@@ -40,6 +40,10 @@ Okay, now take 20 minutes to first read-through and think about the methods & be
     - num_beds
     - num_baths
 
+* Create the landlord database and load the schema to it.
+
+* Connect to the database with ruby
+
 * Define AR classes /w associations for:
   - Person
   - Apartment
