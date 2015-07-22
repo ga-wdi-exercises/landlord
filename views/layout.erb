@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>The Landlord</title> 
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  </head>
+  <body>
+    <nav>
+      <a href='/apartments'>List All apartments</a>
+      <a href='/apartments/3'>View sample apartment</a>
+      <a href='/apartments/new'>Create a new apartment</a>
+      <a href='/apartments/3/tenants'>List tenants for sample apartment</a>
+      <a href='/apartments/3/tenants/new'>Add tenant to apartment</a>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
