@@ -18,3 +18,11 @@ input[type="text"]{
   font:inherit;
   margin-bottom:.5em;
 }
+
+.apartment_info label {
+  font-weight: bold;
+}
+
+.apartment_info label::after {
+  content: ": ";
+}

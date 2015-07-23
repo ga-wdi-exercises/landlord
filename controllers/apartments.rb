@@ -11,5 +11,6 @@ end
 
 # show
 get '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
   erb :"apartments/show"
 end
