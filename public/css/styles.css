@@ -37,3 +37,7 @@ label::after {
   top: 0;
   right: 0;
 }
+
+.button-delete {
+  color: red;
+}

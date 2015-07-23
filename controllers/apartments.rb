@@ -33,3 +33,9 @@ put '/apartments/:id' do
   apartment.update!(params[:apartment])
   redirect "/apartments/#{apartment.id}" #show
 end
+
+# delete
+delete '/apartments/:id' do
+  Apartment.destroy(params[:id])
+  redirect "/apartments" # index
+end
