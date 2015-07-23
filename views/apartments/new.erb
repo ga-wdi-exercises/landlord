@@ -1,8 +1,18 @@
 <form method="post" action="/apartments">
-  <input type="text" placeholder="Address">
-  <input type="text" placeholder="Monthly Rent">
-  <input type="text" placeholder="Square Feet">
-  <input type="text" placeholder="Number Beds">
-  <input type="text" placeholder="Number Baths">
+  <label for="apartment[address]">Address</label>
+  <input name="apartment[address]" type="text">
+
+  <label for="apartment[monthly_rent]">Monthly Rent</label>
+  <input name="apartment[monthly_rent]" type="text">
+
+  <label for="apartment[sqft]">Square Feet</label>
+  <input name="apartment[sqft]" type="text">
+
+  <label for="apartment[num_beds]">Number of Bedrooms</label>
+  <input name="apartment[num_beds]" type="text">
+
+  <label for="apartment[num_baths]">Number of Bathrooms</label>
+  <input name="apartment[num_baths]" type="text">
+
   <input type="submit">
 </form>
