@@ -1,5 +1,5 @@
 <h1>Apartment: <%= @apartment %></h1>
-<section class="apartment_info">
+<section class="apartment">
   <p>
     <label>Address</label>
     <%= @apartment.address %>
@@ -20,6 +20,7 @@
     <label>Number of Bathrooms</label>
     <%= @apartment.num_baths %>
   </p>
+  <img src="<%= @apartment.image_url(256,256) %>" />
 </section>
 
 <section>

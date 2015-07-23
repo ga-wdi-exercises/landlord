@@ -5,6 +5,11 @@ body{
   padding:1em;
 }
 
+section {
+  position: relative;
+  clear: both;
+}
+
 nav{
   margin-bottom:2em;
 }
@@ -25,4 +30,10 @@ label {
 
 label::after {
   content: ": ";
+}
+
+.apartment img {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
