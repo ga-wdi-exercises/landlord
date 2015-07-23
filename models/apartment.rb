@@ -7,6 +7,6 @@ class Apartment < ActiveRecord::Base
 
   def to_s
     # "default" display of apartment
-    "#{rent_as_currency} - #{address}"
+    "#{address} - #{rent_as_currency}"
   end
 end

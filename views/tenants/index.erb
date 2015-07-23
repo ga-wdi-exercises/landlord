@@ -1,1 +1,18 @@
-Listing tenants for apartment #3
+<h1>Tenants for
+  <a href="/apartments/<%= @apartment.id %>">
+    <%= @apartment %>
+  </a>
+</h1>
+
+<% tenants = @apartment.tenants %>
+<% if tenants.size == 0 %>
+  None found
+<% else %>
+  <ul>
+    <% tenants.each do |tenant| %>
+      <li>
+        <%= tenant %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

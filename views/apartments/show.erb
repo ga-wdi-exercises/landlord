@@ -21,3 +21,23 @@
     <%= @apartment.num_baths %>
   </p>
 </section>
+
+<section>
+  <h2>
+    <% tenants_url = "/apartments/#{@apartment.id}/tenants" %>
+    <a href="<%= tenants_url %>">Tenants</a>
+  </h2>
+
+  <% tenants = @apartment.tenants %>
+  <% if tenants.size == 0 %>
+    None found
+  <% else %>
+    <ul>
+      <% tenants.each do |tenant| %>
+        <li>
+          <%= tenant %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
