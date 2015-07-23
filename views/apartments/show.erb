@@ -26,6 +26,7 @@
   <h2>
     <% tenants_url = "/apartments/#{@apartment.id}/tenants" %>
     <a href="<%= tenants_url %>">Tenants</a>
+    <a href="/apartments/<%= @apartment.id %>/tenants/new">(+)</a>
   </h2>
 
   <% tenants = @apartment.tenants %>
