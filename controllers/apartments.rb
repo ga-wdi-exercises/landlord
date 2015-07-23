@@ -30,7 +30,6 @@ end
 # update
 put '/apartments/:id' do
   apartment = Apartment.find(params[:id])
-  binding.pry
   apartment.update!(params[:apartment])
   redirect "/apartments/#{apartment.id}" #show
 end
