@@ -1,4 +1,7 @@
-<h1>Apartment: <%= @apartment %></h1>
+<h1>
+  Apartment: <%= @apartment %>
+  <a href="/apartments/<%= @apartment.id %>/edit">(edit)</a>
+</h1>
 <section class="apartment">
   <p>
     <label>Address</label>

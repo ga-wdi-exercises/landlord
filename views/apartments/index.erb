@@ -2,14 +2,15 @@
   Apartments
   <a href="/apartments/new">(+)</a>
 </h1>
-
-<ul>
-  <% @apartments.each do |apartment| %>
+<section class="apartments">
+  <ul>
+    <% @apartments.each do |apartment| %>
     <li>
       <a href='/apartments/<%= apartment.id %>'>
         <img src="<%= apartment.image_url(32,32) %>" />
         <%= apartment %>
       </a>
     </li>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
+</section>

@@ -20,3 +20,17 @@ get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   erb :"apartments/show"
 end
+
+# edit
+get '/apartments/:id/edit' do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartments/edit"
+end
+
+# update
+put '/apartments/:id' do
+  apartment = Apartment.find(params[:id])
+  binding.pry
+  apartment.update!(params[:apartment])
+  redirect "/apartments/#{apartment.id}" #show
+end
