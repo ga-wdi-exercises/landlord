@@ -13,10 +13,10 @@ The due dates for this week will be the same as usual. Wednesday at 9:00 and Fri
 
 ### Wednesday
 
-All classes - Ruby Classes
-All classes - Schema
-Active Record - Active Record
-Sinatra REST - Sinatra Views and Templates
+- All classes - Ruby Classes
+- All classes - Schema
+- Active Record - Active Record
+- Sinatra REST - Sinatra Views and Templates
 
 ### Friday
 Ideally, you should complete the portion you haven't completed yet before starting Friday's Portion.
