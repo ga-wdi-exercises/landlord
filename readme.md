@@ -79,7 +79,7 @@ Define an instance method add_tenant on the apartment class that allows you to a
   - Tenant
   - Apartment
 
-* Create a Seed file that :
+* Create a `seeds.rb` file in the `db` directory that:
   - Creates at least 3 instances of the apartment class
   - Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
   - queries for all instances of the Tenant class and stores it in a variable of your choice
