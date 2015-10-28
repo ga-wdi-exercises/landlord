@@ -14,7 +14,7 @@ The due dates for this week will be the same as usual. Wednesday at 9:00 and Fri
 ### Wednesday
 
 - All classes - Ruby Classes
-- All classes - Schema
+- All classes - Schema * SQL
 - Active Record - Active Record
 - Sinatra REST - Sinatra Views and Templates
 
@@ -23,7 +23,7 @@ Ideally, you should complete the portion you haven't completed yet before starti
 
 Full Crud Application for Landlord(see last subsection - Sinatra & DB). Ultimately, this application is using concepts covered across each of the subtopics.
 
-## Ruby Classes
+##  <a name="ruby_classes">Ruby Classes
 > Note: If you have taken the Active Record class already, be sure to do this part first, but your PR for Wednesday will only contain your Active Record model definitions.
 
 Create a directory named models.
@@ -51,23 +51,52 @@ And Then...
 
 Define an instance method add_tenant on the apartment class that allows you to add tenants to an existing apartment. Do not add the tenant to the apartment if the number of tenants would exceed the number of beds
 
-## Schema
+## Schema & SQL
 * Create a `db` folder.
 * Create a `landlord_schema.sql` in the `db` folder. It should contain the following:
-  - Tenants table (with the follow attributes):
+  - Tenants table (with the following attributes):
     - id
     - name
     - age
     - gender
     - apartment_id
 
-  - Apartments table (with the follow attributes):
+  - Apartments table (with the following attributes):
     - id
     - address
     - monthly_rent
     - sqft
     - num_beds
     - num_baths
+
+* Load the seed file (`sql/apartment_seeds.sql`)
+* create `queries.sql` file in the `db` folder that contains the following queries:
+
+- Retrieve all info on all tenants
+- Retrieve the name, age, and gender of all tenants
+- Retrieve all info on all tenants older than 65
+- Retrieve all info on all tenants in apartment with id 20
+- Retrieve all info on all tenants in apartment with ids 20 or 15
+- Delete all tenants whose age is greater than 65
+- Create one new tenant, put them in any apartment you want
+- Find just the ids for all apartments
+- Find all info for apartments whose price is greater than $2300
+- Geriatric Birthday! Update all tenants whose age is 90 to be 91
+- Change all tenants ages to increase by 1
+- Find all tenants who live in an apartment that costs more than $2300
+
+Join Queries
+
+Demonstrate joining apartments with tenants (where id < 10);
+
+> Note: If at any point you need a new clean set of data, run the following commands. The things in carrots are dependent on the names you give your database/files
+
+```bash
+$ dropdb database_name
+$ createdb database_name
+$ psql -d database_name < name_of_schema_file.sql
+$ psql -d database_name < name_of_seed_file.sql
+```
 
 ## Active Record
 
