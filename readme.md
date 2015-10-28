@@ -13,7 +13,7 @@ The due dates for this week will be the same as usual. Wednesday at 9:00 and Fri
 
 ### Wednesday
 
-- All classes - Ruby Classes
+- All classes - [Ruby Classes](#Ruby-Classes)
 - All classes - Schema * SQL
 - Active Record - Active Record
 - Sinatra REST - Sinatra Views and Templates
@@ -23,7 +23,7 @@ Ideally, you should complete the portion you haven't completed yet before starti
 
 Full Crud Application for Landlord(see last subsection - Sinatra & DB). Ultimately, this application is using concepts covered across each of the subtopics.
 
-##  <a name="ruby_classes">Ruby Classes
+## Ruby Classes
 > Note: If you have taken the Active Record class already, be sure to do this part first, but your PR for Wednesday will only contain your Active Record model definitions.
 
 Create a directory named models.
@@ -89,7 +89,7 @@ Join Queries
 
 Demonstrate joining apartments with tenants (where id < 10);
 
-> Note: If at any point you need a new clean set of data, run the following commands. The things in carrots are dependent on the names you give your database/files
+> Note: If at any point you need a new clean set of data, run the following commands. The database_name and file names need to be database and files you are using.
 
 ```bash
 $ dropdb database_name
