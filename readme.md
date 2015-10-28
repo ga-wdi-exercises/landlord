@@ -14,12 +14,12 @@ The due dates for this week will be the same as usual. Wednesday at 9:00 and Fri
 ### Wednesday
 
 - All classes - [Ruby Classes](#ruby-classes)
-- All classes - Schema * SQL
-- Active Record - Active Record
-- Sinatra REST - Sinatra Views and Templates
+- All classes - [Schema & SQL](#schema--sql)
+- Active Record - [Active Record](#active-record)
+- Sinatra REST - [Sinatra Views and Templates](#sinatra-views-and-templates)
 
 ### Friday
-Ideally, you should complete the portion you haven't completed yet before starting Friday's Portion.
+Ideally, you should complete the portion you haven't completed yet before starting [Friday's Portion](#sinatra--db).
 
 Full Crud Application for Landlord(see last subsection - Sinatra & DB). Ultimately, this application is using concepts covered across each of the subtopics.
 
