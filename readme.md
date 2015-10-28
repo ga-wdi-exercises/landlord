@@ -87,7 +87,7 @@ Define an instance method add_tenant on the apartment class that allows you to a
 
 Join Queries
 
-Demonstrate joining apartments with tenants (where id < 10);
+- Demonstrate joining apartments with tenants (where id < 10);
 
 > Note: If at any point you need a new clean set of data, run the following commands. The database_name and file names need to be database and files you are using.
 
