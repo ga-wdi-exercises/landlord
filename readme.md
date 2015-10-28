@@ -13,7 +13,7 @@ The due dates for this week will be the same as usual. Wednesday at 9:00 and Fri
 
 ### Wednesday
 
-- All classes - [Ruby Classes](#Ruby-Classes)
+- All classes - [Ruby Classes](#ruby-classes)
 - All classes - Schema * SQL
 - Active Record - Active Record
 - Sinatra REST - Sinatra Views and Templates
