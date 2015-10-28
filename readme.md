@@ -69,7 +69,7 @@ Define an instance method add_tenant on the apartment class that allows you to a
     - num_beds
     - num_baths
 
-* Load the seed file (`sql/apartment_seeds.sql`)
+* Load the seed file (`sql/landlord_seeds.sql`)
 * create `queries.sql` file in the `db` folder that contains the following queries:
 
 - Retrieve all info on all tenants
