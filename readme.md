@@ -38,18 +38,54 @@ A tenant should have the following attributes:
 - age
 - gender
 
+Define an initialize method that takes the three above attributes as arguments
+and assigns them as instance variables
+
+e.g.
+
+```rb
+my_new_tenant = Tenant.new("Jesse", 26, "male")
+```
+
+How do you know it worked?
+
 An apartment should have the following attributes:
 
   address (a single string including floor and unit numbers if applicable)
-  monthy_rent
+  monthly_rent
   sqft
   num_beds
   num_baths
   renters (the tenant or tenants living in the apartment)
 
+Define an initialize method that takes the five (everything but renters) above attributes as arguments
+and assigns them as instance variables
+
+e.g.
+
+```rb
+my_new_apartment = Apartment.new("123 Main St", 2500, 800, 3, 2)
+```
+
 And Then...
 
 Define an instance method add_tenant on the apartment class that allows you to add tenants to an existing apartment. Do not add the tenant to the apartment if the number of tenants would exceed the number of beds
+
+### Hint!
+
+If you want to try this out interactively, create a console file:
+
+```rb
+# console.rb
+require_relative 'models/tenant'
+require_relative 'models/apartment'
+
+binding.pry
+
+puts "this line is here to fix a bug w/ pry"
+```
+
+and then `ruby console.rb`
 
 ## Schema & SQL
 * Create a `db` folder.
@@ -134,15 +170,15 @@ Create the (RESTful) routes and views for the following items:
 
 - The homepage should list several menu options:
   * List all apartments (a link to `GET /apartments`)
-  * View an apartment's details(a link to `GET /apartments/1`)
   * Add an apartment(a link to `GET /apartments/new`)
-  * List tenants (a link to `GET /apartments/1/tenants`)
 - The route `GET /apartments` should list all apartments
   * these apartments will just be hardcoded in your `app.rb` or in your `erb` file.
+  * View an apartment's details(a link to `GET /apartments/1`)
 - The route `GET /apartments/new` should show a form for adding a new apartment
   * Make sure to get the appropriate input from the user when creating an apartment as per schema
 - The route `GET /apartments/1` should show info about a single apartment
   * Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters
+  * List tenants (a link to `GET /apartments/1/tenants`)
 - The route `GET /apartments/1/tenants` should list all tenants for 1 apartment.
 - The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
   * Make sure to get the appropriate input from the user to create your person as per schema
@@ -151,6 +187,16 @@ Create the (RESTful) routes and views for the following items:
 Example of using instance variables:
 
   In your main `app.rb` file, create instance variables that query the Database using active record.
+
+```rb
+# app.rb
+
+require "sinatra"
+
+get "/apartments" do
+  @apartments = Apartment.all
+end
+```
 
   In your views, replace hardcoded html with erb. For example:
 
