@@ -148,6 +148,18 @@ Create the (RESTful) routes and views for the following items:
   * Make sure to get the appropriate input from the user to create your person as per schema
 
 ## Sinatra & DB
+Example of using instance variables:
+
+  In your main `app.rb` file, create instance variables that query the Database using active record.
+
+  In your views, replace hardcoded html with erb. For example:
+
+  ```html
+  <% @apartments.each do |apartment| %>
+    <li><%= apartment.address %></li>
+  <% end %>
+  ```
+
 > This will be a full single model CRUD application that connects to a database backend
 
 You should have the following in your application:
@@ -182,15 +194,3 @@ You should have the following in your application:
 
 ### megabonus
 - incorporate user authentication
-
-Example of using instance variables:
-
-  In your main `app.rb` file, create instance variables that query the Database using active record.
-
-  In your views, replace hardcoded html with erb. For example:
-
-  ```html
-  <% @apartments.each do |apartment| %>
-    <li><%= apartment.address %></li>
-  <% end %>
-  ```
