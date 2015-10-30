@@ -53,7 +53,7 @@ Define an instance method add_tenant on the apartment class that allows you to a
 
 ## Schema & SQL
 
-* Create a `landlord_schema.sql` in the `db` folder. It should contain the following:
+* Create a `schema.sql` in the `db` folder. It should contain the following:
   - Tenants table (with the following attributes):
     - id
     - name
@@ -69,7 +69,7 @@ Define an instance method add_tenant on the apartment class that allows you to a
     - num_beds
     - num_baths
 
-* Load the seed file (`db/landlord_seeds.sql`)
+* Load the seed file (`db/seeds.sql`)
 * read the comments in `query_exercises.sql` file in the `db` folder. For each one, write a working query to perform the requested action
 
 > Note: If at any point you need a new clean set of data, run the following commands. The database_name and file names need to be database and files you are using.
