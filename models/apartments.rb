@@ -9,4 +9,9 @@ class Apartment
     @num_baths = num_baths
     @renters = renters
   end
+  # def add_tenant
+
+  # end
 end
+
+# apt = Apartment.new("2501 Porter St",2000,100,1,1,1)
