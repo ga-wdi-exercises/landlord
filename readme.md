@@ -40,12 +40,12 @@ A tenant should have the following attributes:
 
 An apartment should have the following attributes:
 
-  address (a single string including floor and unit numbers if applicable)
-  monthy_rent
-  sqft
-  num_beds
-  num_baths
-  renters (the tenant or tenants living in the apartment)
+- address (a single string including floor and unit numbers if applicable)
+- monthy_rent
+- sqft
+- num_beds
+- num_baths
+- renters (the tenant or tenants living in the apartment)
 
 And Then...
 
