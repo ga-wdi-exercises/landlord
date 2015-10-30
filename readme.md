@@ -52,7 +52,7 @@ And Then...
 Define an instance method add_tenant on the apartment class that allows you to add tenants to an existing apartment. Do not add the tenant to the apartment if the number of tenants would exceed the number of beds
 
 ## Schema & SQL
-* Create a `db` folder.
+
 * Create a `landlord_schema.sql` in the `db` folder. It should contain the following:
   - Tenants table (with the following attributes):
     - id
@@ -69,25 +69,8 @@ Define an instance method add_tenant on the apartment class that allows you to a
     - num_beds
     - num_baths
 
-* Load the seed file (`sql/landlord_seeds.sql`)
-* create `queries.sql` file in the `db` folder that contains the following queries:
-
-- Retrieve all info on all tenants
-- Retrieve the name, age, and gender of all tenants
-- Retrieve all info on all tenants older than 65
-- Retrieve all info on all tenants in apartment with id 20
-- Retrieve all info on all tenants in apartment with ids 20 or 15
-- Delete all tenants whose age is greater than 65
-- Create one new tenant, put them in any apartment you want
-- Find just the ids for all apartments
-- Find all info for apartments whose price is greater than $2300
-- Geriatric Birthday! Update all tenants whose age is 90 to be 91
-- Change all tenants ages to increase by 1
-- Find all tenants who live in an apartment that costs more than $2300
-
-Join Queries
-
-- Demonstrate joining apartments with tenants (where id < 10);
+* Load the seed file (`db/landlord_seeds.sql`)
+* read the comments in `query_exercises.sql` file in the `db` folder. For each one, write a working query to perform the requested action
 
 > Note: If at any point you need a new clean set of data, run the following commands. The database_name and file names need to be database and files you are using.
 
