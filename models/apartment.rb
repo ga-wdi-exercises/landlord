@@ -1,0 +1,2 @@
+class Apartment
+  def initialize()
