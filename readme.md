@@ -72,7 +72,7 @@ Define an instance method add_tenant on the apartment class that allows you to a
 * Load the seed file (`db/seeds.sql`)
 * read the comments in `query_exercises.sql` file in the `db` folder. For each one, write a working query to perform the requested action
 
-> Note: If at any point you need a new clean set of data, run the following commands. The database_name and file names need to be database and files you are using.
+> Note: If at any point you need a new clean set of data, run the following commands (replacing `database_name` and `name_of_file.sql` with the actual names of the database and files you're using).
 
 ```bash
 $ dropdb database_name
