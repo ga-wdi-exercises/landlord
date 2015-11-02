@@ -16,10 +16,11 @@ INSERT INTO tenants(name, age, gender, apartment_id) VALUES ("Steve Rogers", 93,
 SELECT id FROM tenants;
 -- Find all info for apartments whose price is greater than $2300
 SELECT id FROM apartments WHERE monthly_rent > 2300; #5, 7, 9, 15, 16, 19
-SELECT * FROM tenants WHERE apartment_id = 5 OR apartment_id = 7 OR apartment_id = 9 OR apartment_id = 15 OR apartment_id = 16 OR apartment_id = 19;
+-- SELECT * FROM tenants WHERE apartment_id = 5 OR apartment_id = 7 OR apartment_id = 9 OR apartment_id = 15 OR apartment_id = 16 OR apartment_id = 19;
 -- Geriatric Birthday! Update all tenants whose age is 90 to be 91
 UPDATE tenants SET age = 91 where age = 90;
 -- Change all tenants ages to increase by 1
 UPDATE tenants SET age = age+1;
 -- Find all tenants who live in an apartment that costs more than $2300
 SELECT * FROM tenants WHERE apartment_id = 5 OR apartment_id = 7 OR apartment_id = 9 OR apartment_id = 15 OR apartment_id = 16 OR apartment_id = 19;
+SELECT * FROM tenants JOIN apartments ON appartments.id=tenants.apartment_id WHERE apartments.monthly_rent>2300;
