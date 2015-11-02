@@ -48,7 +48,7 @@ class Apartment
   end
 # methods
   def add_tenant()
-    if self.num_beds < num_beds
+    if renters.length < num_beds
       @renters << tenant
     else
       puts "This apartment is full."
