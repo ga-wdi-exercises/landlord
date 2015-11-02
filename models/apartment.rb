@@ -6,7 +6,7 @@ class Apartment
     @sqft=sqft
     @num_beds=num_beds
     @num_baths=num_baths
-    @renters=renters
+    @renters=[]
   end
   # getters
   def address
@@ -46,9 +46,17 @@ class Apartment
   def renters=(renters)
     @renters=renters
   end
+# methods
+  def add_tenant()
+    if self.num_beds < num_beds
+      @renters << tenant
+    else
+      puts "This apartment is full."
+    end
+  end
 end
 
 # tests
-mine=Apartment.new("123 Main", "1200", 400, 2,1,2)
+mine=Apartment.new("123 Main", "1200", 400, 2,1,"me")
 
-puts mine.address
+puts mine.renters
