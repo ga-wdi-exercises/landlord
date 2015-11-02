@@ -25,3 +25,5 @@ apt = Apartment.new(121,4000,3500,3,2)
 binding.pry
 
 puts "program complete"
+
+# test
