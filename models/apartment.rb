@@ -8,13 +8,13 @@ class Apartment
     @sqft = sqft
     @num_beds = num_beds
     @num_baths = num_baths
-    @renters = renters # array []
+    @renters = renters # array
   end
 
   def add_tenant tenant
-    renters << tenant if renters.length < num_beds
-    # should we reference renters and num_beds without @
-    # my inclination is to not
+    @renters << tenant if renters.length < num_beds
+    # should we reference renters and num_beds without @?
+    # my initial thought is that the @ is only needed for setting directly
   end
 
 end
