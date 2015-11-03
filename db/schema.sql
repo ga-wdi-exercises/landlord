@@ -5,7 +5,7 @@ CREATE TABLE tenants (
   id SERIAL PRIMARY KEY,
   name VARCHAR(50),
   age INTEGER,
-  gender VARCHAR(1),
+  gender VARCHAR(50),
   apartment_id INTEGER
 );
 
