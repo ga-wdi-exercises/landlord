@@ -1,5 +1,5 @@
-class apartment
-
+class Apartment
+  attr_accessor :address, :monthly_rent, :sqft, :num_beds, :num_baths, :renters
   def initialize (address, monthly_rent, sqft, num_beds, num_baths, renters)
     @address = address
     @monthly_rent = monthly_rent
@@ -9,8 +9,7 @@ class apartment
     @renters = renters
 
   end
-
-  def add_tenant
+  def add_tenant 
     while renters <= num_beds
       renters += 1
   end
