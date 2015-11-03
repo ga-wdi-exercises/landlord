@@ -1,7 +1,4 @@
-require 'pry'
-
 class Apartment
-
   attr_reader :address, :monthly_rent, :sqft, :num_beds, :num_baths, :renters
 
   def initialize(address, monthly_rent, sqft, num_beds, num_baths)
@@ -14,12 +11,8 @@ class Apartment
   end
 
   def add_tenant(renter)
-    if @renters.length < @num_beds then
+    if @renters.length < @num_beds
       @renters << renter
     end
   end
-
-  # whitehouse = Apartment.new("washington dc", 10000, 550, 20, 8, "john")
-
 end
-binding.pry
