@@ -1,3 +1,3 @@
 class Tenant < ActiveRecord::Base
-    has_many :apartments
+    belong_to :apartment
   end
