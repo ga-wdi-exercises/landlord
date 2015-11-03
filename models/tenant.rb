@@ -1,4 +1,4 @@
-class Tenants < ActiveRecord::Base
+class Tenant < ActiveRecord::Base
   attr_accessor :name
   attr_accessor :age
   attr_accessor :gender

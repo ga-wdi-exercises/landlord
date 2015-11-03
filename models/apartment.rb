@@ -1,4 +1,4 @@
-class Apartments < ActiveRecord::Base
+class Apartment < ActiveRecord::Base
   attr_accessor :address
   attr_accessor :monthy_rent
   attr_accessor :sqft
