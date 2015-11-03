@@ -3,17 +3,17 @@ DROP TABLE IF EXISTS apartments;
 
 CREATE TABLE tenants (
   id SERIAL PRIMARY KEY,
-  name TEXT,
-  age INT,
-  gender TEXT,
+  name TEXT NOT NULL,
+  age INT NOT NULL,
+  gender TEXT NOT NULL,
   apartment_id INT
 );
 
 CREATE TABLE apartments (
   id SERIAL PRIMARY KEY,
   address VARCHAR(255),
-  monthly_rent INT,
-  sqft INT,
-  num_beds INT,
-  num_baths INT
+  monthly_rent INT NOT NULL,
+  sqft INT NOT NULL,
+  num_beds INT NOT NULL,
+  num_baths INT NOT NULL
 );
