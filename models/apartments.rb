@@ -1,4 +1,5 @@
 class Apartment < ActiveRecord::Base
+  has_many :tenants
   # attr_accessor :renters, :rent #tenants?
   # attr_reader :address, :sqft, :num_beds, :num_baths
   # def initialize (address,rent,sqft,num_beds,num_baths,renters)
