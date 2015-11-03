@@ -1,4 +1,4 @@
-Class Apartment
+class Apartment
 attr_acessor: :name, :age, :gender
 
   def initialize(name, age, gender)
@@ -13,9 +13,3 @@ attr_acessor: :name, :age, :gender
   end
 
 end
-
-
-
-
-Define an instance method add_tenant on the apartment class that allows you to add tenants to an existing apartment.
-Do not add the tenant to the apartment if the number of tenants would exceed the number of beds
