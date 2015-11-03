@@ -8,5 +8,4 @@ class Tenant
     @age = age
     @gender = gender
   end
-binding.pry
 end
