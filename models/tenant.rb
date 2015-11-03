@@ -1,6 +1,4 @@
-require "pry"
-
-class Tenants
+class Tenants < ActiveRecord::Base
   attr_accessor :name
   attr_accessor :age
   attr_accessor :gender
@@ -13,5 +11,3 @@ class Tenants
 
   belongs_to :apartment
 end
-
-binding.pry

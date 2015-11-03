@@ -1,6 +1,4 @@
-require "pry"
-
-class Apartments
+class Apartments < ActiveRecord::Base
   attr_accessor :address
   attr_accessor :monthy_rent
   attr_accessor :sqft
@@ -25,5 +23,3 @@ class Apartments
 
   has_many :songs
 end
-
-binding.pry
