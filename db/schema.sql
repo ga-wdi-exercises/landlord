@@ -9,7 +9,7 @@ CREATE TABLE tenants (
 CREATE TABLE apartments (
   id SERIAL PRIMARY KEY,
   address VARCHAR (255),
-  monthly rent INTEGER,
+  monthly_rent INTEGER,
   sqft INTEGER,
   num_beds INTEGER,
   num_baths INTEGER
