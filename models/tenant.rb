@@ -1,8 +1,8 @@
 class Tenant
-  def initialize (name, age, gender, apartment_id)
+  attr_accessor :name, :age, :gender
+  def initialize (name, age, gender)
     @name = name,
     @age = age,
     @gender = gender,
-    @apartment_id = apartment_id
   end
 end
