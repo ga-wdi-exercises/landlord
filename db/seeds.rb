@@ -22,12 +22,12 @@ gene = Tenant.create(name: "Gene Simmons", age: 62, gender: "M")
 paul = Tenant.create(name: "Paul Stanley", age: 61, gender: "M")
 ace = Tenant.create(name: "Ace Frehley", age: 64, gender: "M")
 peter = Tenant.create(name: "Peter Criss", age: 59, gender: "M")
-#having difficulty creating tenants who are renting. trying multiple approaches
-Tenant.create(name: "Mick Jagger", age: 70, gender: "M", apartment_id: bungalow)
+#tenants living in apartments
+Tenant.create(name: "Mick Jagger", age: 70, gender: "M", apartment: bungalow)
 Tenant.create(name: "Keith Richards", age: 70, gender: "M", apartment: bungalow)
-loft.tenants.create(name: "Mick Taylor", age: 67, gender: "M")
-ranch.create(name: "Bill Wyman", age: 71, gender: "M")
-ranch.create(name: "Charlie Watts", age: 70, gender: "M")
+Tenant.create(name: "Mick Taylor", age: 67, gender: "M", apartment: loft)
+Tenant.create(name: "Bill Wyman", age: 71, gender: "M", apartment: ranch)
+Tenant.create(name: "Charlie Watts", age: 70, gender: "M", apartment: ranch)
 
 # queries for all instances of the Tenant class and stores it in a variable of your choice
 tenants = Tenant.all
@@ -40,3 +40,6 @@ bungalow_tenants = bungalow.tenants
 # Updates an object using the update methods
 
 # Deletes one of the objects you've created
+
+
+binding.pry
