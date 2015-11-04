@@ -58,14 +58,7 @@ $ psql -d database_name < name_of_seed_file.sql
 
 ## Active Record
 
-* Create the landlord database and load the schema(you created this in the schema portion) to it.
-
-* Connect to the database with ruby
-
-* Define AR classes /w associations in the `models` folder for:
-  - Tenant
-  - Apartment
-
+ T
 * Create a `seeds.rb` file in the `db` directory that:
   - Creates at least 3 instances of the apartment class
   - Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
