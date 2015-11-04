@@ -7,13 +7,11 @@ require "pry"
 require_relative "../models/apartment"
 require_relative "../models/tenant"
 
-require_relative "../db/connection.rb"
+require_relative "../db/connection"
 
-
+# destroys existing data in database
 Apartment.destroy_all
 Tenant.destroy_all
-# destroys existing data in database
-
 
 # 3 instances of Apartment class
 bungalow = Apartment.create(address: "123 Main St.", monthly_rent: 4000, sqft: 1000, num_beds: 3, num_baths: 1.5)
@@ -24,8 +22,21 @@ gene = Tenant.create(name: "Gene Simmons", age: 62, gender: "M")
 paul = Tenant.create(name: "Paul Stanley", age: 61, gender: "M")
 ace = Tenant.create(name: "Ace Frehley", age: 64, gender: "M")
 peter = Tenant.create(name: "Peter Criss", age: 59, gender: "M")
-bungalow.apartment.create(name: "Mick Jagger", age: 70, gender: "M")
-bungalow.apartment.create(name: "Keith Richards", age: 70, gender: "M")
-loft.apartment.create(name: "Mick Taylor", age: 67, gender: "M")
-loft.apartment.create(name: "Bill Wyman", age: 71, gender: "M")
-ranch.apartment.create(name: "Charlie Watts", age: 70, gender: "M")
+#having difficulty creating tenants who are renting. trying multiple approaches
+Tenant.create(name: "Mick Jagger", age: 70, gender: "M", apartment_id: bungalow)
+Tenant.create(name: "Keith Richards", age: 70, gender: "M", apartment: bungalow)
+loft.tenants.create(name: "Mick Taylor", age: 67, gender: "M")
+ranch.create(name: "Bill Wyman", age: 71, gender: "M")
+ranch.create(name: "Charlie Watts", age: 70, gender: "M")
+
+# queries for all instances of the Tenant class and stores it in a variable of your choice
+tenants = Tenant.all
+# queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
+bungalow_tenants = bungalow.tenants
+# Updates attributes using attribute helper methods for one of the objects you've created
+
+# Saves an object that you updated using attribute helpers to the Database
+
+# Updates an object using the update methods
+
+# Deletes one of the objects you've created

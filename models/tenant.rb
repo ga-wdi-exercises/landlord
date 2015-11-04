@@ -1,3 +1,3 @@
 class Tenant < ActiveRecord::Base
-    belong_to :apartment
+    belongs_to :apartment
   end
