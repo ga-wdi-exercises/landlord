@@ -24,18 +24,26 @@ dupont_apt.tenants.create(name: "Kate Wannabe", age: 30, gender: "Female")
 dupont_apt.tenants.create(name: "Sally Fessler", age: 45, gender: "Female")
 dupont_apt.tenants.create(name: "Sara Robatille", age: 35, gender: "Female")
 
-# sally = Tenant.create(name: "Sally Mildren", age: 50, gender: "Female")
+betsy = Tenant.create(name: "Betsy Mildren", age: 50, gender: "Female", apartment_id: col_heights_apt.id)
+cindi = Tenant.create(name: "Cindi Nunez", age: 45, gender: "Female", apartment_id: dupont_apt.id)
+jay = Tenant.create(name: "Jay Fathi", age: 49, gender: "Male", apartment_id: ad_mo_apt.id)
+
 
 # # query for all objects of the Tenant class, store it in a variable
 tenant = Tenant.all
+
 #
 # # query for all instances of the Tenant class that belong to the first Apartment you created
-colheights = 
+colheights = col_heights_apt.tenants
 
 # update any one of your objects you've created using attribute helper methods
 
+betsy.name = "Karen"
 # save that object you just updated to the database
-
+betsy.save
 # update an object using the update method
-
+jay.update(name: "Jay Forealizhi")
 # delete an object
+jay.destroy
+
+binding.pry

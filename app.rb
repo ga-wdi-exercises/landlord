@@ -6,7 +6,7 @@ require "pry" # for debugging
 require_relative "db/connection" # require the db connection file that connects us to PSQL, prior to loading models
 require_relative "models/tenant" # require the Student class definition that we defined in the models/student.rb file
 require_relative "models/apartment"
-require_relative "db/seeds.rb"
+# require_relative "db/seeds.rb"
 
 # This will put us into a state of the pry REPL, in which we've established a connection
 # with the wdi database and have defined the Student Class as an
