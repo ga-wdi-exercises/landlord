@@ -1,1 +1,31 @@
-<h1>Add a new tenant here!</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a Tenant</title>
+  </head>
+  <body>
+    <h1>Add a new tenant here!</h1>
+
+    <form method="post" action=".">
+      <fieldset>
+        1. <input type="text" name="first_name" placeholder="First Name">
+      </fieldset>
+
+      <fieldset>
+        2. <input type="text" name="last_name" placeholder="Last Name">
+      </fieldset>
+
+      <fieldset>
+        3. Gender:
+          <input type="radio" name="gender" id="gender" value="male" checked="true" />
+          <label for="male">Male</label>
+
+          <input type="radio"name="gender" id="female" value="female" />
+          <label for="female">Female</label>
+      </fieldset>
+
+      <input type="submit" value="Submit" />
+    </form>
+
+  </body>
+</html>
