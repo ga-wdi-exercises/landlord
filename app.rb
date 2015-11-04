@@ -29,6 +29,7 @@ def add_apt
   num_baths = gets.chomp
   apt_hash[:num_baths]= num_baths unless num_baths == "null"
   Apartment.create(apt_hash)
+  puts "Apartment added!"
 end
 def delete_apt
   puts "Enter the address of the apartment you would like to delete. Type quit or exit to leave. NOTE: deleting an apartment will delete all tenants of that apartment from the system."
@@ -39,6 +40,7 @@ def delete_apt
     apt = Apartment.find_by(address: user_input)
     apt.tenants.delete
     apt.delete
+    puts "Apartment deleted"
   end
 end
 def manage_tenants
@@ -74,12 +76,45 @@ def plus_tenant
   new_tenant[:apartment_id]= Apartment.find_by(address: user_input).id unless user_input == "null"
   puts new_tenant
   Tenant.create(new_tenant)
+  puts "Tenant added!"
 end
 def mod_tenant
-
+  puts "Enter the name of the tenant you would like to modify.  Or type exit or quit to leave"
+  user_input = gets.chomp
+  if user_input == "quit" || user_input == "exit"
+    return
+  end
+  mod_tenant = Tenant.find_by(name: user_input)
+  mod_hash = Hash.new(0)
+  puts "Enter new values for each field.  Or enter null to leave a field unchanged."
+  puts "Name: #{mod_tenant.name}"
+  puts "New name:"
+  user_input = gets.chomp
+  mod_hash[:name] = user_input unless user_input == "null"
+  puts "Age: #{mod_tenant.age}"
+  puts "New age:"
+  user_input = gets.chomp
+  mod_hash[:age] = user_input unless user_input == "null"
+  puts "Gender: #{mod_tenant.gender}"
+  puts "New gender:"
+  user_input = gets.chomp
+  mod_hash[:gender] = user_input unless user_input == "null"
+  puts "Apartment: #{Apartment.find(mod_tenant.apartment_id).address}"
+  puts "New apartment (address):"
+  user_input = gets.chomp
+  mod_hash[:apartment_id] = Apartment.find_by(address: user_input).id unless user_input == "null"
+  mod_tenant.update(mod_hash)
+  puts "Tenant information updated!"
 end
 def remove_tenant
-
+  puts "Enter a tenant name.  Or exit/quit"
+  user_input = gets.chomp
+  if user_input == "exit" || user_input == "quit"
+    return
+  end
+  bye_tenant = Tenant.find_by(name: user_input)
+  bye_tenant.delete
+  puts "Tenant Removed!"
 end
 def mod_apt
   puts "Enter the apartment address.  Enter quit or exit to leave"
@@ -106,6 +141,7 @@ def mod_apt
   user_input = gets.chomp
   mod_hash[:num_baths] = user_input unless user_input == null
   mod_apt.update(mod_hash)
+  puts "Apartment updated!"
 end
 def manage_apts
   loop do
@@ -146,5 +182,4 @@ def run_cmd_app
     end
   end
 end
-
-binding.pry
+run_cmd_app
