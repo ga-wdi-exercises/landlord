@@ -1,6 +1,8 @@
 require 'pry'
 
-class Tenant
+class Tenant < ActiveRecord::Base
+
+  belongs_to :apartment
 
   def initialize name, age, gender
     @name = name
@@ -9,5 +11,3 @@ class Tenant
   end
 
 end
-
-binding.pry
