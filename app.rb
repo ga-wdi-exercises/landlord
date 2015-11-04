@@ -1,5 +1,13 @@
-require 'sinatra'
-require 'sinatra/reloader'
+# require 'sinatra'
+# require 'sinatra/reloader'
+require 'bundler/setup'
+require 'pg'
+require 'active_record'
+require 'pry'
+
+require_relative 'db/connection'
+require_relative 'models/apartment'
+require_relative 'models/tenant'
 
 get '/' do
   erb :index
@@ -38,3 +46,5 @@ get '/apartments/:id/tenants/new' do
   # Make sure to get the appropriate input from the user to create your person as per schema
   erb :tenant_new
 end
+
+binding.pry
