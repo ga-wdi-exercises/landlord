@@ -15,7 +15,8 @@ CREATE TABLE apartments (
   monthly_rent INT NOT NULL,
   sqft INT,
   num_beds INT,
-  num_baths INT
+  num_baths INT,
+  renters INT
 );
 
 -- select * from tenants fill outer join apartments on tenants.apartment_id = apartments.id;

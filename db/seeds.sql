@@ -1,29 +1,47 @@
-TRUNCATE TABLE apartments CASCADE;
-TRUNCATE TABLE tenants CASCADE;
+require "pg"
+require "active_record"
+require "pry"
 
-ALTER SEQUENCE apartments_id_seq RESTART WITH 1;
-ALTER SEQUENCE tenants_id_seq RESTART WITH 1;
+require_relative "../models/tenant"
+require_relative "../models/apartment"
+
+require_relative "connection.rb"
 
 
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('70335 Clemenargaertine Tunnel', 800, 1900, 3, 2);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('44010 Lemke Crossroad', 1000, 1300, 1, 3);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('77841 Jany Lane', 700, 2300, 4, 3);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('4518 Ivy Spur', 2000, 1000, 1, 2);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('95287 Kamille Underpass', 2800, 1400, 1, 3);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('6005 Damien Corners', 400, 2300, 4, 1);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('95599 Koch Stream', 2400, 1900, 2, 4);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('40583 Hal Crossing', 200, 800, 3, 2);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('62897 Verna Walk', 2400, 700, 2, 3);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('351 Dibbert Fields', 2300, 1300, 2, 1);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('3710 Buford Passage', 500, 700, 1, 4);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('64329 Tyree Creek', 500, 2000, 1, 3);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('17297 Runte Bypass', 2300, 1700, 3, 2);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('0889 Marvin Radial', 1100, 500, 3, 2);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('2745 Freddy Vista', 2800, 1400, 4, 4);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('359 Gutmann Pike', 2700, 1900, 2, 1);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('08465 Howell Harbor', 300, 1300, 3, 1);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('8865 Borer Viaduct', 600, 600, 1, 4);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('7357 Emard Row', 2600, 2300, 3, 2);
+Apartment.destroy_all
+Tenant.destroy_all
+
+# destroys existing data in database
+-- TRUNCATE TABLE apartments CASCADE;
+-- TRUNCATE TABLE tenants CASCADE;
+--
+-- ALTER SEQUENCE apartments_id_seq RESTART WITH 1;
+-- ALTER SEQUENCE tenants_id_seq RESTART WITH 1;
+
+
+Apartment.create(address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 19, num_beds: 3, num_baths: 2)
+Apartment.create(address: "44010 Lemke Crossroad", monthly_rent: 1000, sqft: 130, num_beds: 1, num_baths: 3)
+Apartment.create(address: "77841 Jany Lane", monthly_rent: 700, sqft: 2300, num_beds: 4, num_baths: 3)
+Apartment.create(address: "4518 Ivy Spur", monthly_rent: 2000, sqft: 1000, num_beds: 1, num_baths: 2)
+Apartment.create(address: "95287 Kamille Underpass", monthly_rent: 2800, sqft: 1400, num_beds: 1, num_baths: 3) 
+Apartment.create(address: "6005 Damien Corners", monthly_rent: 400, sqft: 230, num_beds:4 , num_baths:1 )
+Apartment.create(address: "95599 Koch Stream", monthly_rent: 2400, sqft: 1900, num_beds: 2, num_baths: 4)
+Apartment.create(address: "40583 Hal Crossing", monthly_rent: 200, sqft: 800, num_beds: 3, num_baths: 2)
+Apartment.create(address: "62897 Verna Walk", monthly_rent: 2400, sqft: 700, num_beds:2 , num_baths:3 )
+Apartment.create(address: "351 Dibbert Fields", monthly_rent: 2300, sqft: 1300, num_beds: 2, num_baths: 1)
+Apartment.create(address: "3710 Buford Passage", monthly_rent: 500, sqft: 700, num_beds: 1, num_baths: 4)
+Apartment.create(address: "64329 Tyree Creek", monthly_rent: 500, sqft: 2000, num_beds: 1, num_baths: 3)
+Apartment.create(address: "17297 Runte Bypass", monthly_rent: 2300, sqft: 1700, num_beds: 3, num_baths: 2)
+Apartment.create(address: "0889 Marvin Radial", monthly_rent: 1100, sqft: 500, num_beds: 3, num_baths: 2)
+Apartment.create(address: "2745 Freddy Vista", monthly_rent: 2800, sqft: 1400, num_beds: 4, num_baths: 4)
+Apartment.create(address: "359 Gutmann Pike", monthly_rent: 2700, sqft: 1900, num_beds: 2, num_baths: 1)
+Apartment.create(address: "08465 Howell Harbor", monthly_rent: 300, sqft: 1300, num_beds:3 , num_baths:1 )
+Apartment.create(address: "8865 Borer Viaduct", monthly_rent: 600, sqft: 600, num_beds: 1, num_baths: 4)
+Apartment.create(address: "7357 Emard Row", monthly_rent: , sqft: 2300, num_beds: 3, num_baths: 2)
+Apartment.create(address: "175 Benedict Ridges", monthly_rent: 2600, sqft: 2100, num_beds: 3, num_baths: 3)
+Apartment.create(address: "45714 Schinner Expressway", monthly_rent: 900, sqft: 2200, num_beds: 6, num_baths: 3)
+Apartment.create(address: "60059 Leta Roads", monthly_rent: 1100, sqft: 2500, num_beds: 3, num_baths: 4)
+
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Maudie Mosciski', 90, 'Female', 1);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Kristin Wisoky', 23, 'Female', 1);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Demario King', 71, 'Female', 2);
@@ -80,3 +98,14 @@ INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Bennett Jakubowsk
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Annette Stamm', 76, 'Male', 20);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Dr. Raquel Carter', 61, 'Female', 20);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Grover Rath', 9, 'Female', 20);
+
+
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Samanta Huels', 32, 'Female', 15);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Raymundo Aufderhar', 42, 'Male', 11);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Marielle Bednar', 7, 'Female', 11);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Jo Gaylord', 61, 'Female', 17);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Hector Sanford', 54, 'Male', 17);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Roscoe Dicki III', 33, 'Male', 15);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Madilyn Ebert', 21, 'Female', 16);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Dudley Rowe', 19, 'Male', 16);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Alfonzo Beatty', 41, 'Male', 11);
