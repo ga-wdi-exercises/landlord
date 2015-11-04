@@ -102,6 +102,7 @@ want_new_tenant
 
 binding.pry
 
+# test test test
 puts Apartment.last.name
 puts Tenant.last.name
 
