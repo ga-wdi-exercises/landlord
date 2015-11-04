@@ -28,18 +28,17 @@ Tenant.create(name: "Keith Richards", age: 70, gender: "M", apartment: bungalow)
 Tenant.create(name: "Mick Taylor", age: 67, gender: "M", apartment: loft)
 Tenant.create(name: "Bill Wyman", age: 71, gender: "M", apartment: ranch)
 Tenant.create(name: "Charlie Watts", age: 70, gender: "M", apartment: ranch)
-
 # queries for all instances of the Tenant class and stores it in a variable of your choice
 tenants = Tenant.all
 # queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
 bungalow_tenants = bungalow.tenants
 # Updates attributes using attribute helper methods for one of the objects you've created
-
+gene.apartment = loft
 # Saves an object that you updated using attribute helpers to the Database
-
+gene.save
 # Updates an object using the update methods
 
 # Deletes one of the objects you've created
-
+peter.destroy
 
 binding.pry
