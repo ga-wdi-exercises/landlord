@@ -44,5 +44,65 @@ natalie.update(age: 29)
 # Deletes one of the objects you've created
 chloe.destroy
 
+# Create a commandline application that utilizes what you know about AR in order to create new apartments and people.
+
+def new_apartment
+	puts "Address?"
+	apt_address = gets.chomp
+	puts "Monthly rent?"
+	apt_rent = gets.chomp.to_i
+	puts "Square feet?"
+	apt_ft = gets.chomp.to_i
+	puts "Number of beds?"
+	apt_beds = gets.chomp.to_i
+	puts "Number of baths?"
+	apt_baths = gets.chop.to_i
+	puts "OK. I'll create a new rental property at #{apt_address}"
+	Apartment.create(address: apt_address, monthly_rent: apt_rent, sqft: apt_ft, num_beds: apt_beds, num_baths: apt_baths)
+	puts "#{apt_address}'s ID is #{Apartment.last.id}"
+	want_new_apt
+end
+
+def want_new_apt
+	puts "Do you want to add another apartment?"
+	if gets.chomp == "yes"
+		new_apartment
+	else
+	end
+end
+
+def new_tenant
+	puts "Name?"
+	tenant_name = gets.chomp
+	puts "Age?"
+	tenant_age = gets.chomp.to_i
+	puts "Gender?"
+	tenant_gender = gets.chomp
+	puts "Apartment ID?"
+	tenant_apt = gets.chomp.to_i
+	if Tenant.where(apartment_id: tenant_apt).length < Apartment.find(tenant_apt).num_beds
+		puts "OK. I'll add #{tenant_name}, a #{tenant_gender} age #{tenant_age}, to apartment #{tenant_apt}."
+		Tenant.create(name: tenant_name, age: tenant_age, gender: tenant_gender, apartment_id: tenant_apt)
+	else 
+		puts "Sorry, that apartment is full. Try again."
+	end
+	want_new_tenant
+end
+
+def want_new_tenant
+	puts "Do you want to add another tenant?"
+	if gets.chomp == "yes"
+		new_tenant
+	else
+	end
+end
+
+want_new_apt
+want_new_tenant
+
 binding.pry
+
+puts Apartment.last.name
+puts Tenant.last.name
+
 
