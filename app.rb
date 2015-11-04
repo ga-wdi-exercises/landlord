@@ -26,8 +26,11 @@ get "/apartments/1/tenants" do
 end
 # The route GET /apartments should list all apartments
 # these apartments will just be hardcoded in your app.rb or in your erb file.
+
 # The route GET /apartments/new should show a form for adding a new apartment
+
 # Make sure to get the appropriate input from the user when creating an apartment as per schema
+
 # The route GET /apartments/1 should show info about a single apartment
 # Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters
 # The route GET /apartments/1/tenants should list all tenants for 1 apartment.
