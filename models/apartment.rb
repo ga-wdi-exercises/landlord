@@ -1,6 +1,8 @@
 require "pry"
 
-class Apartment
+class Apartment < ActiveRecord::Base
+
+  has_many :tenants
 
   attr_accessor :address, :monthly_rent, :sqft, :num_beds, :num_baths, :renters
 
