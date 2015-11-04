@@ -22,3 +22,4 @@ UPDATE tenants SET age = 91 WHERE age = 90;
 UPDATE tenants SET age = age+1;
 -- Find all tenants who live in an apartment that costs more than $2300
 SELECT * FROM tenants JOIN apartments ON tenants.apartment_id = apartments.id WHERE apartments.monthly_rent > 2300;
+;
