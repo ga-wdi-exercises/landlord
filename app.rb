@@ -11,3 +11,5 @@ require_relative "models/tenant" # require the Student class definition that we 
 # with the wdi database and have defined the Student Class as an
 # ActiveRecord::Base class.
 binding.pry
+
+puts "start here"

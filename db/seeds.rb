@@ -20,21 +20,21 @@ university = Apartment.create(address: "200 University St.", monthly_rent: 400, 
 park = Apartment.create(address: "200 Park St.", monthly_rent: 400, sqft: 1000, num_beds: 4, num_baths: 1)
 
 # - Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
-langdon.Tenants.create(name: "Annie", age: 22, gender: "female")
-langdon.Tenants.create(name: "Katie", age: 22, gender: "female")
-langdon.Tenants.create(name: "Gene", age: 22, gender: "female")
-langdon.Tenants.create(name: "lisa", age: 22, gender: "female")
-langdon.Tenants.create(name: "Stefie", age: 22, gender: "female")
-university.Tenants.create(name: "Ger", age: 22, gender: "female")
-park.Tenants.create(name: "Annie", age: 22, gender: "female")
-park.Tenants.create(name: "Katie", age: 22, gender: "female")
-park.Tenants.create(name: "Gerababy", age: 22, gender: "female")
+langdon.tenants.create(name: "Annie", age: 22, gender: "female")
+langdon.tenants.create(name: "Katie", age: 22, gender: "female")
+langdon.tenants.create(name: "Gene", age: 22, gender: "female")
+langdon.tenants.create(name: "lisa", age: 22, gender: "female")
+langdon.tenants.create(name: "Stefie", age: 22, gender: "female")
+university.tenants.create(name: "Ger", age: 22, gender: "female")
+park.tenants.create(name: "Annie", age: 22, gender: "female")
+park.tenants.create(name: "Katie", age: 22, gender: "female")
+park.tenants.create(name: "Gerababy", age: 22, gender: "female")
 
 # - queries for all instances of the Tenant class and stores it in a variable of your choice
 tenant = Tenant.where
 
 # - queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
-landgon_tenants = langdon.Tenant.where
+landgon_tenants = langdon.tenants.where
 
 # - Updates attributes using attribute helper methods for one of the objects you've created
 lisa = Tenant.find_by(name: "lisa")
