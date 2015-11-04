@@ -90,7 +90,6 @@ $ psql -d database_name < name_of_seed_file.sql
 * Define AR classes /w associations in the `models` folder for:
   - Tenant
   - Apartment
-
 * Create a `seeds.rb` file in the `db` directory that:
   - Creates at least 3 instances of the apartment class
   - Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
