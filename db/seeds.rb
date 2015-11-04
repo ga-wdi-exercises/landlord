@@ -16,15 +16,15 @@ n_scott = Apartment.create(address: "1410 North Scott St", monthly_rent: 2000, s
 peabody = Apartment.create(address: "1834 Peabody St", monthly_rent: 4000, sqft: 1800, num_beds: 3, num_baths: 2)
 
 # Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
-becca = Tenant.create(name: "Rebecca", age: 28, gender: "Female", apartment_id: 1)
-carol = Tenant.create(name: "Carol", age: 31, gender: "Female", apartment_id: 1)
-alison = Tenant.create(name: "Alison", age: 29, gender: "Female", apartment_id: 1)
-lauren = Tenant.create(name: "Lauren", age: 30, gender: "Female", apartment_id: 1)
-emelin = Tenant.create(name: "Emelin", age: 30, gender: "Female", apartment_id: 1)
-jason = Tenant.create(name: "Jason", age: 28, gender: "Male", apartment_id: 2)
-natalie = Tenant.create(name: "Natalie", age: 28, gender: "Female", apartment_id: 3)
-shawn = Tenant.create(name: "Shawn", age: 30, gender: "Male", apartment_id: 3)
-chloe = Tenant.create(name: "Chloe", age: 4, gender: "Female", apartment_id: 3)
+becca = Tenant.create(name: "Rebecca", age: 28, gender: "Female", apartment_id: euclid.id)
+carol = Tenant.create(name: "Carol", age: 31, gender: "Female", apartment_id: euclid.id)
+alison = Tenant.create(name: "Alison", age: 29, gender: "Female", apartment_id: euclid.id)
+lauren = Tenant.create(name: "Lauren", age: 30, gender: "Female", apartment_id: euclid.id)
+emelin = Tenant.create(name: "Emelin", age: 30, gender: "Female", apartment_id: euclid.id)
+jason = Tenant.create(name: "Jason", age: 28, gender: "Male", apartment_id: n_scott.id)
+natalie = Tenant.create(name: "Natalie", age: 28, gender: "Female", apartment_id: peabody.id)
+shawn = Tenant.create(name: "Shawn", age: 30, gender: "Male", apartment_id: peabody.id)
+chloe = Tenant.create(name: "Chloe", age: 4, gender: "Female", apartment_id: peabody.id)
 
 # queries for all instances of the Tenant class and stores it in a variable of your choice
 all_tenants = Tenant.all
@@ -65,7 +65,7 @@ end
 
 def want_new_apt
 	puts "Do you want to add another apartment?"
-	if gets.chomp == "yes"
+	if gets.chomp.downcase == "yes"
 		new_apartment
 	else
 	end
@@ -78,7 +78,10 @@ def new_tenant
 	tenant_age = gets.chomp.to_i
 	puts "Gender?"
 	tenant_gender = gets.chomp
-	puts "Apartment ID?"
+	puts "Which apartment? Type the ID shown below."
+	Apartment.all.each do |apt|
+		puts "#{apt.address}: ID #{apt.id}"
+	end
 	tenant_apt = gets.chomp.to_i
 	if Tenant.where(apartment_id: tenant_apt).length < Apartment.find(tenant_apt).num_beds
 		puts "OK. I'll add #{tenant_name}, a #{tenant_gender} age #{tenant_age}, to apartment #{tenant_apt}."
@@ -91,7 +94,7 @@ end
 
 def want_new_tenant
 	puts "Do you want to add another tenant?"
-	if gets.chomp == "yes"
+	if gets.chomp.downcase == "yes"
 		new_tenant
 	else
 	end
