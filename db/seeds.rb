@@ -24,3 +24,25 @@ Tenant.create(name:"Jim",age:20,gender:"Male")
 Tenant.create(name:"Gladys",age:100,gender:"Female")
 Tenant.create(name:"Henry",age:90,gender:"Male")
 Tenant.create(name:"Buck",age:10,gender:"Male")
+
+tenants_all = Tenant.all
+apt1_tenants = Apartment.first.tenants
+
+abc_street = Apartment.first
+abc_street.num_beds = 5
+abc_street.save
+
+Tenant.find_by(name:"Gladys").update(age: 25)
+Tenant.find_by(name:"Buck").destroy
+
+# binding.pry
+#
+# 
+# - Creates at least 3 instances of the apartment class
+# - Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
+# - queries for all instances of the Tenant class and stores it in a variable of your choice
+# - queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
+# - Updates attributes using attribute helper methods for one of the objects you've created
+# - Saves an object that you updated using attribute helpers to the Database
+# - Updates an object using the update methods
+# - Deletes one of the objects you've created
