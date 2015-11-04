@@ -185,7 +185,8 @@ You should have the following in your application:
   - it should have a link to create a new apartment
   - have a show route for each apartment specified by the params value in the
   URL.
-  - it should list its address, montly rent, square feet, number of bedrooms and
+  - it should list its address, monthly rent, square feet, number of bedrooms
+  and
     number of bathrooms
   - it should have a link to delete the apartment
   - it should have a link to edit the apartment
