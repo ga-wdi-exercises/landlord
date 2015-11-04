@@ -30,22 +30,23 @@ Tenant.create(name: "Demario King", age: 71, gender: "Female",  apartment_id: ap
 Tenant.create(name: "Kristin Wisoky", age: 23, gender: "Female",  apartment_id: apartment3.id);
 Tenant.create(name: "Demario King", age: 71, gender: "Female",  apartment_id: apartment3.id);
 
+binding pry
 #queries for all instances of the Tenant class and stores it in a variable of your choice
-Tenant.all
-tenants_all = Tenant.all
-
-#queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
-apartment1.tenants
-tenant_apt1 = apartment1.tenants
-
-#Updates attributes using attribute helper methods for one of the objects you've created
-apartment1.update(monthly_rent: 850, sqft: 2000)
-
-#Saves an object that you updated using attribute helpers to the Database
-tenant_apt1.save
-
-#Updates an object using the update methods
-apartment2.update(monthly_rent: 2600, sqft: 2400)
-
-#Deletes one of the objects you've created
-tenant_apt1.destroy
+# Tenant.all
+# tenants_all = Tenant.all
+#
+# #queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
+# apartment1.tenants
+# tenant_apt1 = apartment1.tenants
+#
+# #Updates attributes using attribute helper methods for one of the objects you've created
+# apartment1.update(monthly_rent: 850, sqft: 2000)
+#
+# #Saves an object that you updated using attribute helpers to the Database
+# tenant_apt1.save
+#
+# #Updates an object using the update methods
+# apartment2.update(monthly_rent: 2600, sqft: 2400)
+#
+# #Deletes one of the objects you've created
+# tenant_apt1.destroy
