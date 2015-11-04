@@ -23,13 +23,19 @@ apartment.Tenant8.create(name: "Sheri Martin", age: 32, gender: "Female")
 apartment.Tenant9.create(name: "Craig Perry", age: 35, gender: "Male")
 Tenent.create(... apartment1.apartment_id)
 # queries for all instances of the Tenant class and stores it in a variable of your choice
-renters = Tenent.find_by(name: "Tenent")
+renters = Tenant.all
 # queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
-
+tenant = Tenant.find_by(apartment_id:(21))
 # Updates attributes using attribute helper methods for one of the objects you've created
-
+apartment = Apartment.where(address: "5442 Lomax Way")
+apartment.update(address: "5004 Lomax Way")
 # Saves an object that you updated using attribute helpers to the Database
-
+apartment.save
 # Updates an object using the update methods
-
+UPDATE tenants SET name = "Sarah Mason" WHERE name = "Vera Mason";
+vera = Tenant.find_by(name: "Vera Mason")
+vera.update(name: "Sarah Mason")
 # Deletes one of the objects you've created
+DELETE * FROM apartments WHERE monthly_rent = 2000;
+vera = Tenant.find_by(name: "Vera Mason")
+vera.destroy
