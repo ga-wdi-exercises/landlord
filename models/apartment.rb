@@ -20,4 +20,5 @@ class Apartment
   def add_tenant(tenant)
     @renters << tenant if @renters.length < @num_beds
   end
+
 end
