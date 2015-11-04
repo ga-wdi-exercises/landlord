@@ -10,8 +10,8 @@ require_relative "models/tenant"
 
 answer = ""
 
-while answer != "quit"
-puts "What would you like to do? Please select one of the following: evict, change rent, assign, add apt, add tenant"
+while answer != "exit"
+puts "What would you like to do? Please select one of the following: evict, change rent, assign, add apt, add tenant, exit"
 answer = gets.chomp.to_s
 
 if answer == "add apt"
