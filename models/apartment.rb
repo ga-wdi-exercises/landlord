@@ -6,7 +6,7 @@ class Apartment < ActiveRecord::Base
   attr_accessor :num_baths
   attr_accessor :renters
 
-  def initialize (address, monthy_rent, sqft, num_beds, num_baths, renters)
+  def initialize (address, monthy_rent, sqft, num_beds, num_baths)
     @address=address
     @monthy_rent=monthy_rent
     @sqft=sqft
@@ -21,5 +21,5 @@ class Apartment < ActiveRecord::Base
     end
   end
 
-  has_many :songs
+  has_many :tenants
 end
