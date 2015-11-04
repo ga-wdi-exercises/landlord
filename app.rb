@@ -34,7 +34,8 @@ def create_apartment
 
   new_apartment = Apartment.create(address: address, monthly_rent: monthly_rent.to_i, sqft: sqft.to_i, num_beds: num_beds.to_i, num_baths: num_baths.to_i)
   puts "You have created a new apartment at the address " + new_apartment.address
-  "New apartment id: " + new_apartment.id.to_s
+  # "New apartment id: " + new_apartment.id.to_s
+  add_another
 end
 
 def create_tenant
@@ -47,7 +48,20 @@ def create_tenant
 
   new_tenant = Tenant.create(name: name, age: age.to_i, gender: gender)
   puts "You have created a new tenant named " + new_tenant.name
-  "New tenant id: " + new_tenant.id.to_s
+  # "New tenant id: " + new_tenant.id.to_s
+  add_another
 end
+
+def add_another
+  puts "Would you like to add more? Type 'yes' or 'quit'"
+  input = gets.chomp
+  if input == 'yes'
+    landlord_clapp
+  else
+    "Thank you. Goodbye." #is there actually any need to have an else?
+  end
+end
+
+# binding.pry
 
 landlord_clapp
