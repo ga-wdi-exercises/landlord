@@ -1,19 +1,19 @@
 DROP TABLE IF EXISTS tenants;
 DROP TABLE IF EXISTS apartments;
 
-CREATE TABLE tenants(
+CREATE TABLE tenants (
   id SERIAL PRIMARY KEY,
   name TEXT,
-  age INTEGER,
+  age INT,
   gender TEXT,
-  apartment_id INTEGER
-)
+  apartment_id INT
+);
 
-CREATE TABLE apartments(
+CREATE TABLE apartments (
   id SERIAL PRIMARY KEY,
   address TEXT,
-  monthly_rent INTEGER,
-  sqf INTEGER,
-  num_beds INTEGER,
-  num_baths INTEGER
-)
+  monthly_rent INT,
+  sqft INT,
+  num_beds INT,
+  num_baths INT
+);
