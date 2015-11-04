@@ -115,6 +115,7 @@ Hardcode some sample html for each of the views.
 
 Create the (RESTful) routes and views for the following items:
 
+
 - The homepage should list several menu options:
   * List all apartments (a link to `GET /apartments`)
   * View an apartment's details(a link to `GET /apartments/1`)
@@ -129,6 +130,9 @@ Create the (RESTful) routes and views for the following items:
 - The route `GET /apartments/1/tenants` should list all tenants for 1 apartment.
 - The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
   * Make sure to get the appropriate input from the user to create your person as per schema
+
+
+
 
 ## Sinatra & DB
 Example of using instance variables:
