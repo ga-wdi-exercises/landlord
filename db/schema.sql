@@ -17,3 +17,5 @@ CREATE TABLE apartments (
   num_beds INT,
   num_baths INT
 );
+
+-- select * from tenants fill outer join apartments on tenants.apartment_id = apartments.id;

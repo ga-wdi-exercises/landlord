@@ -1,3 +1,3 @@
 class Apartment < ActiveRecord::Base
-  # has_many :renters
+  has_many :renters
 end
