@@ -15,5 +15,6 @@ CREATE TABLE apartments (
   monthly_rent INTEGER,
   sqft INTEGER,
   num_beds INTEGER,
-  num_baths INTEGER
+  num_baths INTEGER,
+  renters INTEGER
 );
