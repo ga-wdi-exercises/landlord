@@ -1,0 +1,26 @@
+<!-- # - The route `GET /apartments/new` should show a form for adding a new apartment -->
+<p>Input the following information about your new apartment.</p>
+
+ <form method="post" action=".">
+      <fieldset>
+        <input type="text" name="address" placeholder="Address" />
+      </fieldset>
+      <fieldset>
+      	<input type="number" name="monthly_rent" placeholder="Monthly rent" />
+      </fieldset>
+      <fieldset>
+      	<input type="number" name="sqft" placeholder="Square feet" />
+      </fieldset>
+      <fieldset>
+      	<input type="number" name="num_beds" placeholder="Number of beds" />
+      </fieldset>
+      <fieldset>
+      	<input type="number" name="num_baths" placeholder="Number of baths" />
+      </fieldset>
+      <input type="submit" value="Submit" />    <!-- write to database here -->
+</form>
+
+<% if @apt_submitted %>
+<p>OK, the apartment is live in your database!</p>
+<p>Do you want to <a href-"/apartments/1/tenants/new">add a tenant</a> now?</p>
+<% end %>

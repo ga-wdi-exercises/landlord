@@ -1,0 +1,21 @@
+body {
+  font-family: 'Lato';
+  background: ghostwhite;
+}
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+h2 {
+  color: red;
+  font-size: 20px;
+  margin-left: 5px;
+}
+h3 {
+  padding-bottom: 5px;
+}
+p {
+  padding: 2px 5px 2px 5px;
+}
