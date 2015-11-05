@@ -120,8 +120,9 @@ Create the (RESTful) routes and views for the following items:
   * Add an apartment(a link to `GET /apartments/new`)
   * List tenants (a link to `GET /apartments/1/tenants`)
 - The route `GET /apartments` should list all apartments
-  * these apartments will just be hardcoded in your `app.rb` or in your `erb` file.
 
+  these apartments will just be hardcoded in your `app.rb`
+  
 - The route `GET /apartments/new` should show a form for adding a new apartment
   * Make sure to get the (((((appropriate input))))) from the user when creating an apartment as per schema
 
