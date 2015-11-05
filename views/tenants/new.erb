@@ -1,0 +1,8 @@
+
+<h2><%= @apartment.address %> application for tenancy</h2>
+<form action="/apartments/<%= @id %>/tenants" method="post">
+  <label for="name">Name: </label><input type="text" name="name" value="">
+  <label for="gender">Gender: </label><input type="text" name="gender" value="">
+  <label for="age">Age: </label><input type="number" name="age" value="">
+  <button type="submit">Apply</button>
+</form>
