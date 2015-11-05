@@ -1,0 +1,6 @@
+<h2>Are you sure you want to delete <%= @tenant.name %> from our records?</h2>
+
+<form action="/tenants/<%= @id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Remove</button>
+</form>
