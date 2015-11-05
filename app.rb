@@ -1,5 +1,14 @@
+require 'bundler/setup'
+require 'pg'
+require 'active_record'
+require 'pry'
+
 require 'sinatra'
 require 'sinatra/reloader'
+
+require_relative 'db/connection'
+require_relative 'models/apartment'
+require_relative 'models/tenant'
 
 # homepage
 get '/' do
@@ -17,7 +26,6 @@ end
 # Form includes address, monthly_rent, sqft, num_beds, num_baths, renters
 # this has to come before id
 get '/apartments/new' do
-  puts " 💠 " * 12
   erb :"apartments/new"
 end
 
