@@ -1,0 +1,12 @@
+<h3><%= @apartment.address %> tenant info</h3>
+<% @tenants.each do |tenant| %>
+<p>
+  <%= tenant.name %>
+</p>
+<p>
+  <%= tenant.gender %>
+</p>
+<p>
+  <%= tenant.age %>
+</p>
+<% end %>

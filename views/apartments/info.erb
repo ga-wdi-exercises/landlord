@@ -9,14 +9,8 @@
   Baths: <%= @apartment.num_baths %>
 </p>
 <p>
-  Rent; $<%= @apartment.monthly_rent %>
+  Rent: $<%= @apartment.monthly_rent %>
 </p>
-
-<h3>Tenant info</h3>
-<% @tenants.each do |tenant| %>
-
 <p>
-  <%= tenant.name %>
+  Renters: <%= @apartment.tenants.length %>
 </p>
-
-<% end %>

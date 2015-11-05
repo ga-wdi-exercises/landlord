@@ -36,6 +36,13 @@ get '/apartments/:id' do
   erb :"apartments/info"
 end
 
+get '/apartments/:id/tenants' do
+  @id = params[:id]
+  @apartment = Apartment.find(@id)
+  @tenants = @apartment.tenants
+  erb:"tenants/info"
+end
+
 post '/apartments' do
   address = params[:address]
   beds = params[:num_beds]
@@ -53,5 +60,5 @@ put '/apartments/:id' do
   rent = params[:monthly_rent]
   apartment = Apartment.find(id)
   apartment.update(address:address,num_beds:beds,num_baths:baths,monthly_rent:rent)
-  redirect '/apartments'
+  redirect "/apartments/#{id}"
 end
