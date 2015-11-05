@@ -58,10 +58,16 @@ label {
   padding: 2% 3%;
 }
 
-.add_link a:hover {
+.add_link a:hover, input.submit:hover {
   background-color: #9B59B6;
 }
 
 .add_link {
   padding: 2%;
+}
+
+/* House Icon */
+
+svg {
+  margin: 2% 2% 0 0;
 }

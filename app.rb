@@ -31,6 +31,14 @@ post '/apartments' do
   redirect '/apartments/' + @new_apt.id.to_s
 end
 
+# Edit apartment details
+get "/apartments/:apt_id/edit" do
+  @apartments = Apartment.all
+  @apt_id = params[:apt_id].to_i
+  @apt_details = Apartment.find(@apt_id)
+  erb :"apartments/edit"
+end
+
 # Show apartment details by id
 get "/apartments/:apt_id" do
   @apartments = Apartment.all
@@ -38,8 +46,6 @@ get "/apartments/:apt_id" do
   @apt_details = Apartment.find(@apt_id)
   erb :"apartments/show"
 end
-
-# Edit apartment details
 
 # Delete apartment
 delete "/apartments/:apt_id" do
@@ -66,7 +72,15 @@ end
 
 get "/tenants/:tenant_id" do
   @tenants = Tenant.all
-  @tenant_id = params[:tenant_id].to_i
+  @tenant_id = params[:tenant_id]
   @tenant_details = Tenant.find(@tenant_id)
   erb :"tenants/show"
+end
+
+# Edit tenant details
+get "/tenants/:tenant_id/edit" do
+  @tenants = Tenant.all
+  @tenant_id = params[:tenant_id]
+  @tenant_details = Tenant.find(@tenant_id)
+  erb :"tenants/edit"
 end
