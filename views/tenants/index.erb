@@ -6,7 +6,12 @@
       <%= tenant.name %>
     </p>
     <p>
-      <%= tenant.apartment_id %>
+    <% if tenant.apartment
+      address = tenant.apartment.address
+    else
+      address = "homeless"
+    end  %>
+      <%= address %>
     </p>
   </div>
 <% end %>
