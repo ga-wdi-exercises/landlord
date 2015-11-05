@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Landlord</title>
+</head>
+<body>
+
+  <h1>I'm the landlord. This is my database.</h1>
+  <nav>
+    <ul>
+      <!-- # List all apartments (hardcode into the erb file) -->
+      <li><a href='/apartments'>List apartments</a></li>
+      <!-- # View a single apartment's details -->
+      <li><a href='/apartments/1'>View apartment</a></li>
+      <!-- # Create a new apartment -->
+      <li><a href='/apartments/new'>Create new apartment</a></li>
+      <!-- # List all tenants in apartment 1 -->
+      <li><a href='/apartments/1/tenants'>View tenants in apartment</a></li>
+      <!-- # Create a new tenant (in apartment 1?) -->
+      <li><a href='/apartments/1/tenants/new'>Create new tenants in apartment</a></li>
+    </ul>
+  </nav>
+  <div>Magic happens here: </div>
+  <%= yield %>
+</body>
+</html>
