@@ -1,0 +1,18 @@
+<h1>Show Tenant: <%= @tenant_details.name %></h1>
+
+<p>Details</p>
+
+<ul>
+  <li><%= @tenant_details.name %></li>
+  <li><%= @tenant_details.gender %></li>
+  <li><%= @tenant_details.age %> years old</li>
+  <li>Current Apartment: <%= defined?(@tenant_details.apartment.address) ? @tenant_details.apartment.address : "none" %></li>
+</ul>
+
+<div class="add_link">
+  <a href="/tenants/edit">Edit Tenant</a>
+</div>
+
+<div class="add_link">
+  <a href="/tenants/delete">Delete Tenant</a>
+</div>

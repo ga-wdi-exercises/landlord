@@ -1,7 +1,11 @@
-<h1>This is the apartments index</h1>
+<h1>Apartments</h1>
 
 <ul>
-  <li>Apartment 1</li>
-  <li>Apartment 2</li>
-  <li>Apartment 3</li>
+  <% @apartments.each do |apt|%>
+  <li><a href="/apartments/<%= apt.id %>"><%= apt.address %></a></li>
+  <% end %>
 </ul>
+
+<div class="add_link">
+  <a href="/apartments/new">Add Apartment</a>
+</div>

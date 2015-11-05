@@ -2,17 +2,19 @@
 <html>
   <head>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+      <link rel="stylesheet" type="text/css" href="/styles.css">
     <title>Landlord</title>
   </header>
   <body>
     <header>
-      <h1>Landlord</h1>
+      <h1><a href="/">Landlord</a></h1>
       <a href="/apartments">All Apartments</a> |
-      <a href="/apartments/1">Get Apartment Details</a> |
       <a href="/apartments/new">Add Apartment</a> |
-      <a href="/apartments/3/tenants">All Tenants</a> |
-      <a href="/apartments/3/tenants/new">Add Tenant</a>
+      <a href="/tenants">All Tenants</a> |
+      <a href="/tenants/new">Add Tenant</a>
     </header>
+    <main>
     <%= yield %>
+    </main>
   </body>
 </html>

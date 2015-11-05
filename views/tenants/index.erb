@@ -1,8 +1,11 @@
-<h1>This is tenants index</h1>
-
-<h2>Tenants in Apartment 1</h2>
+<h1>Tenants</h1>
 
 <ul>
-  <li>John Richards</li>
-  <li>Mary York</li>
+  <% @tenants.each do |tenant|%>
+  <li><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></li>
+  <% end %>
 </ul>
+
+<div class="add_link">
+  <a href="/tenants/new">Add Tenant</a>
+</div>
