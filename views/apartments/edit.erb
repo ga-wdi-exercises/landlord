@@ -1,3 +1,4 @@
+<h1>Update Information for <%= @apartment.address %></h1>
 <form action="/apartments/<%= @id %>" method="post">
   <input type="hidden" name="_method" value="put">
   <label for="address">Address: </label><input type="text" name="address" value="<%= @apartment.address %>">

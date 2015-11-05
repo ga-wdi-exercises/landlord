@@ -14,8 +14,10 @@
 <p>
   Renters: <%= @apartment.tenants.length %>
 </p>
-<a href='<%= @id %>/tenants/new'>Apply for tenancy</a>
-<a href='<%= @id %>/tenants'>View tenants</a>
-<a href='<%= @id %>/edit'>Edit listing</a>
-<a href='<%= @id %>/remove'>Remove listing</a>
-<a href='/apartments'>All listings</a>
+<div class="pageLinks">
+  <a href='<%= @id %>/tenants/new'>Apply for tenancy</a>
+  <a href='<%= @id %>/tenants'>View tenants</a>
+  <a href='<%= @id %>/edit'>Edit listing</a>
+  <a href='<%= @id %>/remove'>Remove listing</a>
+  <a href='/apartments'>All listings</a>  
+</div>

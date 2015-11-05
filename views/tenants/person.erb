@@ -1,9 +1,19 @@
+<h1><%= @tenant.name %></h1>
 <p>
-  <%= @tenant.name %>
+  Sqft: <%= @tenant.gender %>
 </p>
 <p>
-  <%= @tenant.gender %>
+  Beds: <%= @tenant.age %>
 </p>
-<p>
-  <%= @tenant.age %>
+<p>Address:
+<% if @tenant.apartment
+  address = "<a href='/apartments/#{@tenant.apartment.id}'>#{@tenant.apartment.address}</a>"
+else
+  address = "homeless"
+end  %>
+  <%= address %>
 </p>
+
+<div class="pageLinks">
+  <a href='/tenants'>All tenants</a>
+</div>
