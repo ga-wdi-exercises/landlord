@@ -1,0 +1,8 @@
+<form action="/apartments/<%= @id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="address">Address: </label><input type="text" name="address" value="<%= @apartment.address %>">
+  <label for="num_beds">Beds: </label><input type="number" name="num_beds" value="<%= @apartment.num_beds %>">
+  <label for="num_baths">Baths: </label><input type="number" name="num_baths" value="<%= @apartment.num_baths %>">
+  <label for="monthly_rent">Rent: </label><input type="number" name="monthly_rent" value="<%= @apartment.monthly_rent %>">
+  <button type="submit">Update</button>
+</form>
