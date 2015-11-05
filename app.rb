@@ -37,3 +37,13 @@ get '/apartments' do
   @apartments=apartments
   erb :apartments
 end
+
+get '/apartments/new' do
+  erb :new_apartment
+end
+
+get '/apartments/:id' do
+  @id=params[:id].to_i-1
+  @apartments=apartments
+  erb :apartment_id
+end
