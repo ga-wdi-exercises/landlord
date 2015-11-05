@@ -11,7 +11,8 @@ end
 
 
 get '/apartments' do
-  erb :apartment_index
+  @apartments = Apartment.all
+  erb :"apartment/index"
 end
 
 #   * View an apartment's details(a link to `GET /apartments/1`)
