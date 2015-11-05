@@ -111,5 +111,8 @@ get '/apartments/:id/tenants' do
   @apartments=apartments
   @tenants=tenants
   erb :apartments_id_tenants
-  binding.pry
+end
+
+get '/apartments/:id/tenants/new' do
+  erb :apartments_id_tenants_new
 end

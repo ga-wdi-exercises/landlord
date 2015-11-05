@@ -1,1 +1,7 @@
-<p><%= Apartment.find(@id).tenants[0] %></p>
+<%= @apartments.each do | index | %>
+  <p>Id = <%= Apartment.find(@id).tenants[index].id %></p>
+  <p>Name = <%= Apartment.find(@id).tenants[index].name %></p>
+  <p>Age = <%= Apartment.find(@id).tenants[index].age %></p>
+  <p>Gender = <%= Apartment.find(@id).tenants[index].gender %></p>
+  <p>Apartment_ID = <%= Apartment.find(@id).tenants[index].apartment_id %></p>
+<% end %>
