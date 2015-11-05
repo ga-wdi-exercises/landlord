@@ -1,6 +1,7 @@
-<h1>Edit Apartment</h1>
+<h1>Edit Apartment: <%= @apt_details.address %></h1>
 
-<form method="post" action="/apartments">
+<form method="post" action="/apartments/<%= @apt_details.id %>">
+  <input type="hidden" name="_method" value="patch">
   <div class="form_div">
     <label for="address">Full Address: </label>
     <input type="text" name="address" id="address" value="<%= @apt_details.address %>" placeholder="e.g. 123 Main St.">

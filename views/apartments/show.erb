@@ -14,14 +14,18 @@
 
 <ul>
   <% @apt_details.tenants.each do |tenant| %>
-  <li><%= tenant.name %></li>
+  <li><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></li>
   <% end %>
 </ul>
 
+<!-- Edit Tenant -->
 <div class="add_link">
-  <a href="/apartments/<%= @apt_id %>/edit">Edit Apartment</a>
+  <a href="/apartments/<%= @apt_details.id %>/edit">Edit Apartment</a>
 </div>
 
-<div class="add_link">
-  <a href="/apartments/<%= @apt_id %>/delete">Delete Apartment</a>
+<!-- Delete Tenant -->
+  <form method="post" action="/apartments/<%= @apt_details.id %>" id="action">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Apartment" class="submit">
+  </form>
 </div>
