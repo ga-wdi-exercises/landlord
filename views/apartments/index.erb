@@ -1,9 +1,12 @@
 <h1>Welcome to apartments</h1>
 
+<p>Take a look at our apartments:</p>
 <% @apartments.each do |apartment| %>
+<a href="/apartments/<%= apartment.id %>" >
   <div class="apt">
     <p>
       <%= apartment.address %>
     </p>
   </div>
+</a>
 <% end %>
