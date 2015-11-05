@@ -1,0 +1,12 @@
+<h1>Welcome to apartments</h1>
+
+<% @apartments.each do |apartment| %>
+  <div class="apt">
+    <p>
+      <%= apartment.address %>
+    </p>
+    <p>
+      <%= apartment.sqft %>
+    </p>
+  </div>
+<% end %>
