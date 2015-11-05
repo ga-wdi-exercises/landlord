@@ -23,10 +23,21 @@ get '/apartments/new' do
   erb :"apartments/new"
 end
 
+get '/tenants' do
+  @tenants = Tenant.all
+  erb :"tenants/index"
+end
+
 get "/apartments/:id/edit" do
   @id = params[:id]
   @apartment = Apartment.find(@id)
   erb :"apartments/edit"
+end
+
+get "/apartments/:id/remove" do
+  @id = params[:id]
+  @apartment = Apartment.find(@id)
+  erb :"apartments/remove"
 end
 
 get '/apartments/:id' do
@@ -67,6 +78,13 @@ put '/apartments/:id' do
   apartment = Apartment.find(id)
   apartment.update(address:address,num_beds:beds,num_baths:baths,monthly_rent:rent)
   redirect "/apartments/#{id}"
+end
+
+delete '/apartments/:id' do
+  id = params[:id]
+  apartment = Apartment.find(id)
+  apartment.destroy
+  redirect "/apartments"
 end
 
 post '/apartments/:id/tenants' do

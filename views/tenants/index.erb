@@ -1,0 +1,12 @@
+<h1>Welcome to apartments</h1>
+
+<% @tenants.each do |tenant| %>
+  <div class="ten">
+    <p>
+      <%= tenant.name %>
+    </p>
+    <p>
+      <%= tenant.apartment_id %>
+    </p>
+  </div>
+<% end %>
