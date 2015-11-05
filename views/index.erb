@@ -1,0 +1,24 @@
+<h1>This is my Index page</h1>
+
+<p>
+  Click through the menu below to explore apartments and tenants.
+</p>
+
+<ul>
+  <li><a href="/apartments">See all apartments</a></li>
+  <!-- why is this link below on the home page? shouldn't it just link from the list of apartments on the 'apartments' page? -->
+  <li><a href="/apartments/1<%#= @apartments.id.to_i%>"></a></li>
+  <li><a href="/apartments/new">Add a new apartment</a></li>
+  <li><a href="/tenants">See a list of tenants</a></li>
+</ul>
+<!-- link to /apartments -->
+
+<!-- View an apartment's details(a link to GET /apartments/1) -->
+<p>Enter an apartment number between 1 and 3:</p>
+<form action="/apartments" method="post">
+  <input type="text" name="id" value="">
+  <input type="GO">
+</form>
+<!-- Add an apartment(a link to GET /apartments/new) -->
+
+<!-- List tenants (a link to GET /apartments/1/tenants) -->
