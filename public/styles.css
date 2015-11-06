@@ -27,7 +27,8 @@ header, footer {
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-left: 100px;
+  text-align: left;
 }
 
 /* unvisited link, visted link*/

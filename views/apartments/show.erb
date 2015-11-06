@@ -1,26 +1,27 @@
 
 <!-- Display Apartment Address -->
-<h2><%= @apartment.address %></h2>
+<p>Address: <%= @apartment.address %></p>
 
 <!-- Display Apartment Rent -->
-<p><%= @apartment.monthly_rent %></p>
+<p>Monthly Rent: $<%= @apartment.monthly_rent %></p>
 
 <!-- Display Apartment Sq. Ft. -->
-<p><%= @apartment.sqft %></p>
+<p>Square Footage: <%= @apartment.sqft %></p>
 
 <!-- Display Apartment Num. Beds -->
-<p><%= @apartment.num_beds %></p>
+<p>Number of Beds: <%= @apartment.num_beds %></p>
 
 <!-- Display Apartment Num. Baths -->
-<p><%= @apartment.num_baths %></p>
+<p>Number of Baths: <%= @apartment.num_baths %></p>
 
-
+<hr />
 <a href="/apartments">← Back to All Apartments</a>
-<!-- Edit/Delete This Artist -->
-<div class="spacing">
-  <a href="/apartments/<%= @apartment.id%>/edit">Edit this Apartment</a>
-</div>
-<form method="post" action="/artists/<%= @artist.id %>">
+
+<!-- Edit/Delete This Apartment -->
+<!-- <div class="spacing">
+  <a href="/apartments/<%#@apartment.id%>/edit">Edit this Apartment</a>
+</div> -->
+<!-- <form method="post" action="/apartments/<%# @apartment.id %>">
   <input type="hidden" name="_method" value="delete">
-  <input class="button-delete" type="submit" value="Delete <%=@artist.name %>">
-</form
+  <input class="button-delete" type="submit" value="Delete <%#@apartment.id %>">
+</form -->
