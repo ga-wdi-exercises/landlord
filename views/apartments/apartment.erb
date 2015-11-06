@@ -7,3 +7,12 @@
   <li>Bathrooms: <%= @apt.num_baths %></li>
   <li>ID: <%= @apt.id %></li>
 </ul>
+
+<h3>Tenants</h3>
+<% if @apt.tenants == nil %>
+<p>No tenants</p>
+<% else %>
+<ul><% @apt.tenants.each do |tenant| %>
+  <li><a href="<%= '/tenants/' + tenant.id.to_s %>"><%= tenant.name %></a> (<%= tenant.age %>, <%= tenant.gender %>)</li>
+<% end %></ul>
+<% end %>
