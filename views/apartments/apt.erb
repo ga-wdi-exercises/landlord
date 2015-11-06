@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apartments</title>
+</head>
+<body>
+  <h1><%= @apt.address %></h1>
+  <h2>$<%= @apt.monthly_rent %> per month</h2>
+  <h2>Square Feet: <%= @apt.sqft%><h2>
+  <h2>Number of bedrooms: <%= @apt.num_beds %></h2>
+  <h2>Number of bathrooms: <%= @apt.num_baths %></h2>
+
+  <a href="/tenants/<%=@apt.id%>"><h2>Click to Update this Apartment</h2></a>
+</body>
+</html>

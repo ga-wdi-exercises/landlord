@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  justify-content: center;
+  text-decoration: none;
+}
+
+body {
+font-family: sans-serif;
+text-align: center;
+color: black;
+}
+
+.image {
+  justify-content: center;
+  padding: 1px;
+  margin: 10px auto;
+  max-width: 800px;
+}
+
+nav {
+  background: rgba(27, 111, 165, 0.4);
+  text-align: center;
+  padding: 10px;
+}
+
+form {
+  background: rgba(27, 111, 165, 0.4);
+  text-align: center;
+  padding: 10px;
+}
+
+.background {
+  background: rgba(27, 111, 165, 0.4);
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  padding: 20px;
+  color: #0876AD;
+  font-family: 'Poiret One', cursive;
+  font-size: 48px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+}
+
+button {
+  background-color: darkblue;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  padding: 5px;
+  color: white;
+}
+
+h3 {
+  text-align: center;
+  margin: 40px; auto;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+  text-align: center;
+  margin: 40px; auto;
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  padding: 5px;
+}
