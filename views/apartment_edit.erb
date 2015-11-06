@@ -1,6 +1,7 @@
-<h1>Add a New Apartment</h1>
-<form method="post" action="/apartments">
+<h1>Form</h1>
+<form method="post" action="/apartments/<%= @apartment.id %>">
   <fieldset>
+    <input type="hidden" name="_method" value="put">
     <input type="text" name="address" placeholder="Address" />
     <input type="number" name="monthly_rent" placeholder="Rent" />
     <input type="number" name="sqft" placeholder="Sqft" />

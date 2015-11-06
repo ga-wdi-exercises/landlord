@@ -1,19 +1,26 @@
-require 'pry'
-
-class Tenant
-
-  attr_accessor :name, :age, :gender
-
-  def initialize name, age, gender
-    @name = name
-    @age = age
-    @gender = gender
-  end
-
-
-
+class Tenant < ActiveRecord::Base
+  belongs_to :apartment
 end
 
-binding.pry
 
-puts "Program complete"
+
+
+# require 'pry'
+#
+# class Tenant
+#
+#   attr_accessor :name, :age, :gender
+#
+#   def initialize name, age, gender
+#     @name = name
+#     @age = age
+#     @gender = gender
+#   end
+#
+#
+#
+# end
+#
+# binding.pry
+#
+# puts "Program complete"
