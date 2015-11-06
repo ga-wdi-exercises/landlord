@@ -13,8 +13,8 @@
   </tr>
   <% @apts.each do |apt| %>
   <tr>
-    <td><a href="edit">Edit</a></td>
-    <td><form method="post" action="<%= '/apartments/' + apt.id.to_s %>">
+    <td><a href="<%= '/apartments/' + apt.id.to_s + '/edit' %>">Edit</a></td>
+    <td><form method="post" action="<%= '/apartments/' + apt.id.to_s + '/edit' %>">
         <input type="hidden" name="_method" value="delete">
         <input class="button-delete" type="submit" value="Delete">
       </form></td>

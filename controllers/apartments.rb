@@ -15,18 +15,30 @@ get '/apartments/:apartment_id' do
   erb :'apartments/apartment'
 end
 
-delete '/apartments/:id' do
-  # delete an existing artist
-  id = params[:id].to_i
-  Apartment.find_by(id: id).destroy
-  redirect '/apartments'
-end
-
 get '/apartment/new' do
   # add an apartment, showing a form to add a new apartment and getting input
   # from user per schema
   # return "new apartment"
   erb :'apartments/new'
+end
+
+get '/apartments/:id/edit' do
+  @apt = Apartment.find_by(id: params[:id].to_s)
+  erb :'apartments/edit'
+end
+
+patch '/apartments/:id' do
+  id = params[:id].to_i
+  # binding.pry
+  Apartment.find_by(id: id).update(params.except('_method', 'splat', 'captures', 'id'))
+  redirect '/apartments'
+end
+
+delete '/apartments/:id' do
+  # delete an existing artist
+  id = params[:id].to_i
+  Apartment.find_by(id: id).destroy
+  redirect '/apartments'
 end
 
 # get '/apartments/:apartment_id/tenants' do
