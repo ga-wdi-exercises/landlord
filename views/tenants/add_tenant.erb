@@ -1,0 +1,17 @@
+<h2>Add a tenant</h2>
+<form method = "post" action = "/apartments/1/tenants/new">
+  Name:
+  <input type="text" name="name"/>
+  Age:
+  <input type="text" name="age"/>
+  Gender
+  <input type="text" name="gender"/>
+  Apartment Id
+  <input type="text" name="apartment_id"/>
+  <input type="submit" value="Submit"/>
+</form>
+
+<p><%= @name %></p>
+<p><%= @age %></p>
+<p><%= @gender %></p>
+<p><%= @apartment_id %></p>
