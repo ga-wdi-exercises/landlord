@@ -13,13 +13,13 @@ The due dates for this week will be the same as usual. Wednesday at 9:00 and Fri
 
 ### Wednesday
 
-- All classes - Ruby Classes
-- All classes - Schema
-- Active Record - Active Record
-- Sinatra REST - Sinatra Views and Templates
+- All classes - [Ruby Classes](#ruby-classes)
+- All classes - [Schema & SQL](#schema--sql)
+- Active Record - [Active Record](#active-record)
+- Sinatra REST - [Sinatra Views and Templates](#sinatra-views-and-templates)
 
 ### Friday
-Ideally, you should complete the portion you haven't completed yet before starting Friday's Portion.
+Ideally, you should complete the portion you haven't completed yet before starting [Friday's Portion](#sinatra--db).
 
 Full Crud Application for Landlord(see last subsection - Sinatra & DB). Ultimately, this application is using concepts covered across each of the subtopics.
 
@@ -40,34 +40,46 @@ A tenant should have the following attributes:
 
 An apartment should have the following attributes:
 
-  address (a single string including floor and unit numbers if applicable)
-  monthy_rent
-  sqft
-  num_beds
-  num_baths
-  renters (the tenant or tenants living in the apartment)
+- address (a single string including floor and unit numbers if applicable)
+- monthy_rent
+- sqft
+- num_beds
+- num_baths
+- renters (the tenant or tenants living in the apartment)
 
 And Then...
 
 Define an instance method add_tenant on the apartment class that allows you to add tenants to an existing apartment. Do not add the tenant to the apartment if the number of tenants would exceed the number of beds
 
-## Schema
-* Create a `db` folder.
-* Create a `landlord_schema.sql` in the `db` folder. It should contain the following:
-  - Tenants table (with the follow attributes):
+## Schema & SQL
+
+* Create a `schema.sql` in the `db` folder. It should contain the following:
+  - Tenants table (with the following attributes):
     - id
     - name
     - age
     - gender
     - apartment_id
 
-  - Apartments table (with the follow attributes):
+  - Apartments table (with the following attributes):
     - id
     - address
     - monthly_rent
     - sqft
     - num_beds
     - num_baths
+
+* Load the seed file (`db/seeds.sql`)
+* read the comments in `query_exercises.sql` file in the `db` folder. For each one, write a working query to perform the requested action
+
+> Note: If at any point you need a new clean set of data, run the following commands (replacing `database_name` and `name_of_file.sql` with the actual names of the database and files you're using).
+
+```bash
+$ dropdb database_name
+$ createdb database_name
+$ psql -d database_name < name_of_schema_file.sql
+$ psql -d database_name < name_of_seed_file.sql
+```
 
 ## Active Record
 
@@ -119,6 +131,18 @@ Create the (RESTful) routes and views for the following items:
   * Make sure to get the appropriate input from the user to create your person as per schema
 
 ## Sinatra & DB
+Example of using instance variables:
+
+  In your main `app.rb` file, create instance variables that query the Database using active record.
+
+  In your views, replace hardcoded html with erb. For example:
+
+  ```html
+  <% @apartments.each do |apartment| %>
+    <li><%= apartment.address %></li>
+  <% end %>
+  ```
+
 > This will be a full single model CRUD application that connects to a database backend
 
 You should have the following in your application:
@@ -153,15 +177,3 @@ You should have the following in your application:
 
 ### megabonus
 - incorporate user authentication
-
-Example of using instance variables:
-
-  In your main `app.rb` file, create instance variables that query the Database using active record.
-
-  In your views, replace hardcoded html with erb. For example:
-
-  ```html
-  <% @apartments.each do |apartment| %>
-    <li><%= apartment.address %></li>
-  <% end %>
-  ```
