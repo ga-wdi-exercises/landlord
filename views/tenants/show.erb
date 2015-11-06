@@ -6,7 +6,7 @@
   <li><%= @tenant_details.name %></li>
   <li><%= @tenant_details.gender %></li>
   <li><%= @tenant_details.age %> years old</li>
-  <li>Current Apartment: <a href="/apartments/ <%= @tenant_details.apartment.id %>"> <%= defined?(@tenant_details.apartment.address) ? @tenant_details.apartment.address : "none" %></a></li>
+  <li>Current Apartment: <a href="/apartments/<%= @tenant_details.apartment.id %>"> <%= defined?(@tenant_details.apartment.address) ? @tenant_details.apartment.address : "none" %></a></li>
 </ul>
 
 <!-- Edit Tenant -->
@@ -15,8 +15,7 @@
 </div>
 
 <!-- Delete Tenant -->
-  <form method="post" action="/tenants/<%= @tenant_details.id %>" id="action">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Tenant" class="submit">
-  </form>
-</div>
+<form method="post" action="/tenants/<%= @tenant_details.id %>" id="action">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Tenant" class="submit">
+</form>

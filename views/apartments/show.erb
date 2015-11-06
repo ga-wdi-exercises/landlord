@@ -24,8 +24,7 @@
 </div>
 
 <!-- Delete Tenant -->
-  <form method="post" action="/apartments/<%= @apt_details.id %>" id="action">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Apartment" class="submit">
-  </form>
-</div>
+<form method="post" action="/apartments/<%= @apt_details.id %>" id="action">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Apartment" class="submit">
+</form>
