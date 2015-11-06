@@ -1,0 +1,36 @@
+<!-- show -->
+<h2><%= @apartment.address %></h2>
+<p>Rent: $<%= @apartment.monthly_rent %></p>
+<p><%= @apartment.sqft %> sqft</p>
+<p><%= @apartment.num_beds %> bedrooms</p>
+<p><%= @apartment.num_baths %> baths</p>
+
+<!-- edit -->
+<h2>Edit Apartment</h2>
+
+<form action="/apartments/<%= @apartment.id %>" method="post" >
+  <input type="hidden" name="_method" value="put">
+
+  <label for="apartment[address]">Address:</label>
+  <input name="apartment[address]" value="<%= @apartment.address %>">
+
+  <label for="apartment[monthly_rent]">Monthly Rent</label>
+  <input name="apartment[monthly_rent]" value="<%= @apartment.monthly_rent %>">
+
+  <label for="apartment[sqft]">Square Feet:</label>
+  <input name="apartment[sqft]" value="<%= @apartment.sqft %>">
+
+  <label for="apartment[num_beds]">Number of Beds:</label>
+  <input name="apartment[num_beds]" value="<%= @apartment.num_beds %>">
+
+  <label for="apartment[num_baths]">Number of Baths:</label>
+  <input name="apartment[num_baths]" value="<%= @apartment.num_baths %>">
+
+  <input type="submit" value="Create">
+</form>
+
+<!-- delete -->
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>
