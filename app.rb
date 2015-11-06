@@ -8,6 +8,8 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 require_relative "Controllers/apartments_controller.rb"
+require_relative "Controllers/tenants_controller.rb"
+
 
 get "/" do
   erb :home

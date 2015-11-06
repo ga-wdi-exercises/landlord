@@ -1,0 +1,11 @@
+<h3>Here are all of your tenants!</h3>
+
+<ul class = "tenants_index">
+
+  <% @tenants.each do |tenant| %>
+  <li>
+       <%= tenant.name %>
+  </li>
+  <% end %>
+
+</ul>

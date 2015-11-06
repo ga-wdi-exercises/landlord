@@ -85,6 +85,10 @@ ul.apartments_index li {
   display: block;
 }
 
+ul.tenants_index li {
+  display: block;
+}
+
 ul.apartment_detail li {
   display: block;
   margin: 5px 0px 0px 5px;
