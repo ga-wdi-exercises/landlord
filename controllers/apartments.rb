@@ -4,19 +4,24 @@ get '/apartments' do
   erb :'apartments/index'
 end
 
+put '/apartments' do
+  Apartment.create(params.except('_method'))
+  redirect '/apartments'
+end
+
 get '/apartments/:apartment_id' do
   # view details about given apartment
   @apt = Apartment.find_by(id: params[:apartment_id])
   erb :'apartments/apartment'
 end
 
-# get '/apartments/new' do
-#   # add an apartment, showing a form to add a new apartment and getting input
-#   # from user per schema
-#   @title = "Add New Apartment"
-#   erb :apartment_new
-# end
-#
+get '/apartment/new' do
+  # add an apartment, showing a form to add a new apartment and getting input
+  # from user per schema
+  # return "new apartment"
+  erb :'apartments/new'
+end
+
 # get '/apartments/:apartment_id/tenants' do
 #   # list tenants for given apartment
 #   @title = "Tenants for Apartment at " + ""
