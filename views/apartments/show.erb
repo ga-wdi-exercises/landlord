@@ -10,8 +10,6 @@
   <li>Bathrooms: <%= @apt_details.num_baths %></li>
 </ul>
 
-<p>Tenants</p>
-<!-- can get tenants to display here, but can't get tenants to display on homepage when click "all tenants.." -->
 <ul>
   <% @apt_details.tenants.each do |tenant| %>
   <li><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></li>
