@@ -6,11 +6,18 @@
   <li>Number of Baths - <%= @apartment[:num_baths] %></li>
 </ul>
 
+<a href="/apartments/edit/<%= @apartment.id %>" class="links">Edit</a>
+
+<form method='post' action="/apartments/<%= @apartment.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Listing">
+</form>
+
 <h3>Tenants</h3>
 <ul>
 <% @tenants.each do | tenant | %>
-  <li><%= tenant[:name] %></li>
+  <li><a href="/tenants/<%= tenant[:id] %>"><%= tenant[:name] %></a></li>
 <% end %>
 </ul>
 
-<a href="/apartments/new_tenant/<%= @apartment.id %>">Add Tenant</a>
+<a href="/apartments/new_tenant/<%= @apartment.id %>" class="links">Add Tenant</a>

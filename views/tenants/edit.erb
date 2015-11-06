@@ -1,0 +1,9 @@
+<h2>Enter Updated Tenant Information:</h2>
+
+<form method='post' action="/tenants/<%= @tenant.id %>">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="gender" placeholder="Gender">
+  <input type="text" name="age" placeholder="Age">
+  <input type="submit" value="Edit">
+</form>

@@ -30,9 +30,24 @@ post "/apartments/:id" do
   redirect "/apartments/#{@apt.id}"
 end
 
-
 get "/apartments/:id" do
   @apartment = Apartment.find(params[:id])
   @tenants = Apartment.find(params[:id]).tenants
   erb :"/apartments/apartment_template"
+end
+
+get "/apartments/edit/:id" do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartments/edit"
+end
+
+put "/apartments/:id" do
+  @apartment = Apartment.find(params[:id])
+  @apartment.update(address: params[:address], monthly_rent: params[:monthly_rent], sqft: params[:sqft], num_beds: params[:num_beds], num_baths: params[:num_baths])
+  redirect "/apartments/#{@apartment.id}"
+end
+
+delete "/apartments/:id" do
+  Apartment.find(params[:id]).destroy
+  redirect "/apartments"
 end

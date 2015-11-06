@@ -1,0 +1,13 @@
+<h2><%= @tenant[:name] %></h2>
+
+<ul>
+  <li>Age - <%= @tenant[:age] %></li>
+  <li>Gender - <%= @tenant[:gender] %></li>
+</ul>
+
+<a href="/tenants/edit/<%= @tenant.id %>" class="links">Edit</a>
+
+<form method='post' action="/tenants/<%= @tenant.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Remove Tenant">
+</form>
