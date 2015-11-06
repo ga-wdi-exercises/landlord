@@ -1,0 +1,8 @@
+<h2>Edit Tenant at <%= @tenant.apartment.address %></h2>
+<form method="post" action="<%= '/tenants/' + @tenant.id.to_s  %>">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="name" value="<%= @tenant.name %>" />
+  <input type="text" name="age" value="<%= @tenant.age %>" />
+  <input type="text" name="gender" value="<%= @tenant.gender %>" />
+  <input type="submit" value="Submit" />
+</form>

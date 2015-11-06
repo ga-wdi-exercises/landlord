@@ -19,3 +19,10 @@ patch '/tenants/:id' do
   Tenant.find_by(id: id).update(params.except('_method', 'splat', 'captures', 'id'))
   redirect '/tenants'
 end
+
+delete '/tenants/:id' do
+  # delete an existing tenant
+  id = params[:id].to_i
+  Tenant.find_by(id: id).destroy
+  redirect '/tenants'
+end

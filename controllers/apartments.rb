@@ -35,7 +35,7 @@ patch '/apartments/:id' do
 end
 
 delete '/apartments/:id' do
-  # delete an existing artist
+  # delete an existing apartment
   id = params[:id].to_i
   Apartment.find_by(id: id).destroy
   redirect '/apartments'
