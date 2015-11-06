@@ -1,0 +1,43 @@
+table {
+  border: solid 2px black;
+}
+
+tr {
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+
+}
+
+a {
+  border: solid 1px black;
+}
+
+td {
+  border-right: solid 2px black;
+  border-left: solid 2px black;
+  text-align: center;
+}
+
+.deleteButton {
+  color: red;
+  font-weight: bold;
+  border: none;
+  background-color: none;
+}
+
+.addForm input{
+  display: block;
+  width: 50%
+}
+
+#submit_button {
+  background-color: gray;
+}
+
+li {
+  display: block;
+}
+
+form {
+  display: inline-block;
+}

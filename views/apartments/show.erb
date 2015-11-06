@@ -1,0 +1,24 @@
+<p>Address: <%= @apartment["address"] %></p>
+<p>Monthly Rent: <%= @apartment["monthly_rent"] %></p>
+<p>Square Footage: <%= @apartment["sqft"] %></p>
+<p>Number of Beds: <%= @apartment["num_beds"] %></p>
+<p>Number of Baths: <%= @apartment["num_baths"] %></p>
+<ul>Tenants:
+<% @tenants.each do |tenant| %>
+<li> <form method="post" action="/tenants/<%= tenant["id"] %>">
+    <input type="hidden" name="_method" value="delete"></input>
+    <input class="deleteButton" type="submit" value="X" id="deleteButton" onclick="return confirm('Are you sure?')"></input>
+  </form><%= tenant["name"] %></li>
+<% end %>
+</ul>
+
+<h3>Add Tenant:</h3>
+<div class="addForm">
+<form method="post" action="/tenants">
+  <label for="name">Name:</label> <input id="name" type="text" name = "name">
+  <label for="age">Age:</label> <input id="age" type="text" name = "age">
+  <label for="gender">Gender:</label> <input id="gender" type="text" name = "gender">
+  <input type="hidden" name="apartment_id" value="<%=@apartment["id"]%>"></input>
+  <input id="submit_button" type="submit">
+</form>
+</div>
