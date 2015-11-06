@@ -1,0 +1,13 @@
+<h2>Edit <%= @apartment.address %> </h2>
+
+<form method="post" action="/apartments/<%=@apartment.id%>">
+  <ul>
+  <input type="hidden" name="_method" value="put">
+    <li>Address:<input type="text" name="address" value="<%=@apartment.address%>"/></li>
+    <li>Rent:<input type="integer" name="monthly_rent" value="<%=@apartment.monthly_rent%>"/></li>
+    <li>SQFT:<input type="integer" name="sqft" value="<%=@apartment.sqft%>"/></li>
+    <li>Beds:<input type="integer" name="num_beds" value="<%=@apartment.num_beds%>"/></li>
+    <li>Bathrooms:<input type="integer" name="num_baths" value="<%=@apartment.num_baths%>"/></li>
+    <li><input type="submit" placeholder="Update Apartment"/></li>
+  </ul>
+</form>
