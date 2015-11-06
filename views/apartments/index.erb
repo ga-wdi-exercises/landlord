@@ -1,0 +1,28 @@
+
+<table>
+<tr>
+<td>Delete?</td>
+<td>Address</td>
+<td>Monthly Rent</td>
+<td>Square Footage</td>
+<td>Number of Beds</td>
+<td>Number of Baths</td>
+<td># of Tenants</td>
+<td>View Tenants</td>
+</tr>
+<% @apartmentsall.each do |apartment| %>
+<tr>
+<td> <form method="post" action="/apartment/<%= apartment["id"] %>">
+    <input type="hidden" name="_method" value="delete"></input>
+    <input class="deleteButton" type="submit" value="X" id="deleteButton" onclick="return confirm('Are you sure?')"></input>
+  </form>
+<td> <%= apartment["address"] %> </td>
+<td> <%= apartment["monthly_rent"] %> </td>
+<td> <%= apartment["sqft"] %> </td>
+<td> <%= apartment["num_beds"] %> </td>
+<td> <%= apartment["num_baths"] %> </td>
+<td> <%= apartment.tenants.count %> </td>
+<td> <a href="/apartment/<%= apartment["id"] %>">See Tenants?</a></td>
+</tr>
+<% end %>
+</table>
