@@ -1,0 +1,3 @@
+<% @apartments.each do |apartment| %>
+<%= "<li><a href='/apartment/#{apartment.id}'>#{apartment.address}</a></li>" %>
+<% end %>

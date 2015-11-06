@@ -5,7 +5,13 @@ require "pg"
 require "pry"
 
 require_relative "db/connection"
+
+require_relative 'controllers/apartments_controllers.rb'
+require_relative 'tenants_controllers.rb'
+
 require_relative "models/apartment"
 require_relative "models/tenant"
 
-binding.pry
+get '/' do
+  erb :apartments
+end

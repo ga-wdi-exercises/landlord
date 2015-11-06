@@ -11,7 +11,7 @@ CREATE TABLE tenants (
 CREATE TABLE apartments (
   id SERIAL PRIMARY KEY,
   address TEXT,
-  monthy_rent INT,
+  monthly_rent INT,
   sqft INT,
   num_beds INT,
   num_baths INT
