@@ -2,32 +2,15 @@
 #   * Make sure to get the appropriate input from the user to create your person as per schema -->
 <p>Input the following information about your new tenant.</p>
 
-
- <form method="get" action=".">
-      <fieldset>
-        <input type="text" name="name" placeholder="Name" />
-      </fieldset>
-      <fieldset>
-      	<input type="number" name="age" placeholder="Age" />
-      </fieldset>
-      <fieldset>
-        Gender:
+<form method="post" action="/new_tenant/<%= @id %>">
+      <p><input type="text" name="name" placeholder="Name" /></p>
+      <p><input type="text" name="age" placeholder="Age" /></p>
+        <p>Gender:
         <select name="gender">
           <option value="male">Male</option>
           <option value="female" selected="true">Female</option>
-        </select>
-      </fieldset>
-      <fieldset>
-        Requested Apartment ID:
-        <select name="apt_id">
-        <!-- there should be a for each loop here, grabbing each apartment in DB, seeing if Apartment.tenants < Apartment.num_beds, and if so putting it as option-->
-          <option value="apt_1">1</option>
-          <option value="apt_2">2</option>
-          <option value="apt_3">3</option>
-        </select>
-      <input type="submit" value="Submit" />     <!-- write to database here -->
-</form>
+        </select></p>
+      <p>
 
-<% if @tenant_submitted %>
-<p>OK, the tenant has been accepted.</p>
-<% end %>
+      <input type="submit">
+</form>

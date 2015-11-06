@@ -1,3 +1,7 @@
 <!-- # - The route `GET /apartments` should list all apartments -->
 
-<p>Here are all your apartments:</p>
+<p>Here are all your apartments. Click on one for more information.</p>
+
+<% @all_apt.each do |apt| %>
+  <p><a href="/apartments/<%= apt.id %>"><%= apt.address %></a></p>
+<% end %>

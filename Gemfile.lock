@@ -18,11 +18,15 @@ GEM
     backports (3.6.7)
     builder (3.2.2)
     coderay (1.1.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (1.8.3)
     method_source (0.8.2)
     minitest (5.8.2)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     pg (0.18.3)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -55,6 +59,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  httparty
   pg
   pry
   sinatra

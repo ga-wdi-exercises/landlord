@@ -16,15 +16,15 @@ n_scott = Apartment.create(address: "1410 North Scott St", monthly_rent: 2000, s
 peabody = Apartment.create(address: "1834 Peabody St", monthly_rent: 4000, sqft: 1800, num_beds: 3, num_baths: 2)
 
 # Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
-becca = Tenant.create(name: "Rebecca", age: 28, gender: "Female", apartment_id: euclid.id)
-carol = Tenant.create(name: "Carol", age: 31, gender: "Female", apartment_id: euclid.id)
-alison = Tenant.create(name: "Alison", age: 29, gender: "Female", apartment_id: euclid.id)
-lauren = Tenant.create(name: "Lauren", age: 30, gender: "Female", apartment_id: euclid.id)
-emelin = Tenant.create(name: "Emelin", age: 30, gender: "Female", apartment_id: euclid.id)
-jason = Tenant.create(name: "Jason", age: 28, gender: "Male", apartment_id: n_scott.id)
-natalie = Tenant.create(name: "Natalie", age: 28, gender: "Female", apartment_id: peabody.id)
-shawn = Tenant.create(name: "Shawn", age: 30, gender: "Male", apartment_id: peabody.id)
-chloe = Tenant.create(name: "Chloe", age: 4, gender: "Female", apartment_id: peabody.id)
+becca = Tenant.create(name: "Rebecca Estes", age: 28, gender: "Female", apartment_id: euclid.id)
+carol = Tenant.create(name: "Carol Rosenberg", age: 31, gender: "Female", apartment_id: euclid.id)
+alison = Tenant.create(name: "Alison Buki", age: 29, gender: "Female", apartment_id: euclid.id)
+lauren = Tenant.create(name: "Lauren Katz", age: 30, gender: "Female", apartment_id: euclid.id)
+emelin = Tenant.create(name: "Emelin Gasparrini", age: 30, gender: "Female", apartment_id: euclid.id)
+jason = Tenant.create(name: "Jason Goldstein", age: 28, gender: "Male", apartment_id: n_scott.id)
+natalie = Tenant.create(name: "Natalie Ronollo", age: 28, gender: "Female", apartment_id: peabody.id)
+shawn = Tenant.create(name: "Shawn Benson", age: 30, gender: "Male", apartment_id: peabody.id)
+chloe = Tenant.create(name: "Chloe Benson", age: 4, gender: "Female", apartment_id: peabody.id)
 
 # queries for all instances of the Tenant class and stores it in a variable of your choice
 all_tenants = Tenant.all

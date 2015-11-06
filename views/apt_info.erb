@@ -1,4 +1,22 @@
-<!-- # - The route `GET /apartments/[ID HERE]` should show info about a single apartment
-#   * Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters -->
 
-<p>Here is the information about your selected apartment.</p>
+<h2><%= @apt.address %></h2>
+<p><strong>Monthly Rent</strong>: <%= @apt.monthly_rent %></p>
+<p><strong>Square Feet</strong>: <%= @apt.sqft %></p>
+<p><strong>Number of Beds</strong>: <%= @apt.num_beds %></p>
+<p><strong>Number of Baths</strong>: <%= @apt.num_baths %></p>
+<p><strong>Current Tenant Names</strong>:</p>
+
+<ul><% @apt.tenants.each do |tenant| %>
+	<li><%= tenant.name %></li>
+<% end %></ul>
+
+
+<% if @apt.tenants.length < @apt.num_beds %>
+	<p>You have free spaces! <a href="/new_tenant/<%= @apt.id %>">Add new tenant?</a></p>
+<% end %>
+
+<% if @apt.tenants.length != 0 %>
+<p>For details on tenants, click <a href="/tenant_details/<%= @apt.id %>">here</a>.</p>
+<% end %>
+
+<p>To edit these apartment details, click <a href="/apt_edit/<%= @apt.id %>">here</a>.</p>
