@@ -1,0 +1,35 @@
+.all
+  returns array [i]
+
+  some_author = Author.all[i] ... makes an instance (object) of the class
+
+    you can find it's attributes with .id, .name, .birth_year, etc
+      ex. some_author.id , some_author.name, some_author.birth_year
+      (getting)
+
+    you can change attributes name
+
+      some_author = Author.where(name = "James") ** returned an array, be sure to access the array when updating or changing! **
+
+      ex. some_author.name = "Jack", some_author.id = 3
+      (setting)
+      you need to then save the change with:
+        some_author.save : in order for it to be saved in the database
+
+.where
+  returns array
+
+.reload
+  refreshed the database to refect changes in it with Ruby
+
+    psql -d database_name
+    psql -d database_name < schema_or_seedfile
+
+.update
+    this method updates and saves the attribute all in one
+    ex some_author[i].update(name: 'Hi')
+
+.find_by
+  returns first result
+
+  relational relationship << Books.new(name: "The Red Death", etc)
