@@ -1,0 +1,16 @@
+<!-- # - The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
+#   * Make sure to get the appropriate input from the user to create your person as per schema -->
+<p>Input the following information about your new tenant.</p>
+
+<form method="post" action="/new_tenant/<%= @id %>">
+      <p><input type="text" name="name" placeholder="Name" /></p>
+      <p><input type="text" name="age" placeholder="Age" /></p>
+        <p>Gender:
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female" selected="true">Female</option>
+        </select></p>
+      <p>
+
+      <input type="submit">
+</form>

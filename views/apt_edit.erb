@@ -1,0 +1,14 @@
+ <form method="post" action="/apt_edit/<%= @id %>">
+   <input type="hidden" name="_method" value="put">
+      <p><input type="text" name="address" value="<%= @apt.address %>"></p>
+      <p><input type="text" name="monthly_rent" value="<%= @apt.monthly_rent %>"></p>
+      <p><input type="text" name="sqft" value="<%= @apt.sqft %>"></p>
+      <p><input type="text" name="num_beds" value="<%= @apt.num_beds %>"></p>
+      <p><input type="text" name="num_baths" value="<%= @apt.num_baths %>"></p>
+      <input type="submit">
+</form>
+
+<form method="post" action="/apt_edit/<%= @id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete FOREVER">
+</form>
