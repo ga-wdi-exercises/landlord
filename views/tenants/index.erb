@@ -1,6 +1,8 @@
 <h2>Listing of all current tennants</h2>
 <table>
   <tr>
+    <th>Edit</th>
+    <th>Delete</th>
     <th>Name</th>
     <th>Age</th>
     <th>Gender</th>
@@ -9,6 +11,11 @@
   </tr>
   <% @tenants.each do |tenant| %>
   <tr>
+    <td><a href="<%= '/tenants/' + tenant.id.to_s + '/edit' %>">Edit</a></td>
+    <td><form method="post" action="<%= '/tenants/' + tenant.id.to_s + '/edit' %>">
+        <input type="hidden" name="_method" value="delete">
+        <input class="button-delete" type="submit" value="Delete">
+      </form></td>
     <td><a href="<%= '/tenants/' + tenant.id.to_s %>"><%= tenant.name %></a></td>
     <td><%= tenant.age %></td>
     <td><%= tenant.gender %></td>

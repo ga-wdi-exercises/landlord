@@ -12,7 +12,20 @@
 <% if @apt.tenants == nil %>
 <p>No tenants</p>
 <% else %>
-<ul><% @apt.tenants.each do |tenant| %>
-  <li><a href="<%= '/tenants/' + tenant.id.to_s %>"><%= tenant.name %></a> (<%= tenant.age %>, <%= tenant.gender %>)</li>
-<% end %></ul>
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Remove</th>
+    <th>Tenant</th>
+    <th>Age</th>
+    <th>Gender</th>
+  </tr>
+  <% @apt.tenants.each do |tenant| %><tr>
+    <td>Edit</td>
+    <td>Remove</td>
+    <td><a href="<%= '/tenants/' + tenant.id.to_s %>"><%= tenant.name %></a></td>
+    <td><%= tenant.age %></td>
+    <td><%= tenant.gender %></td>
+  </tr><% end %>
+</table>
 <% end %>
