@@ -1,1 +1,6 @@
-<h1> Just a tester for now </h1>
+<h1> Apartments for Rent </h1>
+<ul>
+  <% @apartments.each do |apt|%>
+  <li><a href="/apartments/<%= apt.id %>"><%= apt.address %></a></li>
+  <% end %>
+</ul>
