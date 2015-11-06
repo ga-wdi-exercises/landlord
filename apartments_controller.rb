@@ -1,9 +1,9 @@
 #  list all apartments
 get '/apartments' do
   @apartments = Apartment.all
-  erb :"apartments/home"
+  erb :"apartments/index"
 end
-#
+
 # # view an apartment's details
 # get '/apartments/:id' do
 #   @apartment = Apartment.find(params[:id])

@@ -6,6 +6,20 @@ header{
   margin: 0 auto;
 }
 
+nav{
+  width: 482px;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.3);
+  padding: 10px;
+  text-align: center;
+  color: gold;
+  font-weight: normal;
+}
+
+nav a{
+  color: gold;
+}
+
 h1{
   text-align: center;
   color: white;
@@ -30,4 +44,8 @@ a{
   margin-top: 10px;
   border: 2px solid firebrick;
   text-align: center;
+}
+
+#main h2{
+  
 }

@@ -5,8 +5,8 @@ require 'pg'
 require 'active_record'
 require 'pry'
 
-require_relative 'apartments_controller.rb'
-require_relative 'db/connection.rb'
+require_relative 'apartments_controller'
+require_relative 'db/connection'
 require_relative 'models/apartment'
 require_relative 'models/tenant'
 
