@@ -1,0 +1,14 @@
+<h1>Apartments</h1>
+
+<form method="post" action="/apartments">
+  <input type="text" name="address" placeholder="Address" />
+  <input type="text" name="sqft" placeholder="Sqft." />
+  <input type="text" name="num_beds" placeholder="Number of Bedrooms" />
+  <input type="text" name="num_baths" placeholder="Number of Bathrooms" />
+  <input type="text" name="monthly_rent" placeholder="Monthly Rent" />
+  <input type="submit" value="Submit"/>
+</form>
+
+<% @apartments_all.each do |apartments| %>
+  <p><a href="apartments/<%= apartments.id %>"><%= apartments.address %></a></p>
+<% end %>
