@@ -5,6 +5,7 @@
     <th>Age</th>
     <th>Gender</th>
     <th>Apt ID</th>
+    <th>Tenant ID</th>
   </tr>
   <% @tenants.each do |tenant| %>
   <tr>
@@ -12,6 +13,7 @@
     <td><%= tenant.age %></td>
     <td><%= tenant.gender %></td>
     <td><%= tenant.apartment_id %></td>
+    <td><%= tenant.id %></td>
   </tr>
   <% end %>
 </table>
