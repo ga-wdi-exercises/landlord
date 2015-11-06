@@ -1,0 +1,17 @@
+<h1>Show Apartment: <%= @apt_details.address %></h1>
+
+<p>Info</p>
+
+<ul>
+  <li><%= @apt_details.address %></li>
+  <li>$<%= @apt_details.monthly_rent %>/month</li>
+  <li><%= @apt_details.sqft %> sqft</li>
+  <li>Bedrooms: <%= @apt_details.num_beds %></li>
+  <li>Bathrooms: <%= @apt_details.num_baths %></li>
+</ul>
+
+<ul>
+  <% @apt_details.tenants.each do |tenant| %>
+  <li><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></li>
+  <% end %>
+</ul>
