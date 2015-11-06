@@ -9,7 +9,7 @@
   </tr>
   <% @apts.each do |apt| %>
   <tr>
-    <td><%= apt.address %></td>
+    <td><a href="<%= '/apartments/' + apt.id.to_s %>"><%= apt.address %></a></td>
     <td><%= apt.monthly_rent %></td>
     <td><%= apt.sqft %></td>
     <td><%= apt.num_beds %></td>
