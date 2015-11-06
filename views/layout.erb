@@ -3,9 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Landlord App</title>
-    <link rel="stylesheet" href="style.css" charset="utf-8">
+    <link rel="stylesheet" href="/style.css" charset="utf-8">
   </head>
   <body>
-    <%= yield %>
+    <header>
+      <h1>Landlord App</h1>
+      <nav>
+        <ul>
+          <li><a href="/apartments">Apartments</a></li>
+          <li><a href="/apartments/new">New Apartment</a></li>
+          <li><a href="/tenants">Tenants</a></li>
+          <li><a href="/tenants/new">New Tenant</a></li>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

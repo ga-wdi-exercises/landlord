@@ -1,8 +1,37 @@
 body {
-  background: rgb(67, 73, 70);
-  color: white;
+  text-align: center;
 }
 
 h1 {
   text-align: center;
+}
+
+input {
+  display: block;
+}
+
+header {
+  background: rgb(34, 88, 35);
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  background: black;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+}
+
+nav li {
+  display: inline;
+  padding-right: 50px;
+}
+
+ul {
+  text-align: left;
+  padding-left: 50px;
 }
