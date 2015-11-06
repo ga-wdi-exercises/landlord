@@ -1,0 +1,39 @@
+<div class="apartment_profile">
+  <div class="profile_container">
+      <h2>Apartment <%=@apartment.id%></h2>
+      <ul>
+        <li><%=@apartment.address%></li>
+        <li><%=@apartment.sqft%> Square Feet</li>
+        <li>$<%=@apartment.monthly_rent%> / month</li>
+        <li>Beds: <%=@apartment.num_beds%></li>
+        <li>Baths: <%=@apartment.num_baths%></li>
+  </div>
+
+  <div class="apartment_options">
+    <h3>Apartment Options</h3>
+    <ul>
+    <li><a href="/apartments/<%=@apartment.id%>/edit">EDIT</a></li>
+    <li><a href="/apartments/<%=@apartment.id%>/delete">DELETE</a></li>
+  </div>
+
+  <div class="apartment_tenants">
+    <h3>Current Tenants</h3>
+    <table>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Gender</td>
+      </tr>
+      <% @apartment.tenants.each do |tenant| %>
+        <%id = tenant.id%>
+        <tr>
+          <td><a href="/tenants/<%=id%>"><%=id%></a></td>
+          <td><%=tenant.name%></a></td>
+          <td><%=tenant.age%></a></td>
+          <td><%=tenant.gender%></a></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

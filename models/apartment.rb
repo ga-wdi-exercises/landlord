@@ -9,12 +9,12 @@ class Apartment < ActiveRecord::Base
     @renters = []
   end
 
-  def add_tenant(tenant)
-    if @renters.count < @num_beds
-      @renters << tenant
-    else
-      puts "too many renters"
-    end
-  end
+  # def add_tenant(tenant)
+  #   if @renters.count < @num_beds
+  #     @renters << tenant
+  #   else
+  #     puts "too many renters"
+  #   end
+  # end
 
 end

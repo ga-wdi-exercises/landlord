@@ -12,13 +12,13 @@
     <% @apartments_all.each do |apartment| %>
     <%id = apartment.id%>
     <tr>
-      <td><a href="/apartments/<%=apartment.id%>"><%=apartment.id%></a></td>
+      <td><a href="/apartments/show/<%=apartment.id%>"><%=apartment.id%></a></td>
       <td><%=apartment.address%></a></td>
       <td><%=apartment.monthly_rent%></a></td>
       <td><%=apartment.sqft%></a></td>
       <td><%=apartment.num_beds%></a></td>
       <td><%=apartment.num_baths%></a></td>
-      <td><a href="/apartments/<%=apartment.id%>/tenants"><%=apartment.tenants.count%></a></td>
+      <td><%=apartment.tenants.count%></a></td>
     </tr>
     <% end %>
   </ul>

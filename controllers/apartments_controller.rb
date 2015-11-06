@@ -2,18 +2,30 @@ require 'pry'
 
 get '/apartments' do
   @apartments_all = Apartment.all
-  binding.pry
   erb :"apartments/index"
 end
 
-get '/apartments/:apartment_id' do
-  "ur mom in this apartment"
-end
-
 get '/apartments/new' do
-  "ur mom in a new place"
+  erb :"apartments/new"
 end
 
-get '/apartments/:apartment_id/tenants' do
-  "ur tenants do ur mom"
+post '/apartments/new' do
+  @apartment = Apartment.new(params[:address], params[:monthly_rent], params[:sqft], params[:num_beds], num_baths: params[:num_baths])
+  redirect "/apartments/show/#{@apartment.id}"
+end
+
+get '/apartments/show/:id' do
+  @apartment = Apartment.find_by(id: params[:id])
+  erb :"apartments/show"
+end
+
+get '/apartments/:id/edit' do
+  @apartment = Apartment.find_by(id: params[:id])
+  erb :"apartments/edit"
+end
+
+post '/apartments/show/:id' do
+  @apartment = Apartment.find_by(id: params[:id])
+  @apartment.update(address: params[:address], monthly_rent: params[:monthly_rent], sqft: params[:sqft], num_beds: params[:num_beds], num_baths: [:num_baths])
+  redirect "/apartments/show/#{@apartment.id}"
 end
