@@ -1,6 +1,12 @@
-<header>
-  Available Apartments
+<header
+<nav>
+  <a href="http://localhost:4567/">home</a>
+</nav>
 </header>
+
+<h1>
+  Available Apartments
+</h1>
 
   <% @apartments.each do |apartment| %>
 <li>
@@ -11,10 +17,10 @@
 <%end%>
 
 <form method='post' action='/apartments'>
-  <input type='text' address'address'>
-  <input type='text' address'address'>
-  <input type='text' address'address'>
-  <input type='text' address'address'>
-  <input type='text' address'address'>
+  <input type='text' address='address' placeholder="address">
+  <input type='text' monthlyrent='monthly_rent' placeholder="Monthly Rent">
+  <input type='text' sqft='sqft'placeholder="Square feet">
+  <input type='text' numbeds='num_beds' placeholder="Number of Bedrooms">
+  <input type='text' numbaths='num_baths' placeholder="Number of Baths">
   <input type='submit'>
 </form>
