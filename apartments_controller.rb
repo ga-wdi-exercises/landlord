@@ -9,6 +9,24 @@ get '/apartments/new' do
   erb :"apartments/new"
 end
 
+post '/apartments' do
+  @address = params[:address]
+  @monthly_rent = params[:monthly_rent]
+  @sqft = params[:sqft]
+  @num_beds = params[:num_beds]
+  @num_baths = params[:num_baths]
+  @apartment = Apartment.create(address:"#{@address}", monthly_rent: "#{@monthly_rent}", sqft: "#{@sqft}", num_beds: "#{@num_beds}", num_baths: "#{@num_baths}")
+  redirect ("/apartments/#{@apartment.id}")
+end
+
+# post "/artists" do
+#   @name = params[:name]
+#   @photo_url = params[:photo_url]
+#   @nationality = params[:nationality]
+#   @artist = Artist.create(name:"#{@name}", photo_url: "#{@photo_url}", nationality: "#{@nationality}")
+#   redirect("/artists/#{@artist.id}")
+# end
+
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   @tenants = Tenant.where(apartment_id: params[:id])
