@@ -1,0 +1,5 @@
+<h1>Tenant List</h1>
+
+<% @tenants.each do |tenant| %>
+<li><%= tenant.name %>--<%= tenant.age %> years old--<%= tenant.gender %></li>
+<% end %>
