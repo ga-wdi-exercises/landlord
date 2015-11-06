@@ -1,0 +1,20 @@
+<div class="editApt">
+  Edit Tenant
+</div>
+
+<div><%=@tenant.name%></div>
+<div><%=@tenant.age%></div>
+
+<form method="post" action="/tenants/<%=@tenant.id%>/edit">
+  <input type="hidden" name="_method" value="put"/>
+  <input name="name" value="<%=@tenant.name%>"/>
+  <input name="age" value="<%=@tenant.age%>"/>
+  <input name="gender" value="<%=@tenant.gender%>"/>
+  <input type="submit" value="Submit" />
+</form>
+
+
+<form method="post" action="/tenants/<%=@tenant.id%>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete" />
+</form>

@@ -1,0 +1,15 @@
+h1 {
+  font-family: cursive;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tenantWithApt {
+  margin-top: 5%;
+}
