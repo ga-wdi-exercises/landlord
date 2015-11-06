@@ -1,0 +1,30 @@
+<h1>Add new apartment</h1>
+
+<form method="post" action="/apartments">
+  <div class="form_div">
+    <label for="address">Full Address: </label>
+    <input type="text" name="address" id="address" placeholder="e.g. 123 Main St.">
+  </div>
+
+  <div class="form_div">
+    <label for="monthly_rent">Monthly Rent: </label>
+    <input type="text" name="monthly_rent" id="monthly_rent" placeholder="rent">
+  </div>
+
+  <div class="form_div">
+    <label for="sqft">Total Square Footage: </label>
+    <input type="text" name="sqft" id="sqft" placeholder="sqft">
+  </div>
+
+  <div class="form_div">
+    <label for="num_beds">Beds: </label>
+    <input type="text" name="num_beds" id="num_beds" placeholder="number of beds">
+  </div>
+
+  <div class="form_div">
+    <label for="num_baths">Baths: </label>
+    <input type="text" name="num_baths" id="num_baths" placeholder="number of baths">
+  </div>
+
+  <input type="submit" class="submit add_link">
+</form>
