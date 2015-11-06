@@ -1,29 +1,17 @@
--- Tenants table (with the following attributes):
--- id
--- name
--- age
--- gender
--- apartment_id
---
--- Apartments table (with the following attributes):
--- id
--- address
--- monthly_rent
--- sqft
--- num_beds
--- num_baths
+DROP TABLE IF EXISTS tenants;
+DROP TABLE IF EXISTS apartments;
 
 CREATE TABLE tenants (
   tenants_id_seq SERIAL NOT NULL PRIMARY KEY,
-  name VARCHAR NOT NULL,
+  name TEXT NOT NULL,
   age INT,
-  gender VARCHAR,
+  gender TEXT,
   apartment_id INT NOT NULL
 );
 
 CREATE TABLE apartments (
   apartments_id_seq SERIAL PRIMARY KEY,
-  address VARCHAR NOT NULL,
+  address TEXT NOT NULL,
   monthly_rent INT,
   sqft INT,
   num_beds INT,
