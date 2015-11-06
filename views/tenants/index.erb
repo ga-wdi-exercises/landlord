@@ -1,0 +1,5 @@
+<% @tenants.each do |tenant| %>
+  <h3><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></h3>
+  <h5>age=<%= tenant.age %></h5>
+  <h5>gender=<%= tenant.gender %></h5>
+<% end %>

@@ -1,3 +1,7 @@
 <% @apartments.each do |apt| %>
-  <h3><%= apt %></h3>
+  <h3><a href="/apartments/<%= apt.id %>"><%= apt.address %></a></h3>
+  <h5>monthly_rent=<%= apt.monthly_rent %></h5>
+  <h5>sqft=<%= apt.sqft %></h5>
+  <h5>num_beds=<%= apt.num_beds %></h5>
+  <h5>num_baths=<%= apt.num_baths %></h5>
 <% end %>

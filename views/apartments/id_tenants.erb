@@ -1,0 +1,6 @@
+<% Apartment.find(@id).tenants.each do |tenant| %>
+  <h2>Name = <%= tenant.name %></h2>
+  <p>Age = <%= tenant.age %></p>
+  <p>Gender = <%= tenant.gender %></p>
+  <!-- <p>Apartment_ID = <%= tenant.apartment_id %></p> -->
+<% end %>
