@@ -32,7 +32,7 @@ apartment_101 = Apartment.find_by(address: "123 Main St Apt 101")
 apartment_101.monthly_rent = 2200
 apartment_101.save
 apartment_101.update(monthly_rent: 2300)
-apartment_101.destroy
+# apartment_101.destroy
 
 
 
