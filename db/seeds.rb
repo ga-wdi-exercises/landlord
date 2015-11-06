@@ -32,21 +32,21 @@ Tenant.create(name: "Ron Weasley", age: 17, gender: "male", apartment: diagon)
 Tenant.create(name: "James Potter", age: 41 , gender: "male", apartment: godric)
 Tenant.create(name: "Lily Evans", age: 42, gender: "female", apartment: godric)
 Tenant.create(name: "Harry Potter", age: 17, gender: "male", apartment: godric)
-
-# queries for all instances of the Tenant class and stores it in a variable of your choice
-tenants = Tenant.all
-
-# queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
-godric_tenants = godric.tenants
-
-# Updates attributes using attribute helper methods for one of the objects you've created
-diagon.monthly_rent = 3200 + (3200 * 0.05)
-# Saves an object that you updated using attribute helpers to the Database
-diagon.save
-# Updates an object using the update methods
-Tenant.last.update(age: 18)
-# Deletes one of the objects you've created
-elaine = tenants.find_by(name: "Elaine Prince")
-elaine.destroy
-
-binding.pry
+#
+# # queries for all instances of the Tenant class and stores it in a variable of your choice
+# tenants = Tenant.all
+#
+# # queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
+# godric_tenants = godric.tenants
+#
+# # Updates attributes using attribute helper methods for one of the objects you've created
+# diagon.monthly_rent = 3200 + (3200 * 0.05)
+# # Saves an object that you updated using attribute helpers to the Database
+# diagon.save
+# # Updates an object using the update methods
+# Tenant.last.update(age: 18)
+# # Deletes one of the objects you've created
+# elaine = tenants.find_by(name: "Elaine Prince")
+# elaine.destroy
+#
+# binding.pry
