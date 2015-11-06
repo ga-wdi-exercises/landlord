@@ -1,4 +1,4 @@
-<h1><%= @apartment[:address] %></h1>
+<h2><%= @apartment[:address] %></h2>
 <ul>
   <li>Rent - <%= @apartment[:monthly_rent] %></li>
   <li>Square Feet - <%= @apartment[:sqft] %></li>
@@ -6,7 +6,7 @@
   <li>Number of Baths - <%= @apartment[:num_baths] %></li>
 </ul>
 
-<h2>Tenants</h2>
+<h3>Tenants</h3>
 <ul>
 <% @tenants.each do | tenant | %>
   <li><%= tenant[:name] %></li>
