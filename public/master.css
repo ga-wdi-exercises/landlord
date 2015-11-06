@@ -1,0 +1,43 @@
+
+@import url(https://fonts.googleapis.com/css?family=PT+Mono);
+
+body{
+  background-color: gainsboro;
+  color: teal;
+  font-family: 'PT Mono'
+}
+nav a{
+  margin-right: 20px;
+}
+a{
+  color: inherit;
+  text-decoration: underline;
+  display: inline-block;
+  padding: 10px 0 10px 0;
+}
+
+header{
+  width: 85%;
+  margin: 0 auto;
+  padding: 10px;
+  border-bottom: 5px solid #6F567F;
+}
+
+main{
+  width: 85%;
+  margin: 0 auto;
+}
+
+img{
+  width: 50%;
+}
+li{
+  list-style: none;
+}
+.thumbnail{
+  width: 25%;
+}
+audio{
+  display: block;
+  margin: 20px 0 20px 0;
+}
