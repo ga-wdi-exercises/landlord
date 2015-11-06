@@ -1,3 +1,5 @@
+# this is the cli app
+
 require "bundler/setup"
 require 'pry'
 require 'active_record'

@@ -1,3 +1,4 @@
+# this is the sinatra app
 require "bundler/setup"
 require 'pry'
 require 'active_record'
