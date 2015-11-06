@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cassidy's Landlord Application</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+  </head>
+  <body>
+    <h1>This comes from the layout.erb</h1>
+    <nav>
+    <ul>
+    <li><a href='/apartments'>Apartments</a>
+    <li><a href="/apartments/:id">View Details</a>
+    <li><a href="/apartments/new">Add an Apartment</a>
+    <li><a href="/apartments/1/tenants">List Tenants</a>
+    </ul>
+    </nav>
+    <!-- This tells the layout to go back to the index.erb and get all that HTML and insert it into yield -->
+   <%= yield %>
+  </body>
+</html>

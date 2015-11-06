@@ -1,4 +1,5 @@
-class Tenant
+class Tenant < ActiveRecord::Base
+  belongs_to :apartment
   attr_accessor :name, :age, :gender
 
   def initialize(tenant_name, tenant_age, tenant_gender)
