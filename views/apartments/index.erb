@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apartments</title>
+</head>
+<body>
+  <h1>Available Apartments:</h1>
+  <div class="image">
+    <img src="css/interior.jpg" alt="interior apartment"/>
+  </div>
+  <div class=bkgrnd>
+    <% @apts.each do |apt| %>
+      <p>
+        <a href= "apartments/<%= apt.id %>">
+        <%= apt.address %></a>
+      <p>
+    <% end %>
+    <a href="/apartments/new"><button>Enter New Apartment</button></a>
+  </div>
+</body>
+</html>
