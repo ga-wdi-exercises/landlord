@@ -1,0 +1,6 @@
+<h1>Tenants</h1>
+
+<ul>
+<% @tenants.each do | tenant | %>
+  <li><%= tenant[:name] %></li>
+<% end %>
