@@ -90,7 +90,6 @@ $ psql -d database_name < name_of_seed_file.sql
 * Define AR classes /w associations in the `models` folder for:
   - Tenant
   - Apartment
-
 * Create a `seeds.rb` file in the `db` directory that:
   - Creates at least 3 instances of the apartment class
   - Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
@@ -121,14 +120,19 @@ Create the (RESTful) routes and views for the following items:
   * Add an apartment(a link to `GET /apartments/new`)
   * List tenants (a link to `GET /apartments/1/tenants`)
 - The route `GET /apartments` should list all apartments
-  * these apartments will just be hardcoded in your `app.rb` or in your `erb` file.
+
+  these apartments will just be hardcoded in your `app.rb`
+
 - The route `GET /apartments/new` should show a form for adding a new apartment
-  * Make sure to get the appropriate input from the user when creating an apartment as per schema
+  * Make sure to get the (((((appropriate input))))) from the user when creating an apartment as per schema
+
 - The route `GET /apartments/1` should show info about a single apartment
-  * Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters
-- The route `GET /apartments/1/tenants` should list all tenants for 1 apartment.
+      Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters
+
+- The route `GET /apartments/1/tenants` should list info ABOUT all tenants for 1 apartment.
+
 - The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
-  * Make sure to get the appropriate input from the user to create your person as per schema
+  Make sure to get the appropriate input from the user to create your person as per schema
 
 ## Sinatra & DB
 Example of using instance variables:

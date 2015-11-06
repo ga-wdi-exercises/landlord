@@ -1,0 +1,9 @@
+<% apt=@apartments[@id-1] %>
+<h3><%= apt.address %></h3>
+<h5>monthly_rent=<%= apt.monthly_rent %></h5>
+<h5>sqft=<%= apt.sqft %></h5>
+<h5>num_beds=<%= apt.num_beds %></h5>
+<h5>num_baths=<%= apt.num_baths %></h5>
+<a href="/apartments/<%= @id-1 %>/tenants">Tenants</a>
+
+<!-- how can I link to /apartments/:id/tenants by only needing to reference '/tenants'?? -->
