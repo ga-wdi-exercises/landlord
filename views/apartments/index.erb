@@ -1,0 +1,20 @@
+<header>
+  Available Apartments
+</header>
+
+  <% @apartments.each do |apartment| %>
+<li>
+  <a href="">
+  <%= apartment.address %>
+</a>
+</li>
+<%end%>
+
+<form method='post' action='/apartments'>
+  <input type='text' address'address'>
+  <input type='text' address'address'>
+  <input type='text' address'address'>
+  <input type='text' address'address'>
+  <input type='text' address'address'>
+  <input type='submit'>
+</form>

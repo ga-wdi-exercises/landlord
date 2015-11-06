@@ -1,0 +1,18 @@
+<header>
+  Current Tenants
+</header>
+
+  <% @tenants.each do |tenant| %>
+<li>
+  <a href="">
+  <%= tenant.name %>
+</a>
+</li>
+<%end%>
+
+<form method='post' action='/tenants'>
+  <input type='text' name'name'>
+  <input type='text' age'address'>
+  <input type='text' gender'address'>
+  <input type='submit'>
+</form>
