@@ -61,3 +61,7 @@ leta.tenants.create(name: "Katarina Kunde", age: 6, gender: 'Female')
 
 # for all instances of the Tenant class and stores it in a variable of your choice
 residents = Tenant.all
+
+
+# queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
+letaResidents = leta.tenants.all

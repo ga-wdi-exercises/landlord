@@ -1,0 +1,33 @@
+ul {
+  position: relative fixed;
+  display: inline-flex;
+  text-transform: uppercase;
+  /*margin: auto;*/
+
+}
+
+li {
+  margin-bottom: 68px;
+  border-bottom: 4px solid #000;
+  overflow: hidden;
+  position: relative fixed;
+  display: inline-block;
+  padding: 10px 24px 8px;
+  background-color: lavender;
+  margin-right: 46px;
+  cursor: pointer;
+  color: #777;
+  border-radius: 15px 15px 0 0;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+}
+
+li:active {
+  background-color: lavender;
+}
+
+h1 {
+  font: 1000 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+  text-align: center;
+  padding: 10px 24px 8px;
+  margin: 0px 0px 68px 185px;
+}
