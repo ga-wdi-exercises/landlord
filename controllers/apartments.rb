@@ -4,14 +4,12 @@ get '/apartments' do
   erb :'apartments/index'
 end
 
-# get '/apartment/:apartment_id' do
-#   # view details about given apartment
-#   @title = "Apartment at " + ""
-#   @apt_id = params[:apartment_id]
-#   @apartment = "" # get apartment by id
-#   erb :apartment
-# end
-#
+get '/apartments/:apartment_id' do
+  # view details about given apartment
+  @apt = Apartment.find_by(id: params[:apartment_id])
+  erb :'apartments/apartment'
+end
+
 # get '/apartments/new' do
 #   # add an apartment, showing a form to add a new apartment and getting input
 #   # from user per schema

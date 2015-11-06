@@ -5,6 +5,7 @@
     <th>square feet</th>
     <th>bedrooms</th>
     <th>bathrooms</th>
+    <th>id</th>
   </tr>
   <% @apts.each do |apt| %>
   <tr>
@@ -13,6 +14,7 @@
     <td><%= apt.sqft %></td>
     <td><%= apt.num_beds %></td>
     <td><%= apt.num_baths %></td>
+    <td><%= apt.id %></td>
   </tr>
 <% end %>
 </table>

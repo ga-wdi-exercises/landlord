@@ -1,0 +1,17 @@
+<h2>Listing of all current tennants</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Apt ID</th>
+  </tr>
+  <% @tenants.each do |tenant| %>
+  <tr>
+    <td><%= tenant.name %></td>
+    <td><%= tenant.age %></td>
+    <td><%= tenant.gender %></td>
+    <td><%= tenant.apartment_id %></td>
+  </tr>
+  <% end %>
+</table>
