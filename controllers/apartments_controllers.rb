@@ -25,5 +25,6 @@ post '/apartments/new' do
     apartment.photo_url = @photo
     apartment.nationality = @nationality
     apartment.save
+  end
   redirect '/apartments'
 end
