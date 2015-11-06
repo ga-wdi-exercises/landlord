@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- <link rel="stylesheet" href="/style.css" /> -->
-    <title>LandLordApp</title>
-  </head>
-  <body>
-    <%= yield %>
-  </body>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>LandLord</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <section>
+    <h1>LandLord</h1>
+    <ul>
+      <li class="nav"><a href='/apartments'>Apartments</a></li>
+      <li class="nav"><a href='/tenants'>Tenants</a></li>
+    </ul>
+  </section>
+  <%=yield%>
+
+</body>
 </html>

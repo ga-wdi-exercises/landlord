@@ -1,0 +1,22 @@
+<h1><%=@tenant.name%></h1>
+<ul>
+<li><p>Age: <%=@tenant.age%></p></li>
+<li><p>Gender: <%=@tenant.gender%></p></li>
+<li><p>Apartment Address: <%=Apartment.find(@tenant.apartment_id).address%></p></li>
+</ul>
+
+<h2>Edit Tenant</h2>
+<form method="post" action="/tenants/<%=@tenant_id%>/edit">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="name" placeholder="<%=@tenant.name%>">
+  <input type="text" name="gender" placeholder="<%=@tenant.gender%>">
+  <input type="text" name="age" placeholder="<%=@tenant.age%>">
+  <input type="text" name="apartment_id" placeholder="<%=Apartment.find(@tenant.apartment_id).address%>">
+  <input type="submit">
+</form>
+
+<h2>Delete Tenant</h2>
+<form method="post" action="/tenants/<%=@tenant.id%>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Tenant">
+</form>

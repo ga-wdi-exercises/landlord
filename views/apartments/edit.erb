@@ -1,0 +1,9 @@
+<form method="post" action="/apartments/<%=@apt_id%>">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="address" placeholder="<%=@apt.address%>">
+  <input type="text" name="monthly_rent" placeholder="<%=@apt.monthly_rent%>">
+  <input type="text" name="sqft" placeholder="<%=@apt.sqft%>">
+  <input type="text" name = "num_beds" placeholder="<%=@apt.num_beds%>">
+  <input type="text" name = "num_baths" placeholder="<%=@apt.num_baths%>">
+  <input type="submit">
+</form>
