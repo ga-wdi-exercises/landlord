@@ -1,0 +1,16 @@
+<h2><%= @apartment.address %></h2>
+
+<h3>$<%= @apartment.monthly_rent %>/month  |  <%= @apartment.sqft %>sqft  |  <%= @apartment.num_beds %> Beds  |  <%= @apartment.num_baths %> Baths</h3>
+
+<h3> Tenants of <%= @apartment.address %> </h3>
+<ul>
+  <% @apartment.tenants.each do |tenant| %>
+    <li>
+        <%= tenant.name %>
+    </li>
+  <% end %>
+</ul>
+
+<!-- <nav>
+  |<a href="/artists/edit">Edit Artist</a> |
+</nav> -->
