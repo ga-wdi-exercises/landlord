@@ -20,7 +20,8 @@ get '/' do
 end
 
 get "/apartments" do
-  "Hello World"
+  @apartments = Apartment.all
+  erb :apartment
 end
 
 get "/apartments" do

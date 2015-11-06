@@ -1,22 +1,31 @@
+body {
+  background-color: #FFEBCD;
+}
 ul {
   position: relative fixed;
   display: inline-flex;
   text-transform: uppercase;
+  margin: 10px auto;
+  margin-bottom: -15px;
+  height: 100px;
 }
 
 a {
-  margin-bottom: 68px;
+  /*margin-bottom: 68px;*/
   border-bottom: 4px solid #000;
   overflow: hidden;
-  position: relative fixed;
+  /*position: relative fixed;*/
   display: inline-block;
-  padding: 10px 24px 8px;
+  /*padding: 10px;*/
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  /*font-size: 60px;*/
   background-color: lavender;
   margin-right: 46px;
   cursor: pointer;
-  color: #777;
   border-radius: 15px 15px 0 0;
-  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+  font: 600 13px/50px roboto, "Open Sans", Helvetica, sans-serif;
 }
 
 a:active {
@@ -24,8 +33,42 @@ a:active {
 }
 
 h1 {
-  font: 1000 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+  font: "Open Sans", Helvetica, sans-serif;
   text-align: center;
-  padding: 10px 24px 8px;
-  margin: 0px 0px 68px 185px;
+  /*padding: 1  0px 24px 8px;*/
+  margin: 0px 0px -10px 110px;
+  font-size: 45px;
+}
+
+button {
+  background-color: #FFE4E1;
+  color: #2F4F4F;
+  border-radius: 5px;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.apartment {
+  display: inline-block;
+  left: 35px;
+  margin: 5px;
+  padding: 15px;
+  width: 350px;
+  text-align: center;
+  font: 600 roboto, "Open Sans", Helvetica, sans-serif;
+  border-radius: 5px;
+  position: relative;
+  background: lavender;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 0 auto;
+  color: #2F4F4F;
+  text-decoration: underline;
+}
+
+button:hover {
+  text-decoration: underline;
 }
