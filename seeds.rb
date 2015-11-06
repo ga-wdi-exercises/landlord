@@ -46,9 +46,6 @@ ten5.update(name: "Nicholas")
 # ○ Deletes one of the objects you've created
 ap1.destroy
 
-
-
-
 # This will put us into a state of the pry REPL, in which we've established a connection
 # with the landlord database and have defined the apartment/tenant Classes as
 # ActiveRecord::Base classes.
