@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tenants</title>
+</head>
+<body>
+  <h1>Current Tenants:</h1>
+  <div>
+    <% @tenant.each do |tenant| %>
+      <p>
+        <a href= "tenants/<%= tenant.id%>">
+        <%= tenant.name %></a>
+      <p>
+    <% end %>
+    <a href="/tenants/new"><button>Enter New Tenant</button></a>
+  </div>
+
+</body>
+
+</html>
