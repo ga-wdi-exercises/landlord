@@ -13,7 +13,7 @@ class Apartment
 
   def add_tenant(tenant)
     if @renters.count < @num_beds
-     @renters << tenant
+      @renters << tenant
     else
       puts 'too many renters'
     end

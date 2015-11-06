@@ -1,4 +1,4 @@
 class Tenant
-@name = name
-@age = age
-@gender = gender
+  @name = name
+  @age = age
+  @gender = gender
