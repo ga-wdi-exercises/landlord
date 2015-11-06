@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DC RnR Apt Guide</title>
+  <link rel='stylesheet' type='text/css' href='/styles.css'>
+</head>
+<body>
+  <header>
+    <h1>DC Rock and Roll Apartments</h1>
+  </header>
+  <main>
+    <h2>Don't Live with a Drummer (Unless It's Charlie)</h2>
+      <form method="link" action="/apartments">
+        <input type="submit" value="Click to See Apartments - unfinished">
+      </form>
+      <form method="link" action="/tenants">
+        <input type="submit" value="Click to See Tenants">
+      </form>
+
+      <h3>Add a New Tenant</h3>
+
+      <form method="post" action="/tenants">
+      <fieldset>
+        <input type="text" name="new_tenant" placeholder="Tenant Name">
+        <input type="text" name="new_tenant_age" placeholder="Age">
+        <input type="text" name="new_tenant_gender" placeholder="Gender">
+        <input type="submit" value="submit">
+      </fieldset>
+
+
+    <%= yield %>
+
+
+  </main>
+</body>
+</html>
