@@ -12,6 +12,8 @@
   <input type="submit" value="delete me">
 </form>
 
+<button><a href="/apartment/<%= @apartment.id %>/edit">EDIT</a></button>
+
 <h2>Tenants</h2>
 <ul>
   <% @tenants.each do |tenant| %>

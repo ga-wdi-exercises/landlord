@@ -1,0 +1,29 @@
+<form method="post" action="/apartment/<%= @apartment.id %>">
+  <input type="hidden" name="_method" value="put">
+  <fieldset>
+    <label for='apartment-address'>apartment address</label>
+    <input id='apartment-address' type'text' name='address' value="<%= @apartment.address %>" placeholder="apartment address">
+  </fieldset>
+
+  <fieldset>
+    <label for='apartment-monthly_rent'>monthly_rent</label>
+    <input id='apartment-monthly_rent' type'text' name='monthly_rent' value="<%= @apartment.monthly_rent %>" placeholder="monthly_rent">
+  </fieldset>
+
+  <fieldset>
+    <label for='apartment-sqft'>Square Feet</label>
+    <input id='apartment-sqft' type'text' name='sqft' value="<%= @apartment.sqft %>" placeholder="sqft">
+  </fieldset>
+
+  <fieldset>
+    <label for='apartment-num-beds'>Number of Beds</label>
+    <input id='apartment-num-beds' type'text' name='num_beds' value="<%= @apartment.num_beds %>" placeholder="number of beds">
+  </fieldset>
+
+  <fieldset>
+    <label for='apartment-num-baths'>Number of Baths</label>
+    <input id='apartment-num-baths' type'text' name='num_baths' value="<%= @apartment.num_baths %>" placeholder="number of baths">
+  </fieldset>
+
+  <input type="submit">
+</form>
