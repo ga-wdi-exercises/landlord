@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>address</th>
+    <th>monthly rent</th>
+    <th>square feet</th>
+    <th>bedrooms</th>
+    <th>bathrooms</th>
+  </tr>
+  <% @apts.each do |apt| %>
+  <tr>
+    <td><%= apt.address %></td>
+    <td><%= apt.monthly_rent %></td>
+    <td><%= apt.sqft %></td>
+    <td><%= apt.num_beds %></td>
+    <td><%= apt.num_baths %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<!--
+address TEXT,
+monthly_rent INTEGER,
+sqft INTEGER,
+num_beds INTEGER,
+num_baths INTEGER
+ -->
