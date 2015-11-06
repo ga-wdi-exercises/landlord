@@ -1,0 +1,32 @@
+<h2>Listing of <%= @apts.length %> livable Apartments</h2>
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>address</th>
+    <th>monthly rent</th>
+    <th>square feet</th>
+    <th>bedrooms</th>
+    <th>bathrooms</th>
+    <th>tenants</th>
+    <th>id</th>
+  </tr>
+  <% @apts.each do |apt| %>
+  <tr>
+    <td><a href="<%= '/apartments/' + apt.id.to_s + '/edit' %>">Edit</a></td>
+    <td><form method="post" action="<%= '/apartments/' + apt.id.to_s %>">
+        <input type="hidden" name="_method" value="delete">
+        <input class="button-delete" type="submit" value="Delete">
+      </form></td>
+    <td><a href="<%= '/apartments/' + apt.id.to_s %>"><%= apt.address %></a></td>
+    <td><%= apt.monthly_rent %></td>
+    <td><%= apt.sqft %></td>
+    <td><%= apt.num_beds %></td>
+    <td><%= apt.num_baths %></td>
+    <td><%= apt.tenants.length %></td>
+    <td><%= apt.id %></td>
+  </tr>
+<% end %>
+</table>
+<h3>Options</h3>
+<p><a href="/apartment/new">Add a new apartment?</a></p>

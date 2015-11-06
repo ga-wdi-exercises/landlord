@@ -1,0 +1,31 @@
+<h2><%= @apt.address %></h2>
+
+<ul>
+  <li>Monthly Rent: <%= @apt.monthly_rent %></li>
+  <li>Square Feet: <%= @apt.sqft %></li>
+  <li>Bedrooms: <%= @apt.num_beds %></li>
+  <li>Bathrooms: <%= @apt.num_baths %></li>
+  <li>ID: <%= @apt.id %></li>
+</ul>
+
+<h3>Tenants</h3>
+<% if @apt.tenants == nil %>
+<p>No tenants</p>
+<% else %>
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Remove</th>
+    <th>Tenant</th>
+    <th>Age</th>
+    <th>Gender</th>
+  </tr>
+  <% @apt.tenants.each do |tenant| %><tr>
+    <td>Edit</td>
+    <td>Remove</td>
+    <td><a href="<%= '/tenants/' + tenant.id.to_s %>"><%= tenant.name %></a></td>
+    <td><%= tenant.age %></td>
+    <td><%= tenant.gender %></td>
+  </tr><% end %>
+</table>
+<% end %>
