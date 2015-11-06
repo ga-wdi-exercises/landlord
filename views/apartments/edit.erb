@@ -1,0 +1,10 @@
+<h2>Edit Apartment at <%= @apt.address %></h2>
+<form method="post" action="<%= '/apartments/' + @apt.id.to_s  %>">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="address" value="<%= @apt.address %>" />
+  <input type="text" name="monthly_rent" value="<%= @apt.monthly_rent %>" />
+  <input type="text" name="sqft" value="<%= @apt.sqft %>" />
+  <input type="text" name="num_beds" value="<%= @apt.num_beds %>" />
+  <input type="text" name="num_baths" value="<%= @apt.num_baths %>" />
+  <input type="submit" value="Submit" />
+</form>
