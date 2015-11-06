@@ -33,8 +33,9 @@ put '/apartments/:id' do
   @sqft = params[:sqft]
   @num_beds = params[:num_beds]
   @num_baths = params[:num_baths]
+  @apartment = Apartment.find(params[:id])
 
-  @new_apt = Apartment.update(address: @address, monthly_rent: @monthly_rent, sqft: @sqft, num_beds: @num_beds, num_baths: @num_baths)
+  @apartment.update(address: @address, monthly_rent: @monthly_rent, sqft: @sqft, num_beds: @num_beds, num_baths: @num_baths)
 
   redirect '/apartments/' + @new_apt.id.to_s
 end
