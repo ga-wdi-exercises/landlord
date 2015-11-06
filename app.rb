@@ -5,13 +5,18 @@ require "pry" # for debugging
 require 'sinatra'
 require 'sinatra/reloader'
 
-require_relative "db/connection" # require the db connection file that connects us to PSQL, prior to loading models
-require_relative "models/tenant" # require the Student class definition that we defined in the models/student.rb file
-require_relative "models/apartment"
-# require_relative "db/seeds.rb"
+# Connect to DB
+require_relative "db/connection"
 
-#link to view all apartments
-get '/' do
-  "Hey baby"
+# Load specific routes / controllers
+require_relative "controllers/apartments.rb"
+require_relative "controllers/tenants.rb"
+
+# Load models
+require_relative "models/apartment"
+require_relative "models/tenant"
+
+# Home
+get "/" do
   erb :"index"
 end
