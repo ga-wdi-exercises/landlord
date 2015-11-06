@@ -1,13 +1,33 @@
-<!-- Create a new apartment - should I use post?
-Route will show a form for adding a new apartment
-Form includes address, monthly_rent, sqft, num_beds, num_baths, renters -->
+<h2>Add New Apartment</h2>
+<form action="/apartments" method="post">
 
-<p>Create a new apartment</p>
-<form method="post" action="/apartments">
-  <input type="text" placeholder="address">
-  <input type="text" placeholder="monthly_rent">
-  <input type="text" placeholder="sqft">
-  <input type="text" placeholder="num_beds">
-  <input type="text" placeholder="num_baths">
-  <input type="text" placeholder="renters">
+  <!-- Apartment Address -->
+  <label for="apartment[name]">Apartment Address:</label>
+  <input name="apartment[name]" placeholder="enter address"/>
+
+  <!-- Apartment Monthly Rent -->
+  <label for="apartment[monthly_rent]">Monthly Rent:</label>
+  <input name="apartment[monthly_rent]" placeholder="enter monthly rent"/>
+
+  <!-- Apartment Square Footage -->
+  <label for="apartment[sqft]">Square Footage:</label>
+  <input name="apartment[sqft]" placeholder="enter sqft"/>
+
+  <!-- Apartment Number of Beds -->
+  <label for="apartment[num_beds]">Square Footage:</label>
+  <input name="apartment[num_beds]" placeholder="enter # of beds"/>
+
+  <!-- Apartment Number of Baths -->
+  <label for="apartment[num_baths]">Square Footage:</label>
+  <input name="apartment[num_baths]" placeholder="enter # of baths"/>
+
+  <!-- Apartment Renters -->
+  <!-- <label for="apartment[num_baths]">Square Footage:</label> -->
+  <!-- <input name="apartment[num_baths]" placeholder="enter # of baths"/> -->
+
+  <div class="spacing">
+    <button id="submit_new_apartment">Submit</button>
+  </div>
 </form>
+
+<a href="/apartments">← Back to All Apartments</a>

@@ -1,2 +1,26 @@
-<!-- # View a single apartment's details -->
-<p>Apartment 1 information shows here</p>
+
+<!-- Display Apartment Address -->
+<h2><%= @apartment.address %></h2>
+
+<!-- Display Apartment Rent -->
+<p><%= @apartment.monthly_rent %></p>
+
+<!-- Display Apartment Sq. Ft. -->
+<p><%= @apartment.sqft %></p>
+
+<!-- Display Apartment Num. Beds -->
+<p><%= @apartment.num_beds %></p>
+
+<!-- Display Apartment Num. Baths -->
+<p><%= @apartment.num_baths %></p>
+
+
+<a href="/apartments">← Back to All Apartments</a>
+<!-- Edit/Delete This Artist -->
+<div class="spacing">
+  <a href="/apartments/<%= @apartment.id%>/edit">Edit this Apartment</a>
+</div>
+<form method="post" action="/artists/<%= @artist.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete <%=@artist.name %>">
+</form
