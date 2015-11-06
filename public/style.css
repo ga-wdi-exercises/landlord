@@ -1,0 +1,43 @@
+body{
+  font-family:"Helvetica Neue";
+  margin:auto;
+  max-width:40em;
+  padding:1em;
+}
+
+section {
+  position: relative;
+  clear: both;
+}
+
+nav{
+  margin-bottom:2em;
+}
+
+nav a{
+  display:block;
+}
+
+input[type="text"]{
+  display:block;
+  font:inherit;
+  margin-bottom:.5em;
+}
+
+label {
+  font-weight: bold;
+}
+
+label::after {
+  content: ": ";
+}
+
+.apartment img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.button-delete {
+  color: red;
+}

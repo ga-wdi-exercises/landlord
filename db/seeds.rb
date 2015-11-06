@@ -3,11 +3,12 @@ require "pry"
 require "pg"
 require "active_record"
 
-require_relative "db/connection"
-require_relative "models/apartment"
-require_relative "models/tenant"
+require_relative "connection"
+require_relative "../models/apartment"
+require_relative "../models/tenant"
 
-binding.pry
+Apartment.destroy_all
+Tenant.destroy_all
 
 Apartment.create([
   {address: "504 E St NE", monthly_rent: 1100, sqft: 10, num_beds: 2, num_baths: 2},
@@ -16,7 +17,7 @@ Apartment.create([
   ])
 
 Apartment.all[0].tenants.create([
-  {name: "teddy", age: 24, gender: "m"}
+  {name: "teddy", age: 24, gender: "m"},
   {name: "zac", age: 30, gender: "m"}
 ])
 
