@@ -22,3 +22,15 @@ end
 get "/apartments" do
   "Hello World"
 end
+
+get "/apartments" do
+  "Hello World"
+end
+
+get "/new_apt" do
+  "Hello World"
+end
+
+get "/tenants" do
+  "Hello World"
+end
