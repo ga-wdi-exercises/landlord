@@ -46,6 +46,13 @@ a{
   text-align: center;
 }
 
-#main h2{
-  
+.new_apartment{
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+  color:grey;
+  background-color: gold;
+  border: 1px solid grey;
+  width: 100px;
+  font-size: 12px;
 }

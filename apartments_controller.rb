@@ -4,19 +4,12 @@ get '/apartments' do
   erb :"apartments/index"
 end
 
-# view an apartment's details
-get '/apartments/:id' do
-  @apartment = Apartment.find(params[:id])
-  # FOR ADDING TENANTS @tenants = Tenant.where(apartment_id: params[:id])
-  erb :"apartments/show"
-end
-
 # add an apartment
 get '/apartments/new' do
   erb :"apartments/new"
 end
 
-post '/apartments/' do
+post '/apartments/new' do
   @address = params[:address]
   @monthly_rent = params[:monthly_rent]
   @sqft = params[:sqft]
@@ -52,3 +45,11 @@ delete '/apartments/:id' do
   @apartment.destroy
   redirect "/apartments"
 end
+
+# view an apartment's details
+get '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  # FOR ADDING TENANTS @tenants = Tenant.where(apartment_id: params[:id])
+  erb :"apartments/show"
+end
+# Why does this have to go on the bottom for the rest of my code to work? I would otherwise get error "No apartment with id=new", etc.
