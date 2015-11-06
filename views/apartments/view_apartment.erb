@@ -1,0 +1,18 @@
+<h2>Address: <%=@address%></h2>
+<h3>Monthly Rent: $<%=@monthly_rent %></h3>
+<h3>Square feet: <%=@sqft%></h3>
+<h3>Number of beds: <%=@num_beds%></h3>
+<h3>Number of baths: <%=@num_baths%></h3>
+
+<h3>Tenants</h3>
+<% @tenants.each do |tenant| %>
+  <p>
+  <a href ='/tenants/<%=tenant.id%>'><%= tenant.name %></a>
+  </p>
+<% end %>
+
+<h3>Delete this apartment</h3>
+<form method="post" action="/apartments/<%=@id%>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete"/>
+</form>
