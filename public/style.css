@@ -1,0 +1,33 @@
+body{
+  background-color: silver;
+}
+
+header{
+  margin: 0 auto;
+}
+
+h1{
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+
+h2{
+  text-align: center;
+  color: grey;
+  padding: 5px;
+}
+
+a{
+  text-decoration: none;
+}
+
+#main{
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 2px solid firebrick;
+  text-align: center;
+}
