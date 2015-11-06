@@ -1,0 +1,25 @@
+<div class="apartments_index">
+  <table>
+    <tr>
+      <td>ID</td>
+      <td>Address</td>
+      <td>Monthly Rent</td>
+      <td>Square Feet</td>
+      <td>Beds</td>
+      <td>Baths</td>
+      <td>Tenants</td>
+    </tr>
+    <% @apartments_all.each do |apartment| %>
+    <%id = apartment.id%>
+    <tr>
+      <td><a href="/apartments/<%=apartment.id%>"><%=apartment.id%></a></td>
+      <td><%=apartment.address%></a></td>
+      <td><%=apartment.monthly_rent%></a></td>
+      <td><%=apartment.sqft%></a></td>
+      <td><%=apartment.num_beds%></a></td>
+      <td><%=apartment.num_baths%></a></td>
+      <td><a href="/apartments/<%=apartment.id%>/tenants"><%=apartment.tenants.count%></a></td>
+    </tr>
+    <% end %>
+  </ul>
+</div>
