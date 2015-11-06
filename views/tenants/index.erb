@@ -1,0 +1,14 @@
+<h1>Welcome to Tenants</h1>
+
+<p class='subH'>Take a look at tenants:</p>
+<div class='itemGroup'>
+<% @tenants.each do |tenant| %>
+<a href="/tenants/<%= tenant.id %>" >
+  <div class="ten">
+    <p>
+      <%= tenant.name %>
+    </p>
+  </div>
+</a>
+<% end %>
+</div>

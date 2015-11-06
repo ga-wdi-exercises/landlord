@@ -1,0 +1,23 @@
+<h1><%= @apartment.address %></h1>
+<p>
+  Sqft: <%= @apartment.sqft %>
+</p>
+<p>
+  Beds: <%= @apartment.num_beds %>
+</p>
+<p>
+  Baths: <%= @apartment.num_baths %>
+</p>
+<p>
+  Rent: $<%= @apartment.monthly_rent %>
+</p>
+<p>
+  Renters: <%= @apartment.tenants.length %>
+</p>
+<div class="pageLinks">
+  <a href='<%= @id %>/tenants/new'>Apply for tenancy</a>
+  <a href='<%= @id %>/tenants'>View tenants</a>
+  <a href='<%= @id %>/edit'>Edit listing</a>
+  <a href='<%= @id %>/remove'>Remove listing</a>
+  <a href='/apartments'>All listings</a>  
+</div>

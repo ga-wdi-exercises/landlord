@@ -1,0 +1,23 @@
+<h1><%= @apartment.address %> tenant info</h1>
+<table>
+  <tr>
+    <th>Name</th><th>Gender</th><th>Age</th>
+  </tr>
+<% @tenants.each do |tenant| %>
+<tr>
+  <td>
+    <%= tenant.name %>
+  </td>
+  <td>
+    <%= tenant.gender %>
+  </td>
+  <td>
+    <%= tenant.age %>
+  </td>
+</tr>
+<% end %>
+</table>
+
+<div class="pageLinks">
+  <a href='tenants/new'>Apply for tenancy</a>
+</div>

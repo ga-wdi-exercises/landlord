@@ -1,0 +1,20 @@
+<h1><%= @tenant.name %></h1>
+<p>
+  Gender: <%= @tenant.gender %>
+</p>
+<p>
+  Age: <%= @tenant.age %>
+</p>
+<p>Address:
+<% if @tenant.apartment
+  address = "<a href='/apartments/#{@tenant.apartment.id}'>#{@tenant.apartment.address}</a>"
+else
+  address = "homeless"
+end  %>
+  <%= address %>
+</p>
+
+<div class="pageLinks">
+  <a href='/tenants'>All tenants</a>
+  <a href="/tenants/<%= @tenant.id %>/remove">Evict</a>
+</div>

@@ -1,0 +1,17 @@
+<h1>Welcome to Apartments</h1>
+
+<p class='subH'>Take a look at my apartments:</p>
+<div class='itemGroup'>
+<% @apartments.each do |apartment| %>
+<a href="/apartments/<%= apartment.id %>" >
+  <div class="apt">
+    <p>
+      <%= apartment.address %>
+    </p>
+  </div>
+</a>
+<% end %>
+</div>
+<div class="pageLinks">
+  <a href='apartments/new'>Add an Apartment</a>
+</div>

@@ -1,0 +1,6 @@
+<h1>Are you sure you want to delete <%= @apartment.address %> from our records?</h1>
+
+<form action="/apartments/<%= @id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Remove</button>
+</form>
