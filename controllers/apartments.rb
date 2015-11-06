@@ -15,6 +15,13 @@ get '/apartments/:apartment_id' do
   erb :'apartments/apartment'
 end
 
+delete '/apartments/:id' do
+  # delete an existing artist
+  id = params[:id].to_i
+  Apartment.find_by(id: id).destroy
+  redirect '/apartments'
+end
+
 get '/apartment/new' do
   # add an apartment, showing a form to add a new apartment and getting input
   # from user per schema
