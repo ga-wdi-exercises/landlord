@@ -1,8 +1,6 @@
-require "pry"
-
 class Tenant < ActiveRecord::Base
   belongs_to :apartment
-  attr_reader :name, :age, :gender
+  # attr_reader :name, :age, :gender
 
   # def initialize name, age, gender
   #   @name = name
@@ -12,7 +10,3 @@ class Tenant < ActiveRecord::Base
 end
 
 # bob = Tenant.new 'bob', 12, 'female'
-
-binding.pry
-
-puts "ejfsfkspf"

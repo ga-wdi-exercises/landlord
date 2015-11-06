@@ -1,9 +1,8 @@
 require_relative "../models/tenant"
-require "pry"
 
 class Apartment < ActiveRecord::Base
   has_many :tenants
-  attr_reader :address,:monthly_rent,:sqft,:num_beds,:num_baths,:num_baths,:renters
+  # attr_reader :address,:monthly_rent,:sqft,:num_beds,:num_baths,:num_baths,:renters
 
   # def initialize
   #   @renters = []
@@ -22,7 +21,3 @@ end
 # aprt.add_tenant 'bob',23,'male'
 
 # puts aprt
-
-binding.pry
-
-puts "dlfhifsdf"

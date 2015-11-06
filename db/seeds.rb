@@ -7,6 +7,11 @@ require_relative "connection"
 require_relative "../models/apartment"
 require_relative "../models/tenant"
 
+# 
+#
+# ALTER SEQUENCE songs_id_seq RESTART WITH 1;
+# ALTER SEQUENCE artists_id_seq RESTART WITH 1;
+
 Apartment.destroy_all
 Tenant.destroy_all
 
