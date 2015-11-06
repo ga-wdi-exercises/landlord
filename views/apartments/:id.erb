@@ -1,0 +1,24 @@
+<h2>
+  Apartment Complex: <%= @apartment.address %>
+  <a href="/apartments/<%= @apartment.id %>/edit">(edit)</a></h2>
+<uL>
+<p>
+	<h3>Address</h3>
+	<%= @apartment.address %>
+</p>
+<p>
+	<h3>Monthly Rent</h3>
+	<%= @apartment.monthly_rent %>
+</p>
+
+<p>
+	<h3>Square Feet</h3>
+	<%= @apartment.sqft %>
+</p>
+
+<p>
+	<h3>Number of Beds & Number of Baths</h3>
+	<p>Beds: <%= @apartment.num_beds %><p>
+	<p>Baths: <%= @apartment.num_baths %></p>
+</p>
+</ul>
