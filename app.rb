@@ -18,3 +18,7 @@ require_relative "models/tenant"
 get '/' do
   erb :home
 end
+
+get "/apartments" do
+  "Hello World"
+end

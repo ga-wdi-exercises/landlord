@@ -2,11 +2,9 @@ ul {
   position: relative fixed;
   display: inline-flex;
   text-transform: uppercase;
-  /*margin: auto;*/
-
 }
 
-li {
+a {
   margin-bottom: 68px;
   border-bottom: 4px solid #000;
   overflow: hidden;
@@ -21,7 +19,7 @@ li {
   font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
 }
 
-li:active {
+a:active {
   background-color: lavender;
 }
 
