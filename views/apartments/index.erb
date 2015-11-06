@@ -1,0 +1,24 @@
+<h2>All Apartments</h2>
+
+<!-- List of Apartments -->
+<ul>
+  <% @apartments.each do |apartment| %>
+  <li>
+    <a href="/apartments/<%= apartment.id %>">
+      <%= apartment.address %></a>
+  </li>
+  <% end %>
+</ul>
+
+
+<hr />
+
+<!-- Create a New Apartment -->
+<div class="spacing">
+  <a href="/apartments/new">Add a New Apartment</a>
+</div>
+
+<!-- Back to Home -->
+<div class="spacing">
+  <a href="/">← Back to Home</a>
+</div>

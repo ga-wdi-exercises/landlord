@@ -1,0 +1,78 @@
+body {
+  margin: 0 auto;
+  background: url("http://gimme-shelter.com/wp-content/uploads/2012/01/What-is-a-Landlord_-Real-Estate-Term.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+header, footer {
+  padding: 25px;
+}
+.content {
+  margin: 0 auto;
+  padding: 100px;
+  background-color: RGBA(33, 33, 33, .9);
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+  max-width: 500px;
+  border-radius: 20px;
+}
+.spacing {
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 100px;
+  text-align: left;
+}
+
+/* unvisited link, visted link*/
+a, a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* mouse over link, active link */
+a:hover, a:active {
+  color: #fff;
+  text-decoration: underline;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+label, input {
+    /* in order to define widths */
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+label {
+    width: 30%;
+    /* positions the label text beside the input */
+    text-align: right;
+    margin-left: 10px;
+}
+
+label + input {
+    width: 33%;
+    /* large margin-right to force the next element to the new-line
+       and margin-left to create a gutter between the label and input */
+    margin: 0 0 0 5%;
+}
+
+button {
+  margin: 0 auto;
+  width: 75%;
+  height: 10%;
+  text-align: center;
+  font-size: 1.5em;
+}
