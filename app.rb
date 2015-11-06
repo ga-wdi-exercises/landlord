@@ -1,26 +1,12 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require "bundler/setup"
+require 'pg'
+require 'active_record'
+require 'pry'
 
-get '/' do
-  erb :index
-end
 
-get '/apartments' do
-  erb :apartments/index
-end
-
-get '/apartments/new' do
-  erb :apartments/new
-end
-
-get '/apartments/:id' do
-  erb :apartments/show
-end
-
-get '/apartments/:id/tenants' do
-  erb :tenants/index
-end
-
-get '/apartments/:id/tenants/new' do
-  erb :tenants/new
-end
+require_relative "db/connection"
+require_relative "models/apartment"
+require_relative "models/tenant"
+require_relative "controllers/apartments_controller.rb"
