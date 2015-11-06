@@ -10,7 +10,7 @@ require_relative "db/connection"
 
 # Load specific routes / controllers
 require_relative "controllers/apartments.rb"
-require_relative "controllers/tenants.rb"
+require_relative "controllers/tenant.rb"
 
 # Load models
 require_relative "models/apartment"
