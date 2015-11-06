@@ -11,10 +11,7 @@ require_relative "models/apartment"
 # require_relative "db/seeds.rb"
 
 #link to view all apartments
-get '/apartments' do
-  'All of our <a href = " "> Apartments</a>'
-end
-#view an apartments details
-get 'apartments/:id' do
-
+get '/' do
+  "Hey baby"
+  erb :"index"
 end
