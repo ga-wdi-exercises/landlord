@@ -88,31 +88,36 @@ tenants=[{id: 1, name: "Maudie Mosciski", age: 90, gender: "Female", apartment_i
 
 
 get '/' do
-  'mia is awesome!'
+  erb :home
 end
 
 get '/apartments' do
   @apartments=apartments
-  erb :apartments
+  erb :index
+end
+
+get '/tenants' do
+  @tenants=tenants
+  erb :index
 end
 
 get '/apartments/new' do
-  erb :apartments_new
+  erb :new
 end
 
 get '/apartments/:id' do
   @id=params[:id].to_i-1
   @apartments=apartments
-  erb :apartments_id
+  erb :id
 end
 
 get '/apartments/:id/tenants' do
   @id=params[:id].to_i-1
   @apartments=apartments
   @tenants=tenants
-  erb :apartments_id_tenants
+  erb :id_tenants
 end
 
 get '/apartments/:id/tenants/new' do
-  erb :apartments_id_tenants_new
+  erb :id_tenants_new
 end
