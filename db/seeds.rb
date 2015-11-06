@@ -35,13 +35,13 @@ daryl = Tenant.create(name: "Daryl Dixon", age: 35, gender: "male")
 michonne = Tenant.create(name: "Michonne Onename", age: 30, gender: "female")
 glenn = Tenant.create(name: "Glenn Rhee", age: 27, gender: "male")
 
-tenant_all = Tenant.all
-tenant_apt = Tenant.where.not(apartment_id:nil)
-kristin = Tenant.find(3)
-apt3 = Apartment.find(3)
-kristin.apartment = apt3
-kristin.save
-kristin = Tenant.find(3)
-kristin.update(name:"Caroline")
-josh = Tenant.find_by(name:"Josh Cohen")
-josh.destroy
+# tenant_all = Tenant.all
+# tenant_apt = Tenant.where.not(apartment_id:nil)
+# kristin = Tenant.find(3)
+# apt3 = Apartment.find(3)
+# kristin.apartment = apt3
+# kristin.save
+# kristin = Tenant.find(3)
+# kristin.update(name:"Caroline")
+# josh = Tenant.find_by(name:"Josh Cohen")
+# josh.destroy

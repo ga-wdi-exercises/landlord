@@ -1,0 +1,20 @@
+<div class="apartmentDetails">
+  Apartment Details
+</div>
+
+<div class="singleApt">
+<div>Address: <%=@apartment.address%></div>
+<div>Monthly Rent: $<%=@apartment.monthly_rent%></div>
+<div>Square Footage: <%=@apartment.sqft%></div>
+<div>Number of Beds: <%=@apartment.num_beds%></div>
+<div>Number of Baths: <%=@apartment.num_baths%></div>
+<a href="/apartments/<%=@apartment.id%>/edit">Edit</a>
+</div>
+
+<div class="tenantWithApt">
+<% @tenants.each do |tenant| %>
+<li>
+  <a href="/tenants/<%=tenant.id%>" name="<%=tenant.id%>"><%= tenant.name %>: <%= tenant.gender %></a>
+</li>
+<% end %>
+</div>
