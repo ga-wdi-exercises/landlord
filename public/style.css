@@ -51,6 +51,14 @@ nav a {
   letter-spacing: 1px;
 }
 
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: purple;
+}
+
 a:hover {
   color: red;
 }
@@ -69,4 +77,15 @@ h2.welcome {
   padding-bottom: 50px;
   margin: 0 auto;
   width: 75%;
+}
+
+/*Apartments*/
+
+ul.apartments_index li {
+  display: block;
+}
+
+ul.apartment_detail li {
+  display: block;
+  margin: 5px 0px 0px 5px;
 }

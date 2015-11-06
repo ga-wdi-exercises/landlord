@@ -7,6 +7,7 @@ require "pry"
 require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
+require_relative "Controllers/apartments_controller.rb"
 
 get "/" do
   erb :home
@@ -14,9 +15,7 @@ end
 
 # The homepage should list several menu options:
 # List all apartments (a link to GET /apartments)
-get "/apartments" do
-  erb :"apartments/apartments_index"
-end
+
 
 # View an apartment's details(a link to GET /apartments/1)
 get "/apartments/:id" do

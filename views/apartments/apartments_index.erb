@@ -1,1 +1,12 @@
-<h1>Here are all of the apartments!</h1>
+<h3>Here are all of the apartments!</h3>
+
+<ul class = "apartments_index">
+  <% @apartments.each do |apartment| %>
+  <li>
+    Apartment at:
+    <a href='/apartments/<%= apartment.id %>'>
+       <%= apartment.address %>
+    </a>
+  </li>
+  <% end %>
+</ul>

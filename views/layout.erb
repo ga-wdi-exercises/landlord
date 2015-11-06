@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Landlords</title>
   <script src="//use.edgefonts.net/sansita-one;sofia;lancelot;league-gothic;poiret-one.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css"></link>
+  <link rel="stylesheet" type="text/css" href="/style.css"></link>
 </head>
 <body>
   <header>
-    <h1>My Landlord App</h1>
+    <h1>My Landlords App</h1>
   </header>
   <nav>
     <ul>
@@ -16,10 +16,12 @@
         <a href="/apartments">View All Apartments</a>
       </li>
       <li>
-        <a href="/apartments/:id/tenants">View All Tenants</a>
+        <a href="/apartments/tenants">View All Tenants</a>
       </li>
     </ul>
   </nav>
+
   <%= yield %>
+
 </body>
 </html>

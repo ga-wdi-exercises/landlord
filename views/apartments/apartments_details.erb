@@ -1,22 +1,22 @@
-<h1>Here are some details!</h1>
-
-<ul>
+<ul class="apartment_detail">
   <li>
     Address:
+    <%= @apartment.address %>
   </li>
   <li>
-    Monthly_rent
+    Monthly_rent: $
+    <%= @apartment.monthly_rent %>
   </li>
   <li>
     Square Feet:
+    <%= @apartment.sqft %>
   </li>
   <li>
     Number of Bedrooms:
+    <%= @apartment.num_beds %>
   </li>
   <li>
     Number of Baths:
-  </li>
-  <li>
-    Current Renters:
+    <%= @apartment.num_baths %>
   </li>
 </ul>
