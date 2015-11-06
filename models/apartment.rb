@@ -1,7 +1,6 @@
-require "pry"
+require 'pry'
 
 class Apartment < ActiveRecord::Base
-
   has_many :tenants
 
   attr_accessor :address, :monthly_rent, :sqft, :num_beds, :num_baths, :renters
@@ -18,7 +17,7 @@ class Apartment < ActiveRecord::Base
   def add_tenant(new_tenants)
     if renters < num_beds
       # binding.pry
-      #need to use self.method for setter method
+      # need to use self.method for setter method
       self.renters = renters + new_tenants
     end
   end
