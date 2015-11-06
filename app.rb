@@ -17,6 +17,8 @@ require_relative "models/tenant" # require the Tenants class definition that we 
 require_relative "apartments_controller.rb" #aparment routes will go in this file instead of app.rb
 require_relative "tenants_controller.rb" #tenant routes go here
 
+binding.pry
+
 get '/' do
   erb :index
 end
