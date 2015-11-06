@@ -4,8 +4,10 @@ get "/tenants" do
 end
 patch "/tenants/:id/edit" do
   edit_params = params.except("_method", "id", "splat", "captures")
-  edit_params[:apartment_id] = Apartment.find_by(address: edit_params[:apartment_id]).id
   edit_params.delete_if {|key, value| value == ""}
+  if edit_params[:apartment_id]
+    edit_params[:apartment_id] = Apartment.find_by(address: edit_params[:apartment_id]).id
+  end
   Tenant.find(params[:id]).update(edit_params)
   redirect "/tenants/#{params[:id]}"
 end
