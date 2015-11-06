@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<% @apartments.each do |apartment| %>
+  <div class=apartment id=apartment.id>
+    <h2><%=apartment[:address]%></h2>
+    <p>Rent: $<%=apartment[:monthly_rent]%></p>
+    <p>Square Feet: <%=apartment[:sqft]%></p>
+    <p>Number of Beds: <%=apartment[:num_beds]%></p>
+    <p>Number of Baths: <%=apartment[:num_baths]%></p>
+    <button href='<%= apartment.id %>'>View Profile </button>
+  </div>
+<%end%>
