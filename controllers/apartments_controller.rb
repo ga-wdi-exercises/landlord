@@ -17,6 +17,19 @@ get "/apartments/new" do
   erb :"/apartments/new"
 end
 
+get "/apartments/new_tenant/:id" do
+  @apt = Apartment.find(params[:id])
+  erb :"/apartments/new_tenant"
+end
+
+post "/apartments/:id" do
+  @apt = Apartment.find(params[:id])
+  @tenants = Apartment.find(params[:id]).tenants
+  @new_tenants = Tenant.create(name: params[:name], age: params[:age], gender: params[:gender]);
+  @tenants << @new_tenants
+  redirect "/apartments/#{@apt.id}"
+end
+
 
 get "/apartments/:id" do
   @apartment = Apartment.find(params[:id])
