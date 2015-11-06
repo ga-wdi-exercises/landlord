@@ -1,0 +1,19 @@
+<table style="width=100%">
+  <tr>
+    <td>id</td>
+    <td>address</td>
+    <td>monthly_rent</td>
+    <td>sqft</td>
+    <td>num_beds</td>
+    <td>num_baths</td>
+  </tr>
+  <% Apartment.each do %>
+  <tr>
+    <td><%= @id %></td>
+    <td><%= @address %></td>
+    <td><%= @monthly_rent %></td>
+    <td><%= @sqft %></td>
+    <td><%= @num_beds %></td>
+    <td><%= num_baths %></td>
+  </tr>
+</table>

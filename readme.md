@@ -38,7 +38,7 @@ A tenant should have the following attributes:
 - age
 - gender
 
-An apartment should have the following attributes:
+An apartment should have the following '@tributes':
 
 - address (a single string including floor and unit numbers if applicable)
 - monthy_rent
