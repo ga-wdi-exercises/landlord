@@ -1,0 +1,13 @@
+<div id = "main">
+
+  <h2><%= @apartment.address %></h2>
+
+  <p><strong>Monthly Rent: </strong><%= @apartment.monthly_rent %> </p>
+  <p><strong>Square Footage: </strong><%= @apartment.sqft %></p>
+  <p><strong>Number of Beds: </strong><%= @apartment.num_beds %></p>
+  <p><strong>Number of Bathrooms: </strong><%= @apartment.num_baths %></p>
+
+  <a href="/apartments/<%= @apartment.id %>/edit"><div class = "edit_apartment">Edit / Delete
+</div></a>
+
+</div>

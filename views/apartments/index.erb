@@ -1,0 +1,13 @@
+<div id="main">
+  <h2>All Apartments</h2>
+
+  <div class = "apartments">
+    <% @apartments.each do |apartment| %>
+      <p><a href="/apartments/<%= apartment.id%>"><%= apartment.address %></a></p>
+    <% end %>
+  </div>
+
+  <a href="/apartments/new"><div class = "new_apartment">Add new apartment
+  </div></a>
+
+</div>
