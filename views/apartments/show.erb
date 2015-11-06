@@ -1,0 +1,19 @@
+<!-- Show all apt info here, and link to tenants -->
+<h1>Apartment at <%=@apt.address%></h1>
+<ul>
+  <li><p>Monthly Rent: <%=@apt.monthly_rent %> </p></li>
+  <li><p>Square Feet: <%=@apt.sqft %> </p></li>
+  <li><p>Number of Beds: <%=@apt.num_beds %> </p></li>
+  <li><p>Number of Baths: <%=@apt.num_baths %> </p></li>
+</ul>
+
+<ul>
+  <li><a href='<%=@apt_id%>/tenants'>List Tenants</a></li>
+  <li><a href='<%=@apt_id%>/edit'>Edit Apartment Details</a></li>
+  <li>
+    <form method="post" action="/apartments/<%=@apt_id%>">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+    </form>
+  </li>
+</ul>

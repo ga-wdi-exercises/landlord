@@ -1,0 +1,17 @@
+<!-- Show tenants only a specific address  -->
+<h1>All Tenants At <%=@apt.address%></h1>
+
+<ul>
+  <% @tenant_list.each do |tenant|%>
+    <li><a href= '/tenants/<%=tenant.id%>'><%=tenant.name%></a></li>
+  <%end%>
+</ul>
+
+<h2>Add a New Tenant</h2>
+<form method="post" action="/apartments/<%=@apt.id%>/tenants">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="gender" placeholder="Gender">
+  <input type="text" name="age" placeholder="Age">
+  <input type="submit">
+</form>

@@ -1,0 +1,11 @@
+<!-- Lists EVERY tenant -->
+<h1>All Tenants</h1>
+
+<ul>
+  <% @tenant_list.each do | tenant | %>
+
+    <li><a href="/tenants/<%=tenant.id%>"><%=tenant.name%></a></li>
+
+  <%end%>
+
+</ul>
