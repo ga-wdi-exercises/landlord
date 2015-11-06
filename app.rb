@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require 'active_record'
 # require 'haml'
 require 'pry'
 

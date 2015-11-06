@@ -1,3 +1,4 @@
+<h2>Listing of <%= @apts.length %> livable Apartments</h2>
 <table>
   <tr>
     <th>address</th>
@@ -5,6 +6,7 @@
     <th>square feet</th>
     <th>bedrooms</th>
     <th>bathrooms</th>
+    <th>tenants</th>
     <th>id</th>
   </tr>
   <% @apts.each do |apt| %>
@@ -14,16 +16,8 @@
     <td><%= apt.sqft %></td>
     <td><%= apt.num_beds %></td>
     <td><%= apt.num_baths %></td>
+    <td><%= apt.tenants.length %></td>
     <td><%= apt.id %></td>
   </tr>
 <% end %>
 </table>
-
-
-<!--
-address TEXT,
-monthly_rent INTEGER,
-sqft INTEGER,
-num_beds INTEGER,
-num_baths INTEGER
- -->

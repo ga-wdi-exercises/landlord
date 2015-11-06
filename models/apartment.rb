@@ -1,5 +1,5 @@
 class Apartment < ActiveRecord::Base
-  has_many :tenants, dependent: :destroy
+  has_many :tenants #, dependent: :destroy
 
   # attr_accessor :address, :monthly_rent, :sqft, :num_beds, :num_baths
   # attr_reader :renters # my inclination is to not make this settable b/c we have an explicit set function
