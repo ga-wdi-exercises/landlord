@@ -1,31 +1,39 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require "bundler/setup"
+require "pg"
+require "active_record"
+require "pry"
+require_relative "db/connection"
+require_relative "models/apartment"
+require_relative "models/tenant"
 
 get "/" do
-  erb :index
+  erb :home
 end
 
 # The homepage should list several menu options:
 # List all apartments (a link to GET /apartments)
 get "/apartments" do
-  erb :apartments_index
+  erb :"apartments/apartments_index"
 end
 
 # View an apartment's details(a link to GET /apartments/1)
-get "/apartments/1" do
-  erb :apartments_details
+get "/apartments/:id" do
+  erb :"apartments/apartments_details"
 end
+
 # Add an apartment(a link to GET /apartments/new)
 get "/apartments/new" do
-  erb :apartments_new
+  erb :"apartments/apartments_new"
 end
 
 # List tenants (a link to GET /apartments/1/tenants)
-get "/apartments/1/tenants" do
-  erb :apartments_tenants
+get "/apartments/:id/tenants" do
+  erb :"tenants/apartments_tenants"
 end
 
-get "/apartments/1/tenants/new" do
+get "/apartments/:id/tenants/new" do
   erb :apartments_tenants_new
 end
 # The route GET /apartments should list all apartments
