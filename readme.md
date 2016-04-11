@@ -11,11 +11,11 @@ Fork/clone this repo. Look at due dates section to figure out which parts you mu
 ### Wednesday
 
 - [Schema & SQL](#schema--sql)
-- Active Record - [Active Record](#active-record)
+- [Active Record](#active-record)
 
 ### Friday
 
-- Sinatra REST - [Sinatra Views and Templates](#sinatra-views-and-templates)
+- [Sinatra Views and Templates](#sinatra-views-and-templates)
 - [Sinatra DB](#sinatra--db).
 
 Ideally, you should complete the portion you haven't completed yet before starting 
