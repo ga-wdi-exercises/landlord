@@ -7,49 +7,18 @@ You are a landlord in need of an app that will track your apartments and tenants
 Fork/clone this repo. Look at due dates section to figure out which parts you must do by when.
 
 ## Due Dates
-The due dates for this week will be the same as usual. Wednesday at 9:00 and Friday at 9:00. Both deliverables will be PR's against this repo. Note.. there's no starter code!
-
-> After the dash is the header for the portion of this readme that is required to be accomplished. Before the dash is which classes have which portions of this assignment.
 
 ### Wednesday
 
-- All classes - [Ruby Classes](#ruby-classes)
-- All classes - [Schema & SQL](#schema--sql)
+- [Schema & SQL](#schema--sql)
 - Active Record - [Active Record](#active-record)
-- Sinatra REST - [Sinatra Views and Templates](#sinatra-views-and-templates)
 
 ### Friday
-Ideally, you should complete the portion you haven't completed yet before starting [Friday's Portion](#sinatra--db).
 
-Full Crud Application for Landlord(see last subsection - Sinatra & DB). Ultimately, this application is using concepts covered across each of the subtopics.
+- Sinatra REST - [Sinatra Views and Templates](#sinatra-views-and-templates)
+- [Sinatra DB](#sinatra--db).
 
-## Ruby Classes
-> Note: If you have taken the Active Record class already, be sure to do this part first, but your PR for Wednesday will only contain your Active Record model definitions.
-
-Create a directory named models.
-
-Define classes for Tenant and Apartment.
-
-Create a file for each of the classes.
-
-A tenant should have the following attributes:
-
-- name
-- age
-- gender
-
-An apartment should have the following attributes:
-
-- address (a single string including floor and unit numbers if applicable)
-- monthy_rent
-- sqft
-- num_beds
-- num_baths
-- renters (the tenant or tenants living in the apartment)
-
-And Then...
-
-Define an instance method add_tenant on the apartment class that allows you to add tenants to an existing apartment. Do not add the tenant to the apartment if the number of tenants would exceed the number of beds
+Ideally, you should complete the portion you haven't completed yet before starting 
 
 ## Schema & SQL
 
