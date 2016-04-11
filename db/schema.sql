@@ -25,7 +25,7 @@ CREATE TABLE tenants (
 --   - sqft
 --   - num_beds
 --   - num_baths
-CREATE TABLE songs (
+CREATE TABLE apartments (
   id SERIAL PRIMARY KEY,
   address TEXT,
   monthly_rent INT,
