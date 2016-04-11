@@ -25,41 +25,43 @@ the next one.
 
 ### Create a schema file
 
-* Create a `schema.sql` in the `db` folder. It should contain the following:
-  - Tenants table (with the following attributes):
-    - id
-    - name
-    - age
-    - gender
-    - apartment_id
+Create a `schema.sql` in the `db` folder. It should contain the following:
 
-  - Apartments table (with the following attributes):
-    - id
-    - address
-    - monthly_rent
-    - sqft
-    - num_beds
-    - num_baths
+- Tenants table (with the following attributes):
+  - id
+  - name
+  - age
+  - gender
+  - apartment_id
+
+- Apartments table (with the following attributes):
+  - id
+  - address
+  - monthly_rent
+  - sqft
+  - num_beds
+  - num_baths
 
 ### Create your Database and Load the Schema File
 
-* Create your database
+1. Create your database
   - `$ createdb landlord`
-* Load the schema file
-- `$ psql -d landlord < db/schema.sql`
-* Load the seed file (`db/seeds.sql`)
+2. Load the schema file
+  - `$ psql -d landlord < db/schema.sql`
+3. Load the seed file
   - `$ psql -d landlord < db/seeds.sql`
 
 
-  > Note: If at any point you need a new clean set of data, run the following commands (replacing `database_name` and `name_of_file.sql` with the actual names of the database and files you're using).
+> Note: If at any point you need a new clean set of data, run the following commands (replacing `database_name` and `name_of_file.sql` with the actual names of the database and files you're using).
 
-  ```bash
-  $ dropdb database_name
-  $ createdb database_name
-  $ psql -d database_name < name_of_schema_file.sql
-  $ psql -d database_name < name_of_seed_file.sql
-  ```
+```bash
+$ dropdb database_name
+$ createdb database_name
+$ psql -d database_name < name_of_schema_file.sql
+$ psql -d database_name < name_of_seed_file.sql
+```
 
+![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
 Make a commit before you move on!
 
 ## Active Record Exercises
@@ -69,6 +71,7 @@ Make a commit before you move on!
 Look in the `ar_exercises` folder. Update the `exercise.rb` file to solve each
 challenge.
 
+![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
 Make a commit before you move on!
 
 ## Command Line Landlord Manager (Using ActiveRecord)
@@ -104,7 +107,7 @@ the_bat_cave = Apartment.create(address: "123 Main St", monthly_rent: 2000, sqft
 me = Tenant.create(name: "Adam", age: 30, gender: "Male", apartment: the_bat_cave)
 ```
 
-# Step 2 - Create a Seeds File
+### Step 2 - Create a Seeds File
 
 Create a `db/seeds.rb` file.
 
@@ -126,6 +129,7 @@ Then, run your seed file from the command line: `ruby db/seeds.rb`
 Uncomment them and re-run `console.rb`. It should run without error and provide
 the expected output (in terms of the numbers of apartments and tenants.)
 
+![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
 Make a commit before you move on!
 
 ### Step 3 - Build out the CLI Interface
@@ -136,6 +140,10 @@ the user to:
 1. See a list of all apartments (include ID#, address, and monthly rent)
 2. See a list of all tenants (include name and age)
 3. See a list of all apartments and their associated tenants (just address and name)
+
+![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
+Make a commit before you move on!
+
 
 ### Bonus
 
