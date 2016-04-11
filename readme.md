@@ -4,7 +4,7 @@
 You are a landlord in need of an app that will track your apartments and tenants.
 
 ## Directions
-Fork/clone this repo. Look at due dates section to figure out which parts you must do by when.
+Fork/clone this repo. Look at due dates section to figure out which parts are due when.
 
 ## Due Dates
 
@@ -18,9 +18,12 @@ Fork/clone this repo. Look at due dates section to figure out which parts you mu
 - [Sinatra Views and Templates](#sinatra-views-and-templates)
 - [Sinatra DB](#sinatra--db).
 
-Ideally, you should complete the portion you haven't completed yet before starting 
+Ideally, you should complete the portion you haven't completed yet before starting
+the next one.
 
 ## Schema & SQL
+
+### Create a schema file
 
 * Create a `schema.sql` in the `db` folder. It should contain the following:
   - Tenants table (with the following attributes):
@@ -38,43 +41,115 @@ Ideally, you should complete the portion you haven't completed yet before starti
     - num_beds
     - num_baths
 
+### Create your Database and Load the Schema File
+
+* Create your database
+  - `$ createdb landlord`
+* Load the schema file
+- `$ psql -d landlord < db/schema.sql`
 * Load the seed file (`db/seeds.sql`)
-* read the comments in `query_exercises.sql` file in the `db` folder. For each one, write a working query to perform the requested action
+  - `$ psql -d landlord < db/seeds.sql`
 
-> Note: If at any point you need a new clean set of data, run the following commands (replacing `database_name` and `name_of_file.sql` with the actual names of the database and files you're using).
 
-```bash
-$ dropdb database_name
-$ createdb database_name
-$ psql -d database_name < name_of_schema_file.sql
-$ psql -d database_name < name_of_seed_file.sql
+  > Note: If at any point you need a new clean set of data, run the following commands (replacing `database_name` and `name_of_file.sql` with the actual names of the database and files you're using).
+
+  ```bash
+  $ dropdb database_name
+  $ createdb database_name
+  $ psql -d database_name < name_of_schema_file.sql
+  $ psql -d database_name < name_of_seed_file.sql
+  ```
+
+Make a commit before you move on!
+
+## Active Record Exercises
+
+### Complete the AR Exercises
+
+Look in the `ar_exercises` folder. Update the `exercise.rb` file to solve each
+challenge.
+
+Make a commit before you move on!
+
+## Command Line Landlord Manager (Using ActiveRecord)
+
+We're going to recreate our command line app, only this time we'll use ActiveRecord
+to store / read our data (instead of hashes and/or plain ruby objects like we did before).
+
+### Step 0 - Define Your Models
+
+Create a `models` folder. Inside that, you should create models for Apartment
+and Tenant. Ensure you set up the correct `has_many` / `belongs_to` associations.
+
+Hint: you can look at the top of `exercise.rb` for code for each model.
+
+### Step 1 - Create a Connection File
+
+Create a `db/connection.rb` file. See the [AR Lesson](https://github.com/ga-wdi-lessons/activerecord-intro#functionality---wdi-i-do---20--105) for an example of what should be in it. Hint: Make sure you update the name of the DB it's connecting to.
+
+I like to put the following lines at the top of my `connection.rb` file, that
+way, I can just load this file elsewhere and it ensures ActiveRecord is loaded:
+
+```ruby
+require "pg" # postgres db library
+require "active_record" # the ORM
+require "pry" # for debugging
 ```
 
-## Active Record
+**VERIFY:** Run the provided `console.rb` and ensure you can run commands like those
+below without any errors
 
-* Create the landlord database and load the schema(you created this in the schema portion) to it.
+```ruby
+the_bat_cave = Apartment.create(address: "123 Main St", monthly_rent: 2000, sqft: 600, num_beds: 2, num_baths: 1)
+me = Tenant.create(name: "Adam", age: 30, gender: "Male", apartment: the_bat_cave)
+```
 
-* Connect to the database with ruby
+# Step 2 - Create a Seeds File
 
-* Define AR classes /w associations in the `models` folder for:
-  - Tenant
-  - Apartment
+Create a `db/seeds.rb` file.
 
-* Create a `seeds.rb` file in the `db` directory that:
-  - Creates at least 3 instances of the apartment class
-  - Creates at least 9 instances of the Tenant class. At least 5 should belong to an apartment
-  - queries for all instances of the Tenant class and stores it in a variable of your choice
-  - queries for all instances of the Tenant class that belong to one of the Apartments you created and stores it in a variable of your choosing.
-  - Updates attributes using attribute helper methods for one of the objects you've created
-  - Saves an object that you updated using attribute helpers to the Database
-  - Updates an object using the update methods
-  - Deletes one of the objects you've created
+At the very top, ensure your seed file loads the necessary files using `require_relative`:
+* the connection file `db/connection`
+* the 2 model files
 
-### bonus
-- Create a commandline application that utilizes what you know about AR in order to create new apartments and people.
+Below that, add these two lines, to ensure running the seed script clears your DB first.
+```ruby
+Tenant.destroy_all
+Apartment.destroy_all
+```
 
-### mega bonus
+Lastly, copy the code you wrote in `exercise.rb` that *JUST* creates ~9 tenants and ~3 apartments.
+
+Then, run your seed file from the command line: `ruby db/seeds.rb`
+
+**Verify**: Go look at the provided `console.rb`. See the commented out lines?
+Uncomment them and re-run `console.rb`. It should run without error and provide
+the expected output (in terms of the numbers of apartments and tenants.)
+
+Make a commit before you move on!
+
+### Step 3 - Build out the CLI Interface
+
+Build out a simple command line interface that provides a menu prompt and allows
+the user to:
+
+1. See a list of all apartments (include ID#, address, and monthly rent)
+2. See a list of all tenants (include name and age)
+3. See a list of all apartments and their associated tenants (just address and name)
+
+### Bonus
+
 - extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
+
+
+
+
+
+
+# STOP HERE FOR NOW!
+
+
+
 
 
 ## Sinatra Views and Templates
