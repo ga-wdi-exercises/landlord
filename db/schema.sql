@@ -9,9 +9,9 @@ DROP TABLE IF EXISTS apartments;
 --   - age
 --   - gender
 --   - apartment_id
-
+--  the SERIAL PRIMARY KEY gets automatically assigned when .save is done
 CREATE TABLE tenants (
-  id SERIAL PRIMARY KEY,  # <- this gets automatically assigned when .save is done
+  id SERIAL PRIMARY KEY,
   name TEXT,
   age INT,
   gender TEXT,
