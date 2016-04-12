@@ -33,3 +33,9 @@ CREATE TABLE apartments (
   num_beds INT,
   num_baths INT
 );
+-- 
+-- Note: If at any point you need a new clean set of data, run the following commands (replacing database_name and name_of_file.sql with the actual names of the database and files you're using).
+-- $ dropdb database_name
+-- $ createdb database_name
+-- $ psql -d database_name < name_of_schema_file.sql
+-- $ psql -d database_name < name_of_seed_file.sql

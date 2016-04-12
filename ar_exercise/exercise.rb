@@ -1,4 +1,4 @@
-### NOTE: Make sure you've loaded the seeds.sql file into your DB before starting
+### note: Make sure you've loaded the seeds.sql file into your DB before starting
 ### this exercise
 
 require "pg" # postgres db library
@@ -19,7 +19,7 @@ class Apartment < ActiveRecord::Base
 end
 
 ################################################
-#### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
+#### note: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
 
 
