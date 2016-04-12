@@ -57,10 +57,10 @@ end
 # # all_apartments.each {|apartment| puts apartment.address + ' - ' + apartment.monthly_rent.to_s}
 #
 # # Iterate over each apartment, for each apartment, display its address and all of it's tenants
-# # all_apartments.each do |apartment|
-# #   puts apartment.address
-# #   apartment.tenants.each{|tenant| puts "  #{tenant.name}   Age: #{tenant.age}   Gender: #{tenant.gender}"}
-# # end
+# all_apartments.each do |apartment|
+#   puts apartment.address
+#   apartment.tenants.each{|tenant| puts "  #{tenant.name}   Age: #{tenant.age}   Gender: #{tenant.gender}"}
+# end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -113,7 +113,7 @@ end
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
-puts Tenant.all.length
-youngun_tenants = Tenant.where("age < ?", 30)
-youngun_tenants.each {|youngun| youngun.destroy; puts "noooo"}
-puts Tenant.all.length
+# puts Tenant.all.length
+# youngun_tenants = Tenant.where("age < ?", 30)
+# youngun_tenants.each {|youngun| youngun.destroy; puts "noooo"}
+# puts Tenant.all.length
