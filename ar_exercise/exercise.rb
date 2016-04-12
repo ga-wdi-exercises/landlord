@@ -50,6 +50,9 @@ damien_tenants = Tenant.all.where(apartment: damien_corners)
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+all_tenants.each do |tenant|
+  puts tenant
+end
 # Iterate over each apartment, for each apartment, display it's address and rent price
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 
@@ -67,12 +70,12 @@ damien_tenants = Tenant.all.where(apartment: damien_corners)
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
 
-# Rennovation!
+# Renovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
 
 # Rent Adjustment!
-# Update the same apartment that you just 'rennovated'. Increase it's rent by $400
+# Update the same apartment that you just 'renovated'. Increase its rent by $400
 # to reflect the new bedroom
 
 # Millenial Eviction!
