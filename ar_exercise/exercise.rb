@@ -1,6 +1,8 @@
 ### NOTE: Make sure you've loaded the seeds.sql file into your DB before starting
 ### this exercise
 
+# DO EXERCISES IN PRY!!!
+
 require "pg" # postgres db library
 require "active_record" # the ORM
 require "pry" # for debugging
@@ -22,6 +24,7 @@ end
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
 
+# binding.pray
 
 ################################################
 # FINDING / SELECTING
@@ -69,3 +72,5 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+binding.pry
