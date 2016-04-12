@@ -34,10 +34,19 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.first
+
 # get all tenants older than 65
+retirees = Tenant.where("age > '65'")
+
 # get all apartments whose price is greater than $2300
+luxury = Apartment.where("monthly_rent > '2300'")
+
 # get the apartment with the address "6005 Damien Corners"
+damien_corners = Apartment.find_by(address: "6005 Damien Corners")
+
 # get all tenants in that apartment
+damien_tenants = Tenant.all.where(apartment: damien_corners)
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
@@ -69,3 +78,4 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+binding.pry
