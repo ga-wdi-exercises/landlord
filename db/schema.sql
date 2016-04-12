@@ -7,7 +7,7 @@ CREATE TABLE tenants (
   age INT NOT NULL,
   gender TEXT NOT NULL,
   apartment_id INT
-)
+);
 
 CREATE TABLE apartments (
   id SERIAL PRIMARY KEY,
