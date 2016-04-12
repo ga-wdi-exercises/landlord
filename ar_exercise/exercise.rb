@@ -69,9 +69,9 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-simpsons_house = Apartment.create(address: "742 Evergreen Terrace", montly_rent: 2400, sqft: 2000, num_beds: 4, num_baths: 2)
-flanders_house = Apartment.create(address: "744ish Evergreen Terrace", montly_rent: 2600, sqft: 2000, num_beds: 4, num_baths: 2)
-burns_manor = Apartment.create(address: "1000 Mammon Lane", montly_rent: 10000, sqft: 12000, num_beds: 10, num_baths: 6)
+simpsons_house = Apartment.create(address: "742 Evergreen Terrace", monthly_rent: 2400, sqft: 2000, num_beds: 4, num_baths: 2)
+flanders_house = Apartment.create(address: "744ish Evergreen Terrace", monthly_rent: 2600, sqft: 2000, num_beds: 4, num_baths: 2)
+burns_manor = Apartment.create(address: "1000 Mammon Lane", monthly_rent: 10000, sqft: 12000, num_beds: 10, num_baths: 6)
 
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
