@@ -93,8 +93,7 @@ Tenant.create(name: "Billy Pilgrim", age: -1, gender: "Male", apartment_id: 21)
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
-kristiiinnnn_omg = Tenant.all.find_by(name: "Kristin Wisoky")
-binding.pry
+kristiiinnnn_omg = Tenant.find_by(name: "Kristin Wisoky")
 # kristiiinnnn_omg.age = kristiiinnnn_omg.age + 1
 # kristiiinnnn_omg.save
 # Rennovation!
@@ -111,7 +110,6 @@ renno_omg.monthly_rent += 400
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 negative_fantasy_transferrence_objects = all_tenants.where("age < 30")
-binding.pry
 # Delete their records from the DB
 negative_fantasy_transferrence_objects.each do |end_loser|
   end_loser.destroy
