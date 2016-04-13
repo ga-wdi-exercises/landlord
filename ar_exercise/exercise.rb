@@ -95,6 +95,9 @@ debbie = Tenant.create(name: "Debbie Dallas", age: 30, gender: "Female", apartme
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
+# This doesn't work:
+# Tenant.find_by(name: "Kristin Wisoky").update(age: age + 1)
+# Neither does .update(age: :age+1) or (age: (age+1)) or (age: age+1) or many others.
 
 # Renovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
