@@ -34,10 +34,15 @@ end
 
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
+# Before running pry, run file through ruby (fil)
+
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+all_tenants = Tenant.first
 # get all tenants older than 65
+all_tenants = Tenant.where("age: > ?" "65")
+
 # get all apartments whose price is greater than $2300
 # get the apartment with the address "6005 Damien Corners"
 # get all tenants in that apartment
@@ -54,7 +59,25 @@ all_tenants = Tenant.all
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+the_bat_cave = Apartment.create(address: "123 Main St", monthly_rent: 2000, sqft: 600, num_beds: 2, num_baths: 1)
+# ID 22
+the_sinatra = Apartment.create(address: "1094 Bergen St", monthly_rent: 1800, sqft: 700, num_beds: 2, num_baths: 1)
+# ID 23
+the_wu_tang = Apartment.create(address: "2970 Flatbush Ave", monthly_rent: 1100, sqft: 650, num_beds: 1.5, num_baths: 1)
+# ID 24
+the_jeter = Apartment.create(address: "825 Fulton St", monthly_rent: 1300, sqft: 480, num_beds: 1, num_baths: 1)
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+margaret = Tenant.create(name: "Margaret", age: 24, gender: "Female", apartment_id: 22)
+adam = Tenant.create(name: "Adam", age: 30, gender: "Male", apartment_id: 24)
+benedict = Tenant.create(name: "Benedict", age: 85, gender: "Male", apartment_id: 22)
+georgia = Tenant.create(name: "Georgia", age: 49, gender: "Female", apartment_id: 24)
+olu = Tenant.create(name: "Olu", age: 28, gender: "Male", apartment_id: 24)
+benson = Tenant.create(name: "Benson", age: 41, gender: "Male", apartment_id: 23)
+shukura = Tenant.create(name: "Shukura", age: 29, gender: "Female", apartment_id: 22)
+ross = Tenant.create(name: "Ross", age: 28, gender: "Male", apartment_id: 23)
+cassandra = Tenant.create(name: "Cassandra", age: 26, gender: "Female", apartment_id: 23)
+
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
@@ -72,5 +95,6 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
 
 binding.pry
