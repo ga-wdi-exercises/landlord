@@ -38,6 +38,8 @@ first_tenant = Tenant.first
 
 # get all tenants older than 65
 retirees = Tenant.where("age > '65'")
+# retirees = Tenant.where("age >?" 65)  this maybe works, too.  Or not.
+# retirees = Tenant.where("age > 65" :age)  this maybe works, too, too
 
 # get all apartments whose price is greater than $2300
 luxury = Apartment.where("monthly_rent > '2300'")
@@ -50,11 +52,21 @@ damien_tenants = Tenant.all.where(apartment: damien_corners)
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
-all_tenants.each do |tenant|
-  puts tenant
+
+all_tenants.each do |x|
+  puts x[:name] + " " + x[:id].to_s
 end
+
 # Iterate over each apartment, for each apartment, display it's address and rent price
+Apartment.all.each do |x|
+  puts x[:address] + " " + x[:monthly_rent].to_s
+end
+
+
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+# Apartment.all.each do |x|
+#   puts x[:address] + " " + all_tenants(x[:name])
+# end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -63,7 +75,21 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+the_zone = Apartment.create(address: "2214B 15th St", monthly_rent: 700, sqft: 800, num_beds: 3, num_baths: 1)
+the_loft = Apartment.create(address: "5050 Cuming St", monthly_rent: 3000, sqft: 600, num_beds: 2, num_baths: 1)
+the_box = Apartment.create(address: "1500 Pennsylvania Ave", monthly_rent: 5000, sqft: 200, num_beds: 1, num_baths: 1)
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+mike = Tenant.create(name: "Mike Sindt", age: 30, gender: "Male", apartment: the_zone)
+mark = Tenant.create(name: "Mark Liljehorn", age: 30, gender: "Male", apartment: the_zone)
+leland = Tenant.create(name: "Leland Jordon", age: 30, gender: "Male", apartment: the_zone)
+dave = Tenant.create(name: "Dave Flynn", age: 30, gender: "Male", apartment: the_loft)
+clark = Tenant.create(name: "Clark Wayne", age: 30, gender: "Male", apartment: the_loft)
+kent = Tenant.create(name: "Kent West", age: 30, gender: "Male", apartment: the_loft)
+roger = Tenant.create(name: "Roger Stevenson", age: 30, gender: "Male", apartment: the_box)
+kendra = Tenant.create(name: "Kendra Smythe", age: 30, gender: "Female", apartment: the_box)
+debbie = Tenant.create(name: "Debbie Dallas", age: 30, gender: "Female", apartment: the_box)
+
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
