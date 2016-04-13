@@ -63,6 +63,13 @@ Apartment.all.each do |apartment|
   puts "Address: #{apartment.address}, Rent: $#{apartment.monthly_rent}"
 end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+Apartment.all.each do |apartment|
+  puts apartment.address
+  apartment.tenants.each do |tenant|
+    puts tenant.name
+  end
+  puts "-" * 50
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -104,11 +111,14 @@ apartment = Apartment.where(address:"62897 Verna Walk")
 
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
+verna_walk.update(monthly_rent: 2800)
 # to reflect the new bedroom
 
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
-# Delete their records from the DB
+Tenant.where("age < 30")
 
+# Delete their records from the DB
+Tenant.destroy_all("age < 30")
 
 binding.pry
