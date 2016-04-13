@@ -149,16 +149,9 @@ Make a commit before you move on!
 
 - extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
 
+# DUE FRIDAY:
 
-
-
-
-
-# STOP HERE FOR NOW!
-
-
-
-
+<!--
 
 ## Sinatra Views and Templates
 
@@ -182,7 +175,10 @@ Create the (RESTful) routes and views for the following items:
 - The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
   * Make sure to get the appropriate input from the user to create your person as per schema
 
+-->
+
 ## Sinatra & DB
+
 Example of using instance variables:
 
   In your main `app.rb` file, create instance variables that query the Database using active record.
@@ -197,35 +193,38 @@ Example of using instance variables:
 
 > This will be a full single model CRUD application that connects to a database backend
 
-You should have the following in your application:
-- Have an index route for apartments
+You should complete as many of the following routes (aka features) as you can:
+
+- Have an index route for apartments (`GET /apartments`)
   - should list all of the apartments
   - each apartment should link to its own show page
   - it should have a link to create a new apartment
-- have a show route for each apartment specified by the params value in the URL.
-  - it should list its address, montly rent, square feet, number of bedrooms and number of bathrooms
+- have a show route for each apartment specified by the params value in the URL. (e.g. `GET /apartments/17`)
+  - it should list its address, monthly rent, square feet, number of bedrooms and number of bathrooms
   - it should have a link to delete the apartment
   - it should have a link to edit the apartment
   - it should show all tenants living in the apartment
-- have a new route for apartments
+- have a new route for apartments (`GET /apartments/new`)
   - this will contain the form to create new apartments
   - when this form is submitted it will send a `POST` request to the create route(below) in your database.
-- have a create route for apartments
+- have a create route for apartments (`POST /apartments`)
   - when there's a `POST` request to this route, it will create an apartment in your database
   - upon creation it will redirect to the created apartment's show route.
-- have an edit route for a single apartment
+- have an edit route for a single apartment (e.g. `GET /apartments/15/edit`)
   - this will contain the form to edit an existing apartment
   - when this form is submitted it will send a `PUT` request to and update route(below) in your database
-- have an update route for a single apartment specified by the params value in the URL.
+- have an update route for a single apartment specified by the params value in the URL. (e.g. `PUT /apartments/9`)
   - when there's a `PUT` request to this route, it will update an apartment in the database
   - after updating it should redirect to the updated apartments show route
-- have a delete route for a single apartment specified by the params value in the URL.
+- have a delete route for a single apartment specified by the params value in the URL. (e.g. `DELETE /apartments/4`)
   - when there's a `DELETE` request to this route, it will delete the apartment specified.
 
 ### BONUS
-- implement CRUD functionality for tenants
-- introduce a 3rd model
-- introduce a 4th model ...
 
-### megabonus
-- incorporate user authentication
+Choose one or more of the following features:
+
+- Implement CRUD functionality for tenants
+- Implement a form on the apartment show page, which allows you to add an existing tenant to an apartment
+  - The form should have a dropdown which lets you select an existing tenant by name
+  - HINT: You probably want a new route in your app.rb just for handling submissions of this form
+  - HINT: It should probably use a PUT verb since you're updating a tenant's `apartment_id` property
