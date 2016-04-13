@@ -74,21 +74,21 @@ end
 
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
-# Create 3 new apartments, and save them to the DB
-the_zone = Apartment.create(address: "2214B 15th St", monthly_rent: 700, sqft: 800, num_beds: 3, num_baths: 1)
-the_loft = Apartment.create(address: "5050 Cuming St", monthly_rent: 3000, sqft: 600, num_beds: 2, num_baths: 1)
-the_box = Apartment.create(address: "1500 Pennsylvania Ave", monthly_rent: 5000, sqft: 200, num_beds: 1, num_baths: 1)
-
-# Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-mike = Tenant.create(name: "Mike Sindt", age: 30, gender: "Male", apartment: the_zone)
-mark = Tenant.create(name: "Mark Liljehorn", age: 30, gender: "Male", apartment: the_zone)
-leland = Tenant.create(name: "Leland Jordon", age: 30, gender: "Male", apartment: the_zone)
-dave = Tenant.create(name: "Dave Flynn", age: 30, gender: "Male", apartment: the_loft)
-clark = Tenant.create(name: "Clark Wayne", age: 30, gender: "Male", apartment: the_loft)
-kent = Tenant.create(name: "Kent West", age: 30, gender: "Male", apartment: the_loft)
-roger = Tenant.create(name: "Roger Stevenson", age: 30, gender: "Male", apartment: the_box)
-kendra = Tenant.create(name: "Kendra Smythe", age: 30, gender: "Female", apartment: the_box)
-debbie = Tenant.create(name: "Debbie Dallas", age: 30, gender: "Female", apartment: the_box)
+# # Create 3 new apartments, and save them to the DB
+# the_zone = Apartment.create(address: "2214B 15th St", monthly_rent: 700, sqft: 800, num_beds: 3, num_baths: 1)
+# the_loft = Apartment.create(address: "5050 Cuming St", monthly_rent: 3000, sqft: 600, num_beds: 2, num_baths: 1)
+# the_box = Apartment.create(address: "1500 Pennsylvania Ave", monthly_rent: 5000, sqft: 200, num_beds: 1, num_baths: 1)
+#
+# # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+# mike = Tenant.create(name: "Mike Sindt", age: 30, gender: "Male", apartment: the_zone)
+# mark = Tenant.create(name: "Mark Liljehorn", age: 30, gender: "Male", apartment: the_zone)
+# leland = Tenant.create(name: "Leland Jordon", age: 30, gender: "Male", apartment: the_zone)
+# dave = Tenant.create(name: "Dave Flynn", age: 30, gender: "Male", apartment: the_loft)
+# clark = Tenant.create(name: "Clark Wayne", age: 30, gender: "Male", apartment: the_loft)
+# kent = Tenant.create(name: "Kent West", age: 30, gender: "Male", apartment: the_loft)
+# roger = Tenant.create(name: "Roger Stevenson", age: 30, gender: "Male", apartment: the_box)
+# kendra = Tenant.create(name: "Kendra Smythe", age: 30, gender: "Female", apartment: the_box)
+# debbie = Tenant.create(name: "Debbie Dallas", age: 30, gender: "Female", apartment: the_box)
 
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
@@ -98,14 +98,24 @@ debbie = Tenant.create(name: "Debbie Dallas", age: 30, gender: "Female", apartme
 # This doesn't work:
 # Tenant.find_by(name: "Kristin Wisoky").update(age: age + 1)
 # Neither does .update(age: :age+1) or (age: (age+1)) or (age: age+1) or many others.
+# THIS WORKS:
+# Tenant.find_by(name: "Kristin Wisoky").increment(:age)
 
 # Renovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
+# Apartment.find_by(address: "62897 Verna Walk").increment(:num_beds)
 # Make sure to save the results to your database
+# Tenant.find_by(name: "Kristin Wisoky").save
+# Apartment.find_by(address: "62897 Verna Walk").save
+
 
 # Rent Adjustment!
 # Update the same apartment that you just 'renovated'. Increase its rent by $400
 # to reflect the new bedroom
+apartment = Apartment.find_by(address: "62897 Verna Walk")
+apartment.monthly_rent += 400
+apartment.save
+# .increment(:rent +400)
 
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
