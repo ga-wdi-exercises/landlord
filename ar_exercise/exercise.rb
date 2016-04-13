@@ -88,12 +88,10 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `update`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-apartment1 = Apartment.new(address: "4128 Baldwin Crescent", monthly_rent: 7500, sqft: 2000, num_beds: 3, num_baths: 2.5)
-apartment1.save
-apartment2 = Apartment.new(address: "4055 Joshua Barney", monthly_rent: 5000, sqft: 1500, num_beds: 2, num_baths: 2)
-apartment2.save
-apartment3 = Apartment.new(address: "1211 Abraham Drive", monthly_rent: 10000, sqft: 3500, num_beds: 5, num_baths: 4)
-apartment3.save
+apartment1 = Apartment.create(address: "4128 Baldwin Crescent", monthly_rent: 7500, sqft: 2000, num_beds: 3, num_baths: 2.5)
+apartment2 = Apartment.create(address: "4055 Joshua Barney", monthly_rent: 5000, sqft: 1500, num_beds: 2, num_baths: 2)
+apartment3 = Apartment.create(address: "1211 Abraham Drive", monthly_rent: 10000, sqft: 3500, num_beds: 5, num_baths: 4)
+
 
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 new_tenant1 = Tenant.create(name: "Alexander	Hardy", age: "25", gender: "Male", apartment_id: 7)
