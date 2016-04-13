@@ -89,7 +89,7 @@ binding.pry
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
-verna_walk = Tenant.find_by(address: "62897 Verna Walk")
+  # verna_walk = Tenant.find_by(address: "62897 Verna Walk")
 
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
