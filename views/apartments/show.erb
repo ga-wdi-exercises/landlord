@@ -7,6 +7,12 @@
 <body>
   <center>
   <h1><a href="/apartments">Apartment</a> #<%= @apartment.id%></h1>
+  <p>
+ <a href="/apartments/<%=@apartment.id%>/edit/">Edit Apartment</a>
+  | |
+  <a href="/apartments/<%=@apartment.id%>/delete/">Delete Apartment</a>
+
+  </p>
   <table>
     <tr>
       <td><%= @apartment.id %></td>
