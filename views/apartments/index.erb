@@ -9,19 +9,22 @@
   <h1>Apartments</h1>
   <table style="width:70%">
   <tr>
+
     <td>Address</td>
     <td>Rent</td>
     <td>Square Feet</td>
     <td>Beds</td>
     <td>Bathrooms</td>
+
   </tr>
   <% @apartments.each do |unit|%>
   <tr>
-    <td><%= unit.address%><td>
-    <td><%= unit.monthly_rent%><td>
-    <td><%= unit.sqft%><td>
-    <td><%= unit.num_beds%><td>
-    <td><%= unit.num_baths%><td>
+
+    <td><%= unit.address%></td>
+    <td><%= unit.monthly_rent%></td>
+    <td><%= unit.sqft%></td>
+    <td><%= unit.num_beds%></td>
+    <td><%= unit.num_baths%></td>
 
   </tr>
   <% end %>
