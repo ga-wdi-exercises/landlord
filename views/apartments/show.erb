@@ -22,7 +22,7 @@
   <p>Occupied by:</p>
   <%@tenants.each do |person|%>
   <p>
-    <a href="#">
+    <a href="/tenants/<%=person.id%>">
     <%= person.name %>
     </a>
   </p>
