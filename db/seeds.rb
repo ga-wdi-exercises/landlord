@@ -4,8 +4,8 @@ require "active_record" # the ORM
 require "pry" # for debugging
 
 require_relative "connection"
-require_relative "../models/apartments"
-require_relative "../models/tenants"
+require_relative "../models/apartment"
+require_relative "../models/tenant"
 
 Tenant.destroy_all
 Apartment.destroy_all

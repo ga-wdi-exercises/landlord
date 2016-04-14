@@ -1,11 +1,11 @@
-require "bundler/setup" # require all the gems we'll be using for this app from the Gemfile. Obviates the need for `bundle exec`
-require "pg" # postgres db library
-require "active_record" # the ORM
-require "pry" # for debugging
+require "bundler/setup"
+require "pg"
+require "active_record"
+require "pry"
 
 require_relative "db/connection"
-require_relative "models/apartments"
-require_relative "models/tenants"
+require_relative "models/apartment"
+require_relative "models/tenant"
 
 
 puts "There are #{Apartment.count} apartments"
@@ -43,7 +43,7 @@ elsif track_number == "3"
     puts "Address #{apt.address}"
     puts nil
     apt.tenants.each do |person|
-      puts "Tenant Name: #{person.name}"
+      puts "Tenant: #{person.name}"
     end
   end
 
