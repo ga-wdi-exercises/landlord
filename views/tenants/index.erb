@@ -17,11 +17,15 @@
 
       <% @tenants.each do |person| %>
       <tr>
-
-        <td><%= person.name%></td>
+        <td>
+          <a href="tenants/<%=person.id%>">
+          <%= person.name%>
+          </a>
+        </td>
         <td><%= person.age%></td>
         <td><%= person.gender%></td>
         <td><%= person.apartment_id%></td>
+
         <!-- <td> clownhat = @apartments.find(person.apartment_id).address clownhat </td> -->
       </tr>
       <% end %>
