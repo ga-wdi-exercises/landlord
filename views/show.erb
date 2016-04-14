@@ -5,6 +5,17 @@
   <title>Show</title>
 </head>
 <body>
-  <h1>Show</h1>
+  <h1>Apartment Show</h1>
+  <h2><%= @apartment.address %></h2>
+  <p>Rent: <%= @apartment.monthly_rent %></p>
+  <p>Sqft: <%= @apartment.sqft %></p>
+  <p>Bedrooms: <%= @apartment.num_beds %></p>
+  <p>Bathrooms: <%= @apartment.num_baths %></p>
+  <h2>Tenants</h2>
+  <% @tenants.each do |tenant| %>
+    <li>
+      <%= tenant.name %>
+    </li>
+  <% end %>
 </body>
 </html>

@@ -6,5 +6,12 @@
 </head>
 <body>
   <h1>Index</h1>
+  <% @apartments.each do |apartment| %>
+    <li>
+      <a href="apartments/<%= apartment.id %>"><%= apartment.address %></a>
+    </li>
+  <% end %>
+  <h2>New</h2>
+  <a href="apartments/new">Create apartment</a>
 </body>
 </html>

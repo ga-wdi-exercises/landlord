@@ -1,6 +1,6 @@
 require "pry"
 require "sinatra"
-require "sinatra/reloader"
+# require "sinatra/reloader"
 require "active_record"
 
 require_relative "db/connection"
@@ -12,6 +12,7 @@ get "/" do
 end
 
 get "/apartments" do
+  @apartments = Apartment.all
   erb :index
 end
 
@@ -20,6 +21,8 @@ get "/apartments/new" do
 end
 
 get "/apartments/:id" do
+  @apartment = Apartment.find_by(id: params[:id])
+  @tenants = @apartment.tenants
   erb :show
 end
 
