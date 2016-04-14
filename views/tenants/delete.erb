@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @tenant.name %></title>
+</head>
+<body>
+  <h2>Please confirm:</h2>
+  <form action="/tenants/<%= @tenant.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input name="roommatedelete" type="checkbox"><span>Delete roommates?</span>
+    <input class="button-delete" type="submit" value="Delete tenant?"><br>
+  </form>
+</body>
+</html>

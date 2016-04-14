@@ -52,3 +52,60 @@ get '/apartments/:id' do
   @tenants = @apartment.tenants
   erb :"/apartments/show"
 end
+
+
+get '/tenants/new' do
+  @tenants = Tenant.all
+  @apartments = Apartment.all
+  erb :"/tenants/new"
+end
+
+post '/new_tenant' do
+  Tenant.create(name: params[:name], age: params[:age], gender: params[:gender], apartment_id: params[:apartment_id])
+  redirect "/tenants"
+end
+
+
+get '/tenants/:id/edit' do
+  @tenant = Tenant.find(params[:id])
+  @apartments = Apartment.all
+  erb :"/tenants/edit"
+end
+
+put '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.update(params[:tenant])
+  redirect '/tenants/' + @tenant.id.to_s
+end
+
+
+get '/tenants/:id/delete' do
+  @tenant = Tenant.find(params[:id])
+  @apartment = @tenant.apartment
+  @roommates = @apartment.tenants - [@tenant]
+  erb :"/tenants/delete"
+end
+
+delete '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @apartment = @tenant.apartment
+  @roommates = @apartment.tenants - [@tenant]
+  @tenant.destroy!
+  if params[:roommatedelete]
+    @roommates.each {|roommate| roommate.destroy!}
+  end
+  redirect "/tenants"
+end
+
+
+get '/tenants' do
+  @tenants = Tenant.all
+  erb :"/tenants/index"
+end
+
+get '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @apartment = @tenant.apartment
+  @roommates = @apartment.tenants - [@tenant]
+  erb :"/tenants/show"
+end

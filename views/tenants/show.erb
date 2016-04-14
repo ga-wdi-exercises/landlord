@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @tenant.name%></title>
+</head>
+<body>
+  <h1><%= @tenant.name %></h1>
+  <ul>
+    <li>Age: <%=@tenant.age%></li>
+    <li>Gender: <%=@tenant.gender%></li>
+    <li>Residence: <%=@apartment.address%></li>
+    <li>Current roommates:</li>
+    <ul>
+        <%@roommates.each do |roommate|%>
+        <li><a href="/tenants/<%= roommate.id %>"><%= roommate.name %></a></li>
+        <% end %>
+    </ul>
+  </ul>
+  <a href="/tenants/<%= @tenant.id %>/edit">Edit this tenant</a><br>
+  <a href="/tenants/<%= @tenant.id %>/delete">Delete this tenant</a><br>
+  <a href="/tenants">Back to tenants</a>
+</body>
+</html>
