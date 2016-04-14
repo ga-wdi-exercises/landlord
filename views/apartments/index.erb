@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("button").click(function(){
+        if (this.innerHTML == "Add An Apartment"){
+          $("form").hide(1000);
+          $("#create").toggle('slow','swing');
+        }
+      });
+  });
+
+</script>
+
+<!--Buttons for selection options  -->
+<button type="button">Add An Apartment</button>
+
+
+<!--Create Form Apartment-->
+<form id = "create" action = '/apartments/new' method="post" style="display:none; width:15vw;">
+  <input name='apartmentAddress' placeholder="Add Apartment Address">
+  <input name='apartmentMonthlyRent' placeholder="Add Apartment Rent (optional)">
+  <input name='apartmentSqft' placeholder="Add Apartment Size in sq. ft. (optional)">
+  <input name='apartmentNumBeds' placeholder="Add Apartment Number of Beds (optional)">
+  <input name='apartmentNumBaths' placeholder="Add Apartment Number of Baths (optional)">
+  <input type="submit" value="Add Apartment">
+</form>
+
+
+
+
+<% @apartments.each do |ap| %>
+  <p></p>
+  <p><a href="/apartments/<%=ap.id%>"><%= ap.address %></a></p>
+<% end %>
