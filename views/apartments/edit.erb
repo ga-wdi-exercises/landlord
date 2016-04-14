@@ -25,3 +25,10 @@
 </p>
   <input type="submit" value="Update">
 </form>
+
+<h5>Delete Apartment</h5>
+
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>
