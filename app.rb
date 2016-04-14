@@ -26,7 +26,34 @@ get '/tenants' do
   erb :"tenants/index"
 end
 
+get '/apartments/new' do
+erb :"apartments/new"
+end
+
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   erb :"apartments/show"
+end
+
+get '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/show"
+end
+
+get "/apartments/:id/edit" do
+  @apartment = Apartment.find(params[:id])
+  erb(:"apartments/edit")
+end
+
+put '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.update(params[:apartment])
+  redirect("/apartments/#{@apartment.id}")
+end
+
+post '/add_tenant' do
+  @apartment = Apartment.find(params[:id])
+  @tenant = Tenant.find(params[:tenant_id])
+  @tenant.update(apartment_id: params[:apartment_id])
+  redirect("/apartments/#{@apartment.id}")
 end

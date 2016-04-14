@@ -1,4 +1,4 @@
-<h2> <a href= "/apartments">All Apartments</a></h2>
+<a href='/apartments/<%= @apartment.id %>/edit'>Edit This Apartment</a>
 
 <div class= "apt_listing">
 <p>Address: <%= @apartment.address %></p>
@@ -12,7 +12,19 @@
 <p> Tenants: </p>
 <p>
   <% @apartment.tenants.each do |person| %>
-  <p><%= person.name %> </p>
+  <p><a href="/tenants/<%= person.id %>"><%= person.name %></a> </p>
   <% end %>
 </p>
+
+<p> <%= "*" * 50 %> </p>
+
+<p><b><i>Add an existing tenant to this apartment!</i></b></p>
+<form action="/add_tenant" method="post">
+  <input type="hidden" name="apartment_id" value="<%=@apartment.id%>">
+  <label>Tenant ID:</label>
+  <input type="text" name="tenant_id">
+  <input type="submit">
+</form>
+
+
 </div>
