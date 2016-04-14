@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bob Pizza's Tenants</title>
+</head>
+<body>
+  <center>
+  <h1>Tenants</h1>
+  <table>
+    <tr>
+
+      <td><%= @tenant.name%>, </td>
+      <td>Age: <%= @tenant.age%>, </td>
+      <td><%= @tenant.gender%>, </td>
+      <td>
+        <a href="/apartments/<%= @tenant.apartment_id%>">
+        in Apt. #<%= @tenant.apartment_id%>
+        </a>
+      </td>
+
+      <!-- <td> clownhat = @apartments.find(person.apartment_id).address clownhat </td> -->
+    </tr>
+  </table>
+  </center>
+</body>
+</html>
