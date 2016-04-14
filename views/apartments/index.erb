@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All apartments</title>
+</head>
+<body>
+  <h1>All apartments</h1>
+  <ul>
+    <% @apartments.each do |apartment|%>
+    <li><a href="/apartments/<%=apartment.id%>"><%= apartment.address %></a></li>
+    <% end %>
+  </ul>
+  <a href="/apartments/new">Add a new apartment</a>
+</body>
+</html>

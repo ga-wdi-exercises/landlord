@@ -72,8 +72,8 @@ while choice != 'q'
     all_apartments.each do |apartment|
       print apartment.address
       puts ''
-      tenants_in_apartment = all_tenants.select {|tenant| tenant.apartment_id == apartment.id}
-      tenants_in_apartment.each {|person| print '  '; puts person.name}
+      tenants_in_apartment = apartment.tenants
+
     end
 
   when 4
@@ -82,10 +82,8 @@ while choice != 'q'
     tenant_lookup = raw_lookup.split.map(&:capitalize).join(' ')
     apt_lookup = nil
     all_tenants = Tenant.all
-    this_tenant = all_tenants.find {|tenant| tenant.name == tenant_lookup}
-    apt_lookup = this_tenant.apartment_id
-    all_apartments = Apartment.all
-    this_apartment = all_apartments.find {|apartment| apartment.id == apt_lookup}
+    this_tenant = all_tenants.find_by(name: tenant_lookup)
+    this_apartment = this_tenant.apartment
     puts "#{tenant_lookup} is renting #{this_apartment.address}"
   end
 end
