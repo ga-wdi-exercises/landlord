@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><% @artist.name %> </title>
+  </head>
+  <body>
+  <p>
+    <img style="height: 300px" src=" <%= @artist.photo_url %>" >
+    <a href class="artist">
+    <!-- to be fixed -->
+    <%= @artist.name + "Nationality: " + @artist.nationality %>
+  </a>
+  </p>
+  </body>
+</html>

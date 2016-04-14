@@ -112,6 +112,14 @@ apartment = Apartment.where(address:"62897 Verna Walk")
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 verna_walk.update(monthly_rent: 2800)
+apartment.save
+
+# or
+
+apartment.monthly_rent = apartment.monthly_rent + 400
+apartment.save
+
+
 # to reflect the new bedroom
 
 # Millenial Eviction!
@@ -122,3 +130,5 @@ Tenant.where("age < 30")
 Tenant.destroy_all("age < 30")
 
 binding.pry
+
+# apartment.monthly_rent
