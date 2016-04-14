@@ -18,9 +18,15 @@ get '/' do
 end
 
 get '/apartments/index' do
-
+  @apartments = Apartment.all
+  @tenants = Tenant.all
+  erb :"apartments/index"
 end
 
-get '/tenants/index' do
 
+
+get '/tenants/index' do
+  @apartments = Apartment.all
+  @tenants = Tenant.all
+  erb :"tenants/index"
 end
