@@ -9,7 +9,7 @@
   <h1>Apartments</h1>
   <table style="width:70%">
   <tr>
-
+    <td>Unit #</td>
     <td>Address</td>
     <td>Rent</td>
     <td>Square Feet</td>
@@ -17,15 +17,18 @@
     <td>Bathrooms</td>
 
   </tr>
-  <% @apartments.each do |unit|%>
+  <% @apartments.each do |unit| %>
   <tr>
-
-    <td><%= unit.address%></td>
+    <td><%= unit.id %></td>
+    <td>
+      <a href="/apartments/<%= unit.id %>">
+      <%= unit.address%>
+    </a>
+    </td>
     <td><%= unit.monthly_rent%></td>
     <td><%= unit.sqft%></td>
     <td><%= unit.num_beds%></td>
     <td><%= unit.num_baths%></td>
-
   </tr>
   <% end %>
 </table>
