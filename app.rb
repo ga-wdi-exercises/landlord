@@ -13,6 +13,6 @@ end
 
 get '/apartments' do
   "Hello Apartments"
-  @pizza = Apartment.all
+  @apartments = Apartment.all
   erb :'/apartments/index'
 end
