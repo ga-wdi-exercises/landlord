@@ -17,16 +17,26 @@ get '/' do
   erb :index
 end
 
-get '/apartments/index' do
+get '/apartments' do
   @apartments = Apartment.all
   @tenants = Tenant.all
   erb :"apartments/index"
 end
 
+get '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @tenants = Tenant.where( apartment_id: params[:id] )
+  erb :"apartments/show"
+end
 
 
-get '/tenants/index' do
+get '/tenants' do
   @apartments = Apartment.all
   @tenants = Tenant.all
   erb :"tenants/index"
+end
+
+get '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/show"
 end
