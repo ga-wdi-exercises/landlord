@@ -8,6 +8,7 @@
   <h1>Index</h1>
   <h3><a href="javascript:history.back()">Go Back</a></h3>
   <h3><a href="/apartments/new">Add apartment</a></h3>
+  
   <% @apartments.each do |apartment| %>
     <li>
       <a href="apartments/<%= apartment.id %>"><%= apartment.address %></a>

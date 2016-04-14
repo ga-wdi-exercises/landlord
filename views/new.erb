@@ -7,5 +7,25 @@
 <body>
   <h1>New</h1>
   <h3><a href="javascript:history.back()">Go Back</a></h3>
+
+  <form method='post' action='/apartments'>
+
+    <label for="apartment[address]">Address</label>
+    <input type='text' name='apartment[address]' placeholder="123 fun street"><br>
+
+    <label for="apartment[monthly_rent]">monthly rent</label>
+    <input type='text' name='apartment[monthly_rent]' placeholder="1000"><br>
+
+    <label for="apartment[sqft]">sqft</label>
+    <input type='text' name='apartment[sqft' placeholder]="2000"><br>
+
+    <label for="apartment[num_beds]">Num beds</label>
+    <input type='text' name='apartment[num_beds]' placeholder="2"><br>
+
+    <label for="apartment[num_baths]">Num baths</label>
+    <input type='text' name='apartment[num_baths]' placeholder="2"><br>
+
+    <input type='submit' value="Create One!">
+  </form>
 </body>
 </html>
