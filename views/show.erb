@@ -6,6 +6,9 @@
 </head>
 <body>
   <h1>Apartment Show</h1>
+  <h3><a href="javascript:history.back()">Go Back</a></h3>
+  <h3><a href="/apartments">Index</a></h3>
+  <h3><a href="<%= @apartment.id %>/edit">Edit</a></h3>
   <h2><%= @apartment.address %></h2>
   <p>Rent: <%= @apartment.monthly_rent %></p>
   <p>Sqft: <%= @apartment.sqft %></p>
