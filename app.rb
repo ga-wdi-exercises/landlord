@@ -38,7 +38,7 @@ post '/apartments/new/' do
   redirect "/apartments/#{@apartment.id}"
 end
 
-get '/apartments/:id/edit' do
+get '/apartments/:id/edit/' do
     @apartment = Apartment.find(params[:id])
     erb :"apartments/edit"
 end
