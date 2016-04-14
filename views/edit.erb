@@ -1,38 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Edit</title>
-</head>
-<body>
-  <h1>Edit</h1>
-  <h3><a href="javascript:history.back()">Go Back</a></h3>
-  <h3><a href="/apartments">Index</a></h3>
+<h1>Edit</h1>
 
-  <form method='post' action='/apartments/<%= @apartment.id %>'>
-    <input type="hidden" name="_method" value="put">
+<form method='post' action='/apartments/<%= @apartment.id %>'>
+  <input type="hidden" name="_method" value="put">
 
-    <label for="apartment[address]">Address</label>
-    <input type='text' name='apartment[address]' value="<%= @apartment.address %>"><br>
+  <label for="apartment[address]">Address</label>
+  <input type='text' name='apartment[address]' value="<%= @apartment.address %>"><br>
 
-    <label for="apartment[monthly_rent]">monthly rent</label>
-    <input type='text' name='apartment[monthly_rent]' value="<%= @apartment.monthly_rent %>"><br>
+  <label for="apartment[monthly_rent]">monthly rent</label>
+  <input type='text' name='apartment[monthly_rent]' value="<%= @apartment.monthly_rent %>"><br>
 
-    <label for="apartment[sqft]">sqft</label>
-    <input type='text' name='apartment[sqft]' value="<%= @apartment.sqft %>"><br>
+  <label for="apartment[sqft]">sqft</label>
+  <input type='text' name='apartment[sqft]' value="<%= @apartment.sqft %>"><br>
 
-    <label for="apartment[num_beds]">Num beds</label>
-    <input type='text' name='apartment[num_beds]' value="<%= @apartment.num_beds %>"><br>
+  <label for="apartment[num_beds]">Num beds</label>
+  <input type='text' name='apartment[num_beds]' value="<%= @apartment.num_beds %>"><br>
 
-    <label for="apartment[num_baths]">Num baths</label>
-    <input type='text' name='apartment[num_baths]' value="<%= @apartment.num_baths %>"><br>
+  <label for="apartment[num_baths]">Num baths</label>
+  <input type='text' name='apartment[num_baths]' value="<%= @apartment.num_baths %>"><br>
 
-    <input type='submit' value="Edit!">
-  </form>
+  <input type='submit' value="Edit!">
+</form>
 
-  <form action="/apartments/<%= @apartment.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input class="button-delete" type="submit" value="Delete!">
-  </form>
-</body>
-</html>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>
