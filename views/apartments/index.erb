@@ -5,7 +5,7 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>HERE ARE YOUR APARTMENTS</h1>
+  <h1>Apartment Directory</h1>
 <% @apartments.each do |apt| %>
 <p class="apartment">
   <a href="/apartments/<%= apt.id %>"><%= apt.address %></a>

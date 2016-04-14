@@ -1,10 +1,18 @@
 <h2> <a href= "/apartments">All Apartments</a></h2>
 
 <div class= "apt_listing">
+<p>Address: <%= @apartment.address %></p>
+<p>Monthly Rent: $<%= @apartment.monthly_rent %></p>
+<p>Square Feet: <%= @apartment.sqft %></p>
+<p>Bedrooms: <%= @apartment.num_beds %></p>
+<p>Bathrooms: <%= @apartment.num_baths %></p>
+
+<p> <%= "*" * 50 %> </p>
+
+<p> Tenants: </p>
 <p>
-  Apartment Address: <%= @apartment.address %>
-</p>
-<p>
-  Tenants: <%= @apartment.tenant %>
+  <% @apartment.tenants.each do |person| %>
+  <p><%= person.name %> </p>
+  <% end %>
 </p>
 </div>
