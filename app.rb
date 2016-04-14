@@ -12,7 +12,15 @@ require_relative 'models/apartment'
 require_relative 'models/tenant'
 
 get '/' do
-  erb :index
   @apartments = Apartment.all
   @tenants = Tenant.all
+  erb :index
+end
+
+get '/apartments/index' do
+
+end
+
+get '/tenants/index' do
+
 end
