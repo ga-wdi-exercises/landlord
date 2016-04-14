@@ -6,8 +6,8 @@ Tenant.destroy_all
 Apartment.destroy_all
 
 # Create 3 new apartments, and save them to the DB
-Apartment.create(address: "666 Tubtopia Terrace", monthly_rent: 0, sqft: 1999, num_beds: 1, num_baths: 12)
-Apartment.create(address: "123 Bedsofall Pozibul-Werlds Blvd", monthly_rent: 0, sqft: 540, num_beds: 12, num_baths: 1)
+Apartment.create(address: "666 Tubtopia Terrace", monthly_rent: 1, sqft: 1999, num_beds: 1, num_baths: 12)
+Apartment.create(address: "123 Bedsofall Pozibul-Werlds Blvd", monthly_rent: 1, sqft: 540, num_beds: 12, num_baths: 1)
 Apartment.create(address: "1 Everyplace Ever Place", monthly_rent: 9999, sqft: 9, num_beds: 0, num_baths: 0)
 
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
