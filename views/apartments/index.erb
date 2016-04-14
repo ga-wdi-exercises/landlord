@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Welcome to my apartments!!!</h1>
+    <h3><u>List of addresses</u></h3>
+    <% @apartments.each do |apt| %>
+    <p><a href="/apartments/<%=apt.id%>"><%= apt.address %><a/></p>
+<% end %>
+
+</body>
+</html>
