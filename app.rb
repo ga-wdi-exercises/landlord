@@ -29,6 +29,37 @@ get '/apartments/:id' do
   erb :"apartments/show"
 end
 
+get '/apartments/new/' do
+  erb :"apartments/new"
+end
+
+post '/apartments/new/' do
+  @apartment = Apartment.create(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
+end
+
+get '/apartments/:id/edit' do
+    @apartment = Apartment.find(params[:id])
+    erb :"apartments/edit"
+end
+
+put '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.update(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
+end
+
+get '/apartments/:id/delete' do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartments/delete"
+end
+
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect("/apartments/")
+end
+
 
 get '/tenants' do
   @apartments = Apartment.all
