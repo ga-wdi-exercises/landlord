@@ -23,6 +23,7 @@ end
 
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
+  @tenant = @apartment.tenant
   erb :"/apartments/show"
 end
 
