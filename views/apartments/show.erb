@@ -16,7 +16,9 @@
    </ul>
  </p>
  <p>
-   
+   <% @tenants.each do |tenant| %>
+   <%= tenant.name %>
+   <% end %>
  </p>
  <button><a href="/">     Home       </a></button>
  </p>

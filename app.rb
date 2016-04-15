@@ -23,7 +23,7 @@ end
 
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
-  @tenant = @apartment.tenant
+  @tenants = @apartment.tenants
   erb :"/apartments/show"
 end
 
