@@ -7,48 +7,53 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
+# root
 get "/" do
   redirect to "/apartments"
 end
 
-# index
+################
+## Apartments ##
+################
+
+# apartment index
 get "/apartments" do
   @apartments = Apartment.all
-  erb :index
+  erb :"apartments/index"
 end
 
-# new
+# apartment new
 get "/apartments/new" do
-  erb :new
+  erb :"apartments/new"
 end
 
-# create
+# apartment create
 post "/apartments" do
   new_apt = Apartment.create(params[:apartment])
   redirect to ("/apartments/#{new_apt.id}")
 end
 
-# show
+# apartment show
 get "/apartments/:id" do
   @apartment = Apartment.find(params[:id])
   @tenants = @apartment.tenants
-  erb :show
+  erb :"apartments/show"
 end
 
-# edit
+# apartment edit
 get "/apartments/:id/edit" do
   @apartment = Apartment.find(params[:id])
-  erb :edit
+  erb :"apartments/edit"
 end
 
-# update
+# apartment update
 put "/apartments/:id" do
   @apartment = Apartment.find(params[:id])
   @apartment.update(params[:apartment])
   redirect to ("/apartments/#{@apartment.id}")
 end
 
-# destroy
+# apartment destroy
 delete "/apartments/:id" do
   @apartment = Apartment.find(params[:id])
   @apartment.destroy
