@@ -49,7 +49,7 @@ end
 delete '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   @apartment.destroy
-  erb :"apartments/edit"
+  # erb :"apartments/edit"
   redirect('/apartments')
 end
 
@@ -88,6 +88,5 @@ end
 delete '/tenants/:id' do
   @tenant = Tenant.find(params[:id])
   @tenant.destroy
-  erb :"tenants/edit"
   redirect('/tenants')
 end

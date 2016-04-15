@@ -20,9 +20,13 @@
       <% if @tenant.apartment != nil %>
       <option value="<%= @tenant.apartment.id %>" selected><%= @tenant.apartment.address %>
         <% end %>
-        <% if @tenant %>
+      <% if @tenant %>
         <% @apartments.each do |apartment| %>
-        <option value="<%= apartment.id %>"><%= apartment.address %></option>
+            <% if @tenant.apartment != nil && apartment.id != @tenant.apartment.id %>
+                  <option value="<%= apartment.id %>"><%= apartment.address %></option>
+            <% else %>
+                  <option value="<%= apartment.id %>"><%= apartment.address %></option>
+        <% end %>
         <% end %>
         <% end %>
       </select>
