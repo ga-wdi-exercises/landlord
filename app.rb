@@ -18,6 +18,7 @@ end
 # create apartments
 post '/apartments' do
   @apartment = Apartment.create(address: params[:address], monthly_rent: params[:monthly_rent], sqft: params[:sqft], num_beds: params[:num_beds], num_baths: params[:num_baths])
+  erb :"/apartment/new"
   redirect "/apartments/#{@apartment.id}"
 end
 
@@ -31,7 +32,7 @@ end
 # edit apartments
 get "/apartments/:address/edit" do
   @apartments = Apartment.find(params[:address])
-  erb(:"apartmentss/edit")
+  erb :"apartmentss/edit"
 end
 
 # update apartements
@@ -44,10 +45,30 @@ end
 # show all tenants living in apartments
 post '/apartments' do
   @tenant = Tenant.all "/tenants/#{@tenant.id}"
+  erb :"/apartments/index"
 end
 
 #
-post '/apartments' do
+get '/apartments' do
   @apartments = Apartment.create(params[:apartments])
   redirect "/apartments/#{@apartments.id}"
+  erb :"apartments/index"
+end
+
+
+post '/apartments/new' do
+  @apartments = Apartment.create(params[:apartments])
+  redirect "/apartments/#{@apartments.id}"
+end
+
+
+get "/apartments/:id/edit" do
+  @apartments = Apartment.find(params[:id])
+  erb(:"apartments/edit")
+end
+
+put '/apartments/:id' do
+  @apartments = Apartment.find(params[:id])
+  @apartments.update(params[:id])
+  redirect("/apartments/#{@apartments.id}")
 end
