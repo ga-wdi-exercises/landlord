@@ -10,10 +10,12 @@
 
      <p class="showoff">
        <a href="/tenants/<%= tenant.id %>" >
-       <%= tenant.name + " Age: " + tenant.age + " Gender: " + tenant.gender %>
+       <%= tenant.name + " Age: " + tenant.age.to_s + " Gender: " + tenant.gender %>
         </a>
      </p>
    <% end %>
-   <h2><a href="/">Home</a></h2>
+   <h2><a href="/tenants/new">Add a Tenant</a></h2>
+
+   <h3><a href="/">Home</a></h3>
  </body>
 </html>

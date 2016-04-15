@@ -33,7 +33,7 @@ end
 
 
 get '/tenants' do
-  @tenants = Song.all
+  @tenants = Tenant.all
   erb :'/tenants/index'
 end
 

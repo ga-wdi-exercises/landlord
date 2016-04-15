@@ -2,15 +2,19 @@
 <html>
  <head>
    <meta charset="utf-8">
-   <title><% @tenant.title %> </title>
+   <title><% @tenant.name %> </title>
  </head>
  <body>
    <h1>Hello World - this is views/tenants/show.erb</h1>
  <p>
-   <%= "Name: " + @tenant.name %>
+   <%= "Name: " + @tenant.name + " Age: " + @tenant.age.to_s + " Gender: " + @tenant.gender %>
 
  </p>
-
+ <h3>DISPOSE of this tenant!!</h3>
+     <form action="/tenants/<%= @tenant.id %>" method="post">
+       <input type="hidden" name="_method" value="delete">
+       <input class="button-delete" type="submit" value="Delete!">
+     </form>
  <button><a href="/">     Home       </a></button>
  </p>
 
