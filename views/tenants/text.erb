@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>App</title>
+</head>
+<body>
+  <h1>Hello</h1>
+  <% @tenants.each do |tenant| %>
+  <p>
+    <%= "Name: " + @tenant.name + " Age: " + @tenant.age.to_s + " Gender: " + @tenant.gender %>
+  </p>
+  <p>
+    <h3>Delete tenant</h3>
+    <form action="/tenants/<%= @tenant.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input class="button-delete" type="submit" value="Delete!">
+    </form>
+
+  </P>
+
+  <h2><a href="/"> Home </a></h
+    2>
+  <!-- <h2><a href="/tenants/new">Add a Tenant</a></h2> -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>App</title>
+</head>
+<body>
+  <h1>Apartments</h1>
+  <% @apartment.each do |apartment| %>
+  <!-- <h2>Delete Apartment</h2> -->
+
+  <p class="apartment">
+    <a href="/apartments/<%= apartment.id %>" >
+      <body style="height: 4em" src= "<%= artist.photo_url %>" >
+        <%= apartment.address %>
+        <!-- #  + " Rent: " + apartment.monthly_rent.to_s "SqFt: " + apartment.sqft.to_s %> -->
+      </p>
+      <% end %>
+      <h2><a href="/apartments/new">Add New Apartment Here</a></h2>
+      <h3><a href="/"Home</a></h3>
+      </form>
+    </body>
+    </html>
