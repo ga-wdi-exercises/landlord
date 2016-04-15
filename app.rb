@@ -48,7 +48,7 @@ end
 
 post '/tenants' do
   @tenant = Tenant.create(params[:tenant])
-  redirect "/tenants/#{@song.id}"
+  redirect "/tenants/#{@tenant.id}"
 end
 
 delete '/tenants/:id' do

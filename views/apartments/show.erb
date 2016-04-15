@@ -12,10 +12,12 @@
      <li><%= "Rent: " + @apartment.monthly_rent.to_s %></li>
      <li><%= "Square Footage: " + @apartment.sqft.to_s %></li>
      <li><%= "Baths: " + @apartment.num_baths.to_s %></li>
-     <li><%= "Beds: " + @apartment.num_beds.to_s %></li> 
+     <li><%= "Beds: " + @apartment.num_beds.to_s %></li>
    </ul>
  </p>
-
+ <p>
+ <%= Apartment.includes(:tenant) %>
+ </p>
  <button><a href="/">     Home       </a></button>
  </p>
 
