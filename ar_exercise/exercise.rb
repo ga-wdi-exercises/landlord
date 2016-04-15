@@ -31,6 +31,18 @@ end
 
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
+get '/landlord/:choice' do
+	@apartments = Apartment.all
+	@tenants = Tenant.all
+	@table = params[:choice]
+	if @table == ""
+		erb :"artists/index"
+	else
+		erb :"songs/index"
+	end
+end
+
+
 puts "*" * 50
 
 all_tenants = Tenant.all

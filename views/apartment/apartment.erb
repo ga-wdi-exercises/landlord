@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Landlord Property Management System</title>
+</head>
+<style>
+p {display: inline-block;}
+</style>
+<body>
+
+<h2>All Apartments</h2>
+	<% @apartments.each do |apt| %>
+	<div>
+	<p><a href='/apartments/<%= apt.id %>'>Apartment Details</a></p>
+ 	 <p>Apt id: <%= apt.id %></p>
+ 	 <p>  Address: <%= apt.address %></p>
+ 	 <p>  Rent: <%= apt.monthly_rent %></p>
+ 	 <p>  Square Feet: <%= apt.sqft %></p>
+ 	 <p>  Bedrooms: <%= apt.num_beds %></p>
+ 	 <p>  Bathrooms: <%= apt.num_baths%></p>
+ 	 </div>
+<% end %>
+
+</body>
+</html>
