@@ -24,7 +24,7 @@
   <p><b> Tenants: </b></p>
   <p>
    <% @apartments.tenants.each do |person| %>
-    <p><%= person.name %></p>
+    <p><a href="/tenants/<%= person.id %>"><%= person.name %></a></p>
    <% end %>
   </p>
 
