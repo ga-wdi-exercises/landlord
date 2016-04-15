@@ -1,0 +1,65 @@
+<style>
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  h4 {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  input {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+  label {
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  form {
+    margin: 0 auto;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  div {
+    margin: 0 auto;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+</style>
+
+<h1>MY APARTMENT MANAGER</h1>
+<h2>Apartment Details</h2>
+<h4><a href="/">GO BACK</a></h4>
+
+
+<div class="apartment">
+  <p>Address: <%= @apartment.address %></p>
+  <p>Rent: <%= @apartment.monthly_rent %></p>
+  <p>Sq. Feet: <%= @apartment.sqft %></p>
+  <p>Beds: <%= @apartment.num_beds %></p>
+  <p>Baths: <%= @apartment.num_baths %></p>
+  <p><a href='/apartments/<%= @apartment.id %>/edit'>Edit This Apartment</a></p>
+</div>
+
+<h2>Tenants</h2>
+
+ <% @tenants.each do |tenant| %>
+   <p><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></p>
+ <% end %>
+
+  <h2>Delete This Apartment</h2>
+    <form action="/apartments/<%= @apartment.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input class="button-delete" type="submit" value="Delete Apartment">
+    </form>
