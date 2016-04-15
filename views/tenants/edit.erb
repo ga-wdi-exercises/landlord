@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit/Delete Tenant</title>
+</head>
+<body>
+  <div>
+  <h1>Edit this Tenant</h1>
+  <form action="/tenants/<%= @tenant.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+
+    <p><label for="tenant[name]">Name:   </label>
+    <input class="input" name="tenant[name]" value="<%= @tenant.name %>"><p>
+
+    <p><label for="tenant[age]">Age: </label>
+    <input class="input" name="tenant[age]" value="<%= @tenant.age %>"></p>
+
+    <select name="tenant[apartment_id]">
+      <% if @tenant.apartment != nil %>
+      <option value="<%= @tenant.apartment.id %>" selected><%= @tenant.apartment.address %>
+        <% end %>
+        <% if @tenant %>
+        <% @apartments.each do |apartment| %>
+        <option value="<%= apartment.id %>"><%= apartment.address %></option>
+        <% end %>
+        <% end %>
+      </select>
+
+    <p><input type="submit" value="Update">
+  </form>
+<h1>Delete this Tenant</h1>
+<form action="/tenants/<%=@tenant.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete">
+</form>
+<h4>Note: This action cannot be undone.</h4>
+
+</body>
+</html>

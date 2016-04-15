@@ -72,3 +72,22 @@ get '/tenants/:id' do
   @tenant = Tenant.find(params[:id])
   erb :"tenants/show"
 end
+
+get '/tenants/:id/edit' do
+  @tenant = Tenant.find(params[:id])
+  @apartments = Apartment.all
+  erb :"tenants/edit"
+end
+
+put '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.update(params[:tenant])
+  redirect("/tenants/#{@tenant.id}")
+end
+
+delete '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.destroy
+  erb :"tenants/edit"
+  redirect('/tenants')
+end
