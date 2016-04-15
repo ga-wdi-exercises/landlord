@@ -16,7 +16,8 @@
    </ul>
  </p>
  <p>
- <%= Apartment.includes(:tenant) %>
+   <% flat = @apartment.apartment_id %>
+ <%= Tenant.find_by(flat) %>
  </p>
  <button><a href="/">     Home       </a></button>
  </p>
