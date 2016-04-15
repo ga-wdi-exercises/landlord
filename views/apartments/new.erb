@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Apartment</title>
+</head>
+<body>
+<form action="/apartments" method="post">
+<p><label>Address: </label>
+<input class="input" type="text" name="apartment[address]"></p>
+<p><label>Square Feet: </label>
+<input class="input" type="text" name="apartment[sqft]"></p>
+<p><label>Monthly Rent: </label>
+<input class="input" type="text" name="apartment[monthly_rent]"></p>
+<p><label>Number of Bedrooms: </label>
+<input class="input" type="text" name="apartment[num_beds]"></p>
+<p><label>Number of Bathrooms: </label>
+<input class="input" type="text" name="apartment[num_baths]"></p>
+  <p><input type="submit" value="Create"></p>
+</form>
+
+</body>
+</html>

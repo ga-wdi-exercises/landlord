@@ -13,9 +13,52 @@ require_relative 'models/apartment'
 require_relative 'models/tenant'
 
 get '/' do
-  '<a href = "/apartments">go to apartments'
+  erb :index
 end
 
 get '/apartments' do
-  "Apartments"
+  @apartments = Apartment.all
+  erb :"apartments/index"
+end
+
+get '/apartments/new' do
+  erb :"apartments/new"
+end
+
+post '/apartments' do
+  @apartment = Apartment.create(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
+end
+
+get '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartments/show"
+end
+
+get '/apartments/:id/edit' do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartments/edit"
+end
+
+put '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.update(params[:apartment])
+  redirect("/apartments/#{@apartment.id}")
+end
+
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  erb :"apartments/edit"
+  redirect('/apartments')
+end
+
+get '/tenants' do
+  @tenants = Tenant.all
+  erb :"tenants/index"
+end
+
+get '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/show"
 end

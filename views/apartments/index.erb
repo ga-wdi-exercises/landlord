@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>ALL APARTMENTS</title>
 </head>
 <body>
+<h1>ALL APARTMENTS</h1>
+<% @apartments.each do |apartment| %>
+  <h2 class="apartment">
+    <a href='apartments/<%=apartment.id%>'><%= apartment.address %></a>
+  </h2>
+<% end %>
+
 
 </body>
 </html>

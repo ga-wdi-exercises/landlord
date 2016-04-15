@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title><%= @tenant.name %></title>
 </head>
 <body>
-
+<h1><%= @tenant.name %></h1>
+<% if @tenant.apartment != nil %>
+<h2>Resides at <a href="/apartments/<%= @tenant.apartment.id%>"><%= @tenant.apartment.address %></a></h2>
+<% else %>
+<h2>No residence</h2>
+<% end %>
+<h2><%= @tenant.age %> year old <%= @tenant.gender %></h2>
 </body>
 </html>

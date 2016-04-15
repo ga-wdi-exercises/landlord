@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="button">
+      <input type="button" onclick="location.href='/apartments';" value="ALL APARTMENTS" />
+      <input type="button" onclick="location.href='/apartments/new';" value="ADD APARTMENT" />
+      <input type="button" onclick="location.href='/tenants';" value="ALL TENANTS" />
+    </div>
+    <div class="content">
+      <%= yield %>
+    </div>
+</body>
+</html>
