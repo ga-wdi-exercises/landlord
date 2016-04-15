@@ -16,8 +16,8 @@
    </ul>
  </p>
  <p>
-   <% flat = @apartment.apartment_id %>
- <%= Tenant.find_by(flat) %>
+   <% flat = @apartment %>
+ <%= Tenant.find_by(flat).all %>
  </p>
  <button><a href="/">     Home       </a></button>
  </p>
