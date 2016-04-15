@@ -10,6 +10,6 @@
 <h2>Tenants</h2>
 <% @tenants.each do |tenant| %>
   <li>
-    <%= tenant.name %>
+    <a href="../apartments/<%= @apartment.id %>/tenants/<%= tenant.id %>"><%= tenant.name %></a>
   </li>
 <% end %>

@@ -59,3 +59,52 @@ delete "/apartments/:id" do
   @apartment.destroy
   redirect to ("/apartments")
 end
+
+#############
+## Tenants ##
+#############
+
+# tenant index (on apartment show)
+
+# tenant new (on apartment show)
+get "/tenants/new" do
+  @apartments = Apartment.all
+  erb :"tenants/new"
+end
+
+# tenant create
+post "/tenants" do
+  tens_apt = params[:apartment]
+  new_tenant = tens_apt.tenants.create(params[:tenant])
+  redirect to ("/apartments/#{tens_apt.id}/tenants/#{new_tenant.id}")
+end
+
+# tenant show
+get "/apartments/:apartment_id/tenants/:id" do
+  @tenant = Tenant.find(params[:id])
+  @apartment = Apartment.find(params[:apartment_id])
+  erb :"tenants/show"
+end
+
+# tenant edit
+get "/apartments/:apartment_id/tenants/:id/edit" do
+  @tenant = Tenant.find(params[:id])
+  @apartment = Apartment.find(params[:apartment_id])
+  erb :"tenants/edit"
+end
+
+# tenant update
+put "/apartments/:apartment_id/tenants/:id" do
+  @tenant = Tenant.find(params[:id])
+  @apartment = Apartment.find(params[:apartment_id])
+  @tenant.update(params[:tenant])
+  redirect to ("apartments/#{@tenant.apartment.id}/tenants/#{@tenant.id}")
+end
+
+# tenant delete
+delete "/apartments/:apartment_id/tenants/:id" do
+  @tenant = Tenant.find(params[:id])
+  @apartment = Apartment.find(params[:apartment_id])
+  @tenant.destroy
+  redirect to ("apartments/#{@tenant.apartment.id}")
+end

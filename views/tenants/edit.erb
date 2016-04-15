@@ -1,0 +1,21 @@
+<h1>Apartment Edit</h1>
+
+<form method='post' action='/apartments/<%= @apartment.id %>/tenants/<%= @tenant.id %>'>
+  <input type="hidden" name="_method" value="put">
+
+  <label for="tenant[name]">Name</label>
+  <input type='text' name='tenant[name]' value="<%= @tenant.name %>"><br>
+
+  <label for="tenant[age]">Age</label>
+  <input type='text' name='tenant[age]' value="<%= @tenant.age %>"><br>
+
+  <label for="tenant[gender]">Gender</label>
+  <input type='text' name='tenant[gender]' value="<%= @tenant.gender %>"><br>
+
+  <input type='submit' value="Edit!">
+</form>
+
+<form action="/apartments/<%= @apartment.id %>/tenants/<%= @tenant.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>
