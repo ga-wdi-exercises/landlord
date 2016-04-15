@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title></title>
+ </head>
+ <body>
+   <h1>Hello</h1>
+   <% @apartments.each do |apartment| %>
+
+     <p class="showoff">
+       <a href="/apartments/<%= apartment.id %>" >
+       <%= apartment.address + " Rent: " + apartment.monthly_rent.to_s + " SqFt: " + apartment.sqft.to_s %>
+        </a>
+     </p>
+     
+   <% end %>
+ </h2><a href="/apartments/new">Add Apartment</a></h2>
+   <h3><a href="/">Home</a></h3>
+ </body>
+</html>
