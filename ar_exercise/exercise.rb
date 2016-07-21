@@ -34,16 +34,37 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.first
 # get all tenants older than 65
+senior_tenants = Tenant.where("age > ?", 65)
 # get all apartments whose price is greater than $2300
+pricey = Apartment.where("monthly_rent > ?", 2300)
 # get the apartment with the address "6005 Damien Corners"
+dam = Apartment.find_by(address: "6005 Damien Corners")
 # get all tenants in that apartment
-
+dam_tenants = dam.tenants
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+all_tenants.each do |ten|
+  puts "Tenant : #{ten.name}, ID : #{ten.id}"
+end
 # Iterate over each apartment, for each apartment, display it's address and rent price
+all_apartments = Apartment.all
+all_apartments.each do |apt|
+  puts "Address : #{apt.address}, Rent : #{apt.monthly_rent}"
+end
+puts ""
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-
+all_apartments.each do |apt|
+  puts ""
+  puts "Address : #{apt.address}"
+  puts "Tenants : "
+  tenArry = apt.tenants
+  tenArry.each do |ten|
+    puts "#{ten.name}"
+  end
+end
+binding.pry
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
@@ -69,3 +90,4 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+puts ""
