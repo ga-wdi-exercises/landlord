@@ -7,16 +7,16 @@ require_relative "../models/tenant"
 Tenant.destroy_all
 Apartment.destroy_all
 
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment_id: 21)
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment_id: 22)
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment_id: 23)
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment_id: 21)
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment_id: 22)
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment_id: 23)
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment_id: 21)
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment_id: 22)
-Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment_id: 23)
+ap1 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+ap2 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+ap3 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
 
-Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
-Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
-Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment: ap1)
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment: ap2)
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment: ap3)
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment: ap1)
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment: ap2)
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment: ap3)
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment: ap1)
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment: ap2)
+Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment: ap3)

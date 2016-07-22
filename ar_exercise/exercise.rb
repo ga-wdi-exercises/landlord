@@ -18,6 +18,7 @@ class Apartment < ActiveRecord::Base
   has_many :tenants
 end
 
+
 ################################################
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################

@@ -1,9 +1,9 @@
-# The Landlord
+<!-- # The Landlord
 
 ## Prompt:
-You are a landlord in need of an app that will track your apartments and tenants.
+You are a landlord in need of an app that will track your apartments and tenants. -->
 
-## Directions
+<!-- ## Directions
 Fork/clone this repo. Look at due dates section to figure out which parts are due when.
 
 ## Due Dates
@@ -11,14 +11,14 @@ Fork/clone this repo. Look at due dates section to figure out which parts are du
 ### Wednesday
 
 - [Schema & SQL](#schema--sql)
-- [Active Record](#active-record)
+- [Active Record](#active-record) -->
 
-### Friday
+<!-- ### Friday
 
 - [Sinatra Views and Templates](#sinatra-views-and-templates)
-- [Sinatra DB](#sinatra--db).
+- [Sinatra DB](#sinatra--db). -->
 
-Ideally, you should complete the portion you haven't completed yet before starting
+<!-- Ideally, you should complete the portion you haven't completed yet before starting
 the next one.
 
 ## Schema & SQL
@@ -49,12 +49,12 @@ Create a `schema.sql` in the `db` folder. It should contain the following:
 2. Load the schema file
   - `$ psql -d landlord < db/schema.sql`
 3. Load the seed file
-  - `$ psql -d landlord < db/seeds.sql`
+  - `$ psql -d landlord < db/seeds.sql` -->
 
 
 > Note: If at any point you need a new clean set of data, run the following commands (replacing `database_name` and `name_of_file.sql` with the actual names of the database and files you're using).
 
-```bash
+<!-- ```bash
 $ dropdb database_name
 $ createdb database_name
 $ psql -d database_name < name_of_schema_file.sql
@@ -118,31 +118,31 @@ At the very top, ensure your seed file loads the necessary files using `require_
 Below that, add these two lines, to ensure running the seed script clears your DB first.
 ```ruby
 Tenant.destroy_all
-Apartment.destroy_all
-```
+Apartment.destroy_all -->
+<!-- ```
 
-Lastly, copy the code you wrote in `exercise.rb` that *JUST* creates ~9 tenants and ~3 apartments.
+<!-- Lastly, copy the code you wrote in `exercise.rb` that *JUST* creates ~9 tenants and ~3 apartments. -->
 
-Then, run your seed file from the command line: `ruby db/seeds.rb`
+<!-- Then, run your seed file from the command line: `ruby db/seeds.rb`
 
 **Verify**: Go look at the provided `console.rb`. See the commented out lines?
 Uncomment them and re-run `console.rb`. It should run without error and provide
-the expected output (in terms of the numbers of apartments and tenants.)
+the expected output (in terms of the numbers of apartments and tenants.) -->
 
-![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
-Make a commit before you move on!
+<!-- ![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
+Make a commit before you move on! -->
 
 ### Step 3 - Build out the CLI Interface
 
 Build out a simple command line interface that provides a menu prompt and allows
 the user to:
 
-1. See a list of all apartments (include ID#, address, and monthly rent)
+<!-- 1. See a list of all apartments (include ID#, address, and monthly rent)
 2. See a list of all tenants (include name and age)
-3. See a list of all apartments and their associated tenants (just address and name)
+3. See a list of all apartments and their associated tenants (just address and name) -->
 
-![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
-Make a commit before you move on!
+<!-- ![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
+Make a commit before you move on! -->
 
 
 ### Bonus
