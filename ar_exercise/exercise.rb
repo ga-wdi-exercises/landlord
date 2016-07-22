@@ -21,28 +21,52 @@ end
 ################################################
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
+#
+#
+# ################################################
+# # FINDING / SELECTING
+# ################################################
+#
+# # Hint, the following methods will help: `where`, `all`, `find`, `find_by`
+#
+# # Use Active record to do the following, and store the results **in a variable**
+# # example: get every tenant in the DB
+# # all_tenants = Tenant.all
+#
+# # get the first tenant in the DB
+tenant_one = Tenant.find(1)
+#
+# # get all tenants older than 65
+older_than_65 = Tenant.where("age  > ?", 65)
+#
+# # get all apartments whose price is greater than $2300
+greater_than_2300 = Apartment.where("monthly_rent  > ?", 2500)
+#
+# # get the apartment with the address "6005 Damien Corners"
+damien_corners = Apartment.find_by(address: "6005 Damien Corners")
+#
+# # get all tenants in that apartment
+damien_corners.tenants
+#
+# # Use `each` and `puts` to:
+# # Display the name and ID # of every tenant
+Tenant.all.each do |tenant|
+  puts "#{tenant.name}: #{tenant.id}"
+end
 
+# # Iterate over each apartment, for each apartment, display it's address and rent price
+Apartment.all.each do |apartment|
+  puts "#{apartment.address} : #{apartment.monthly_rent} "
+end
 
-################################################
-# FINDING / SELECTING
-################################################
-
-# Hint, the following methods will help: `where`, `all`, `find`, `find_by`
-
-# Use Active record to do the following, and store the results **in a variable**
-# example: get every tenant in the DB
-all_tenants = Tenant.all
-
-# get the first tenant in the DB
-# get all tenants older than 65
-# get all apartments whose price is greater than $2300
-# get the apartment with the address "6005 Damien Corners"
-# get all tenants in that apartment
-
-# Use `each` and `puts` to:
-# Display the name and ID # of every tenant
-# Iterate over each apartment, for each apartment, display it's address and rent price
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+Apartment.all.each do |apartment|
+  puts "#{apartment.address} : "
+
+  apartment.tenants.each do |tenant|
+    puts "#{tenant.name}"
+  end
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -69,3 +93,7 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+binding.pry
+
+puts "end of application"
