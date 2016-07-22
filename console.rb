@@ -25,16 +25,16 @@ def tenant_view
   end
 end
 
-# def apartment_tenant_view
-#   Tenant.all.each_with_index do |tenant|
-#     tenant_apt << ({
-#       name: name,
-#       apartment_id: apt,
-#       id: index
-#   })
-#   end
-#   puts tenant_apt
-# end
+def apartment_tenant_view
+  Apartment.all.each do |apartment|
+    tenant_name = Apartment.find(apartment.id).tenants.pluck(:name)
+    if tenant_name == []
+      puts "Address: #{apartment.address}"
+    else
+      puts "Address: #{apartment.address}, Tenants: #{tenant_name.join(", ")}"
+    end
+  end
+end
 
 
 # start game
