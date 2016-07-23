@@ -36,11 +36,51 @@ def apartment_tenant_view
   end
 end
 
+def add_tenant
+  puts "What's the tenant's name?"
+  name_input = gets.chomp
+  puts "What's the tenant's age?"
+  age_input = gets.chomp
+  puts "What's the tenant's gender?"
+  gender_input = gets.chomp
+  puts "What's the apartment id?"
+  apt_id_input = gets.chomp
+  Tenant.create(name: name_input, age: age_input, gender: gender_input, apartment_id: apt_id_input)
+  puts "A new tenant was added to the database!"
+end
+
+def assign_apt
+  puts "What's the tenant's name you want to assign to a new apartment?"
+  name_input = gets.chomp
+  puts "What apartment do you want to reassign them to?"
+  apt_id_input = gets.chomp
+  tenant_to_update = Tenant.find_by(name: name_input)
+  tenant_to_update.update(apartment_id: apt_id_input)
+  puts "#{name_input} has been assigned to apartment no. #{apt_id_input}."
+end
+
+def evict_tenant
+  puts "What's the tenant's name you want to evict?"
+  name_input = gets.chomp
+  tenant_to_evict = Tenant.find_by(name: name_input)
+  tenant_to_evict.destroy
+  puts "Oh snap, you just evicted #{name_input}!"
+end
+
+def raise_rent
+  puts "What apartment no. do you want to increase the rent for?"
+  apartment_id_input = gets.chomp
+  puts "What do you want to the rent to be?"
+  rent_input = gets.chomp
+  apt_to_update = Apartment.find_by(id: apartment_id_input)
+  apt_to_update.update(monthly_rent: rent_input)
+  puts "Apartment no. #{apartment_id_input} had its rent increased to $#{rent_input}."
+end
 
 # start game
 def landlord_game
   loop do
-    puts "\nMenu:\n[1] See All Apartments\n[2] See All Tenants\n[3] See All Apts and Tenants\n[exit]"
+    puts "\nMenu:\n[1] See All Apartments\n[2] See All Tenants\n[3] See All Apts and Tenants\n[4] Add Tenant\n[5] Assign Apartment\n[6] Evict Tenants\n[7] Raise Rent\n[exit]"
     input = gets.chomp
     command, *params = input.split /\s/
 
@@ -51,6 +91,14 @@ def landlord_game
       tenant_view
     when /\A3\z/i
       apartment_tenant_view
+    when /\A4\z/i
+      add_tenant
+    when /\A5\z/i
+      assign_apt
+    when /\A6\z/i
+      evict_tenant
+    when /\A7\z/i
+      raise_rent
     when /\Aexit\z/i
       puts "Thanks for playin'!"
       break
