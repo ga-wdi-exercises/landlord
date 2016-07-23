@@ -5,19 +5,6 @@ require "pg" # postgres db library
 require "active_record" # the ORM
 require "pry" # for debugging
 
-ActiveRecord::Base.establish_connection(
-  :adapter => "postgresql",
-  :database => "landlord"
-)
-
-class Tenant < ActiveRecord::Base
-  belongs_to :apartment
-end
-
-class Apartment < ActiveRecord::Base
-  has_many :tenants
-end
-
 ################################################
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
@@ -81,13 +68,13 @@ Apartment.create(address: "845 Rotonda Road", monthly_rent: 1700, sqft: 800, num
 Apartment.create(address: "76 Matera Street", monthly_rent: 900, sqft: 600, num_beds: 2, num_baths: 2)
 
 # # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-Tentant.create(name: "Brandon", age: 19, gender: "male", apartment_id: 5)
-Tentant.create(name: "Jacob", age: 29, gender: "male", apartment_id: 5)
-Tentant.create(name: "Kyrie", age: 25, gender: "male", apartment_id: 3)
-Tentant.create(name: "Irving", age: 36, gender: "male", apartment_id: 8)
-Tentant.create(name: "Jessica", age: 21, gender: "female", apartment_id: 8)
-Tentant.create(name: "Emma", age: 26, gender: "female", apartment_id: 8)
-Tentant.create(name: "Danny", age: 38, gender: "male", apartment_id: 2)
+Tenant.create(name: "Brandon", age: 19, gender: "male", apartment_id: 5)
+Tenant.create(name: "Jacob", age: 29, gender: "male", apartment_id: 5)
+Tenant.create(name: "Kyrie", age: 25, gender: "male", apartment_id: 3)
+Tenant.create(name: "Irving", age: 36, gender: "male", apartment_id: 8)
+Tenant.create(name: "Jessica", age: 21, gender: "female", apartment_id: 8)
+Tenant.create(name: "Emma", age: 26, gender: "female", apartment_id: 8)
+Tenant.create(name: "Danny", age: 38, gender: "male", apartment_id: 2)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
