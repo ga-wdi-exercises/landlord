@@ -103,13 +103,25 @@ kristin.age += 1
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
+verna_walk = Apartment.find_by(address: "62897 Verna Walk")
+verna_walk.num_beds += 1
 
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
+verna_walk.monthly_rent += 400
 
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+def evict_millennials()
+  millennials = Tenant.where("age < ?", 30)
+    millennials.each |tenant|
+      tenant.destroy
+    end
+  end
+end
 
 binding.pry
+
+puts "end of application"
