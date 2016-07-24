@@ -34,11 +34,21 @@ end
 
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
-all_tenants = Tenant.all
+
+# *** all_tenants = Tenant.all
 
 # get the first tenant in the DB
+
+# *** firstkid = Tenant.first
+
 # get all tenants older than 65
+
+# *** oldheads = Tenant.where("age > ?", 65)
+
 # get all apartments whose price is greater than $2300
+
+
+
 # get the apartment with the address "6005 Damien Corners"
 # get all tenants in that apartment
 
