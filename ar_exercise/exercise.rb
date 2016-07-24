@@ -58,8 +58,9 @@ all_tenants = Tenant.all
     puts "Address: #{apartment.address}, \tRent Price: #{apartment.monthly_rent}"
   end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-
-
+  Apartment.all.each do |apartment|
+    puts "#{apartment.address} and #{apartment.tenants.inspect}"
+  end
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
