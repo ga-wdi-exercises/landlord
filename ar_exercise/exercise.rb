@@ -34,6 +34,7 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+
 # get all tenants older than 65
 # get all apartments whose price is greater than $2300
 # get the apartment with the address "6005 Damien Corners"
