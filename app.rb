@@ -35,8 +35,6 @@ def app_start()
       tenants()
     elsif option.to_i == 3
       apartments_tenants()
-    elsif option.to_i == 4
-      break
     else 
       puts "I am sorry but I do not understand that command, please try again."
     end
@@ -52,7 +50,7 @@ def apartments()
   puts '*' * 50
   puts "\nYour apartments address, id#, and monthly rent are as follows \n \n"
   apartment.each do |apart|
-    print "The address for apartment id number: #{apart.id} is #{apart.address}, and its monthly rent is #{apart.monthly_rent}. \n"
+    print "The address for apartment id number: #{apart.id}, is #{apart.address}, and its monthly rent is #{apart.monthly_rent} dollars. \n"
   end 
 end
 
@@ -66,7 +64,20 @@ def tenants()
   end
 end
 
-
+# Tenants and their aparments
+def apartments_tenants()
+  puts "*" * 50
+  puts "\nYour aparments address and the tenants that live there as as follows. \n \n"
+  Apartment.all.each do |apart|
+    apart_id = apart.id
+    apartment = Apartment.find_by(id: apart.id)
+    puts "The tenants that live at apartment #{apart.address} are: "
+    apartment.tenants.each do |tenant|
+      puts "    #{tenant.name}"
+    end
+    puts "\n"
+  end
+end
 
 
 
