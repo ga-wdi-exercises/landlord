@@ -8,6 +8,6 @@ ActiveRecord::Base.establish_connection(
 )
 
 
-binding.pry
-
-puts "end"
+# binding.pry
+#
+# puts "end"
