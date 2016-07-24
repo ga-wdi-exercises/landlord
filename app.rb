@@ -56,5 +56,29 @@ def apartments()
   end 
 end
 
+# tenants listing
+def tenants()
+  tenants = Tenant.all
+  puts '*' * 50
+  puts "\nThe name and age of each of your tenants is as follows: \n \n"
+  tenants.each do |tenant| 
+    print "#{tenant.name} is #{tenant.age} years old.\n"
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Start app
 app_start()
