@@ -18,16 +18,27 @@ puts "Enter \"3\" to see all apartments and their associated tenants"
 
 input = gets.chomp.to_i
 
+all_apartments = Apartment.all
+all_tenants = Tenant.all
+
 if input == 1
-  all_apartments = Apartment.all
   all_apartments.each do |apartment|
     puts apartment.address
   end
 end
 
 if input == 2
-  all_tenants = Tenant.all
   all_tenants.each do |tenant|
     puts tenant.name
+    puts tenant.apartment_id
+  end
+end
+
+if input == 3
+  all_apartments.each do |apartment|
+    puts "#{apartment.address}:"
+    apartment.tenants.each do |apt_tenant|
+      puts "#{apt_tenant.name}"
+    end
   end
 end
