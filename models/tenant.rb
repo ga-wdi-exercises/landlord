@@ -1,3 +1,3 @@
-class Tenant
+class Tenant < ActiveRecord::Base
 
 end

@@ -1,3 +1,3 @@
-class Apartment
+class Apartment < ActiveRecord::Base
 
 end
