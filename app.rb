@@ -15,6 +15,9 @@ get '/apartments' do
   erb :"apartments/index"
 end
 
+get '/apartments/new' do
+  "hello there"
+end
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   erb :"apartments/show"
