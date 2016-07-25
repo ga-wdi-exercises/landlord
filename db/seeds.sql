@@ -4,7 +4,6 @@ TRUNCATE TABLE tenants CASCADE;
 ALTER SEQUENCE apartments_id_seq RESTART WITH 1;
 ALTER SEQUENCE tenants_id_seq RESTART WITH 1;
 
-
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('70335 Clemenargaertine Tunnel', 800, 1900, 3, 2);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('44010 Lemke Crossroad', 1000, 1300, 1, 3);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('77841 Jany Lane', 700, 2300, 4, 3);
