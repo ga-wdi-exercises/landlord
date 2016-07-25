@@ -7,5 +7,9 @@ require_relative 'models/apartment'
 require_relative 'models/tenant'
 
 get '/' do
-  "hello"
+  redirect '/apartments'
+end
+
+get '/apartments' do
+  "HI"
 end
