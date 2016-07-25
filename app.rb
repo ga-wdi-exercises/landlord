@@ -11,5 +11,6 @@ get '/' do
 end
 
 get '/apartments' do
-  "HI"
+  @all_apartments = Apartment.all
+  erb :"apartments/index"
 end
