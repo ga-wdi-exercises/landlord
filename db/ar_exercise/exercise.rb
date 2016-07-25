@@ -33,12 +33,15 @@ end
 # example: get every tenant in the DB
 all_tenants = Tenant.all
 # get the first tenant in the DB
-first_tenant = Tenant.first
-
+first_tenant = Tenant.find_by
 # get all tenants older than 65
-
+old_tenants = Tenant.select do |tenant|
+tenant[:age] > 65
 # get all apartments whose price is greater than $2300
+high_price = Apartment.select do |apartment|
+apartment[:monthly_rent] > $2300
 # get the apartment with the address "6005 Damien Corners"
+specific_apt =
 # get all tenants in that apartment
 
 # Use `each` and `puts` to:
