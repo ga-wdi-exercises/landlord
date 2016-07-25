@@ -1,6 +1,3 @@
-require "pry"
-
-
 class Tenant < ActiveRecord::Base
   belongs_to :apartment
 end
@@ -29,5 +26,3 @@ end
 #   end
 #
 # end
-
-binding.pry

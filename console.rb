@@ -1,7 +1,7 @@
 require "bundler"
 require "pg"
 require "active_record"
-require "pry"
+# require "pry"
 
 require_relative "db/connection"
 require_relative "models/apartment"
@@ -31,7 +31,7 @@ if userInput == 1.to_s
 elsif userInput == 2.to_s
   Tenant.all.each do |tenant|
     puts "Name: #{tenant.name}, Age: #{tenant.age}"
-  enda
+  end
 elsif userInput == 3.to_s
   Apartment.all.each do |apartment|
     apartment.tenants.each do |tenant|
@@ -54,4 +54,4 @@ end
 
 
 
-binding.pry
+# binding.pry
