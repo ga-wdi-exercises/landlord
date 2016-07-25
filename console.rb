@@ -46,12 +46,3 @@ end
 # 1. See a list of all apartments (include ID#, address, and monthly rent)
 # 2. See a list of all tenants (include name and age)
 # 3. See a list of all apartments and their associated tenants (just address and name)
-
-
-
-
-
-
-
-
-# binding.pry
