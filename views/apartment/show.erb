@@ -1,0 +1,21 @@
+<p> The address is: </p>
+<p><%=@apartment.address%></p>
+<p>***************************<p>
+<p> The monthly rent is: </p>
+<p><%=@apartment.monthly_rent%></p>
+<p>***************************<p>
+<p> The square feet is: </p>
+<p><%=@apartment.sqft%></p>
+<p>***************************<p>
+<p> The number of beds is: </p>
+<p><%=@apartment.num_beds%></p>
+<p>***************************<p>
+<p> The number of baths is </p>
+<p><%=@apartment.num_baths%></p>
+<p>***************************<p>
+<p> The tenants are: </p>
+<%@apartment.tenants.each do |tenant|%>
+  <p> <%=tenant.name%> </p>
+  <%end%>
+
+  <%=@apartment%>
