@@ -32,9 +32,13 @@ end
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
 all_tenants = Tenant.all
-
+puts all_tenants.each {|tenant| puts tenant.name}
 # get the first tenant in the DB
+
+
 # get all tenants older than 65
+
+
 # get all apartments whose price is greater than $2300
 # get the apartment with the address "6005 Damien Corners"
 # get all tenants in that apartment
