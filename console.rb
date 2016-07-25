@@ -4,7 +4,7 @@ require_relative "models/tenant"
 
 # NOTE: Uncomment the lines below to verify that your seed script is working
 
-# puts "There are #{Apartment.count} apartments"
+puts "There are #{Apartment.count} apartments"
 # puts "There are #{Tenant.count} tenants"
 #
 # puts "*" * 50
