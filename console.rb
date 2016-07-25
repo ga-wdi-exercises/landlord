@@ -2,7 +2,11 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
-# NOTE: Uncomment the lines below to verify that your seed script is working
+# Uncomment the lines below to verify that your seed script is working
+
+require "pg" # postgres db library
+require "active_record" # the ORM
+require "pry" # for debugging
 
 puts "There are #{Apartment.count} apartments"
 # puts "There are #{Tenant.count} tenants"
