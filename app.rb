@@ -64,6 +64,7 @@ end
 
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
+  @tenants = Apartment.find(params[:id]).tenants.pluck(:name)
   erb :"apartments/show"
 end
 
