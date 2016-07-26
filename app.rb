@@ -56,7 +56,28 @@ get '/tenants' do
   erb :"tenants/index"
 end
 
+get '/tenants/new' do
+
+end
+
 get '/tenants/:id' do
   @tenant = Tenant.find(params[:id])
+  @residence = Apartment.find(@tenant.apartment_id)
   erb :"tenants/show"
+end
+
+get 'tenants/:id/edit' do
+  
+end
+
+post '/tenants' do
+
+end
+
+put '/tenants/:id' do
+
+end
+
+delete '/tenants/:id' do
+
 end

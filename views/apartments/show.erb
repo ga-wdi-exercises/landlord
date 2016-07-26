@@ -10,5 +10,5 @@ Bathrooms: <%= @apartment.num_baths %> <br>
 
 Tenants: <br>
 <% @tenants_here.each do |tenant| %>
-  <a href = "#"><%= tenant.name %></a><br>
+  <a href = "/tenants/<%= tenant.id %>"><%= tenant.name %></a><br>
 <% end %>
