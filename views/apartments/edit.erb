@@ -1,0 +1,21 @@
+<form class="apt_update" action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label>Address</label>
+  <input type="text" name="apartment[address]" value = "<%= @apartment.address %>">
+  <label>Monthly Rent</label>
+  <input type="text" name="apartment[monthly_rent]" value = "<%= @apartment.monthly_rent %>">
+  <label>Square Feet</label>
+  <input type="text" name="apartment[sqft]" value = "<%= @apartment.sqft %>">
+  <label>Number of Bedrooms</label>
+  <input type="text" name="apartment[num_beds]" value = "<%= @apartment.num_beds %>">
+  <label>Number of Bathrooms</label>
+  <input type="text" name="apartment[num_baths]" value = "<%= @apartment.num_baths %>">
+  <input type="submit" value="uh oh we editing this business all over the place broh">
+
+</form>
+
+<form class="" action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="DESTROY THAT APT BROH">
+</form>

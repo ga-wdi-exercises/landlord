@@ -16,16 +16,22 @@ end
 
 get '/apartments' do
   @apartments = Apartment.all
-  erb :"apartment/index"
+  erb :"apartments/index"
 end
 
 get '/apartments/new' do
-  erb :"apartment/new"
+  erb :"apartments/new"
 end
 
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
-  erb :"apartment/show"
+  @tenants_here = Tenant.where(apartment_id: params[:id])
+  erb :"apartments/show"
+end
+
+get '/apartments/:id/edit' do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartments/edit"
 end
 
 post '/apartments' do
@@ -33,12 +39,24 @@ post '/apartments' do
   redirect "/apartments/#{apt.id}"
 end
 
+put '/apartments/:id' do
+  apt = Apartment.find(params[:id])
+  apt.update(params[:apartment])
+  redirect "/apartments/#{apt.id}"
+end
+
+delete '/apartments/:id' do
+  apt = Apartment.find(params[:id])
+  apt.destroy
+  redirect '/apartments'
+end
+
 get '/tenants' do
   @tenants = Tenant.all
-  erb :"tenant/index"
+  erb :"tenants/index"
 end
 
 get '/tenants/:id' do
   @tenant = Tenant.find(params[:id])
-  erb :"tenant/show"
+  erb :"tenants/show"
 end
