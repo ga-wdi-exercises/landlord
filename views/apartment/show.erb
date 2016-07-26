@@ -1,1 +1,11 @@
-<%= @apartment.address %>
+<%= @apartment.address %> <br>
+Monthly Rent: <%= @apartment.monthly_rent %> <br>
+Square Feet: <%= @apartment.sqft %> ft<br>
+Bedrooms: <%= @apartment.num_beds %> <br>
+Bathrooms: <%= @apartment.num_baths %>
+
+address TEXT,
+monthly_rent INT,
+sqft INT,
+num_beds INT,
+num_baths INT

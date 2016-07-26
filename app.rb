@@ -8,6 +8,8 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
+require "pry"
+
 get '/' do
   erb :index
 end
@@ -17,9 +19,18 @@ get '/apartments' do
   erb :"apartment/index"
 end
 
+get '/apartments/new' do
+  erb :"apartment/new"
+end
+
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   erb :"apartment/show"
+end
+
+post '/apartments' do
+  apt = Apartment.create(params[:apartment])
+  redirect "/apartments/#{apt.id}"
 end
 
 get '/tenants' do
