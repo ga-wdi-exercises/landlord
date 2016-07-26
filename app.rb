@@ -14,9 +14,14 @@ get '/' do
   erb :index
 end
 
+# Tenant routes - includes logic for adding, deleting, and editing tenants
 get '/tenants' do
   @tenants = Tenant.all
   erb :"tenants/index"
+end
+
+get '/tenants/new' do
+  erb :"tenants/new"
 end
 
 get '/tenants/:id' do
@@ -24,6 +29,30 @@ get '/tenants/:id' do
   erb :"tenants/show"
 end
 
+post '/tenants' do
+  @tenant = Tenant.create(params[:tenant])
+  redirect "/tenants/#{@tenant.id}"
+end
+
+get '/tenants/:id/edit' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/edit"
+end
+
+put '/tenants/:id' do
+  tenant = Tenant.find(params[:id])
+  tenant.update(params[:tenant])
+  redirect "/tenants/#{tenant.id}"
+end
+
+delete '/tenants/:id' do
+  tenant = Tenant.find(params[:id])
+  tenant.destroy
+  redirect '/tenants'
+end
+
+
+# Apartment routes - includes logic for adding, deleting, and editing apartments
 get '/apartments' do
   @apartments = Apartment.all
   erb :"apartments/index"
