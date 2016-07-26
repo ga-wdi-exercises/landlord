@@ -33,3 +33,20 @@ post '/apartment' do
   @apartment = Apartment.create(params[:apartment])
  redirect "/apartment/#{@apartment.id}"
 end
+
+get '/apartment/:id/edit' do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartment/edit"
+end
+
+put '/apartment/:id' do
+  apartment = Apartment.find(params[:id])
+  apartment.update(params[:apartment])
+  redirect "/apartment/#{apartment.id}"
+end
+
+delete '/apartment/:id' do
+  apartment = Apartment.find(params[:id])
+  apartment.destroy
+  redirect '/apartment'
+end

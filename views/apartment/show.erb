@@ -1,3 +1,4 @@
+<a href="/apartment/<%=@apartment.id%>/edit"> Edit This Apartment </a>
 <p> The address is: </p>
 <p><%=@apartment.address%></p>
 <p>***************************<p>
@@ -17,5 +18,3 @@
 <%@apartment.tenants.each do |tenant|%>
   <p> <%=tenant.name%> </p>
   <%end%>
-
-  <%=@apartment%>
