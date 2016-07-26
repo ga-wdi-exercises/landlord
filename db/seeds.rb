@@ -1,6 +1,9 @@
-require_relative "connection"
-require_relative "../models/apartment"
-require_relative "../models/tenant"
+require_relative 'connection'
+require_relative '../models/apartment'
+require_relative '../models/tenant'
+
+Apartment.destroy_all
+Tenant.destroy_all
 
 Apartment.destroy_all
 Tenant.destroy_all
