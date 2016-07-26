@@ -22,3 +22,26 @@ header {
   position: fixed;
   width: 100%;
 }
+h2 {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+a:active {
+  color: blue;
+}
+a:hover {
+  opacity: .7;
+}
+p {
+  line-height: .5;
+}
+form {
+    max-width: 750px;
+}
+input {
+    margin: 10px;
+}
