@@ -132,10 +132,10 @@ the expected output (in terms of the numbers of apartments and tenants.) -->
 <!-- ![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
 Make a commit before you move on! -->
 
-### Step 3 - Build out the CLI Interface
+<!-- ### Step 3 - Build out the CLI Interface
 
 Build out a simple command line interface that provides a menu prompt and allows
-the user to:
+the user to: -->
 
 <!-- 1. See a list of all apartments (include ID#, address, and monthly rent)
 2. See a list of all tenants (include name and age)
@@ -145,39 +145,38 @@ the user to:
 Make a commit before you move on! -->
 
 
-### Bonus
+<!-- ### Bonus
 
-- extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
+- extend functionality of the command line app where you, the landlord,
+can assign people to apartments,
+evict tenants,
+change rent and .... whatever you want! -->
 
-# DUE FRIDAY:
-
-<!--
+<!-- # DUE FRIDAY:
 
 ## Sinatra Views and Templates
 
-**Do not connect sinatra to the DB.** That's friday's hw. Focus on creating the routes and views.
-Hardcode some sample html for each of the views.
+**Do not connect sinatra to the DB.** That's friday's hw. Focus on creating the routes and views. -->
+<!-- Hardcode some sample html for each of the views.
 
 Create the (RESTful) routes and views for the following items:
 
-- The homepage should list several menu options:
-  * List all apartments (a link to `GET /apartments`)
-  * View an apartment's details(a link to `GET /apartments/1`)
-  * Add an apartment(a link to `GET /apartments/new`)
-  * List tenants (a link to `GET /apartments/1/tenants`)
-- The route `GET /apartments` should list all apartments
-  * these apartments will just be hardcoded in your `app.rb` or in your `erb` file.
-- The route `GET /apartments/new` should show a form for adding a new apartment
-  * Make sure to get the appropriate input from the user when creating an apartment as per schema
-- The route `GET /apartments/1` should show info about a single apartment
-  * Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters
-- The route `GET /apartments/1/tenants` should list all tenants for 1 apartment.
-- The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
-  * Make sure to get the appropriate input from the user to create your person as per schema
+- The homepage should list several menu options: -->
+  <!-- * List all apartments (a link to `GET /apartments`) -->
+  <!-- * View an apartment's details(a link to `GET /apartments/1`) -->
+  <!-- * Add an apartment(a link to `GET /apartments/new`) -->
+  <!-- * List tenants (a link to `GET /apartments/1/tenants`) -->
+<!-- - The route `GET /apartments` should list all apartments
+  * these apartments will just be hardcoded in your `app.rb` or in your `erb` file. -->
+<!-- - The route `GET /apartments/new` should show a form for adding a new apartment
+  * Make sure to get the appropriate input from the user when creating an apartment as per schema -->
+<!-- - The route `GET /apartments/1` should show info about a single apartment
+  * Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters -->
+<!-- - The route `GET /apartments/1/tenants` should list all tenants for 1 apartment. -->
+<!-- - The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
+  * Make sure to get the appropriate input from the user to create your person as per schema -->
 
--->
-
-## Sinatra & DB
+<!-- ## Sinatra & DB
 
 Example of using instance variables:
 
@@ -188,36 +187,31 @@ Example of using instance variables:
   ```html
   <% @apartments.each do |apartment| %>
     <li><%= apartment.address %></li>
-  <% end %>
-  ```
+  <% end %> -->
+<!-- You should complete as many of the following routes (aka features) as you can -->
 
-> This will be a full single model CRUD application that connects to a database backend
-
-You should complete as many of the following routes (aka features) as you can:
-
-- Have an index route for apartments (`GET /apartments`)
-  - should list all of the apartments
-  - each apartment should link to its own show page
-  - it should have a link to create a new apartment
-- have a show route for each apartment specified by the params value in the URL. (e.g. `GET /apartments/17`)
-  - it should list its address, monthly rent, square feet, number of bedrooms and number of bathrooms
-  - it should have a link to delete the apartment
-  - it should have a link to edit the apartment
-  - it should show all tenants living in the apartment
-- have a new route for apartments (`GET /apartments/new`)
-  - this will contain the form to create new apartments
-  - when this form is submitted it will send a `POST` request to the create route(below) in your database.
-- have a create route for apartments (`POST /apartments`)
-  - when there's a `POST` request to this route, it will create an apartment in your database
-  - upon creation it will redirect to the created apartment's show route.
-- have an edit route for a single apartment (e.g. `GET /apartments/15/edit`)
-  - this will contain the form to edit an existing apartment
-  - when this form is submitted it will send a `PUT` request to and update route(below) in your database
-- have an update route for a single apartment specified by the params value in the URL. (e.g. `PUT /apartments/9`)
-  - when there's a `PUT` request to this route, it will update an apartment in the database
-  - after updating it should redirect to the updated apartments show route
-- have a delete route for a single apartment specified by the params value in the URL. (e.g. `DELETE /apartments/4`)
-  - when there's a `DELETE` request to this route, it will delete the apartment specified.
+<!-- Have an index route for apartments (`GET /apartments`)
+  should list all of the apartments
+   each apartment should link to its own show page
+   it should have a link to create a new apartment
+ have a show route for each apartment specified by the params value in the URL. (e.g. `GET /apartments/17`)
+   it should list its address, monthly rent, square feet, number of bedrooms and number of bathrooms
+   it should have a link to delete the apartment
+   it should have a link to edit the apartment
+   it should show all tenants living in the apartment
+ have a new route for apartments (`GET /apartments/new`)
+   this will contain the form to create new apartments
+   when this form is submitted it will send a `POST` request to the create route(below) in your database.
+ have a create route for apartments (`POST /apartments`)
+   when there's a `POST` request to this route, it will create an apartment in your database
+   upon creation it will redirect to the created apartment's show route.
+ have an edit route for a single apartment (e.g. `GET /apartments/15/edit`)
+   this will contain the form to edit an existing apartment
+   when this form is submitted it will send a `PUT` request to and update route(below) in your database
+ have an update route for a single apartment specified by the params value in the URL. (e.g. `PUT /apartments/9`)
+   when there's a `PUT` request to this route, it will update an apartment in the database
+   after updating it should redirect to the updated apartments show route
+ have a delete route for a single apartment specified by the params value in the URL. (e.g. `DELETE /apartments/4`) when there's a `DELETE` request to this route, it will delete the apartment specified. -->
 
 ### BONUS
 

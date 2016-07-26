@@ -1,0 +1,9 @@
+<h1 class='headline'><a href="/">Go Home!</a></h1>
+<h2 class='headline'>All your current Properties</h2>
+<%@apartments.each do |apartment| %>
+    <p><a href="/apartments/<%= apartment.id%>">Address: <%= apartment.address%></a></p>
+    <p>Rent: <%= apartment.monthly_rent.to_s%></p>
+    <p>Square Feet <%= apartment.sqft.to_s%></p>
+    <p>Beds: <%= apartment.num_beds.to_s%></p>
+    <p>Baths: <%= apartment.num_baths.to_s%></p>
+<%end%>

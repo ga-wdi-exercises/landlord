@@ -14,7 +14,7 @@ class Tenant < ActiveRecord::Base
      def self.find_apt(name)
          name_object = Tenant.find_by name:name
          puts "Name: #{name_object.name}"
-         puts "Apartment: #{name_object.apartment.get_all}"
+         puts "Apartment:#{name_object.apartment.get_all}"
      end
 
      def self.match_apt
