@@ -1,11 +1,15 @@
-require "bundler/setup"
+require 'sinatra'
+require 'sinatra/reloader'
 require "pg"
 require "active_record"
-require "pry"
 
 require_relative "db/connection"
+
 require_relative "models/tenant"
+require_relative 'models/apartment'
 
-binding.pry
 
-puts "end app"
+get '/tenants' do
+  @tenants = Tenant.all
+  erb :"tenants/index"
+end
