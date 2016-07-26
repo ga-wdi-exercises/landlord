@@ -11,7 +11,7 @@ require_relative 'models/apartment'
 require_relative 'models/tenant'
 
 get '/' do
-  redirect '/tenants'
+  erb :index
 end
 
 get '/tenants' do
