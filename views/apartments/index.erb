@@ -1,3 +1,7 @@
 <% @apartment.each do |apart| %>
   <h3><%= apart.address %></h3>
+    <div>Rent: $<%= apart.monthly_rent %></div>
+    <div>Square feet: <%= apart.sqft%> ft&#178</div>
+    <div>Number of Bedrooms: <%= apart.num_beds%></div>
+    <div>Number of Baths: <%= apart.num_baths%></div>
 <% end %>

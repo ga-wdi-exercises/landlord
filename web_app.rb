@@ -12,7 +12,9 @@ require_relative 'models/tenant'
 
 
 get '/' do 
-  redirect '/apartments'
+  @apart = '/apartments'
+  @tenant = '/tenants'
+  erb :'home/index'
 end
 
 get '/apartments' do
@@ -21,3 +23,7 @@ get '/apartments' do
   erb :"/apartments/index"
 end
 
+get '/tenants' do 
+  @tenant = Tenant.all
+  erb :"/tenants/index"
+end 
