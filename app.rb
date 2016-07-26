@@ -57,7 +57,7 @@ get '/tenants' do
 end
 
 get '/tenants/new' do
-
+  erb :"tenants/new"
 end
 
 get '/tenants/:id' do
@@ -66,18 +66,24 @@ get '/tenants/:id' do
   erb :"tenants/show"
 end
 
-get 'tenants/:id/edit' do
-  
+get '/tenants/:id/edit' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/edit"
 end
 
 post '/tenants' do
-
+  ten = Tenant.create(params[:tenant])
+  redirect "/tenants/#{ten.id}"
 end
 
 put '/tenants/:id' do
-
+  ten = Tenant.find(params[:id])
+  ten.update(params[:tenant])
+  redirect "tenants/#{ten.id}"
 end
 
 delete '/tenants/:id' do
-
+  ten = Tenant.find(params[:id])
+  ten.destroy
+  redirect '/tenants'
 end
