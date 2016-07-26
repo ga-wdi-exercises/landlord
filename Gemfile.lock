@@ -17,6 +17,8 @@ GEM
     arel (6.0.3)
     builder (3.2.2)
     coderay (1.1.0)
+    faker (1.6.6)
+      i18n (~> 0.5)
     i18n (0.7.0)
     json (1.8.3)
     method_source (0.8.2)
@@ -39,6 +41,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  faker
   pg
   pry
   rspec-core (~> 3.5, >= 3.5.1)

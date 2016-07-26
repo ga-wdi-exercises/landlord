@@ -1,11 +1,11 @@
-# require "bundler/setup"
+require "bundler/setup"
 require "pg"
 require "active_record"
 require "pry"
 
 require_relative "db/connection"
-require_relative "models/apartment"
-require_relative "models/tenant"
+require_relative "db/models/apartment"
+require_relative "db/models/tenant"
 
 # NOTE: Uncomment the lines below to verify that your seed script is working
 
