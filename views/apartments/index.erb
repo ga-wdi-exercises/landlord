@@ -1,3 +1,4 @@
+<p class="new"><a class="btn btn-warning btn-sm" href="/apartments/new">(+) Add New Apartment</a></p>
 
 <% @apartments.each do |apartment| %>
     <p id="aptaddress"><a class="btn btn-primary btn-sm" href="/apartments/<%= apartment.id %>"><%= apartment.address %></a></p>
