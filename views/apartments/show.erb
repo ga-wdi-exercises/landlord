@@ -1,20 +1,24 @@
-<h2><a href="/apartments">All Apartments</a></h2>
-<div>
-  <h2>
-    Address: <%= @apartment.address %>
-  </h2>
-  <p>
-    Rent: <%= @apartment.monthly_rent %>
-  </p>
-  <p>
-    Square Feet: <%= @apartment.sqft %>
-  </p>
-  <p>
-    Bedrooms: <%= @apartment.num_beds %>
-  </p>
-  <p>
-    Bathrooms: <%= @apartment.num_baths %>
-  </p>
-</div>
+<div class='container'>
+  <h1><a href="/apartments"><strong>All Apartments</strong></a></h2>
+<br>
+  <div>
+    <h3>
+      Address: <%= @apartment.address %>
+    </h3>
 
-<!-- address, monthly_rent, sqft, num_beds, num_baths -->
+    <p>
+      Rent: $<%= @apartment.monthly_rent %>
+    </p>
+    <p>
+      Square Feet: <%= @apartment.sqft %>
+    </p>
+    <p>
+      Bedrooms: <%= @apartment.num_beds %>
+    </p>
+    <p>
+      Bathrooms: <%= @apartment.num_baths %>
+    </p>
+  </div>
+
+  <p><a class="btn btn-success btn-md" href="/apartments/<%= @apartment.id %>/edit">Edit Apartment</a></p>
+</div>

@@ -15,8 +15,28 @@ get '/' do
 end
 
 get '/apartments' do
-  @apartments = Apartment.all
+  @apartments = Apartment.all.order(address: :asc)
   erb :"apartments/index"
+end
+
+get '/apartments/new' do
+  erb :"apartments/new"
+end
+
+post '/apartments' do
+  @apartment = Apartment.create(address: params[:address], monthly_rent: params[:monthly_rent], sqft: params[:sqft], num_beds: params[:num_beds], num_baths: params[:num_baths])
+  redirect '/apartments'
+end
+
+get '/apartments/:id/edit' do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartments/edit"
+end
+
+put '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.update(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
 end
 
 get '/apartments/:id' do
@@ -24,9 +44,41 @@ get '/apartments/:id' do
   erb :"apartments/show"
 end
 
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect '/apartments'
+end
+
 get '/tenants' do
-  @tenants = Tenant.all
+  @tenants = Tenant.all.order(name: :asc)
   erb :"tenants/index"
+end
+
+get '/tenants/new' do
+  erb :"tenants/new"
+end
+
+post '/tenants' do
+  @tenant = Tenant.create(name: params[:name], age: params[:age], gender: params[:gender])
+  redirect '/tenants'
+end
+
+get '/tenants/:id/edit' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/edit"
+end
+
+put '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.update(params[:tenant])
+  redirect "/tenants/#{@tenant.id}"
+end
+
+delete '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.destroy
+  redirect "/tenants"
 end
 
 get '/tenants/:id' do

@@ -1,8 +1,13 @@
-<h2><a href="/tenants">All Tenants</a></h2>
+<div class="container">
+<h1><a href="/tenants">All Tenants</a></h1>
 
-<h4>
+<h3>
   Name: <%= @tenant.name %>
-</h4>
+</h3>
 
-<p><%= @tenant.age %></p>
-<p><%= @tenant.gender %></p>
+<p>Age: <%= @tenant.age %></p>
+<p>Gender: <%= @tenant.gender %></p>
+<br>
+<br>
+<a class="btn btn-success" href="/tenants/<%= @tenant.id %>/edit">Edit Tenant</a>
+</div>
