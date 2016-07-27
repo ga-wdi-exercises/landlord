@@ -47,6 +47,10 @@ end
 
 delete '/apartments/:id' do
   apt = Apartment.find(params[:id])
+  residents = Tenant.where(apartment_id: params[:id])
+  residents.each do |resident|
+    resident.destroy
+  end
   apt.destroy
   redirect '/apartments'
 end
