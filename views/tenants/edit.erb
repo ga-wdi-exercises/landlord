@@ -8,7 +8,11 @@
     <label>Age:</label>
     <input type="text" name="tenant[age]" value="<%= @tenant.age %>">
     <label>Gender:</label>
-    <input type="text" name="tenant[gender]" value="<%= @tenant.gender %>">
+    <select name="tenant[gender]" value="<%= @tenant.gender %>">
+      <option value="" disabled selected><%= @tenant.gender %></option>
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+    </select>
     <p>
     <label>Apartment:</label>
     <select name="tenant[apartment_id]">

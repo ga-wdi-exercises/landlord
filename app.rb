@@ -27,6 +27,8 @@ end
 
 get '/tenants/:id' do
   @tenant = Tenant.find(params[:id])
+  apt_id = Tenant.find(params[:id]).apartment_id
+  @current_apt = Apartment.find(apt_id)
   erb :"tenants/show"
 end
 
