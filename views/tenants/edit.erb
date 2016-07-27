@@ -1,0 +1,24 @@
+<form action="/tenants/<%= @tenant.id %>" method= "post">
+  <input type="hidden" name="_method" value="put">
+<label> Name:  </label>
+<input type="text" name="tenant[name]"   value= "<%=@tenant.name %>">
+<br>
+<br>
+<br>
+<label> Age: </label>
+<input type="text" name="tenant[age]"  value= "<%=@tenant.age %>">
+<br>
+<br>
+<br>
+<label> Gender: </label>
+<input type="text" name="tenant[gender]"  value= "<%=@tenant.gender %>">
+<br>
+<br>
+<br>
+<label> Apartment_ID: </label>
+<input type="text" name="tenant[apartment_id]"  value= "<%=@tenant.apartment_id %>">
+<br>
+<br>
+<br>
+<input type="submit" value="Edit Tenant">
+</form>

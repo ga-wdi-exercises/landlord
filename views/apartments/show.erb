@@ -2,6 +2,9 @@
 <h2>Apartment monthly rent: <%= @apartment.monthly_rent %></h2>
 <br>
 <br>
+<h2><a href="/apartments/<%= @apartment.id %>/edit">Edit Apartment</a></h2>
+<br>
+<br>
 <h2>Current Tenants:</h2>
 <% @current_tenants.each do |tenant| %>
 <h3><a href = "/tenants/<%= tenant.id %>"><%= tenant.name %></a></h3>
