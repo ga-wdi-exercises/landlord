@@ -6,8 +6,6 @@
 <h3><a href="/apartments/<%= @apartment.id %>/edit">Edit This Apartment</a></h3>
 
 <h2> Tenants:<% @apartment.tenants.each do |tenant| %>
-
-<%= tenant.name %>
-
+<h2><hr><a href='/tenants/<%=tenant.id %>'><%= tenant.name %></h2>
 <% end %>
  </h2>
