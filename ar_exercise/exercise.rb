@@ -47,13 +47,14 @@ damien_addr.tenants
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
 Tenant.all.each do |tenant|
-  puts "#{tenant.name}: #{tenant.id}"
+  puts "#{tenant.name}, #{tenant.id}"
 end
 # Iterate over each apartment, for each apartment, display it's address and rent price
 Apartment.all.each do |apartment|
-  puts "#{apartment.address}: #{apartment.monthly_rent}"
+  puts "#{apartment.address}, #{apartment.monthly_rent}"
 end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+
 
 ################################################
 # CREATING / UPDATING / DELETING
