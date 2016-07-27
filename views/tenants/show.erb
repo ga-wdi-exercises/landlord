@@ -1,6 +1,10 @@
-<h2> <%= @tenant.name %> </h2>
-<h2> Age: <%= @tenant.age %> </h2>
-<h2> Gender: <%= @tenant.gender %> </h2>
-<h2> Apartment: <%= @tenant.apartment_id %> </h2>
+<div class="info">
+<h1> <%= @tenant.name %> </h1>
+<h3> <span>Age</span>: <%= @tenant.age %> </h2>
+<h3> <span>Gender</span>: <%= @tenant.gender %> </h2>
+<h3> <span>Apartment</span>: <%= @apartment.address %> </h2>
+</div>
 
-<h3><a href="/tenants/<%= @tenant.id %>/edit">Edit This tenant</a></h3>
+<div class ="edit">
+<h2><a href="/tenants/<%= @tenant.id %>/edit">Edit This tenant</a></h3>
+</div>

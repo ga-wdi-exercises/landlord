@@ -65,6 +65,7 @@ get '/tenants' do
   # 4th step: getting the id of a apartment and feeding into the url to direct the client to a specific apartment page
   get '/tenants/:id' do
     @tenant = Tenant.find(params[:id])
+    @apartment = Apartment.find(@tenant.apartment_id)
     erb :"tenants/show"
   end
   # 5th step: creates new apartment based off criteria entered in form on View/erb 'new' & redirects based off apartment id

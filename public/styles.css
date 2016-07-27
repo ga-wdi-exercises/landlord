@@ -1,9 +1,7 @@
 a {
   text-decoration: none;
   color: rgb(237, 121, 88);
-
 }
-
 a:link {
   text-decoration: none;
   color: rgb(237, 121, 88);
@@ -16,9 +14,17 @@ a:hover {
   text-decoration: none;
   color: rgb(255, 64, 8);
 }
+.wrapper, {
+  margin-top: 12em;
+}
 
+span {
+  text-decoration: underline;
+}
 header {
-  font-size: 45px;
+  position: fixed;
+  text-decoration: overline underline;;
+  font-size: 60px;
   margin: 0 auto;
   text-align: center;
   box-sizing: border-box;
@@ -42,10 +48,28 @@ nav, form {
   margin-bottom: 50px;
 
 }
+nav {
+  position: fixed;
+  margin-top: 4em;
 
+}
+.wrapper {
+  position: relative;
+  margin-top: 10em;
+  text-align: center;
+  z-index: -1;
+}
+.apartment, .tenant {
+  float: left;
+  margin: 0 auto;
+  width: 100%;
+}
 
 body {
-  background-image: url(/Blueprint-featured.png);
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  /*background-image: url(/Blueprint-featured.png);*/
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-family: "Ariel", monospace;
@@ -56,7 +80,7 @@ h1, h2, h3 {
   color: rgb(148, 61, 36);
   box-sizing: border-box;
   padding: 10px;
-  width: 100%;
+  width: 80%;
   margin: auto;
   background-color: rgba(255, 255, 255, .8);
   text-align: center;
