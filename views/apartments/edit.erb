@@ -12,11 +12,11 @@
   <label>Number of Bathrooms</label>
   <input type="text" name="apartment[num_baths]" value = "<%= @apartment.num_baths %>">
 
-  <input type="submit" value="uh oh we editing this business all over the place broh">
+  <input type="submit" value="Edit tenant">
 </form>
 
 <form class="" action="/apartments/<%= @apartment.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <label></label>
-  <input type="submit" value="DESTROY THAT APT BROH">
+  <input type="submit" value="Delete tenant">
 </form>

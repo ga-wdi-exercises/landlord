@@ -12,10 +12,10 @@
     <input type="radio" name="tenant[apartment_id]" value="<%= apartment.id %>">
     <label><%= apartment.address %></label><br>
   <% end %>
-  <input type="submit" value="personality is a mutable construct broh">
+  <input type="submit" value="Edit tenant">
 </form>
 
 <form action="/tenants/<%= @tenant.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="YOU SICK MONSTER">
+  <input type="submit" value="Delete tenant">
 </form>
