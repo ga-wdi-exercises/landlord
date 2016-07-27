@@ -7,16 +7,24 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
-# NOTE: Uncomment the lines below to verify that your seed script is working
+puts "Welcome, please select 'a' to see your apartment listings, 'b' to see your tenant listings, or 'c' to see apartments and associated tenants."
 
-# puts "There are #{Apartment.count} apartments"
-# puts "There are #{Tenant.count} tenants"
-#
-# puts "*" * 50
-#
-# puts "The first apartment is at #{Apartment.first.address}."
-# puts "It has  #{Apartment.first.tenants.count} tenants."
+answer = gets.chomp
+
+if answer == "a"
+  Apartment.all.each do |apartment|
+    puts "ID: #{apartment.id}, Address: #{apartment.address}, Monthly Rent: $#{apartment.monthly_rent}"
+  end
+elsif answer == "b"
+  Tenant.all.each do |tenant|
+    puts "Name: #{tenant.name}, Age: #{tenant.age}"
+  end
+elsif answer == "c"
+  
+end
+
+
 
 binding.pry
 
-puts "ignore this line, it's just here so the binding.pry above works"
+#puts "ignore this line, it's just here so the binding.pry above works"
