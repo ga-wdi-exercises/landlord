@@ -1,0 +1,16 @@
+<form action="/tenants/<%= @tenant.id %>" method="post" >
+  <input type="hidden" name="_method" value="put">
+  <label>Name:</label>
+  <input type="text" name="tenant[name]" value="<%= @tenant.name %>">
+  <label>Age:</label>
+  <input type="text" name="tenant[level]" value="<%= @tenant.age %>">
+  <label>Gender:</label>
+  <input type="text" name="tenant[img_url]" value="<%= @tenant.gender %>">
+  <input type="submit" value="Update Tenant">
+</form>
+
+<h2> Delete Tenant</h2>
+<form action="/tenants/<%= @tenant.id %>" method="post" >
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Tenant">
+</form>

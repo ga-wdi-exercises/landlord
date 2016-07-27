@@ -1,0 +1,72 @@
+a {
+  text-decoration: none;
+  color: rgb(237, 121, 88);
+
+}
+
+a:link {
+  text-decoration: none;
+  color: rgb(237, 121, 88);
+}
+a:visited {
+  text-decoration: none;
+  color: rgb(148, 61, 36);
+}
+a:hover {
+  text-decoration: none;
+  color: rgb(255, 64, 8);
+}
+
+header {
+  font-size: 45px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  justify-content: center;
+}
+
+nav, form {
+  font-size: 25px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 50px;
+
+}
+
+
+body {
+  background-image: url(/Blueprint-featured.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: "Ariel", monospace;
+  letter-spacing: .25em;
+  font-size: 200%;
+}
+h1, h2, h3 {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  justify-content: center;
+}
+label, .delete {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  justify-content: center;
+
+}
