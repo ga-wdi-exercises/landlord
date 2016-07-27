@@ -54,10 +54,7 @@ Apartment.all.each do |apartment|
   puts "#{apartment.address}, #{apartment.monthly_rent}"
 end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-Apartment.all.each do |apartment|
-  apartment.tenants.each do |tenant|
-  puts "#{apartment.address}, #{tenant.name}"
-end
+
 
 ################################################
 # CREATING / UPDATING / DELETING

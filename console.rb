@@ -20,8 +20,13 @@ elsif answer == "b"
     puts "Name: #{tenant.name}, Age: #{tenant.age}"
   end
 elsif answer == "c"
-  
+  Apartment.all.each do |apartment|
+    puts "Address: #{apartment.address}"
+ end
 end
+
+#need to get this last one to work porperly!
+
 
 
 
