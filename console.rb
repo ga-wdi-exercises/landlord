@@ -21,10 +21,13 @@ elsif answer == "b"
   end
 elsif answer == "c"
   Apartment.all.each do |apartment|
-    puts "Address: #{apartment.address}"
+    puts "#{apartment.address}"
+  #  Tenant.all.each do |tenant|
+  #  puts tenant.where("apartment_id == apartment.id")
+  end
  end
 end
-#need to get this last one to work porperly!
+#need to get this last one to work properly! ^
 
 
 
