@@ -25,7 +25,17 @@ end
 
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
+  @current_tenants = Tenant.where(apartment_id: params[:id])
   erb :"apartments/show"
+end
+
+get '/apartment/new' do
+  erb :"apartments/new"
+end
+
+post '/apartments/index' do
+  apartment = Apartment.create(params[:apartment])
+  redirect '/apartments/index'
 end
 
 get '/tenants/index' do
@@ -33,7 +43,17 @@ get '/tenants/index' do
   erb :"tenants/index"
 end
 
+get '/tenants/new' do
+  erb :"tenants/new"
+end
+
 get '/tenants/:id' do
   @tenant = Tenant.find(params[:id])
+  @current_apartment = Apartment.find(@tenant.apartment_id)
   erb :"tenants/show"
+end
+
+post '/tenants/:id' do
+  tenant = Tenant.create(params[:tenant])
+  redirect '/tenants/index'
 end

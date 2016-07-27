@@ -1,2 +1,6 @@
 <h2> Tenant Name: <%= @tenant.name %> </h2>
 <h2> Tenant Age: <%= @tenant.age %> </h2>
+<br>
+<br>
+<h2>Current Residence:</h2>
+<h3><a href = "/apartments/<%= @current_apartment.id %>"><%= @current_apartment.address %></a></h3>
