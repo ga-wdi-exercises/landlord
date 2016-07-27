@@ -35,6 +35,7 @@ get '/apartments/:id/edit' do
   erb :"apartments/edit"
 end
 
+
 put '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   @apartment.update(params[:apartment])
@@ -50,6 +51,15 @@ end
 get '/tenants' do
   @all_tenants = Tenant.all
   erb :"tenants/index"
+end
+
+get '/tenants/new' do
+  erb :'tenants/new'
+end
+
+post '/tenants' do
+  @tenant = Tenant.create(params[:tenant])
+  redirect "/tenants/#{@tenant.id}"
 end
 
 get '/tenants/:id' do
