@@ -1,12 +1,17 @@
-<h1><a href="/apartments">Go Back to Apartments!</a></h1>
-<h2> Address: <%= @apartments.address.to_s%></h2>
-<p>Rent: <%= @apartments.monthly_rent.to_s%></p>
-<p>Square Feet <%= @apartments.sqft.to_s%></p>
-<p>Beds: <%= @apartments.num_beds.to_s%></p>
-<p>Baths: <%= @apartments.num_baths.to_s%></p>
-<h3><a href="/apartments/<%=@apartments.id%>/tenants">Tenants</a></h3>
-<h3><a href="/apartments/<%=@apartments.id%>/edit">Edit Listing</a></h3>
-<form action="/apartments/<%= @apartments.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input class="button-delete" type="submit" value="Delete!">
-</form>
+<h1 class ='headline'><a href="/">Main Menu</a></h1>
+<h1 class ='headline'><a href="/apartments">Listings!</a></h1>
+<div class='apartment_container'>
+    <div class='listing-individual'>
+        <h2 class='list'> Address: <%= @apartments.address.to_s%></h2>
+        <p class='list'>Rent: <%= @apartments.monthly_rent.to_s%></p>
+        <p class='list'>Square Feet <%= @apartments.sqft.to_s%></p>
+        <p class='list'>Beds: <%= @apartments.num_beds.to_s%></p>
+        <p class='list'>Baths: <%= @apartments.num_baths.to_s%></p>
+        <h3 class='edit-list'><a href="/apartments/<%=@apartments.id%>/tenants">Apartment Tenants</a></h3>
+        <h3 class='edit-list'><a href="/apartments/<%=@apartments.id%>/edit">Edit Listing</a></h3>
+        <form class='delete-button' action="/apartments/<%= @apartments.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input class="button-delete" type="submit" value="Delete!">
+        </form>
+    </div>
+</div>

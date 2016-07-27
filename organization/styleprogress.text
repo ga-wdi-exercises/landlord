@@ -1,0 +1,11 @@
+FINISHED
+-layout
+-index
+-apartments/index
+-apartments/show
+
+To Complete
+-edit.erb
+-new.erb
+-tenants.erb
+-tenants/new.erb

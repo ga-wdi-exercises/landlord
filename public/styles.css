@@ -6,6 +6,7 @@ body{
 }
 
 .headline{
+    margin-top: 1em;
     text-align: center;
     color: rgb(230, 230, 230);
     font-family: 'Old Standard TT', serif;
@@ -20,12 +21,15 @@ body{
 }
 
 .menu_button{
+    display: flex;
     margin: 0 3em;
     border-radius: 25px;
     height: 300px;
     width: 300px;
     position: relative;
     background-color: rgba(102, 102, 102, 0.6);
+    align-items: center;
+    justify-content: center;
 }
 
 .flex-mask {
@@ -48,13 +52,67 @@ body{
     opacity: 1;
 }
 
+.hide{
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Old Standard TT', serif;
+}
+
+.menu_button:hover .hide{
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+}
+
 .show {
     margin: 0;
     max-width: 50%;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Old Standard TT', serif;
 }
 
 a {
     color: rgb(230, 230, 230);
     text-decoration: none;
+}
+
+.apartment_container{
+    display: flex;
+    justify-content: center;
+}
+
+.listing{
+    width: 250px;
+    height: 160px;
+    margin: 2em 4em;
+    background-color: rgba(102, 102, 102, 0.8);
+    border-radius: 12px;
+}
+
+.listing-individual{
+    width: 250px;
+    height: 280px;
+    margin: 2em 4em;
+    background-color: rgba(102, 102, 102, 0.8);
+    border-radius: 12px;
+
+}
+
+.list{
+    font-family: 'Old Standard TT', serif;
+    font-size: 11px;
+    color: rgb(230, 230, 230);
+    text-shadow: 1px 1px rgb(80, 80, 80);
+    margin-left: 1em;
+    text-align: center;
+}
+
+.edit-list{
+    font-weight: bolder;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 1px 1px rgb(80, 80, 80);
+}
+
+.delete-button{
+    text-align: center;
 }
