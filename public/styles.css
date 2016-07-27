@@ -55,9 +55,9 @@ nav {
 }
 .wrapper {
   position: relative;
-  margin-top: 10em;
+  margin-top: 7em;
   text-align: center;
-  z-index: -1;
+  z-index: auto;
 }
 .apartment, .tenant {
   float: left;
