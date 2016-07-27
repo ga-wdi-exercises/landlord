@@ -15,3 +15,10 @@
   <input type="text" name="tenant[apartment_id]" value ="<%= @tenant.apartment_id%>">
   <input type="submit" value="Update">
 </form>
+
+
+<h3>DELETE this tenant</h3>
+<form action="/tenants/<%= @tenant.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>

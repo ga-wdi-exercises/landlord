@@ -77,3 +77,9 @@ put '/tenants/:id' do
   @tenant.update(params[:tenant])
   redirect "/tenants/#{@tenant.id}"
 end
+
+delete '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.destroy
+  redirect '/tenants'
+end
