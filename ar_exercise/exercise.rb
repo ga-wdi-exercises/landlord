@@ -66,8 +66,11 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-
+Apartment.create(address: "1234 House Drive", monthly_rent: 200, sqft: 120, num_beds: 1, num_baths: 1)
+Apartment.create(address: "2500 Panda Bear Lane", monthly_rent: 2000, sqft: 1200, num_beds: 2, num_baths: 1)
+Apartment.create(address: "5600 Pants Circle", monthly_rent: 2500, sqft: 2400, num_beds: 3, num_baths: 2)
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
