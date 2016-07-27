@@ -1,0 +1,225 @@
+body{
+    background-image: url("http://i.imgur.com/krNWsKp.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.headline{
+    margin-top: 3em;
+    text-align: center;
+    color: rgb(250, 250, 230);
+    font-family: 'Old Standard TT', serif;
+    text-shadow: 1px 1px rgb(102, 102, 102);
+}
+
+.listing-title{
+    margin-top: 2em;
+}
+
+.container{
+    margin-top: 7em;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.menu_button{
+    display: flex;
+    margin: 0 3em;
+    border-radius: 25px;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    background-color: rgba(102, 102, 102, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-mask {
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #f2f2f2;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    background: rgba(0,0,0,0.7);
+}
+
+.flex-mask:hover{
+    opacity: 1;
+}
+
+.hide{
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Old Standard TT', serif;
+}
+
+.menu_button:hover .hide{
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+}
+
+.show {
+    margin: 0;
+    max-width: 50%;
+    font-size: 20px;
+    font-family: 'Old Standard TT', serif;
+}
+
+a {
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+}
+
+.apartment_container{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.listing{
+    width: 250px;
+    height: 190px;
+    margin: 2em 4em;
+    background-color: rgba(102, 102, 102, 0.8);
+    border-radius: 12px;
+}
+
+.listing-individual{
+    width: 250px;
+    height: 320px;
+    margin: 2em 4em;
+    background-color: rgba(102, 102, 102, 0.8);
+    border-radius: 12px;
+}
+
+.tenant-listing{
+    width: 250px;
+    height: 150px;
+    margin: 2em 4em;
+    background-color: rgba(102, 102, 102, 0.8);
+    border-radius: 12px;
+}
+
+.list{
+    font-family: 'Old Standard TT', serif;
+    font-size: 11px;
+    color: rgb(230, 230, 230);
+    text-shadow: 1px 1px rgb(80, 80, 80);
+    margin-left: 1em;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.edit-list{
+    font-weight: bolder;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 1px 1px rgb(80, 80, 80);
+}
+
+.button{
+    text-align: center;
+    padding: 0;
+    width: 200px;
+    margin-top: 0;
+    display: block;
+}
+
+.delete-button{
+    text-align: center;
+    padding: 0;
+    width: 200px;
+    margin-top: 0;
+}
+
+.title {
+  position:relative;
+  font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+  font-weight:bold;
+  font-size: 25px;
+  text-shadow: 0px 1px 2px rgba(255,255,255,.5);
+  color: rgb(80, 80, 80);
+  text-align:center;
+}
+
+form {
+  background: none;
+  margin: 20px auto 0;
+  padding: 10px;
+  width: 280px;
+}
+
+label{
+    color: rgb(230, 230, 230);
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    text-shadow: 1px 1px rgb(80, 80, 80);
+}
+
+input {
+  display: block;
+  font-size: 14px;
+  width:240px;
+  margin: 10px auto;
+  padding: 10px 8px 10px 8px;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0, .55), 0px 1px 1px rgba(255,255,255,.5);
+  border: 1px solid #666;
+}
+
+input:hover,
+input:focus {
+  color:#08c;
+  border: 1px solid #08c;
+   box-shadow: 0px 1px 0px rgba(255,255,255,.25),inset 0px 3px 6px rgba(0,0,0,.25);
+}
+
+input[type="submit"] {
+  appearance: none;
+  opacity: .99;
+  width:120px;
+  background: #08c;
+  box-shadow: inset 0 1px 2px rgba(255,255,255, .35), 0px 1px 6px rgba(0,246,255,.5);
+  border: 1px solid #0a5378;
+  border-radius: 4px;
+  color: #eee;
+  cursor: pointer;
+  text-shadow:0px -1px 0px rgba(0,0,0,.5);
+}
+
+#contain {
+    margin : 0 auto;
+    position : relative;
+    margin-top : 50px;
+}
+
+#footer {
+    text-align:center;
+    margin: 10px -2px 0px;
+    padding: 1px 1px;
+    border-radius: 5px 5px 5px 5px;
+    color: rgb(102, 102, 102);
+    background: rgb(255,255,255);
+    font-weight:bold;
+    font-size: 60%;
+}
+
+footer{
+    margin: 0 auto;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}

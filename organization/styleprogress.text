@@ -1,0 +1,14 @@
+FINISHED
+-layout
+-index
+-apartments/index
+-apartments/show
+-tenants/show.erb
+-edit.erb
+-new.erb
+-tenants/new.erb
+
+To Complete
+Tenant assignment interface (Remove Tenant button under Apartment Show Tenant - Assign Tenant Button also) 
+Apartment Image under the Apartment id show view
+Delete Tenant button under Apartment Tenant View

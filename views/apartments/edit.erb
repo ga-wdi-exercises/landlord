@@ -1,0 +1,22 @@
+<h1 class='headline'><a href="/apartments/<%=@apartments.id%>">Back to Apartment</a></h1>
+<form action="/apartments/<%= @apartments.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <div class='title'>Edit Apartment</div>
+
+    <label for="apartment[address]">Address:</label>
+    <input name="apartment[address]" value="<%= @apartments.address %>">
+
+    <label for="apartment[monthly_rent]">Rent:</label>
+    <input name="apartment[monthly_rent]" value="<%= @apartments.monthly_rent %>">
+
+    <label for="apartment[sqft]">swft:</label>
+    <input name="apartment[sqft]" value="<%= @apartments.sqft %>">
+
+    <label for="apartment[num_beds]">Beds:</label>
+    <input name="apartment[num_beds]" value="<%= @apartments.num_beds %>">
+
+    <label for="apartment[num_beds]">Baths:</label>
+    <input name="apartment[num_beds]" value="<%= @apartments.num_baths %>">
+
+    <input type="submit" value="Update">
+</form>

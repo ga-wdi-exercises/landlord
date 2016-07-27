@@ -1,0 +1,11 @@
+<h1 class='headline'><a href="/apartments/<%=@apartments.id%>">Go Back to Apartment Details!</a></h1>
+<div class='apartment_container'>
+<% @tenants.each do |tenant| %>
+    <div class='tenant-listing'>
+        <p class='list'>Name:<%=tenant.name%></p>
+        <p class='list'>Age:<%=tenant.age%></p>
+        <p class='list'>Gender:<%=tenant.gender%></p>
+    </div>
+<%end%>
+</div>
+<h3 class='headline listing-title'><a href="/apartments/<%=@apartments.id%>/tenants/new">New Tenant</a></h3>
