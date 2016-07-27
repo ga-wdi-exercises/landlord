@@ -1,3 +1,4 @@
+<p class="new"><a class="btn btn-warning btn-sm" href="/tenants/new">(+) Add Tenant</a></p>
 <% @tenants.each do |tenant| %>
-<p><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></p>
+<p id="alltenants"><a class="btn btn-success btn-sm" href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></p>
 <% end %>
