@@ -52,7 +52,7 @@ get '/tenants' do
   erb :"tenants/index"
 end
 
-get '/tenatns/:id' do
+get '/tenants/:id' do
   @tenant = Tenant.find(params[:id])
   erb :"tenants/show"
 end
