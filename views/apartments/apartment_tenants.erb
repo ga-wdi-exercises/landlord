@@ -1,0 +1,5 @@
+<h3>Please click on the Tenant to see their information</h3>
+<h2><%= @apartment.address %></h2>
+<% @tenant.each do |tenant| %>
+  <a href="/tenant/<%= tenant.id %>"><h3><%= tenant.name %></a></h3>
+<% end %>
