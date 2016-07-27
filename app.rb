@@ -66,3 +66,14 @@ get '/tenants/:id' do
   @tenant = Tenant.find(params[:id])
   erb :"tenants/show"
 end
+
+get '/tenants/:id/edit' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/edit"
+end
+
+put '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.update(params[:tenant])
+  redirect "/tenants/#{@tenant.id}"
+end
