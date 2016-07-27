@@ -49,6 +49,12 @@ get '/apartments/:id/edit' do
   erb :"apartments/edit"
 end
 
+delete '/apartments/:id' do
+  apartment = Apartment.find(params[:id])
+  apartment.destroy
+  redirect '/apartments/index'
+end
+
 
 
 
@@ -90,4 +96,10 @@ put '/tenants/:id' do
   tenant = Tenant.find(params[:id])
   tenant.update(params[:tenant])
   redirect "/tenants/#{tenant.id}"
+end
+
+delete '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.destroy
+  redirect '/tenants/index'
 end

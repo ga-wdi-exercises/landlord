@@ -22,3 +22,12 @@
 <br>
 <input type="submit" value="Edit Tenant">
 </form>
+
+<br>
+<br>
+
+<h2>Delete Tenant</h2>
+<form action="/tenants/<%= @tenant.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
