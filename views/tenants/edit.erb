@@ -10,8 +10,13 @@
     <label>Gender:</label>
     <input type="text" name="tenant[gender]" value="<%= @tenant.gender %>">
     <p>
-    <label>Apartment ID:</label>
-    <input type="text" name="tenant[apartment_id]" value="<%= @tenant.apartment_id %>">
+    <label>Apartment:</label>
+    <select name="tenant[apartment_id]">
+      <option value="" disabled selected><%= @current_apt.address %></option>
+      <% @apartments.each do | apartment | %>
+          <option value="<%= apartment.id %>"><%= apartment.address %></option>
+      <% end %>
+    </select>
     <input type="submit" value="Update Tenant">
   </p>
   </form>

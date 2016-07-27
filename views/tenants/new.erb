@@ -9,8 +9,13 @@
     <label>Gender:</label>
     <input name="tenant[gender]">
     <p>
-    <label>Apartment ID:</label>
-    <input name="tenant[apartment_id]">
+    <label>Apartment:</label>
+    <select name="tenant[apartment_id]">
+      <option value="" disabled selected>Select an Apartment</option>
+      <% @apartments.each do | apartment | %>
+          <option value="<%= apartment.id %>"><%= apartment.address %></option>
+      <% end %>
+    </select>
     <input type="submit" value="Add Tenant">
     </p>
   </form>

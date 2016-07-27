@@ -21,6 +21,7 @@ get '/tenants' do
 end
 
 get '/tenants/new' do
+  @apartments = Apartment.all
   erb :"tenants/new"
 end
 
@@ -36,6 +37,9 @@ end
 
 get '/tenants/:id/edit' do
   @tenant = Tenant.find(params[:id])
+  apt_id = Tenant.find(params[:id]).apartment_id
+  @current_apt = Apartment.find(apt_id)
+  @apartments = Apartment.all
   erb :"tenants/edit"
 end
 

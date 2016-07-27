@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background: url('/images/buildings.jpg');
-  background-size: auto;
+  background-size: 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
