@@ -11,7 +11,7 @@ require_relative 'models/tenant'
 
 # first step: get the '/' page up on Sinatra
 get '/' do
-  redirect '/apartments'
+  erb:"index"
 end
 
 # 2nd step: redirect '/' to '/apartments' which lists apartment.all using the view from ERB :apartments/index
