@@ -1,0 +1,21 @@
+<form action="/tenants/<%= @tenants.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <labe>Name: </label>
+  <input type="text" name="tenant[name]" value="<%= @tenant.name %>">
+
+  <label>Age: </label>
+  <input type="text" name="tenant[age]" value="<%= @tenant.age %>">
+
+  <label>Gender: </label>
+  <input type="text" name="tenant[gender]" value="<%= @artist.gender %>">
+
+  <label>Apartment ID: </label>
+  <input type="text" name="tenant[apartment_id]" value="<%= @tenant.apartment_id %>">
+
+  <h2>Delete Tenant</h2>
+  <form action="/tenants/<%= @tenant.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="DELETE TENANT">
+  </form>
+  
