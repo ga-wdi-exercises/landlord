@@ -1,4 +1,4 @@
 <h2>Tenants</h1>
 <% @all_tenants.each do |tenant|%>
-  <h3><%= tenant.name%></h2>
+  <h3><a href="tenants/<%= tenant.id%>"><%= tenant.name%></h2>
   <% end%>
