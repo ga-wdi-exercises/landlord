@@ -1,0 +1,23 @@
+
+
+.apartments {
+  background: rgba(192,192,192,.5);
+  width: 40%;
+  display: inline-block;
+  margin: 0 auto;
+  margin-right: 2em;
+  margin-left: 2em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.tenants {
+  background: rgba(192,192,192,.8);
+  width: 40%;
+  display: inline-block;
+  margin: 0 auto;
+  margin-right: 2em;
+  margin-left: 2em;
+  margin-top: 2em;
+  text-align: center;
+}

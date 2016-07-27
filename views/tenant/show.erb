@@ -1,0 +1,13 @@
+<p> The tenants name is: </p>
+<p><%=@tenant.name%></p>
+<p>***************************<p>
+<p> The tenant's age is: </p>
+<p><%=@tenant.age%></p>
+<p>***************************<p>
+<p> The tenants gender is: </p>
+<p><%=@tenant.gender%></p>
+<p>***************************<p>
+<p> The tenant lives in: </p>
+<p><%=@tenant.apartment.address%></p>
+
+<a href="/tenant/<%=@tenant.id%>/edit">Edit This Tenant </a>

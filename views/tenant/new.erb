@@ -1,0 +1,19 @@
+<h2>New Tenant</h2>
+
+<form action="/tenant" method="post" >
+  <label>Name</label>
+  <input name="tenant[name]">
+
+  <label>Age</label>
+  <input name="tenant[age]">
+
+  <label>Gender</label>
+  <input name="tenant[gender]">
+
+  <label>Apartment</label>
+  <% @apartments.each do |apartment| %>
+    <p> <%=apartment.address%>
+    <input type="radio" name="tenant[apartment_id]" value ="<%=apartment.id%>">
+    <%end%>
+  <input type="submit" value="Create">
+</form>
