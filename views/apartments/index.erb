@@ -1,0 +1,14 @@
+<% @apartments.each do |apartment| %>
+<div class="container">
+  <div class="row">
+    <div class= "apartment">
+      <h2> <span class="name">Address:</span> <%= apartment.address %></h2>
+      <h2> <span class="name">Rent:</span>  <%= apartment.monthly_rent %></h2>
+      <h2> <span class="name">Square Feet:</span> <%= apartment.sqft %></h2>
+      <h2> <span class="name">Number of beds:</span> <%= apartment.num_beds %></h2>
+      <h2> <span class="name">Number of baths:</span> <%= apartment.num_baths %></h2>
+      <h3><a href='/apartments/<%= apartment.id %>'>More info</a></h3>
+    </div>
+  </div>
+</div>
+<% end %>
