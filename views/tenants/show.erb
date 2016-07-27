@@ -1,5 +1,7 @@
-<h2><%= @tenant.name %></h2>
-<p>Age: <%= @tenant.age %></p>
-<p>Gender: <%= @tenant.gender %></p>
-<p>Apartment ID: <%= @tenant.apartment_id %></p>
-<p><a href="/tenants">Back to listings</a> | <a href="/tenants/<%= @tenant.id %>/edit">Edit Tenant</a></p>
+<div class="container">
+  <h2><%= @tenant.name %></h2>
+  <p>Age: <%= @tenant.age %></p>
+  <p>Gender: <%= @tenant.gender %></p>
+  <p>Apartment ID: <%= @tenant.apartment_id %></p>
+  <p><a href="/tenants">Back to listings</a> | <a href="/tenants/<%= @tenant.id %>/edit">Edit Tenant</a></p>
+</div>
