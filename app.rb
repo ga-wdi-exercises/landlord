@@ -54,10 +54,10 @@ delete '/apartments/:id' do
   redirect("/apartments")
 end
 
-get '/apartments/:id/tenants' do
+get '/apartments/:id/tenants/show' do
     @apartments=Apartment.find(params[:id])
     @tenants = Apartment.find(params[:id]).tenants
-    erb :'apartments/tenants'
+    erb :'apartments/tenants/show'
 end
 
 get '/apartments/:id/tenants/new' do

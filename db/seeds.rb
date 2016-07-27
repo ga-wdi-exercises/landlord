@@ -10,6 +10,12 @@ Apartment.destroy_all
 ap1 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
 ap2 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
 ap3 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+ap4 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+ap5 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+ap6 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+ap7 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+ap8 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
+ap9 = Apartment.create(address: Faker::Address.street_address, monthly_rent: Faker::Number.number(3), sqft: Faker::Number.number(3), num_beds: Faker::Number.number(1) , num_baths: Faker::Number.number(1))
 
 Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'male', apartment: ap1)
 Tenant.create(name: Faker::StarWars.character, age: Faker::Number.number(2) , gender: 'female', apartment: ap2)

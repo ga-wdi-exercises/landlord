@@ -1,13 +1,15 @@
-<h1 class='headline'><a href="/">Main Menu</a></h1>
-<h2 class='headline'>All your current Properties</h2>
+<a href="/"><h1 class='headline'>Main Menu</h1></a>
+<h2 class='headline listing-title'>All your current Properties</h2>
 <div class='apartment_container'>
     <%@apartments.each do |apartment| %>
         <div class='listing'>
-            <p class='list'><a href="/apartments/<%= apartment.id%>">Address: <%= apartment.address%></a></p>
-            <p class='list'>Rent: $<%= apartment.monthly_rent.to_s%></p>
-            <p class='list'>Square Feet: <%= apartment.sqft.to_s%> sqft</p>
-            <p class='list'>Beds: <%= apartment.num_beds.to_s%></p>
-            <p class='list'>Baths: <%= apartment.num_baths.to_s%></p>
+            <a href="/apartments/<%= apartment.id%>">
+                <p class='list'>Address: <%= apartment.address%></p>
+                <p class='list'>Rent: $<%= apartment.monthly_rent.to_s%></p>
+                <p class='list'>Square Feet: <%= apartment.sqft.to_s%> sqft</p>
+                <p class='list'>Beds: <%= apartment.num_beds.to_s%></p>
+                <p class='list'>Baths: <%= apartment.num_baths.to_s%></p>
+            </a>
         </div>
 <%end%>
 </div>

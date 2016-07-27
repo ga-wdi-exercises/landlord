@@ -1,7 +1,0 @@
-<h1><a href="/apartments/<%=@apartments.id%>">Go Back to Apartment Details!</a></h1>
-<% @tenants.each do |tenant| %>
-<p>Name:<%=tenant.name%></p>
-<p>Age:<%=tenant.age%></p>
-<p>Gender:<%=tenant.gender%></p>
-<%end%>
-<h3><a href="/apartments/<%=@apartments.id%>/tenants/new">New Tenant</a></h3>
