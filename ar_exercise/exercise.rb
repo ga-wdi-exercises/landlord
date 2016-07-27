@@ -54,7 +54,10 @@ Apartment.all.each do |apartment|
   puts "#{apartment.address}, #{apartment.monthly_rent}"
 end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-
+Apartment.all.each do |apartment|
+  apartment.tenants.each do |tenant|
+  puts "#{apartment.address}, #{tenant.name}"
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -63,6 +66,7 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
