@@ -1,4 +1,11 @@
 <h2>All Tenants</h2>
+
 <% @tenants.each do |tenant|%>
-<p><%= tenant.name %></p>
+<li><%= tenant.name %></li>
+<% end %>
+
+<h2>All Apartments</h2>
+
+<% @apartments.each do |apartment|%>
+<li><%= apartment.address %></li>
 <% end %>
