@@ -3,10 +3,6 @@ a {
   color: rgb(148, 61, 36);
 }
 
-.wrapper, {
-  margin-top: 12em;
-}
-
 span {
   text-decoration: underline;
 }
@@ -49,6 +45,16 @@ nav {
   margin-top: 7em;
   text-align: center;
   z-index: 0;
+  background-image: url("living_room.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.wrapperNew {
+  position: relative;
+  margin-top: 0;
+  text-align: center;
+  z-index: 0;
+  height:15em;
   background-image: url("living_room.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
