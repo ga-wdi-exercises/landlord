@@ -1,0 +1,8 @@
+<div class="container">
+  <p><a href="/tenants/new">+ Add New Tenant</a></p>
+  <% @tenants.each do | tenant| %>
+    <div class="tenant">
+      <h2><a href='/tenants/<%= tenant.id %>'><%= tenant.name %></a></h2>
+    </div>
+  <% end %>
+</div>

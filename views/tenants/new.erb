@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>New Tenant</h2>
+
+  <form action="/tenants" method="post">
+    <label>Name:</label>
+    <input name="tenant[name]">
+    <label>Age:</label>
+    <input name="tenant[age]">
+    <label>Gender:</label>
+    <select name="tenant[gender]">
+      <option value="" disabled selected>Select an option</option>
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+    </select>
+    <p>
+    <label>Apartment:</label>
+    <select name="tenant[apartment_id]">
+      <option value="" disabled selected>Select an Apartment</option>
+      <% @apartments.each do | apartment | %>
+          <option value="<%= apartment.id %>"><%= apartment.address %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Add Tenant">
+    </p>
+  </form>
+</div>

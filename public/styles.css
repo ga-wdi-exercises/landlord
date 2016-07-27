@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  background: url('/images/buildings.jpg');
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.container {
+  background: white;
+  opacity: .8;
+  padding: 20px;
+  border-radius: 10px;
+}
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 4.5em;
+}
+#logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3em;
+}
+
+h1#logo {
+  margin: 0;
+  display: inline-block;
+}
+
+a.menu {
+    color: white;
+    float: right;
+    padding: 5px 10px;
+    font-size: 1.2em;
+}
+a.menu:active {
+  color: white;
+}
+
+nav {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  background: black;
+  height: 34px;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+h2 {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: #1a75ff;
+}
+a:active {
+  color: #1a75ff;
+}
+a:hover {
+  opacity: .7;
+}
+p {
+  line-height: .5;
+}
+form {
+    max-width: 750px;
+}
+input {
+    margin: 10px;
+}
