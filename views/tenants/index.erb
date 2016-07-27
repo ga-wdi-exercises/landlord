@@ -1,4 +1,4 @@
 <h2>Please Click on a tenant to view more about them</h2>
 <% @tenant.each do |tenant| %>
-  <div class="tenants"><a href="tenant/<%= tenant.id %>"><%= tenant.name %></a></div>
+  <div class="tenants"><a href="tenants/<%= tenant.id %>"><%= tenant.name %></a></div>
 <% end %>

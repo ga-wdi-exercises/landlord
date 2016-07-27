@@ -1,5 +1,13 @@
 <h3>Please click on the Tenant to see their information</h3>
+<h3><a href="/apartments/<%= @apartment.id %>/edit">Edit this Apartment</a></h3>
 <h2><%= @apartment.address %></h2>
 <% @tenant.each do |tenant| %>
   <a href="/tenant/<%= tenant.id %>"><h3><%= tenant.name %></a></h3>
 <% end %>
+
+<h2>Delete this Apartment</h2>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="delete_button" type="submit" value="DELETE">
+</form>
+

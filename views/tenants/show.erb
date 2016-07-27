@@ -1,3 +1,11 @@
-  <h2><%= @tenant.name %> is <%= @tenant.age %> years old and identifies as a <%= @tenant.gender %></h2>
-  <h2><%= @tenant.name %> lives at <%= @apartment.address %></h2>
+<h3><a href="/tenants/<%= @tenant.id %>/edit">Click Here to Edit this Tenant's Information</a></h3>
+<h2><%= @tenant.name %> is <%= @tenant.age %> years old and identifies as a <%= @tenant.gender %></h2>
+<h2><%= @tenant.name %> lives at <%= @apartment.address %></h2>
+
+<h2>Delete this Tenant</h2>
+<form action="/tenants/<%= @tenant.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="delete_button" type="submit" value="DELETE">
+</form>
+
 
