@@ -24,7 +24,6 @@ elsif answer == "c"
     puts "Address: #{apartment.address}"
  end
 end
-
 #need to get this last one to work porperly!
 
 
