@@ -1,0 +1,7 @@
+<h2><%= @tenant.name%></h2>
+<ul>
+  <li>Age : <%= @tenant.age%></li>
+  <li>Gender : <%= @tenant.gender%></li>
+  <li>Apartment : <%= Apartment.find(@tenant.apartment_id).address%></li>
+</ul>
+<h3><a href="/tenants/<%= @tenant.id%>/edit">Edit this tenant</a></h3>

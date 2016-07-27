@@ -195,21 +195,21 @@ Example of using instance variables:
 
 You should complete as many of the following routes (aka features) as you can:
 
-- Have an index route for apartments (`GET /apartments`)
-  - should list all of the apartments
-  - each apartment should link to its own show page
-  - it should have a link to create a new apartment
-- have a show route for each apartment specified by the params value in the URL. (e.g. `GET /apartments/17`)
-  - it should list its address, monthly rent, square feet, number of bedrooms and number of bathrooms
+- Have an index route for apartments (`GET /apartments`)✓
+  - should list all of the apartments✓
+  - each apartment should link to its own show page✓
+  - it should have a link to create a new apartment✓
+- have a show route for each apartment specified by the params value in the URL. (e.g. `GET /apartments/17`)✓
+  - it should list its address, monthly rent, square feet, number of bedrooms and number of bathrooms✓
   - it should have a link to delete the apartment
   - it should have a link to edit the apartment
-  - it should show all tenants living in the apartment
-- have a new route for apartments (`GET /apartments/new`)
-  - this will contain the form to create new apartments
-  - when this form is submitted it will send a `POST` request to the create route(below) in your database.
-- have a create route for apartments (`POST /apartments`)
-  - when there's a `POST` request to this route, it will create an apartment in your database
-  - upon creation it will redirect to the created apartment's show route.
+  - it should show all tenants living in the apartment✓
+- have a new route for apartments (`GET /apartments/new`)✓
+  - this will contain the form to create new apartments✓
+  - when this form is submitted it will send a `POST` request to the create route(below) in your database.✓
+- have a create route for apartments (`POST /apartments`)✓
+  - when there's a `POST` request to this route, it will create an apartment in your database✓
+  - upon creation it will redirect to the created apartment's show route.✓
 - have an edit route for a single apartment (e.g. `GET /apartments/15/edit`)
   - this will contain the form to edit an existing apartment
   - when this form is submitted it will send a `PUT` request to and update route(below) in your database
