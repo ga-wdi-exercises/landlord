@@ -57,6 +57,7 @@ get '/tenants' do
 end
 
 get '/tenants/new' do
+  @apartments = Apartment.all
   erb :"tenants/new"
 end
 
