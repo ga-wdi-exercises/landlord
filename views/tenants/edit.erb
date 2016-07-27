@@ -7,7 +7,11 @@
   <input type="text" name="tenant[age]" value="<%= @tenant.age %>">
   <label>Gender</label>
   <input type="text" name="tenant[gender]" value="<%= @tenant.gender %>">
-
+  <label>Residence</label>
+  <% @apartments.each do |apartment| %>
+    <input type="radio" name="tenant[apartment_id]" value="<%= apartment.id %>"">
+    <label><%= apartment.address %></label>
+  <% end %>
   <input type="submit" value="personality is a mutable construct broh">
 </form>
 

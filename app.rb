@@ -67,11 +67,13 @@ get '/tenants/:id' do
 end
 
 get '/tenants/:id/edit' do
+  @apartments = Apartment.all
   @tenant = Tenant.find(params[:id])
   erb :"tenants/edit"
 end
 
 post '/tenants' do
+  @apartments = Apartment.all
   ten = Tenant.create(params[:tenant])
   redirect "/tenants/#{ten.id}"
 end
