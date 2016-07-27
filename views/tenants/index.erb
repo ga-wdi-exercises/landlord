@@ -1,5 +1,5 @@
 <% @tenants.each do |tenant| %>
 <div class="tenant">
-  <h2><hr><%= tenant.name %></h2>
+  <h2><hr><a href='/tenants/<%=tenant.id %>'><%= tenant.name %></h2>
 </div>
 <% end %>

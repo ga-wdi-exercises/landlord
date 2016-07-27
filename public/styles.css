@@ -53,6 +53,7 @@ body {
   font-size: 200%;
 }
 h1, h2, h3 {
+  color: rgb(148, 61, 36);
   box-sizing: border-box;
   padding: 10px;
   width: 100%;
@@ -61,7 +62,13 @@ h1, h2, h3 {
   text-align: center;
   justify-content: center;
 }
+
+label{
+  color: rgb(237, 121, 88);
+}
+
 label, .delete {
+  rgb(148, 61, 36);
   width: 50%;
   margin: 0 auto;
   margin-top: 20px;
