@@ -14,6 +14,6 @@ CREATE TABLE apartments (
   address TEXT NOT NULL,
   monthly_rent INT,
   sqft INT,
-  num_bed INT,
+  num_beds INT,
   num_baths INT
 );

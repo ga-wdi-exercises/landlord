@@ -1,9 +1,9 @@
-### NOTE: Make sure you've loaded the seeds.sql file into your DB before starting
+###  Make sure you've loaded the seeds.sql file into your DB before starting
 ### this exercise
-
-require "pg" # postgres db library
-require "active_record" # the ORM
-require "pry" # for debugging
+require "bundler/setup"
+require "pg"
+require "active_record"
+require "pry"
 
 ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
@@ -102,7 +102,7 @@ verna.monthly_rent += 400
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
 millennials_out = Tenant.where("age < ?", 30)
-millennials_out.destroy 
+millennials_out.destroy
 
 binding.pry
 
