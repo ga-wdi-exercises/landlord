@@ -1,3 +1,8 @@
-require "pg" # postgres db library
-require "active_record" # the ORM
-require "pry" # for debugging
+require "pg"
+require "active_record"
+require "pry"
+
+ActiveRecord::Base.establish_connection(
+:adapter => "postgresql",
+:database => "landlord"
+)
