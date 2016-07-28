@@ -68,12 +68,21 @@ get '/tenants' do
   erb :"/tenants/index"
 end 
 
+# Add new tenant
+get '/tenants/create' do
+  erb :"tenants/create"
+end
 
 get '/tenants/:id' do 
   @tenant = Tenant.find(params[:id])
   @apartment_id = @tenant.apartment.id
   @apartment = Apartment.find(@apartment_id)
   erb :"/tenants/show"
+end
+
+post '/tenants' do
+  tenant = Tenant.create(params[:tenant])
+  redirect "/tenants/#{tenant.id}"
 end
 
 # Edit the Tenant
