@@ -1,0 +1,12 @@
+<a href="/apartments/new">create new property</a>
+
+<% @apartments.each do |apartment| %>
+
+<div class="apartment">
+<h2><a href='/apartments/<%= apartment.id %>'><%= apartment.address %></a></h2>
+  <h3>Monthly rent: $<%= apartment.monthly_rent%></h3>
+  <h3><%= apartment.sqft%> ft&sup2;</h3>
+  <h3><%= apartment.num_beds%> bedrooms</h3>
+  <h3><%= apartment.num_baths%> baths</h3>
+</div>
+<% end %>

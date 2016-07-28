@@ -1,0 +1,9 @@
+<a href="/apartments/new">create new property</a>
+
+<h2>apartment address: <%=@apartment.address%></h2>
+<h3>monthly rent: <%=@apartment.monthly_rent%></h3>
+<h3>square footage: <%=@apartment.sqft%></h3>
+<h3>bedrooms: <%=@apartment.num_beds%></h3>
+<h3>bathrooms: <%=@apartment.num_baths%></h3>
+
+<h3><a href="/apartments/<%= @apartment.id %>/edit">Edit this apartment</a></h3>
