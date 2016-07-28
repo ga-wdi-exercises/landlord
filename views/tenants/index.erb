@@ -1,0 +1,16 @@
+<% @tenants.each do |tenant| %>
+  <div class="tenant">
+    <h2><a href='/tenant/<%= tenant.id %>'><%=tenant.name%></a></h2>
+    <h2>Age:  <%= tenant.age %></h2>
+    <h2>Gender:  <%= tenant.gender %></h2>
+    <h2>Apartment:  <%= tenant.apartment_id %></h2>
+  </div>
+<% end %>
+
+<!-- CREATE TABLE tenants(
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  age INT,
+  gender TEXT,
+  apartment_id INT
+); -->
