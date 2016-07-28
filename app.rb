@@ -14,16 +14,13 @@ end
 
 # List out all apts
 get '/apartments' do
-  @apartments=Apartment.all
+  @apartments = Apartment.all
   erb :"apartments/index"
 end
 
-# get '/apartments' do
-#   @apartments = Apartment.all
-#   erb :"apartments/index"
-# end
-
-
+# Generates a new view w a form which contains
+# ability to create an apt
+# This must be before :id path
 get '/apartments/new' do
   erb :"apartments/new"
 end
