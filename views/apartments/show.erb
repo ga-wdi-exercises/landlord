@@ -1,0 +1,10 @@
+<div class="apartment">
+
+  <p>Address: <%= @apartment.address %></p>
+  <p>Rent: <%= @apartment.monthly_rent %></p>
+  <p>Beds: <%= @apartment.num_beds %></p>
+  <p>Baths: <%= @apartment.num_baths %></p>
+
+</div>
+
+<h3><a href="/apartments/<%= @apartment.id %>/edit">Edit Apartment</a></h3>
