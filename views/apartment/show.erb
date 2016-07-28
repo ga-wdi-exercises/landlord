@@ -3,3 +3,4 @@
 <h3>SQFT: <%= @apartment.sqft %></h3>
 <h3>Number of Beds: <%= @apartment.num_beds %></h3>
 <h3>Number of Baths: <%= @apartment.num_baths %></h3>
+<h3>Owner(s): <a href="/tenant/<%= @tenants.id %>"><%= @tenants.name %></a></h3>

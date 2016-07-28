@@ -34,6 +34,7 @@ end
 
 get '/apartment/:id' do
 	@apartment = Apartment.find(params[:id])
+	@tenants = Tenant.find_by(apartment_id: @apartment.id)
 	erb :"apartment/show"
 end
 
