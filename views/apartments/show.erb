@@ -1,0 +1,26 @@
+<h2>Apartment ID:  <%= @apartment.id %></h2>
+
+  <h3>Address: <%= @apartment.address %> </h3>
+
+  <h3>Monthly Rent: <%= @apartment.monthly_rent %> </h3>
+
+  <h3>Square Feet: <%= @apartment.sqft %> </h3>
+
+  <h3>Bedrooms: <%= @apartment.num_beds %> </h3>
+
+  <h3>Bathrooms: <%= @apartment.num_baths %> </h3>
+
+  <h3>Tenants: <% @apartment.tenants.each do |tenant| %>
+  <a href='/tenants/<%= tenant.id %>'>
+    <%= tenant.name %>
+  </a></h3>
+
+  <% end %>
+
+  <h3>
+    <a href='/apartments/<%= @apartment.id %>/edit'>Edit This Apartment</a>
+  </h3>
+
+  <h3>
+    <a href="/apartments">Return to Apartments</a>
+  </h3>
