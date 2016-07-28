@@ -1,0 +1,34 @@
+<h2>Apartment: <%= @apartment.id %></h2>
+<hr/>
+
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label>Address: </label>
+  <input type="text" name="apartment[address]" value="<%= @apartment.address %>"><br>
+
+  <label>Monthly Rent: </label>
+  <input type="text" name="apartment[monthly_rent]" value="<%= @apartment.monthly_rent %>"><br>
+
+  <label>Square Feet: </label>
+  <input type="text" name="apartment[sqft]" value="<%= @apartment.sqft %>"><br>
+
+  <label>Bedrooms: </label>
+  <input type="text" name="apartment[num_beds]" value="<%= @apartment.num_beds %>"><br>
+
+  <label>Bathrooms: </label>
+  <input type="text" name="apartment[num_baths]" value="<%= @apartment.num_baths %>"><br>
+  <hr/>
+<br>
+  <input class="click" type="submit" value="UPDATE This Apartment">
+</form>
+<br>
+
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="click" type="submit" value="DELETE this Apartment">
+</form>
+<br>
+<button>
+  <a href="/apartments">RETURN to Apartments</a>
+</button>
