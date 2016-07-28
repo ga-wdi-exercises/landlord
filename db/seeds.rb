@@ -1,3 +1,5 @@
+require "active_record"
+require 'pg'
 # loads necessary files
 require_relative "connection"
 require_relative "../models/apartment"
