@@ -1,4 +1,4 @@
 <h1>Name: <%= @tenant.name %></h1>
 <h3>Age: <%= @tenant.age %></h3>
 <h3>Gender: <%= @tenant.gender %></h3>
-<h3>Apartment's Address: <%= @tenant.apartment.address %></h3>
+<h3><a href="/apartment/<%= @tenant.apartment.id %>">Apartment's Address: <%= @tenant.apartment.address %></a></h3>
