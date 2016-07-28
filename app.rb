@@ -43,16 +43,8 @@ put '/apartments/:id' do
   redirect "/apartments/#{@apartment.id}"
 end
 
-
-
-# put '/apartments/:id' do
-#   @apartment = Apartment.find(params[:id])
-#   @apartment.update(params[:apartment])
-#   redirect "/apartment/#{@apartment.id}"
-# end
-#
-# delete '/apartment/:id' do
-#   @apartment = Apartment.find(params[:id])
-#   @apartment.destroy
-#   redirect '/apartments'
-# end
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect '/apartments'
+end
