@@ -2,15 +2,15 @@
 
 <form action="/apartments" method="post">
   <label>Address: </label>
-  <input type="text" name="address">
+  <input name="apartment[address]">
   <label>Monthly Rent: </label>
-  <input type="text" name="monthly_rent">
+  <input name="apartment[monthly_rent]">
   <label>Sqft: </label>
-  <input type="text" name="sqft">
+  <input name="apartment[sqft]">
   <label>Number of Beds: </label>
-  <input type="text" name="num_beds">
+  <input name="apartment[num_beds]">
   <label>Number of Baths: </label>
-  <input type="text" name="num_baths">
+  <input name="apartment[num_baths]">
 
   <input type="submit" value="Create apartment">
 </form>

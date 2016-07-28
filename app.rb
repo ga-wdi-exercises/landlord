@@ -25,15 +25,16 @@ get '/apartments/new' do
   erb :"apartments/new"
 end
 
-# Apartment show page
+# Apartment show page w a button to edit the apartment
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   erb :"apartments/show"
 end
 
-# Create a new apartment
+# Create a new apartment, this path needs to be the same as the action of the form that's making the request in the new.erb
 post '/apartments' do
-  @apartment = Apartment.create(name: params[:name], poke_type: params[:poke_type], cp: params[:cp], img_url: params[:img_url])
+  @apartment = Apartment.create(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
 end
 
 # Edit apartment
@@ -45,12 +46,12 @@ end
 put '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   @apartment.update(params[:apartment])
-  redirect "/apartments #{apartment.id}"
+  redirect "/apartments/#{@apartment.id}"
 end
 
 delete '/apartment/:id' do
-  apartment = Apartment.find(params[:id])
-  apartment.destroy
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
   redirect "/apartments"
 end
 
