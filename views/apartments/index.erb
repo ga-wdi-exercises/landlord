@@ -1,0 +1,19 @@
+<!-- CREATE TABLE apartments(
+  id SERIAL PRIMARY KEY,
+  address TEXT,
+  monthly_rent INT,
+  sqft INT,
+  num_beds INT,
+  num_baths INT
+); -->
+
+<% @apartments.each do |apartment| %>
+  <div class="apartment">
+    <h2><a href='/apartments/<%= apartment.id %>'><%=apartment.address%></a></h2>
+    <h2>Monthly Rent: <%= apartment.monthly_rent %></h2>
+    <h2>Sqft:  <%= apartment.sqft %></h2>
+    <h2>Beds:  <%= apartment.num_beds %></h2>
+    <h2>Bathrooms:  <%= apartment.num_baths %></h2>
+
+  </div>
+<% end %>
