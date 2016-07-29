@@ -1,0 +1,24 @@
+  <h2>Tenant: </h2>
+
+  <h3>Name: </h3>
+  <h4><%= @tenant.name %></h4>
+
+  <h3>Age: </h3>
+  <h4><%= @tenant.age %></h4>
+
+  <h3>Gender: </h3>
+  <h4><%= @tenant.gender %></h4>
+
+  <h3>Residence:</h3>
+  <h4><a href='/apartments/<%= @tenant.apartment_id %>'>
+    <%= @tenant.apartment.address %>
+  </a>
+</h4>
+
+<button>
+  <a href='/tenants/<%= @tenant.id %>/edit'>Edit this Wrestler</a>
+</button>
+
+<h3>
+  <a href="/tenants">Return to Wrestlers</a>
+</h3>
