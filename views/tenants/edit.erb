@@ -1,0 +1,25 @@
+  <h2>Edit Tenant:</h2>
+
+  <form action="/tenants/<%= @tenant.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+
+    <label>Name: </label>
+    <input type="text" name="tenant[name]" value="<%= @tenant.name %>"><br>
+
+    <label>Age: </label>
+    <input type="text" name="tenant[age]" value="<%= @tenant.age %>"><br>
+
+    <label>Gender: </label>
+    <input type="text" name="tenant[gender]" value="<%= @tenant.gender %>"><br>
+
+    <label>Residence ID (#): </label>
+    <input type="text" name="tenant[apartment_id]" value="<%= @tenant.apartment_id %>"><br>
+
+    <input class="click" type="submit" value="Update the Wrestler">
+  </form>
+
+
+  <form action="/tenants/<%= @tenant.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input class="click" type="submit" value="Future Endeavor Wrestler">
+  </form>

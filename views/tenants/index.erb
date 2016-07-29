@@ -1,0 +1,13 @@
+  <h2>Tenants <a href="/tenants/new">(Add)</a></h2>
+
+  <% @tenant.each do |tenant| %>
+
+  <h3>
+    <a href='/tenants/<%= tenant.id %>'>
+      <%= tenant.name %>
+    </a>
+  </h3>
+
+  <% end %>
+
+  <h2>Residences <a href="/apartments">(View All)</a></h2>
