@@ -1,0 +1,13 @@
+<div class="wrapper">
+<h1><%= @apartment.address %> </h1>
+<h3><span><hr> Monthly Rent: $<%= @apartment.monthly_rent %> </span></h3>
+<h3><span><hr> Square Feet: <%= @apartment.sqft %> </span></h3>
+<h3><span><hr> #Bedrooms: <%= @apartment.num_beds %> </span></h3>
+<h3><span><hr> #Bath: <%= @apartment.num_baths %> </span></h3>
+<h1><hr><a href="/apartments/<%= @apartment.id %>/edit">Edit This Apartment</a></h1>
+
+<h1><hr> Tenants:<% @apartment.tenants.each do |tenant| %>
+<h3><hr><a href='/tenants/<%=tenant.id %>'><%= tenant.name %></h3>
+<% end %>
+ </h1>
+</div>

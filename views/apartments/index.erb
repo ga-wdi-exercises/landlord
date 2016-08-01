@@ -1,0 +1,12 @@
+<div class = "wrapper">
+<% @apartments.each do |apartment| %>
+<div class="apartment">
+  <a href='/apartments/<%= apartment.id %>'>
+    <ul>
+      <%= apartment.address %>
+      <br>
+    $<%= apartment.monthly_rent %>/month&middot;<%= apartment.sqft %> ft<sup>2</sup>
+  </ul>
+</div>
+<% end %>
+</div>

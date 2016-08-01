@@ -1,0 +1,9 @@
+
+<div class="wrapper">
+<% @tenants.each do |tenant| %>
+<div class="tenant">
+  <a href='/tenants/<%=tenant.id %>'><%= tenant.name %>
+</div>
+<% end %>
+<div>
+</div>

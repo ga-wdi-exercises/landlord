@@ -1,0 +1,129 @@
+a {
+  text-decoration: none;
+  color: rgb(148, 61, 36);
+}
+
+span {
+  text-decoration: underline;
+}
+header {
+  position: fixed;
+  text-decoration: overline underline;;
+  font-size: 60px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+nav, form {
+  font-size: 25px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  justify-content: center;
+
+
+}
+nav {
+  position: fixed;
+  margin-top: 4em;
+  z-index: 10;
+
+}
+.wrapper {
+  position: relative;
+  margin-top: 7em;
+  text-align: center;
+  z-index: 0;
+  background-image: url("living_room.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.wrapperNew {
+  position: relative;
+  margin-top: 0;
+  text-align: center;
+  z-index: 0;
+  height:15em;
+  background-image: url("living_room.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.apartment{
+  border-top: 3px solid rgb(148, 61, 36);
+  border-bottom: 3px solid rgb(148, 61, 36);
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 auto;
+  width: 50%;
+  height: 70px;
+  padding: 10px;
+  margin-bottom: 10px;
+  clear:both;
+  vertical-align:sub;
+  background-color: rgba(255, 255, 255, .8);
+
+}
+
+.tenant {
+  border-top: 3px solid rgb(148, 61, 36);
+  border-bottom: 3px solid rgb(148, 61, 36);
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 auto;
+  width: 50%;
+  height: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  clear:both;
+  vertical-align:sub;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+body {
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  /*background-image: url(/Blueprint-featured.png);*/
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: "Ariel", monospace;
+  letter-spacing: .25em;
+  font-size: 200%;
+}
+h1, h2 {
+  color: rgb(148, 61, 36);
+  box-sizing: border-box;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  justify-content: center;
+}
+
+h3 {
+  color: rgb(148, 61, 36);
+  box-sizing: border-box;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  justify-content: center;
+}
+
+label{
+  color: rgb(237, 121, 88);
+}
