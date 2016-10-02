@@ -115,6 +115,25 @@ At the very top, ensure your seed file loads the necessary files using `require_
 * the connection file `db/connection`
 * the 2 model files
 
+#NOTE: The `require_relative`: files you add are located relative to the Ruby program running and the path specification where the destination files reside. in the example above the seeds.rb file is located within the db folder.
+├── ar_exercise
+│   └── exercise.rb
+├── console.rb
+├── db
+│   ├── connection.rb
+│   ├── schema.sql
+│   ├── seeds.rb
+│   └── seeds.sql
+├── models
+│   ├── apartment.rb
+│   └── tenant.rb
+└── readme.md
+
+If you are going to add relative locations to the apartment.rb and tenant.rb files relative to the seeds.rb you would need to point them up one directory and over to the models folder.  ie `..\models\apartment.rb `
+So your statement would look like this:
+`require_relative "../models/apartment"``
+
+
 Below that, add these two lines, to ensure running the seed script clears your DB first.
 ```ruby
 Tenant.destroy_all
