@@ -3,18 +3,96 @@ require_relative "models/apartment"
 require_relative "models/tenant"
 
 
-#######################################################################
-# view_all_apts()
-# Description: view all apartment report
+
+
+
+######################################################################
+# Select Apt
+# Description:Display list of all apartments return id
 #     Parmeters: none
 #
-#     Return - nil
+#     Return  - ID of apartment
 #######################################################################
-def view_all_apts()
+def select_apt()
   puts `clear`
-  puts "View All Apartments"
+
+  # Select Apartment for Rent change
+  # Enter Rent Amount
+  # Update Rent
+  # Save Changes
+end # change_rent
+
+######################################################################
+# change Rent()
+# Description: Change Rent of exisiting apt
+#     Parmeters: none
+#
+#     Return  - nil
+#######################################################################
+def change_rent()
+  puts `clear`
+  puts "Change Rent"
+  # Select Apartment for Rent change
+  # Enter Rent Amount
+  # Update Rent
+  # Save Changes
+end # change_rent
+
+######################################################################
+# add_tenants_to_apt()
+# Description: Add Tenants to Apartments
+#     Parmeters: none
+#
+#     Return  - nil
+#######################################################################
+def  add_tenants_to_apt()
+  puts `clear`
+  puts "Change Rent"
+  # Select Apartment for new Tenant
+  # Select Existing Tenant
+  # No  -> Add New Tenant
+  # Yes -> Move Tenant to Apt
+  # Update Tenant Apartment ID
+  # Save Changes
+end #  add_tenants_to_apt
+
+######################################################################
+# Add Evict Tenant()
+# Description: view  and optionally select all Tenant report
+#     Parmeters: none
+#
+#     Return  - nil
+#######################################################################
+def  evict_tenant()
+  puts `clear`
+  puts "Evict Tenant"
+
+  # Select Tenant to Evict
+  # Select Existing Tenant
+  # Delete Tenant
+  # Save Changes
+end # evict Tenant
+
+#######################################################################
+# view_all_apts()
+# Description: view and optionaly select all apartment report
+#     Parmeters: none
+#
+#     Return  - nil
+#######################################################################
+def view_all_apts(title,option)
+  puts `clear`
+  puts title
   puts
-  printf(" %-10s  %-30s  %-7s \n","ID","Address","Rent")
+
+  case option
+  when :get_apt
+    printf("%-8s  %-30s \n","Id","Address")
+  when :view_apt
+    printf("%4s          %-30s %-7s\n","ID","Address","Rent")
+    print
+  end # case
+
 
   # Iterate over each apartment, for each apartment, display it's address and rent price
   Apartment.find_each do |apt|
@@ -26,19 +104,40 @@ end # view all apts
 #######################################################################
 #   view_all_tenants()
 # Description: view all tenants report
-#     Parmeters: None
+#     Parmeters: title - Title to display
+#                option 1  - display list only
+#                option 2  - display Numbered list and get Selection
 #
-#     Return - nil
+#     Return  - nil  - Option 1
+#              ID of Apartment
 #######################################################################
-def   view_all_tenants()
+def   view_all_tenants(title,option)
   puts `clear`
-  puts "View All Tenants"
+  puts title
   puts
-  printf("%-30s  %-8s \n","Name","Age")
+  # setup title strings based on options
+  case option
+  when :get_tenant
+    printf("%-8s  %-30s \n","Id","Name")
+  when :view_tenant
+    printf("%-30s %-8s \n","Name","Age")
+    print
+  end # case
+
   Tenant.find_each do |user|
-    printf( " %-30s  %8d\n",user.name,user.age)
-  end #Tenant
+    case option
+    when :view_tenant
+      printf( "%-30s  %-8d\n",user.name,user.age)
+    when :get_tenant
+      printf( "%-8d %-30s  \n",user.id,user.name)
+    end #case
+  end # doTenant
   printf("%s" , "\n\n")
+  if option == :get_tenant
+    print(" Enter ID of Tenant:")
+    return(gets.chomp)
+  end
+
 end # view_all_tenants
 
 #######################################################################
@@ -46,7 +145,7 @@ end # view_all_tenants
 # Description: view all tenants report
 #     Parmeters: None
 #
-#     Return - nil
+#     Return  - nil
 #######################################################################
 def    view_all_apts_and_tenants()
   puts `clear`
@@ -69,17 +168,17 @@ end # view_all_apts_and_tenants(
 # Description: handle menu number choices
 #     Parmeters: menu_itm
 #
-#     Return - true - exit  false = replay menu
+#     Return  - true  - exit  false = replay menu
 #######################################################################
 def handle_menu(menu_item)
   case menu_item
   when 1
-    view_all_apts
+    view_all_apts("View All Apartments",:view_apt)
     puts("Press [ENTER] to continue")
     gets
     return false
   when 2
-    view_all_tenants
+    view_all_tenants("View All Tenants",:view_tenant)
     puts("Press [ENTER] to continue")
     gets
     return false
@@ -103,18 +202,23 @@ end # handle_menu
 # Description: Display Menu of numeric choices
 #     Parmeters:  None
 #
-#     Return - choice number
+#     Return  - choice number
 #######################################################################
 def menu
   puts `clear`
   puts "Landlord Management System"
   puts
-  puts "1 - View all the apartments"
-  puts "2 - View all the tenants"
-  puts "3 - View all apartments and their associated tenants"
+  puts "1  - View all the apartments"
+  puts "2  - View all the tenants"
+  puts "3  - View all apartments and their associated tenants"
+  puts "4  - Change Rent on Apartment"
+  puts "5  - Evict Tenant"
+  puts "6  - Add New Tenant"
+  puts "8  - Add New Apartment"
+  puts "9  - Move a Tenant"
   puts "99 - Exit this App"
   puts
-  print "Enter Menu Choice[1..2  99 ]:"
+  print "Enter Menu Choice[1..9  99 ]:"
   return gets.chomp.to_i
 end # menu
 
