@@ -1,3 +1,3 @@
 class Tenant < ActiveRecord::Base
-  belongs_to :apartment
+  # AR classes are singular and capitalized by convention
 end
