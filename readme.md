@@ -15,9 +15,9 @@ a section corresponding to the appropriate class.
   - [Schema & SQL](#schema--sql)
   - [Active Record](#active-record)
 - Sinatra Intro
-  - [Sinatra Views and Templates](#sinatra--views--and--templates)
+  - [Sinatra Views and Templates](#sinatra-views-and-templates)
 - Sinatra w/ Active Record
-  - [Sinatra DB](#sinatra--active-record).
+  - [Sinatra Active Record](#sinatra--active-record).
 
 Ideally, you should complete the portion you haven't completed yet before starting
 the next one.
