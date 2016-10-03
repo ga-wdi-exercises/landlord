@@ -6,7 +6,7 @@ CREATE TABLE tenants (
   name VARCHAR(255),
   age INTEGER,
   gender VARCHAR(255),
-  apartment_id
+  apartment_id INTEGER
 );
 
 CREATE TABLE apartments (
