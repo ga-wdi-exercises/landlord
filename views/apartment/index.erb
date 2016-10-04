@@ -1,0 +1,10 @@
+<h2> All Apartments</h2>
+
+
+<pre>
+  <%=sprintf('%-30s %10s %10s %10s  %10s','Address','Rent','Sq Ft','Beds','Baths')%>
+  <% @apartments.each do |apt| %>
+
+   <%= sprintf('%-30s %10d %10d %10d  %10d', apt.address, apt.monthly_rent, apt.sqft, apt.num_beds, apt.num_beds) %>
+  <% end %>
+</pre>
