@@ -1,19 +1,20 @@
-DROP TABLE IF EXISTS tenants, apartments;
+DROP TABLE IF EXISTS tenants;
 
-CREATE TABLE players (
+CREATE TABLE tenants (
   id serial PRIMARY KEY,
-  name TEXT,
+  name VARCHAR,
   age INTEGER,
-  gender TEXT,
+  gender VARCHAR,
   apartment_id INTEGER
 
 );
+DROP TABLE IF EXISTS apartments;
 
 CREATE TABLE apartments (
   id serial PRIMARY KEY,
-  address TEXT,
+  address VARCHAR(50),
   monthly_rent INTEGER,
   sqft INTEGER,
   num_beds INTEGER,
-  num_beds INTEGER
+  num_baths INTEGER
 );
