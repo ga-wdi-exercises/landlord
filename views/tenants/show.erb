@@ -1,0 +1,6 @@
+<h2><%=@tenant.name%></h2>
+<ul>
+  <li>Age: <%= @tenant.age %></li>
+  <li>Gender: <%= @tenant.gender %></li>
+  <li>Apartment: <a href="/apartments/<%=@tenant.apartment.id%>">   <%= @tenant.apartment.address %></a></li>
+</ul>
