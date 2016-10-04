@@ -78,23 +78,44 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `update`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+# Apartment.create(address: "2259 12th St NW", monthly_rent: 1760, sqft: 1400, num_beds: 2, num_baths: 1)
+# Apartment.create(address: "5221 Nebraska Ave NW", monthly_rent: 3600, sqft: 2400, num_beds: 4, num_baths: 2)
+# Apartment.create(address: "646 Orleans Pl NE", monthly_rent: 1800, sqft: 1300, num_beds: 2, num_baths: 1)
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
+# Tenant.create(name: "Tim", age: 26, gender: "male", apartment_id: 24)
+# Tenant.create(name: "Jack", age: 26, gender: "male", apartment_id: 24)
+# Tenant.create(name: "Joe", age: 26, gender: "male", apartment_id: 26)
+# Tenant.create(name: "Trey", age: 24, gender: "male", apartment_id: 25)
+# Tenant.create(name: "Andrew", age: 24, gender: "male", apartment_id: 5)
+# Tenant.create(name: "Moses", age: 29, gender: "male", apartment_id: 10)
+# Tenant.create(name: "Jonathan", age: 99, gender: "male", apartment_id: 7)
+# Tenant.create(name: "Rachel", age: 29, gender: "male", apartment_id: 12)
+# Tenant.create(name: "Jessica", age: 29, gender: "male", apartment_id: 1)
+
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
+# kristin = Tenant.find_by(name: "Kristin Wisoky")
+# kristin.update(age: 24)
 
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
+# verna = Apartment.find_by(address: "62897 Verna Walk")
+# verna.update(num_beds: 3)
 
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
+# verna.update(monthly_rent: 2800)
 
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+# millenials = Tenant.where("age < 30")
+# millenials.destroy_all
 
 binding.pry
