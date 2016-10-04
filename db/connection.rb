@@ -8,11 +8,7 @@ ActiveRecord::Base.establish_connection(
   :database => "landlord"
 )
 
-if defined? Sinatra
-	after do
-	  ActiveRecord::Base.connection.close
-	end
-end
+
 
 binding.pry
 puts "end"
