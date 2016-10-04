@@ -81,14 +81,24 @@ Make a commit before you move on!
 We're going to recreate our command line app, only this time we'll use ActiveRecord
 to store / read our data (instead of hashes and/or plain ruby objects like we did before).
 
-#### Step 0 - Define Your Models
+#### Step 0 - Create a Gemfile
+
+Create a `Gemfile` in the root of your project directory.
+
+> Can be done with `$ bundler init`
+
+Decide which gems to include, add those to your gemfile, then run `$ bundle install` to install those gems locally.
+
+> **Hint**: You might need to install more gems, as this application grows, make sure to run a `$ bundle install` after each new gem you add
+
+#### Step 1 - Define Your Models
 
 Create a `models` folder. Inside that, you should create models for Apartment
 and Tenant. Ensure you set up the correct `has_many` / `belongs_to` associations.
 
 > **Hint**: you can look at the top of `exercise.rb` for code for each model.
 
-#### Step 1 - Create a Connection File
+#### Step 2 - Create a Connection File
 
 Create a `db/connection.rb` file. See the [AR Lesson](https://github.com/ga-wdi-lessons/activerecord-intro#functionality---wdi-i-do---20--105) for an example of what should be in it. Hint: Make sure you update the name of the DB it's connecting to.
 
@@ -109,7 +119,7 @@ the_bat_cave = Apartment.create(address: "123 Main St", monthly_rent: 2000, sqft
 me = Tenant.create(name: "Adam", age: 30, gender: "Male", apartment: the_bat_cave)
 ```
 
-#### Step 2 - Create a Seeds File
+#### Step 3 - Create a Seeds File
 
 Create a `db/seeds.rb` file.
 
@@ -135,7 +145,7 @@ the expected output (in terms of the numbers of apartments and tenants.)
 
 Make a commit before you move on!
 
-#### Step 3 - Build out the CLI Interface
+#### Step 4 - Build out the CLI Interface
 
 Build out a simple command line interface that provides a menu prompt and allows
 the user to:
