@@ -34,13 +34,22 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.find(1)
 # get all tenants older than 65
+older_tenants = Tenant.where(age: > 65)
 # get all apartments whose price is greater than $2300
+price = Apartment.where(monthly_rent: > 2300)
 # get the apartment with the address "6005 Damien Corners"
+damien = Apartment.find_by(address: "6005 Damien Corners")
 # get all tenants in that apartment
+damien_tenant = Tenant.all(address: "6005 Damien Corners")
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+tenants.each do
+  |tenant|
+  puts [:name] [:ID]
+end
 # Iterate over each apartment, for each apartment, display it's address and rent price
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 
@@ -55,15 +64,15 @@ apartment_one = Apartment.create(address: "514 university dr", monthly_rent: 550
 apartment_two = Apartment.create(address: "1400 O St", monthly_rent: 850, sqft: 800, num_beds: 2, num_baths: 2)
 apartment_three = Apartment.create(address: "613 U St", monthly_rent: 700, sqft: 650, num_beds: 2, num_baths: 1)
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-jetta = Tenant.create()
-henry =
-mary =
-larry =
-sam =
-bella =
-neil =
-jaz =
-cam =
+jetta = Tenant.create("Jetta Murphy", 34, "Male", 1)
+henry = Tenant.create("Henry Smith", 70, "Male", 1)
+mary = Tenant.create("Mary Johnson", 43, "Female", 2)
+larry = Tenant.create("Larry Johnson", 39, "Male", 2)
+sam = Tenant.create("Sam Smith", 20, "Female", 3)
+bella = Tenant.create("Bella Diaz", 25, "Female", 3)
+neil = Tenant.create("Neil Schwab", 50, "Female", 4)
+jaz = Tenant.create("Jaz Jazzy", 30, "Male", 4)
+cam = Tenant.create("Cam Newton", 34, "Female", 5)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
