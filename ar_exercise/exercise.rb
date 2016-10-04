@@ -51,7 +51,19 @@ all_tenants = Tenant.all
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+apartment_one = Apartment.create(address: "514 university dr", monthly_rent: 550, sqft: 400, num_beds: 1, num_baths: 1)
+apartment_two = Apartment.create(address: "1400 O St", monthly_rent: 850, sqft: 800, num_beds: 2, num_baths: 2)
+apartment_three = Apartment.create(address: "613 U St", monthly_rent: 700, sqft: 650, num_beds: 2, num_baths: 1)
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+jetta = Tenant.create()
+henry =
+mary =
+larry =
+sam =
+bella =
+neil =
+jaz =
+cam =
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
