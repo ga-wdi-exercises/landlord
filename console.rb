@@ -19,9 +19,9 @@ puts "*" * 50
 puts "The first apartment is at #{Apartment.first.address}."
 puts "It has  #{Apartment.first.tenants.count} tenants."
 
-# Tenant.all.each do |tenant|
-#   puts "here is #{Tenant.name} and their id, #{Tenant.id}"
-# end
+Tenant.all.each do |tenant|
+  puts "here is #{tenant.name} and their id, #{tenant.id}"
+end
 
 binding.pry
 
