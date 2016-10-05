@@ -1,0 +1,14 @@
+<h2>All Apartments</h2>
+<ul>
+  <% @apartments.each do |apt| %>
+  <li><a href="/apartments/<%= apt.id %>"><%= apt.address %></a>
+    <ul>
+      <li>Rent: $<%= apt.monthly_rent %></li>
+      <li>SqFt: <%= apt.sqft %></li>
+      <li>Beds: <%=apt.num_beds%> | Baths: <%=apt.num_baths%></li>
+      <li>Tenants: <%=apt.tenant.length%></li>
+    </ul>
+  </li>
+
+  <% end %>
+</ul>
