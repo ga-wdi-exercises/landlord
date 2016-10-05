@@ -23,9 +23,9 @@ class Menu
   def self.display
     while 1
       puts "Choose one of the following:"
-      puts "1 - Option 1"
-      puts "2 - Option 2"
-      puts "3 - Option 3"
+      puts "1 - List of all apartment ID#, address and monthly_rent"
+      puts "2 - List of all tenants name and age"
+      puts "3 - Address and name of all associated tenants"
       input = gets.chomp
       if ["1","2","3"].include? input
         self.select input

@@ -51,15 +51,24 @@ Tenant.all.where "apartment_id = 6"
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
-all_tenants.each {|tenant| puts "#{tenant.name}, #{tenant.id}"}
-
+all_tenants.each do |tenant|
+  puts "#{tenant.name}, #{tenant.id}"
+end
 
 # Iterate over each apartment, for each apartment, display it's address and rent price
-Apartment.all.each {|apt| puts "#{apt.address}, $#{apt.monthly_rent}"}
+Apartment.all.each do|apt|
+  puts "#{apt.address}, $#{apt.monthly_rent}"
+end
 
 
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-
+all_apartments.each do |apt|
+all_tenants.each do |tenant|
+    if apt[:id] == tenant[:apartment_id]
+      puts "#{apt[:address]}  #{tenant[:name]}"
+    end
+    end
+end
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
