@@ -50,6 +50,15 @@ get '/apartments/1' do
    puts
 end
 
+get "/apartments/new" do
+  erb :"apartment/new"
+end
+
+post "/apartments" do
+  @apartments = Apartment.create(params[:apartment])
+  redirect "/apartments/#{@instructor.id}"
+end
+
 get "/apartments/:id" do
     @apartments= Apartment.find(params[:id])
     @address=@apartments.address
