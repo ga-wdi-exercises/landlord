@@ -1,0 +1,22 @@
+<h2> All Apartments</h2>
+
+
+<pre>
+  <%=sprintf('%-30s %10s %10s %10s  %10s','Address','Rent','Sq Ft','Beds','Baths')%>
+  <% @apartments.each do |apt| %>
+    <div id= "delpair">
+<a href= "/apartments/<%=apt.id%> " >
+   <%= sprintf('%-30s %10d %10d %10d  %10d', apt.address, apt.monthly_rent, apt.sqft, apt.num_beds, apt.num_beds) %> </a>
+   <form action="/apartments/<%= apt.id %>" method="post">
+     <input type="hidden" name="_method" value="delete">
+     <input class="button-delete" type="submit" value="Delete!">
+   </form>
+   <form action="/tenants/<%= apt.id %>" method="get">
+     <input class="button-showtenant" type="submit" value="Show Tenants">
+   </form>
+
+ </div>
+  <% end %>
+</pre>
+
+  <button id="addbut" type="button"><a href='/apartments/new'>Add a NEW apartment</a></button>

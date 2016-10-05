@@ -1,0 +1,15 @@
+
+h2 {
+  font-size:3em;
+}
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+    font-size: 2em;
+}
+#delpair {
+  display:flex;
+  height:100%;
+}

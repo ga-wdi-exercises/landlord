@@ -1,0 +1,9 @@
+<h2> Show Tenants of Apartment <%=@apartments.address %></h2>
+  <pre>
+     <%= sprintf('%-20s %10s %15s','name','age','Gender') %>
+    <% @tenants.each do |tenant| %>
+     <%= sprintf('%-20s %10d %15s',tenant.name, tenant.age,tenant.gender)%>
+     <% end %>
+  </pre>
+
+<a href= "/apartments"> Return to all apartments </a>
