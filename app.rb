@@ -15,5 +15,5 @@ end
 
 get '/apartments' do
   @apartments = Apartment.all
-  erb :index
+  erb :"views/index"
 end
