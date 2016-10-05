@@ -9,3 +9,7 @@ pre {
     margin: 1em 0;
     font-size: 2em;
 }
+#delpair {
+  display:flex;
+  height:100%;
+}
