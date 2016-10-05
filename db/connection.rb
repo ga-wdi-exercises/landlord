@@ -5,7 +5,3 @@ ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
   :database => "landlord"
 )
-
-
-binding.pry
-puts "done"
