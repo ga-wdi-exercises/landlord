@@ -1,0 +1,13 @@
+body {
+  background-color: #ffaa44;
+  text-align: center;
+}
+
+h1 {
+  color: blue;
+  font-size: 40px;
+}
+
+p {
+  font-weight: bold;
+}

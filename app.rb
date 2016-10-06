@@ -15,5 +15,17 @@ end
 
 get '/apartments' do
   @apartments = Apartment.all
-  erb :"views/index"
+  erb :"apartments/index"
+end
+
+get '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @tenant = Tenant.find(params[:id])
+  erb :"apartments/show"
+end
+
+get '/tenants/:id' do
+  @apartment = Aparment.find(params[:id])
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/show"
 end

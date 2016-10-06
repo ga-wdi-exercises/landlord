@@ -9,7 +9,7 @@ INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('44010 Lemke Crossroad', 1000, 1300, 1, 3);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('77841 Jany Lane', 700, 2300, 4, 3);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('4518 Ivy Spur', 2000, 1000, 1, 2);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('95287 Kamille Underpass', 2800, 1400, 1, 3);
+INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('95287 Kamille Underpass', 2800, 1400, 1, 30);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('6005 Damien Corners', 400, 2300, 4, 1);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('95599 Koch Stream', 2400, 1900, 2, 4);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('40583 Hal Crossing', 200, 800, 3, 2);
