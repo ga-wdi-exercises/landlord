@@ -31,18 +31,29 @@ end
 
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
-all_tenants = Tenant.all
-
+    all_tenants = Tenant.all
 # get the first tenant in the DB
-# get all tenants older than 65
-# get all apartments whose price is greater than $2300
-# get the apartment with the address "6005 Damien Corners"
+    first_tenant = Tenant.find(1)
 # get all tenants in that apartment
+    all_apts = Apartment.all
+# get all tenants older than 65
+    older_than_65 = all_tenants.where("age >?", 65)
+# get all apartments whose price is greater than $2300
+    expensive = all_apts.where("monthly_rent >?", 2300)
+# get the apartment with the address "6005 Damien Corners"
+    only_6005 = all_apts.where(address: "6005 Damien Corners")
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+    puts Tenant.params[:id] 
 # Iterate over each apartment, for each apartment, display it's address and rent price
+    Apartments.each do |apartment|
+        puts address && price
+    end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+    Apartments.each do |apartment|
+        puts address && tenants
+    end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -69,3 +80,6 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+binding.pry
+puts "end"
