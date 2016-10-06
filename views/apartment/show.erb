@@ -1,0 +1,27 @@
+<h2> Single Poke View </h2>
+
+<%=@apartments.address %>
+
+<ul>
+<li>Rent: <%=@apartments.monthly_rent %></li>
+<li>Square Feet: <%=@apartments.sqft %></li>
+<li>Number of beds: <%=@apartments.num_beds %></li>
+<li>Number of baths: <%=@apartments.num_baths%></li>
+<li>Apartment ID: <%=@apartments.id%></li>
+</ul>
+
+<h4>Tenants</h4>
+<ul>
+<% @tenants.each do |tenant| %>
+<li><%=tenant.name%></li>
+<% end %>
+</ul>
+
+<form action="/apartments/<%=@apartments.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" name="button">delete apartment</button>
+</form>
+
+<a href="/apartments/<%=@apartments.id%>/edit">Edit this apartment</a>
+
+<a href="/apartments">Return to all</a>
