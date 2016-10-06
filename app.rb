@@ -45,3 +45,39 @@ delete "/apartment/:id" do
   @apartment.destroy
   redirect("/apartment")
 end
+
+get '/tenant' do
+  @tenant = Tenant.all
+  erb :"tenant/index"
+end
+
+get '/tenant/new' do
+  erb :"tenant/new"
+end
+
+post '/tenant' do
+  @tenant = Tenant.create(params[:tenant])
+  redirect "/tenant/#{@tenant.id}"
+end
+
+get "/tenant/:id/edit" do
+  @tenant = Tenant.find(params[:id])
+  erb(:"tenant/edit")
+end
+
+put '/tenant/:id' do
+  @tenant = Tenant.find(params[:id])
+  @tenant.update(params[:tenant])
+  redirect ("/tenant/#{@tenant.id}")
+end
+
+get '/tenant/:id' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenant/show"
+end
+
+delete "/tenant/:id" do
+  @tenant = Tenant.find(params[:id])
+  @tenant.destroy
+  redirect("/tenant")
+end

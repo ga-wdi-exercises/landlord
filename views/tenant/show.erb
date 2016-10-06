@@ -1,0 +1,11 @@
+<h2>Single Tenant</h2>
+
+<p>Name: <%=@tenant.name%></p>
+<p>Age: <%=@tenant.age%></p>
+<p>Gender: <%=@tenant.gender%></p>
+<p>Apt ID: <%=@tenant.apartment_id%></p>
+
+<form action="/tenant/<%= @tenant.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete Tenant</button>
+</form>
