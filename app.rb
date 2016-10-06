@@ -1,6 +1,8 @@
 require 'pry'
 require 'pg'
 require 'active_record'
+require 'sinatra'
+require 'sinatra/reloader'
 
 require_relative "db/connection"
 require_relative "models/apartment"
@@ -63,10 +65,22 @@ post "/apartments" do
 end
 
 get "/apartments/tenants" do
+  erb :"apartment/show"
+end
 
+get "/apartments/:id/edit" do
+  @apartment = apartment.find(params[:id])
+  erb :"apartment/edit"
+end
+
+put "/apartments/:id" do
+  @apartment = Apartment.find(params[:id])
+  @apartment.update(params[:pokemon])
+  redirect "/apartment"
 end
 
 get "/apartments/:id" do
+  @apartment = Apartment.find(params[:id])
   erb :"apartment/show"
 end
 

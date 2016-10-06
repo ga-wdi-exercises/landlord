@@ -1,1 +1,5 @@
-<%= @apartments %>
+<ul>
+<% @apartments.each do |apt| %>
+  <li><%= apt.address %></li>
+<% end %>
+</ul>

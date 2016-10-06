@@ -1,1 +1,14 @@
-hello wworld
+Here are your apartments
+
+<%= @apartment %>
+
+
+
+
+
+Here are your tenants
+
+<% Apartment.all.each do |apt| %>
+  <%@tenants = apt.tenants.map { |ten| ten.name} %>
+  <%= @tenants.join(", ") %>
+<% end %>
