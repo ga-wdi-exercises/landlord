@@ -1,1 +1,20 @@
 <h2>New Apartment</h2>
+
+<form action="/apartments" method="post">
+	<label>Address</label>
+	<input type="text" name="apartment[address]" />
+
+	<label>Monthly Rent</label>
+	<input type="text" name="apartment[monthly_rent]" />
+
+	<label>Square Feet</label>
+	<input type="text" name="apartment[sqft]" />
+
+	<label>Number of Bedrooms</label>
+	<input type="text" name="apartment[num_beds]" />
+
+	<label>Number of Bathrooms</label>
+	<input type="text" name="apartment[num_baths]" />
+
+	<button type="submit">Submit</button>
+</form>
