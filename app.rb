@@ -48,6 +48,28 @@ end
 
 Menu.display
 
+get "/apartments" do
+  @apartments = Apartment.all
+  erb :"apartment/index"
+end
+
+get "/apartments/new" do
+  erb :"apartment/new"
+end
+
+post "/apartments" do
+  Apartment.create(params[:apt])
+  redirect "/apartments"
+end
+
+get "/apartments/tenants" do
+
+end
+
+get "/apartments/:id" do
+  erb :"apartment/show"
+end
+
 
 
 binding.pry
