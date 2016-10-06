@@ -44,7 +44,7 @@ ballers = Apartment.where("monthly_rent > 2300")
 damien = Apartment.find_by address: '6005 Damien Corners'
 
 # get all tenants in that apartment
-damien_tenants = Tenant.find 6
+damien.tenants
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
@@ -60,7 +60,9 @@ end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 Apartment.find_each do |apt|
   puts "address: #{apt.address}"
-Tenants
+Tenants.find_each do |tent|
+  puts "tenants: #{tent.address}"
+  end
 end
 
 
@@ -76,7 +78,15 @@ two = Apartment.create(:address => '892 Happy Feet Street', :monthly_rent => 170
 three = Apartment.create(:address => '900 Elizabeth Ave', :monthly_rent => 9000, :sqft => 4100, :num_beds => 6, :num_baths => 4)
 
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-
+t_one = Tenant.create(:name => "Latoya Watson", :age => 21, :gender => "Female", :apartment_id => 20)
+t_two = Tenant.create(:name => "Sarah South", :age => 43, :gender => "Female", :apartment_id => 4)
+t_three = Tenant.create(:name => "North West", :age => 61, :gender => "Female", :apartment_id => 20)
+t_four = Tenant.create(:name => "Beckey Yuah", :age => 45, :gender => "Female", :apartment_id => 22)
+t_five = Tenant.create(:name => "Lauren Burrell", :age => 32, :gender => "Female", :apartment_id => 9)
+t_six = Tenant.create(:name => "Mary Watson", :age => 63, :gender => "Male", :apartment_id => 20)
+t_seven = Tenant.create(:name => "Jamie Smith", :age => 55, :gender => "Male", :apartment_id => 21)
+t_eight = Tenant.create(:name => "Rob Smith", :age => 34, :gender => "Male", :apartment_id => 21)
+t_nine = Tenant.create(:name => "Kim K", :age => 54, :gender => "Female", :apartment_id => 8)
 
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
@@ -84,14 +94,25 @@ three = Apartment.create(:address => '900 Elizabeth Ave', :monthly_rent => 9000,
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
 
+kw = Tenant.find_by name: "Kristin Wisoky"
+kw.update(age: 24)
+
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
+
+verna = Apartment.find_by address: "62897 Verna Walk"
+verna.update(num_beds: 3)
 
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
 
+verna.update(monthly_rent: 2800)
+
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+younguns = Tenant.where("age < 30")
+younguns.destroy_all
