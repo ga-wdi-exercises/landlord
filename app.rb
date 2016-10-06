@@ -49,3 +49,9 @@ end
 
 get '/apartments/1/tenants/new' do
 end
+
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect "/apartment"
+end

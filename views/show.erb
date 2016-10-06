@@ -1,0 +1,7 @@
+<h2><a href="/pokemons">Choose an Apartment</a></h2>
+<div class="apartment">
+  <p>Apartment Address: <%= @apartment.address%></p>
+  <p>Apartment monthly_rent: <%= @apartment.monthly_rent %></p>
+</div>
+
+<a href='/apartments/<%= @apartment.id %>/edit'>Edit This Apartment</a>
