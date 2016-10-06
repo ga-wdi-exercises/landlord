@@ -10,12 +10,35 @@ require_relative "models/tenant"
 require_relative "models/apartment"
 
 
-
 ################################################
 ####  DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
 
+####COMMAND LINE INTERFACE
 
+puts "Hi! Press 1 for apartment data."
+puts "Press 2 for tenant data"
+puts "Press 3 for a little bit of both"
+
+userInput = gets.chomp.to_i
+
+if userInput == 1
+  print Apartment.select([:id, :address, :monthly_rent])
+elsif userInput == 2
+  print Tenant.select([:name, :age])
+elsif userInput == 3
+
+    Apartment.all.each do |apt|
+      puts apt.address
+      aptID = apt.id
+      puts Tenant.where("apartment_id = #{aptID}")
+    end
+
+else
+  puts "command not recognized, please try again"
+end
+
+binding.pry
 ################################################
 # FINDING / SELECTING
 ################################################
@@ -47,26 +70,26 @@ damien_corners_res = Tenant.find_by(apartment_id:"6")
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
 
-Tenant.all.each do |tenant|
-  puts "#{tenant.name}, #{tenant.id}"
-end
+# Tenant.all.each do |tenant|
+#   puts "#{tenant.name}, #{tenant.id}"
+# end
 
 # Iterate over each apartment, for each apartment, display it's address and rent price
 
-Apartment.all.each do |apt|
-  puts "#{apt.address}, #{apt.monthly_rent}"
-end
+# Apartment.all.each do |apt|
+#   puts "#{apt.address}, #{apt.monthly_rent}"
+# end
 
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 #Try to double loop instead
 
-  Apartment.all.each do |apt|
-    puts apt.address
-    aptID = apt.id
-    puts Tenant.where("apartment_id = #{aptID}")
-  end
+  # Apartment.all.each do |apt|
+  #   puts apt.address
+  #   aptID = apt.id
+  #   puts Tenant.where("apartment_id = #{aptID}")
+  # end
 
-binding.pry
+
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
@@ -74,19 +97,19 @@ binding.pry
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-Apartment.create(address: "123 K Street", monthly_rent: 1200, sqft: 400, num_beds: 2, num_baths: 1)
-Apartment.create(address: "124 K Street", monthly_rent: 2300, sqft: 500, num_beds: 3, num_baths: 2)
-Apartment.create(address: "125 K Street", monthly_rent: 2400, sqft: 600, num_beds: 3, num_baths: 1)
-
-# Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-Tenant.create(name: "Professor Horse", age: 27, gender: "Male", apartment_id: 2)
-Tenant.create(name: "George Bush", age: 90, gender: "Male", apartment_id: 2)
-Tenant.create(name: "Blake Bortles", age: 35, gender: "Male", apartment_id: 2)
-Tenant.create(name: "Clinton", age: 70, gender: "Male", apartment_id: 2)
-Tenant.create(name: "Jerry", age: 28, gender: "Male", apartment_id: 2)
-Tenant.create(name: "Tiffany", age: 29, gender: "Female", apartment_id: 2)
-Tenant.create(name: "Lila", age: 30, gender: "Female", apartment_id: 2)
-Tenant.create(name: "Stephanie", age: 35, gender: "Female", apartment_id: 2)
+# Apartment.create(address: "123 K Street", monthly_rent: 1200, sqft: 400, num_beds: 2, num_baths: 1)
+# Apartment.create(address: "124 K Street", monthly_rent: 2300, sqft: 500, num_beds: 3, num_baths: 2)
+# Apartment.create(address: "125 K Street", monthly_rent: 2400, sqft: 600, num_beds: 3, num_baths: 1)
+#
+# # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+# Tenant.create(name: "Professor Horse", age: 27, gender: "Male", apartment_id: 2)
+# Tenant.create(name: "George Bush", age: 90, gender: "Male", apartment_id: 2)
+# Tenant.create(name: "Blake Bortles", age: 35, gender: "Male", apartment_id: 2)
+# Tenant.create(name: "Clinton", age: 70, gender: "Male", apartment_id: 2)
+# Tenant.create(name: "Jerry", age: 28, gender: "Male", apartment_id: 2)
+# Tenant.create(name: "Tiffany", age: 29, gender: "Female", apartment_id: 2)
+# Tenant.create(name: "Lila", age: 30, gender: "Female", apartment_id: 2)
+# Tenant.create(name: "Stephanie", age: 35, gender: "Female", apartment_id: 2)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
