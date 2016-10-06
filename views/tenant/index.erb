@@ -1,0 +1,7 @@
+<h2>All Tenants</h2>
+<% @tenant.each do |tenant|%>
+  <p>Name: <%=tenant.name%></p>
+  <p>Age: <%=tenant.age%></p>
+  <p>Gender: <%=tenant.gender%></p>
+  <p>Apt ID: <%=tenant.apartment_id%></p>
+<% end %>

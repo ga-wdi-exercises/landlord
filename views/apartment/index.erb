@@ -1,0 +1,8 @@
+<h2>All Apartments</h2>
+<% @apartment.each do |apartment|%>
+  <p>Address: <%=apartment.address%></p>
+  <p>Monthly Rent: <%=apartment.monthly_rent%></p>
+  <p>SQFT: <%=apartment.sqft%></p>
+  <p>No. of Beds: <%=apartment.num_beds%></p>
+  <p>No. of Baths: <%=apartment.num_baths%></p>
+<% end %>
