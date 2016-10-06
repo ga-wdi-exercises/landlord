@@ -1,0 +1,6 @@
+<h2>Edit #<%= @apartment.id %> - <%= @apartment.address %> </h2>
+<a href="<%= @apartment.id %>/edit">Edit</a>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>

@@ -14,4 +14,4 @@ require_relative "models/tenant"
 
 binding.pry
 
-puts "ignore this line, it's just here so the binding.pry above works"
+puts "done"
