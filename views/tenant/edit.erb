@@ -1,0 +1,19 @@
+<h2>Update Tenant</h2>
+
+<form action="/tenants/<%= @tenants.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label>name</label>
+  <input type="text" name="tenant[name]" value="<%= @tenants.name %>">
+
+  <label>age</label>
+  <input type="INTEGER" name="tenant[age]" value="<%= @tenants.age %>">
+
+  <label>apartment id</label>
+  <input type="integer" name="tenant[apartment_id]" value="<%= @tenants.apartment_id%>">
+
+  <button type="submit">Submit</button>
+
+</form>
+
+<a href="/tenants">Return to Home</a>

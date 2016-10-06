@@ -1,0 +1,17 @@
+<h2> Single Poke View </h2>
+
+<%=@tenants.name %>
+
+<ul>
+<li>Age: <%=@tenants.age %></li>
+<li>Apartment ID: <%=@tenants.apartment_id%></li>
+</ul>
+
+<form action="/tenants/<%=@tenants.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" name="button">delete tenant</button>
+</form>
+
+<a href="/tenants/<%=@tenants.id%>/edit">Edit this tenant</a>
+
+<a href="/tenants">Return to all tenants</a>
