@@ -4,7 +4,7 @@ require "active_record"
 require_relative "models/apartment"
 require_relative "models/tenant"
 require_relative "db/connection"
-sputs "Please enter the following number to view the informations"
+puts "Please enter the following number to view the informations"
 puts "1 --- all apartments(ID, address, and monthly_rent)"
 puts "2 --- all tenants (name and age)"
 puts "3 --- all apartments and their associated tenants(address and name)"
@@ -21,6 +21,11 @@ elsif user_input == 2
   end
 elsif user_input ==3
   Apartment.all.each do |apt|
-    puts "#{apt.address}, #{apt.tenants}"
+    apt.each do |tenant|
+    # apt.each do |tenant|
+      puts apt.address
+      puts apt.name#{apt.address}
+  #  puts #{tenant.name}"
+  end
   end
 end

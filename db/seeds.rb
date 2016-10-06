@@ -1,7 +1,7 @@
 require 'active_record'
+# require 'ffaker'
+require 'pg'
 require_relative 'connection'
-
-# models files
 require_relative '../models/apartment'
 require_relative '../models/tenant'
 
