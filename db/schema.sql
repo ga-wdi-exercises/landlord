@@ -15,5 +15,5 @@ CREATE TABLE apartments (
   monthly_rent TEXT,
   sqft TEXT,
   num_beds TEXT,
-  num)baths TEXT
+  num_baths TEXT
 );
