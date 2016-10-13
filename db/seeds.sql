@@ -1,3 +1,12 @@
+require 'active_record'
+require_relative 'connection'
+
+require_relative '../models/apartment'
+require_relative '../models/tenant'
+
+Tenant.destroy_all
+Apartment.destroy_all
+
 TRUNCATE TABLE apartments CASCADE;
 TRUNCATE TABLE tenants CASCADE;
 

@@ -1,6 +1,9 @@
-require_relative "db/connection"
-require_relative "models/apartment"
-require_relative "models/tenant"
+require 'pry'
+require 'active_record'
+
+require_relative 'db/connection'
+require_relative 'models/apartment'
+require_relative 'models/tenant'
 
 # NOTE: Uncomment the lines below to verify that your seed script is working
 
