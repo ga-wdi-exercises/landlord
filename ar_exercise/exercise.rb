@@ -29,12 +29,15 @@ end
 
 # Hint, the following methods will help: `where`, `all`, `find`, `find_by`
 
+require_relative "../models/apartment" # require the Artist class definition that we defined in the models/artist.rb file
+require_relative "../models/tenant" # require the Artist class definition that we defined in the models/artist.rb file
+
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
 all_tenants = Tenant.all
-
 # get the first tenant in the DB
 firstGuy = Tenant.first
+puts firstGuy.name
 # get all tenants older than 65
 # get all apartments whose price is greater than $2300
 # get the apartment with the address "6005 Damien Corners"
