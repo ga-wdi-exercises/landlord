@@ -1,11 +1,6 @@
-
-require "pg" # postgres db library
-require "active_record" # the ORM
-require "pry" # for debugging
-
+require_relative "db/connection"
 require_relative "models/apartment" # require the Artist class definition that we defined in the models/artist.rb file
 require_relative "models/tenant" # require the Artist class definition that we defined in the models/artist.rb file
-require_relative "db/connection"
 
 # NOTE: Uncomment the lines below to verify that your seed script is working
 
