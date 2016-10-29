@@ -11,7 +11,7 @@ require_relative "models/tenant"
 #
 # puts "The first apartment is at #{Apartment.first.address}."
 # puts "It has  #{Apartment.first.tenants.count} tenants."
-
-binding.pry
-
-puts "ignore this line, it's just here so the binding.pry above works"
+#
+# binding.pry
+#
+# puts "ignore this line, it's just here so the binding.pry above works"
