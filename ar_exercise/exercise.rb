@@ -5,11 +5,52 @@ require "pg" # postgres db library
 require "active_record" # the ORM
 require "pry" # for debugging
 
+require_relative "../db/connection"
+require_relative "../models/apartment"
+require_relative "../models/tenant"
+
 
 ################################################
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
 
+all_apartments = Apartment.all
+
+loop do
+  puts "Hello! Enter the number you would like to access"
+  puts "1. See a list of all apartments"
+  puts "2. See a list of all tenants"
+  puts "3. See a list of all apartments and their associated tenants"
+  puts "Enter '99' to leave"
+  answer = gets.chomp.to_i
+  if answer == 1
+    all_apartments.each do |apartment|
+      puts apartment[:id]
+      puts apartment[:address]
+      puts apartment[:monthly_rent]
+      puts "-----------------"
+    end
+  elsif answer == 2
+    all_tenants = Tenant.all
+    all_tenants.each do |tenant|
+      puts tenant[:name]
+      puts tenant[:age]
+      puts "-----------------"
+    end
+  elsif answer == 3
+    all_apartments.each do |apartment|
+      puts apartment[:address]
+        find_people = Tenant.select {|tenant|
+          tenant[:apartment_id] == apartment[:id]
+        }
+          find_people.each do |tenant|
+            puts tenant[:name]
+          end
+      puts "------------------"
+    end
+  end
+  break if answer == 99
+end
 
 ################################################
 # FINDING / SELECTING
