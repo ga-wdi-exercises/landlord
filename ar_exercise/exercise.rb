@@ -19,10 +19,6 @@ require_relative "../models/tenant"
 
 all_apartments = Apartment.all
 
-def offer_rose(person)
-    puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter form the better cold?"
-end
-
 
 loop do
   puts "Hello! Enter the number you would like to access"
@@ -137,9 +133,9 @@ end
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
-# kristin = Tenant.select {|tenant| tenant[:name] == "Kristin Wisoky"}
-# kristin[0][:age] += 1
-# puts kristin[0][:age]
+kristin = Tenant.select {|tenant| tenant[:name] == "Kristin Wisoky"}
+kristin[0][:age] += 1
+puts kristin[0][:age]
 
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
