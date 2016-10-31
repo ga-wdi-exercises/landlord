@@ -4,6 +4,8 @@
 require "pg" # postgres db library
 require "active_record" # the ORM
 require "pry" # for debugging
+require 'sinatra'
+require 'sinatra/reloader'
 
 require_relative "../db/connection"
 require_relative "../models/apartment"
@@ -14,7 +16,13 @@ require_relative "../models/tenant"
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
 
+
 all_apartments = Apartment.all
+
+def offer_rose(person)
+    puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter form the better cold?"
+end
+
 
 loop do
   puts "Hello! Enter the number you would like to access"
