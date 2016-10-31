@@ -1,12 +1,12 @@
-
-
-require "sinatra"
-require "bundler/setup"
+require "pg" # postgres db library
+require "active_record" # the ORM
+require "pry" # for debugging
+require 'sinatra'
 require 'sinatra/reloader'
-# require_relative "views/index.erb"
 
-# require_relative "models/apartment" # require the Artist class definition that we defined in the models/artist.rb file
-# require_relative "models/tenant"
+require_relative "db/connection"
+require_relative "models/apartment"
+require_relative "models/tenant"
 
 get '/' do
   "<h1>Welcome to the Homepage!</h1>
@@ -14,33 +14,29 @@ get '/' do
   <p><a href='/apartments/1'> >>View Apartment Details</a></p>
   <p><a href='/apartments/new'> >>Add an Apartment</a></p>
   <p><a href='/apartments/1/tenants'> >>View All Tenants</a></p>"
+
 end
 
-# "<h1>Current Apartments</h1>"
 get '/apartments' do
-  names = ['bobert','asdfasdf','qwerqwerqwer']
-  @name = names
-  erb :index
-end
-
-get '/apartments/1' do
-  "<h1>Apartment Details</h1>"
+  @apartments = Apartment.all
+  erb :allApts
 end
 
 get '/apartments/new' do
-  "<h1>Add an Apartment</h1>"
+  erb :addApt
 end
 
-get '/apartments/1/tenants' do
-  "<h1>Current Tenants</h1>"
+get '/apartments/:id' do
+  @apartments = Apartment.find(params[:id])
+  erb :aptDetails
 end
 
-# get '/:num' do
-#   "<p>#{params[:num]} Bottles of beer on the wall</p>
-#   <p><a href='/#{params[:num].to_i-1}'>Drink one!</a></p>"
-# end
+get '/apartments/:id/tenants' do
+  @tenants = Apartment.find(params[:id])
+  erb :tenants
+end
 
-# get '/' do
-#   @name = 'bobert'
-#   erb :index
-# end
+post '/apartments' do
+  Apartment.create(address: params[:address], monthly_rent: params[:monthly_rent], sqft: params[:sqft], num_beds:params[:num_beds], num_baths: params[:num_baths])
+  redirect "/apartments"
+end
