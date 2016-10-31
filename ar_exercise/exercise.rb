@@ -34,15 +34,33 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+puts all_tenants.first.inspect
 # get all tenants older than 65
+puts all_tenants.where("age > 65").inspect
 # get all apartments whose price is greater than $2300
+apartments = Apartment.all
+puts apartments.where("monthly_rent > 2300").inspect
 # get the apartment with the address "6005 Damien Corners"
-# get all tenants in that apartment
+damien_corners = apartments.where(address: '6005 Damien Corners').first
 
+puts damien_corners.inspect
+
+# get all tenants in that apartment
+puts damien_corners.tenants.inspect
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+all_tenants.each { |tenant| puts "name: #{tenant.name} id: #{tenant.id}"  }
+
 # Iterate over each apartment, for each apartment, display it's address and rent price
+apartments.each { |apartment| puts "address: #{apartment.address} rent: $#{apartment.monthly_rent}"  }
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+apartments.each { |apartment|
+  puts "Address: #{apartment.address}"
+  puts "Residents:"
+  apartment.tenants.each { |tenant|
+    puts tenant.inspect
+  }
+}
 
 ################################################
 # CREATING / UPDATING / DELETING
