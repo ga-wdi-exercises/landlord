@@ -1,8 +1,4 @@
-require 'pry'
-require 'active_record'
-
-## Connect to the database
-require_relative 'db/connection'
+require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
