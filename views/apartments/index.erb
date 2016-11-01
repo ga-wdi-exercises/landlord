@@ -1,4 +1,4 @@
-<div class="apartments">
+<div class="row">
 <table>
   <thead>
     <tr>
@@ -28,11 +28,12 @@
           <%= apartment.tenants.count %>
         </td>
         <td>
-            <a href="/apartments/<%= apartment.id %>">View</a>
+            <a href="/apartments/<%= apartment.id %>" class="button">View</a>
         </td>
       </tr>
       <% end %>
     </tbody>
   </thead>
 </table>
+<a href="/apartments/new" class='button'>Create New Apartment</a>
 </div>
