@@ -1,0 +1,34 @@
+<div class="tenants">
+  <h1>Residents of <%= @apartment.address %></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Age
+        </th>
+        <th>
+          Gender
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tenants.each do |tenant| %>
+      <tr>
+        <td>
+          <%= tenant.name %>
+        </td>
+        <td>
+          <%= tenant.age %>
+        </td>
+        <td>
+          <%= tenant.gender %>
+        </td>
+      </tr>
+      <% end  %>
+    </tbody>
+  </table>
+
+</div>

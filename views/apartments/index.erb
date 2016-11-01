@@ -15,22 +15,24 @@
         View
       </th>
     </tr>
-    <% @apartments.each do |apartment| %>
-    <tr>
-      <td>
-        <%= apartment.address %>
-      </td>
-      <td>
-        $<%= apartment.monthly_rent %>.00
-      </td>
-      <td>
-        <%= apartment.tenants.count %>
-      </td>
-      <td>
-          <a href="/apartments/<%= apartment.id %>">View</a>
-      </td>
-    </tr>
-    <% end %>
+    <tbody>
+      <% @apartments.each do |apartment| %>
+      <tr>
+        <td>
+          <%= apartment.address %>
+        </td>
+        <td>
+          $<%= apartment.monthly_rent %>.00
+        </td>
+        <td>
+          <%= apartment.tenants.count %>
+        </td>
+        <td>
+            <a href="/apartments/<%= apartment.id %>">View</a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
   </thead>
 </table>
 </div>
