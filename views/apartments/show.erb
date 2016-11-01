@@ -3,4 +3,21 @@
 <p>Square feet: <%= @apartment.sqft %></p>
 <p>Number of beds: <%= @apartment.num_beds %></p>
 <p>Number of baths: <%= @apartment.num_baths %></p>
-<a href='/apartments/<%= @apartment.id %>/edit'>Edit This Apartment</a>
+
+<h1>Tenants</h1>
+<% @apartment.tenants.each do |tenant| %>
+  <p><a href="/tenants/<%= tenant.id %>"> <%= tenant.name %> </a></p>
+<% end %>
+
+<form action="/apartments">
+  <input type="submit" value="Back to Apartments">
+</form>
+
+<form action="/apartments/<%= @apartment.id %>/edit">
+  <input type="submit" value="Edit this Apartment!">
+</form>
+
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>

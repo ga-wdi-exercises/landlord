@@ -13,6 +13,20 @@ get '/' do
   erb :index
 end
 
+get '/tenants' do
+  @tenants = Tenant.all
+  erb :"tenants/index"
+end
+
+get '/tenants/new' do
+  erb :"tenants/new"
+end
+
+post '/tenants' do
+  @tenants = Tenant.create(params[:tenant])
+  redirect "/tenants"
+end
+
 get '/apartments' do
   @apartments = Apartment.all
   erb :"apartments/index"
@@ -25,6 +39,11 @@ end
 post '/apartments' do
   @apartment = Apartment.create(params[:apartment])
   redirect "/apartments/#{@apartment.id}"
+end
+
+get '/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  erb :"tenants/show"
 end
 
 get '/apartments/:id' do
