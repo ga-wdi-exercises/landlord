@@ -4,13 +4,14 @@
   <h2>Bedrooms: <%= @apartment.num_beds %></h2>
   <h2>Bathrooms: <%= @apartment.num_baths %></h2>
   <h2>Size: <%= @apartment.sqft %> sqft</h2>
-  <p>
+  <div>
     <a class="button" href="/apartments/<%= @apartment.id %>/edit">Edit</a>
     <form action="/apartments/<%= @apartment.id %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Delete">
     </form>
-  </p>
+  </div>
+
 </div>
 <div>
   <h2>Tenants</h2>
