@@ -1,0 +1,9 @@
+<form action="/apartments/edit/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  address: <input type="text" name="address" value="<%= @apartment.address %>">
+  monthly_rent: <input type="text" name="monthly_rent" value="<%= @apartment.monthly_rent %>">
+  sqft: <input type="text" name="sqft" value="<%= @apartment.sqft %>">
+  num_beds: <input type="text" name="num_beds" value="<%= @apartment.num_beds %>">
+  num_baths: <input type="text" name="num_baths" value="<%= @apartment.num_baths %>">
+  <p><input type="submit" name="save" value="Save Changes"></p>
+</form>
