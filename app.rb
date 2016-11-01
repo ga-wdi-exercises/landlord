@@ -6,6 +6,7 @@ require_relative "db/connection"
 
 require "sinatra"
 require "sinatra/reloader"
+require "sinatra/partial"
 
 
 
