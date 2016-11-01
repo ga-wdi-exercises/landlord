@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS tenants;
-DROP TABLE IF EXISTS trainers;
+DROP TABLE IF EXISTS apartments;
 
 CREATE TABLE tenants(
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
-  age TEXT,
+  age INT,
   gender TEXT,
   apartment_id INT
 );
