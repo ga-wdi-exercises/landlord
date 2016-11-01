@@ -8,10 +8,8 @@ require_relative '../models/tenant'
 Tenant.destroy_all
 Apartment.destroy_all
 
-funnie_house = Apartment.create(address: "123 Bluffington Ave", monthly_rent: 2000, sqft: 2000, num_beds: 4, num_baths: 2)
-
+funnie_house = Apartment.create(address: "123 Bluffington Ave", monthly_rent: 1800, sqft: 2000, num_beds: 4, num_baths: 2)
 valentine_house = Apartment.create(address: "456 Bluffington Ave", monthly_rent: 1900, sqft: 2500, num_beds: 5, num_baths: 2)
-
 mayonnaise_house = Apartment.create(address: "987 Bluffington Ave", monthly_rent: 1600, sqft: 800, num_beds: 2, num_baths: 1)
 
 funnie_house.tenants.create(name: "Doug Funnie", age: 11, gender: "Male")
