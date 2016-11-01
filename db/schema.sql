@@ -3,15 +3,15 @@ DROP TABLE IF EXISTS apartments;
 
 CREATE TABLE tenants (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
+  name VARCHAR,
   age INTEGER,
-  gender VARCHAR(255),
+  gender VARCHAR,
   apartment_id INTEGER
 );
 
 CREATE TABLE apartments (
   id SERIAL PRIMARY KEY,
-  address VARCHAR(255),
+  address VARCHAR,
   monthly_rent INTEGER,
   sqft INTEGER,
   num_beds INTEGER,
