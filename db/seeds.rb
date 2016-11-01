@@ -7,8 +7,8 @@ Apartment.destroy_all
 
 # Create 3 new apartments, and save them to the DB
 testApt1 = Apartment.create(address: "1617 Carlin Ln", monthly_rent: 10000, sqft: 10000, num_beds: 7, num_baths: 6)
-testApt2 = Apartment.create(address: "stuff", monthly_rent: 999, sqft: 999, num_beds: 1, num_baths: 1)
-testApt3 = Apartment.create(address: "The Box on the Corner", monthly_rent: 10, sqft: 15, num_beds: 0, num_baths: 0)
+testApt2 = Apartment.create(address: "234 Address Ave", monthly_rent: 1200, sqft: 999, num_beds: 1, num_baths: 1)
+testApt3 = Apartment.create(address: "9000 Stuff St", monthly_rent: 900, sqft: 1500, num_beds: 2, num_baths: 2)
 
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.

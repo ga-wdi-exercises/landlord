@@ -1,6 +1,9 @@
 <h1>All Apartments</h1>
 <% @apartments.each do |apt| %>
-  <p><%= apt.address %> <a href="/apartments/<%= apt.id %>">View Details</a></p>
+  <p><%= apt.address %> <a href="/apartments/<%= apt.id %>">View Details</a>
+  <form action="/apartments/edit/<%= apt.id %>" method="get">
+      <input type="submit" name="edit" value="Edit Apartment">
+      </form></p>
   <% end %>
 
 <a href="/apartments/new">Add Apartment</a>
