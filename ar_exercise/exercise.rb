@@ -34,7 +34,7 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
-first_tenant = Tenant.find(1)
+first_tenant = Tenant.first
 
 # get all tenants older than 65
 older_tenants = Tenant.where(:age > 65)
