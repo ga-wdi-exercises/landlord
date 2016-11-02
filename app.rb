@@ -9,6 +9,9 @@ require "sinatra/reloader"
 require "sinatra/partial"
 
 
+get '/' do
+  erb :welcome
+end
 
 get '/apartments' do
   @apartments = Apartment.all
