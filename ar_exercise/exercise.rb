@@ -4,6 +4,7 @@
 require "pg" # postgres db library
 require "active_record" # the ORM
 require "pry" # for debugging
+require "rb-readline"
 
 ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
@@ -34,16 +35,36 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.find(1)
+
 # get all tenants older than 65
+senior_tenants = Tenant.where("age > 65")
+
 # get all apartments whose price is greater than $2300
+expensive_apartments = Apartment.where("monthly_rent > 2300")
+
 # get the apartment with the address "6005 Damien Corners"
+damien_apartment = Apartment.find_by(address:'6005 Damien Corners')
+
 # get all tenants in that apartment
+damien_tenants = damien_apartment.tenants
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
-# Iterate over each apartment, for each apartment, display it's address and rent price
-# Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+all_tenants.each do |tenant|
+  puts "#{tenant[:name]} #{tenant[:id]}"
+end
 
+# Iterate over each apartment, for each apartment, display it's address and rent price
+all_apartments = Apartment.all
+all_apartments.each do |apartment|
+  puts "#{apartment[:address]} #{apartment[:monthly_rent]}"
+end
+# Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+all_apartments.each do |apartment|
+  puts "#{apartment[:address]}, #{apartment.tenants}"
+binding.pry
+puts 'cheese'
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
