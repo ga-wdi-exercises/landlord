@@ -1,0 +1,9 @@
+<a href="/">Home</a>
+<h2>Tenant Details</h2>
+<h3>Address: <%=@apt.address %></h3><br/>
+<h3>Tenants:</h3>
+  <ul>
+    <% @apt.tenants.each do |tnt| %>
+      <li><%= tnt.name %></li>
+    <% end %>
+  </ul>
