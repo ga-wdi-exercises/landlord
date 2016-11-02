@@ -21,7 +21,8 @@ end
 ################################################
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
-
+# require_relative "../models/apartment" # require the Artist class definition that we defined in the models/artist.rb file
+# require_relative "../models/tenant" # require the Artist class definition that we defined in the models/artist.rb file
 
 ################################################
 # FINDING / SELECTING
@@ -30,19 +31,40 @@ end
 # Hint, the following methods will help: `where`, `all`, `find`, `find_by`
 
 # Use Active record to do the following, and store the results **in a variable**
+
 # example: get every tenant in the DB
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.first
+
 # get all tenants older than 65
+old_tenants = Tenant.where("age > '65'")
+
 # get all apartments whose price is greater than $2300
+expensive_apts = Apartment.where("monthly_rent > '2300'")
+
 # get the apartment with the address "6005 Damien Corners"
+damien_apt = Apartment.find_by(address: "6005 Damien Corners")
+
 # get all tenants in that apartment
+damien_tenants = damien_apt.tenants
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+all_tenants.each do |tenant|
+  puts "#{tenant.id}: #{tenant.name}"
+end
 # Iterate over each apartment, for each apartment, display it's address and rent price
+all_apt = Apartment.all
+all_apt.each do |apt|
+  puts "#{apt.address}: #{apt.monthly_rent}"
+end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+all_apt.each do |apt|
+  puts "#{apt.address}"
+  puts "#{apt.tenants.map {|tenant| tenant.name}.join(", ")}"
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -69,3 +91,5 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+binding.pry
