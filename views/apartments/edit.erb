@@ -1,0 +1,15 @@
+<a href="/">Home</a>
+
+    <form action="/apartments/<%=@apt.id%>" method="post">
+      <input type="hidden" name="_method" value="put">
+
+      <h3>You can edit the apartment details below:</h3>
+      <h2>Address: <input name="apartment[address]" value="<%=@apt.address %>"></h2>
+      <h2>Monthly Rent: <input name="apartment[monthly_rent]" value="<%=@apt.monthly_rent %>"></h2>
+      <h2>Square Feet: <input name="apartment[sqft]" value="<%=@apt.sqft %>"></h2>
+      <h2>Number of Beds: <input name="apartment[num_beds]" value="<%=@apt.num_beds %>"></h2>
+      <h2>Number of Baths: <input name="apartment[num_baths]" value="<%=@apt.num_baths %>"></h2>
+      <br/>
+      <input type="submit" value="Update Apartment"><br/>
+
+    </form>
