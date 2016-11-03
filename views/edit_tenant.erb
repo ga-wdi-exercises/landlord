@@ -1,0 +1,26 @@
+<h1>Tenant Profile: <%=@tenant.name%></h1>
+
+<hr/>
+
+<div class="info">
+  <p></p>
+<div class ="form">
+<form action="/tenant/<%= @tenant.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="tenant[name]">Name: </label>
+  <input name="tenant[name]" value="<%= @tenant.name %>">
+<br/>
+  <label for="tenant[age]">Age: </label>
+  <input name="tenant[age]" value="<%= @tenant.age %>">
+<br/>
+  <label for="tenant[gender]">Gender: </label>
+  <input name="tenant[gender]" value="<%= @tenant.gender%>">
+
+</div>
+<br/>
+<br/>
+<input id="submit" type="submit" value="Update">
+</form>
+<p></p>
+</div>

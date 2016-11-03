@@ -1,0 +1,16 @@
+<h1>Add New Tenant</h1>
+
+<hr/>
+
+<div class="info">
+<div class ="form">
+  <form action="/<%=@apartment.id%>/tenant" method = "post">
+    <p>Name: <input type="text" name="tenant[name]"></p>
+    <p>Age: <input type="text" name="tenant[age]"></p>
+    <p>Gender: <input type="text" name="tenant[gender]"></p>
+    <input type="hidden" name="tenant[apartment_id]" value="<%=@apartment.id%>">
+  </div><br/>
+    <input id="submit" type="submit" value="Submit">
+    <p></p>
+  </form>
+</div>
