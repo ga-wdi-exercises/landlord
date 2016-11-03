@@ -21,9 +21,25 @@ get '/apartments/new' do
   erb :new_apartment
 end
 
+post '/apartments' do
+  Apartment.create(params[:apartment])
+  redirect "/apartments"
+end
+
 get '/apartments/:id' do
-  @apartments = Apartment.find(params[:id])
+  @apartment = Apartment.find(params[:id])
   erb :apartment_info
+end
+
+get '/apartments/:id/edit' do
+  @apartment = Apartment.find(params[:id])
+  erb :edit_apartment
+end
+
+put '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.update(params[:apartment])
+  redirect "/apartments"
 end
 
 get '/apartments/:id/tenants' do
@@ -33,4 +49,10 @@ end
 
 get '/apartments/:id/tenants/new' do
   erb :new_tenant
+end
+
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect "/apartments"
 end

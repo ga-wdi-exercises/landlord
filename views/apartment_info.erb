@@ -1,9 +1,14 @@
 <h1>Apartment Info</h1>
 
-<p>Address: <%= @apartments.address %></p>
-<p>Monthly Rent: $<%= @apartments.monthly_rent %></p>
-<p>Squarefoot: <%= @apartments.sqft %> square ft. </p>
-<p>Bedroom(s): <%= @apartments.num_beds %></p>
-<p>Bathroom(s): <%= @apartments.num_baths %></p>
+<p>Address: <%= @apartment.address %></p>
+<p>Monthly Rent: $<%= @apartment.monthly_rent %></p>
+<p>Squarefoot: <%= @apartment.sqft %> square ft. </p>
+<p>Bedroom(s): <%= @apartment.num_beds %></p>
+<p>Bathroom(s): <%= @apartment.num_baths %></p>
 
-<b><a href="/">Main Menu</a></b>
+<p><b><a href="/">Main Menu</a> | <a href="/apartments/<%= @apartment.id %>/edit">Edit Apartment</a></b>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete apartment">
+</form>
+</p>
