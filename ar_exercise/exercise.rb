@@ -4,6 +4,7 @@
 require "pg" # postgres db library
 require "active_record" # the ORM
 require "pry" # for debugging
+require "rb-readline"
 
 ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
@@ -34,16 +35,36 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.find(1)
+
 # get all tenants older than 65
+senior_tenants = Tenant.where("age > 65")
+
 # get all apartments whose price is greater than $2300
+expensive_apartments = Apartment.where("monthly_rent > 2300")
+
 # get the apartment with the address "6005 Damien Corners"
+damien_apartment = Apartment.find_by(address:'6005 Damien Corners')
+
 # get all tenants in that apartment
+damien_tenants = damien_apartment.tenants
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
-# Iterate over each apartment, for each apartment, display it's address and rent price
-# Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+all_tenants.each do |tenant|
+  puts "#{tenant[:name]} #{tenant[:id]}"
+end
 
+# Iterate over each apartment, for each apartment, display it's address and rent price
+all_apartments = Apartment.all
+all_apartments.each do |apartment|
+  puts "#{apartment[:address]} #{apartment[:monthly_rent]}"
+end
+# Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+all_apartments.each do |apartment|
+  puts "#{apartment[:address]}, #{apartment.tenants}"
+binding.pry
+puts 'cheese'
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
@@ -51,7 +72,29 @@ all_tenants = Tenant.all
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+apartment_one = Apartment.create(address: "123 1st St", monthly_rent: 500, sqft: 1000, num_beds: 2, num_baths: 1)
+apartment_two = Apartment.create(address: "456 1st Rd", monthly_rent: 750, sqft: 1500, num_beds: 2, num_baths: 2)
+apartment_three = Apartment.create(address: "789 1st Pl", monthly_rent: 1000, sqft: 2000, num_beds: 3, num_baths: 2)
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+apartment_one.tenants.create([
+  {name: "Dashon", age: 27, gender: "m"},
+  {name: "Jessica", age: 26, gender: "f"},
+  {name: "Bailey", age: 1, gender: "f"}
+])
+
+apartment_two.tenants.create([
+  {name: "Jose", age: 45, gender: "m"},
+  {name: "Manuela", age: 65, gender: "f"},
+  {name: "Enrique", age: 30, gender: "m"}
+])
+
+apartment_three.tenants.create([
+  {name: "Henry", age: 26, gender: "m"},
+  {name: "Adriana", age: 27, gender: "f"},
+  {name: "Daniela", age: 26, gender: "f"}
+])
+
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!

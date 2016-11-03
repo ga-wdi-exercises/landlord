@@ -1,0 +1,22 @@
+Apartment: <%= @apartment %>
+  <a href="/apartments/<%= @apartment.id %>/edit">(edit)</a>
+
+<%= @apartment.address %>
+<%= @apartment.monthly_rent %>
+<%= @apartment.sqft %>
+<%= @apartment.num_beds %>
+<%= @apartment.num_baths %>
+
+
+<% tenants_url = "/apartments/#{@apartment.id}/tenants" %>
+<a href="<%= tenants_url %>">Tenants</a>
+<a href="/apartments/<%= @apartment.id %>/tenants/new">(+)</a>
+
+<% tenants = @apartment.tenants %>
+  <% if tenants.size == 0 %>
+    None found
+  <% else %>
+      <% tenants.each do |tenant| %>
+          <%= tenant %>
+      <% end %>
+  <% end %>
