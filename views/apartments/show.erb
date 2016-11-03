@@ -1,0 +1,36 @@
+<div class="apartment">
+  <h1><%= @apartment.address %></h1>
+  <h2>$<%= @apartment.monthly_rent %>.00 / Month </h2>
+  <h2>Bedrooms: <%= @apartment.num_beds %></h2>
+  <h2>Bathrooms: <%= @apartment.num_baths %></h2>
+  <h2>Size: <%= @apartment.sqft %> sqft</h2>
+  <div>
+    <a class="button" href="/apartments/<%= @apartment.id %>/edit">Edit</a>
+    <form action="/apartments/<%= @apartment.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+    </form>
+  </div>
+
+</div>
+<div>
+  <h2>Tenants</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Age
+        </th>
+        <th>
+          Gender
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial(:'tenants/tenants_table', template_engine: :erb) %>
+    </tbody>
+  </table>
+</div>

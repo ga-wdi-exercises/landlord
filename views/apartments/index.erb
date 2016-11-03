@@ -1,0 +1,39 @@
+<div class="row">
+<table>
+  <thead>
+    <tr>
+      <th>
+        <strong>Address</strong>
+      </th>
+      <th>
+        <strong>Rent</strong>
+      </th>
+      <th>
+        <strong>Number of Tenants</strong>
+      </th>
+      <th>
+        View
+      </th>
+    </tr>
+    <tbody>
+      <% @apartments.each do |apartment| %>
+      <tr>
+        <td>
+          <%= apartment.address %>
+        </td>
+        <td>
+          $<%= apartment.monthly_rent %>.00
+        </td>
+        <td>
+          <%= apartment.tenants.count %>
+        </td>
+        <td>
+            <a href="/apartments/<%= apartment.id %>" class="button">View</a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </thead>
+</table>
+<a href="/apartments/new" class='button'>Create New Apartment</a>
+</div>

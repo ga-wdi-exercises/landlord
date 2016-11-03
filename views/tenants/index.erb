@@ -1,0 +1,22 @@
+<div class="tenants">
+  <h1>Residents of <%= @apartment.address %></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Age
+        </th>
+        <th>
+          Gender
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= partial(:'tenants/tenants_table', template_engine: :erb) %>
+    </tbody>
+  </table>
+
+</div>
