@@ -12,9 +12,9 @@ apartment1 = Apartment.create(address: "123 Fake Street", monthly_rent: 1000, sq
 apartment2 = Apartment.create(address: "345 Imagination Street", monthly_rent: 2000, sqft: 5000, num_beds: 2, num_baths: 1)
 apartment3 = Apartment.create(address: "567 Ugly Street", monthly_rent: 500, sqft: 700, num_beds: 2, num_baths: 1)
 
-tenant1 = Tenant.create(name: "Charlotte", age: 11, gender: "female", apartment_id: 5)
+tenant1 = Tenant.create(name: "Charlotte", age: 11, gender: "female", apartment_id: 1)
 tenant2 = Tenant.create(name: "Charley", age: 21, gender: "male", apartment_id: 15)
-tenant3 = Tenant.create(name: "Pam", age: 18, gender: "female", apartment_id: 7)
+tenant3 = Tenant.create(name: "Pam", age: 18, gender: "female", apartment_id: 1)
 tenant4 = Tenant.create(name: "Sam", age: 41, gender: "male", apartment_id: 6)
 tenant5 = Tenant.create(name: "Tim", age: 34, gender: "female", apartment_id: 10)
 tenant6 = Tenant.create(name: "Kim", age: 25, gender: "male", apartment_id: 4)
