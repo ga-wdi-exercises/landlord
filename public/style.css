@@ -1,0 +1,83 @@
+body{
+  background-image: url("http://www.trbimg.com/img-53f5236e/turbine/chi-real-estate-market-technology-bsi-20140820");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  font-family: Helvetica;
+}
+
+div {
+  font-size: 20px;
+  font-weight: 100;
+  width: 50%;
+  display: inline-block;
+}
+.info{
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 50px;
+}
+
+.button{
+  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  width: 150px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.button:hover{
+  background: white;
+}
+
+.form{
+  text-align: left;
+}
+
+span{
+  color: #1A2E50;
+  font-weight: 800;
+  font-size: 26px;
+}
+
+form{
+  display: inline-block;
+}
+
+input,
+.input {
+  border: 1px solid #888;
+  box-sizing: border-box;
+  display: inline-block;;
+  background: white;
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #1A2E50;
+  line-height: 20px;
+  margin-bottom: 15px;
+  padding: 2px 5px;
+  width: 100px;
+  font-weight: 400;
+}
+
+h1{
+  font-weight: 400;
+}
+
+p{
+  padding: 0px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: #1A2E50;
+}

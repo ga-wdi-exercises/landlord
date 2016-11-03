@@ -1,0 +1,11 @@
+<h1><%=@apartment.address%></h1>
+
+<hr/>
+<div class="info">
+  <p>Square Feet: <%=@apartment.sqft%></p>
+  <p>Monthly Rent: $<%=@apartment.monthly_rent%>.00</p>
+  <p>Number of Bedrooms: <%=@apartment.num_beds%></p>
+  <p>Number of Bathrooms: <%=@apartment.num_baths%></p>
+  
+  <div class="button"><a href="/apartments/<%=@apartment.id%>/tenants"><span>TENANTS</span></a></div>
+</div>

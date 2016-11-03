@@ -1,0 +1,18 @@
+<h1>Tenants</h1>
+
+<hr/>
+<div class="info">
+  <h3>○ <%=@apartment.address%> ○</h3>
+  <%@apartment.tenants.each do |tenant|%>
+  <p><%=tenant.name%> | Age: <%=tenant.age%> | Gender: <%=tenant.gender%></p>
+
+  <form action="/tenant/<%=tenant.id%>" method="post">
+      <input type="hidden" name = "_method" value="delete">
+      <input id="submit" type="submit" name = "delete" value="DELETE">
+    </form>
+    <a href="/tenant/<%=tenant.id%>/edit"><div class="input">EDIT</div></a>
+  <%end%>
+  <br/>
+  <br/>
+  <div class="button"><a href="/apartments/<%=@apartment.id%>/tenants/new"><span>ADD NEW</span></a></div>
+</div>
