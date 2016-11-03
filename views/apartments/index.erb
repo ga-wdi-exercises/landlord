@@ -1,0 +1,15 @@
+<h1>
+  Apartments
+  <a href="/apartments/new">(+)</a>
+</h1>
+<section class="apartments">
+  <ul>
+    <% @apartments.each do |apartment| %>
+    <li>
+      <a href='/apartments/<%= apartment.id %>'>
+        <%= apartment %>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</section>
