@@ -1,0 +1,9 @@
+<a href="/">APT HOME</a>
+
+ <% @apartments.each do |apt| %>
+
+ <h3>
+ <span>ID <%= apt.id %>:</span> <%= apt.address %>
+ </h3>
+
+ <% end %>
