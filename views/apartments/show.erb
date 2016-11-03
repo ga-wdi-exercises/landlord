@@ -1,0 +1,14 @@
+<h1> <%= @apartment.address %> </h1>
+
+<p>Monthly Rent: $<%= @apartment.monthly_rent %></p>
+<p>Square feet: <%= @apartment.sqft %></p>
+<p>Number of beds: <%= @apartment.num_beds %> bedrooms</p>
+<p>Number of baths: <%= @apartment.num_baths %> bathrooms</p>
+
+<a href="/apartments/<%=@apartment.id%>/edit">Edit Apartment</a>
+<br>
+<br>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+   <input type="hidden" name="_method" value="delete">
+   <input type="submit" value="Delete This Apartment">
+</form>

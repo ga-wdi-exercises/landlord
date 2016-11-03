@@ -1,0 +1,10 @@
+<h1>EDIT THIS APARTMENT</h1>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <p>Address: <input value="<%= @apartment.address %>" name="apartment[address]"></p>
+  <p>Monthly Rent: <input value="$<%= @apartment.monthly_rent %>" name="apartment[monthly_rent]"></p>
+  <p>Square feet: <input value="<%= @apartment.sqft %>" name="apartment[sqft]"></p>
+  <p>Number of beds: <input value="<%= @apartment.num_beds %>" name="apartment[num_beds]"></p>
+  <p>Number of baths <input value="<%= @apartment.num_baths %>" name="apartment[num_baths]"></p>
+  <input type="submit" value="Update">
+</form>
