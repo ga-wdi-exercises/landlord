@@ -1,6 +1,7 @@
 require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
+require "pry"
 
 # NOTE: Uncomment the lines below to verify that your seed script is working
 
