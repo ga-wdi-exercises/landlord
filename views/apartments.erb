@@ -1,0 +1,13 @@
+<h1> Apartment Information</h1>
+<% @apartments.each do |apartment| %>
+<p> Apartment: <%=apartment.id%>
+  <a href="/apartment/<%=apartment.id%>"> more..</a>
+</br>
+  Address: <%= apartment.address %>
+</p>
+<% end %>
+
+
+<a href="apartments/"
+
+<a href="/"> Main Menu </a>
