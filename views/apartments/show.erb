@@ -1,0 +1,13 @@
+<h2>Apartment</h2>
+<h3>Address: <%=@apt.address %></h3>
+<h3>Rent: <%=@apt.monthly_rent %></h3>
+<h3>Sq Ft: <%=@apt.sqft %></h3>
+<h3>No. Beds: <%=@apt.num_beds %></h3>
+<h3>No. Baths: <%=@apt.num_baths %></h3>
+
+<a href="/apartment/<%=@apt.id %>/edit">Edit apt</a>
+
+<form action="/apartments/<%=@apt.id%>" method="post">
+  <input type="hidden" name=")method" value="delete">
+  <input type="submit" value="delete apt">
+</form>
