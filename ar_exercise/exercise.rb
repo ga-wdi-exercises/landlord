@@ -46,7 +46,7 @@ gentrification = Apartment.select {|x| x.monthly_rent > 2300}
 # get the apartment with the address "6005 Damien Corners"
 omen = Apartment.find_by_address("6005 Damien Corners")
 # get all tenants in that apartment
-coven = Tenant.where(:apartment_id => omen[:id])
+# coven = Tenant.where(:apartment_id => omen[:id])
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
 all_tenants.each do |tenant|
@@ -92,6 +92,7 @@ f = Tenant.create(name: "Francine", age: 35, gender: "Female", apartment_id: 2)
 g = Tenant.create(name: "Francois", age: 36, gender: "Male", apartment_id: 1)
 h = Tenant.create(name: "Frankford", age: 37, gender: "Male", apartment_id: 3)
 i = Tenant.create(name: "France", age: 65, gender: "Male", apartment_id: 3)
+binding.pry
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
@@ -115,6 +116,92 @@ millenials.each do |y|
   Tenant.destroy(y[:id])
 end
 
-binding.pry
+def menuscreen  tenants,  apartments
+puts "###################################################"
+puts "Welcome to landlord.ly, the premier landlording app"
+puts "###################################################"
+puts "1. list all tenants"
+puts "2. list all apartments"
+puts "3. view apartments with current tenants"
+puts "4. search apartment by tenant"
+puts "5. remove tenant from apartment"
+puts "6. add new tenant"
+puts "9. exit"
+menu = gets.chomp.to_i
+case menu
+when 1
+   tenants.each do |name|
+    puts "#{name.name}"
+  end
+  puts ""
+  menuscreen  tenants,  apartments
+when 2
+   apartments.each do |apt|
+    puts "#{apt.address}"
+  end
+  puts ""
+  menuscreen  tenants,  apartments
+when 3
+   apartments.each do |apt|
+     tenants.each do |name|
+      if apt.id == name.apartment_id
+    puts "#{apt.address}, occupied by #{name.name}\n"
+  end
+end
+  end
+  puts ""
+  menuscreen  tenants,  apartments
+when 4
+  puts "enter tenant name"
+  search = gets.chomp
+   apartments.each do |apt|
+     tenants.each do |name|
+  if search == name.name && apt.id == name.apartment_id
+    puts "#{name.name} lives at #{apt.address}\n"
+end
+end
+end
+puts ""
+menuscreen  tenants,  apartments
+when 5
+  puts "removing tenant: enter tenant name"
+  search = gets.chomp
+   tenants.each do |name|
+  if search == name.name
+    name.apartment_id = nil  #there's gotta be a better way to do this
+  end
+end
+puts "#{search} has been removed"
+puts ""
+menuscreen  tenants,  apartments
+when 6
+  puts "new tenant name"
+  newname = gets.chomp
+  puts "new tenant id"
+  newid = gets.chomp
+  puts "new tenant age"
+  newage = gets.chomp
+  puts "new tenant apartment_id"
+  newapt = gets.chomp
+ tenants << Tenant.new(newid, newname, newage, newapt)
+puts "#{newname} has been added"
+puts ""
+menuscreen  tenants,  apartments
+
+when 9
+  puts "enjoy your idle wealth!!"
+else
+  puts "not a valid response\n\n"
+  menuscreen  tenants,  apartments
+end
+end
+
+menuscreen all_tenants, all_apartments
+
+
+
+
+
+
 
 #lkasjdfj

@@ -1,3 +1,5 @@
+<h2>Apartments!</h2>
 <% @apartments.each do |apt|%>
-<p><%= apt.address %><p>
+<p><a href="/apartments/<%= apt.id %>"><%= apt.address %></a><p>
 <% end %>
+<a href="/apartments/newapt">Make a new apartment!</a>
