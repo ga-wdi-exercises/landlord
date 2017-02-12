@@ -18,7 +18,6 @@ INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('3710 Buford Passage', 500, 700, 1, 4);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('64329 Tyree Creek', 500, 2000, 1, 3);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('17297 Runte Bypass', 2300, 1700, 3, 2);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('0889 Marvin Radial', 1100, 500, 3, 2);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('2745 Freddy Vista', 2800, 1400, 4, 4);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('359 Gutmann Pike', 2700, 1900, 2, 1);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('08465 Howell Harbor', 300, 1300, 3, 1);
