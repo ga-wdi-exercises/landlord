@@ -74,9 +74,9 @@ INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Dr. Lindsey Reich
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Carlee Nolan', 77, 'Female', 18);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Bernie Weimann', 11, 'Male', 18);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Jose Denesik', 26, 'Female', 18);
-INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Guadalupe OHara', 9, 'Female', 20);
-INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Sheridan Jacobson Sr.', 6, 'Female', 20);
-INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Bennett Jakubowski', 69, 'Female', 20);
-INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Annette Stamm', 76, 'Male', 20);
-INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Dr. Raquel Carter', 61, 'Female', 20);
-INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Grover Rath', 9, 'Female', 20);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Guadalupe OHara', 9, 'Female', 19);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Sheridan Jacobson Sr.', 6, 'Female', 19);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Bennett Jakubowski', 69, 'Female', 19);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Annette Stamm', 76, 'Male', 19);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Dr. Raquel Carter', 61, 'Female', 19);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Grover Rath', 9, 'Female', 19);
