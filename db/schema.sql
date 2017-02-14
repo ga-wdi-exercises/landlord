@@ -4,16 +4,16 @@ DROP TABLE IF EXISTS apartments      CASCADE;
 CREATE TABLE tenants (
   id serial PRIMARY KEY,
   name VARCHAR,
-  age integar NOT NULL,
+  age INTEGER,
   gender VARCHAR,
-  apartment_id integar NOT NULL
+  apartment_id INTEGER
 );
 
 CREATE TABLE apartments (
   id serial PRIMARY KEY,
   address VARCHAR NOT NULL,
-  monthly_rent integar NOT NULL,
-  sqft INTEGAR,
-  num_beds INTGEGAR,
-  num_baths INTEGAR
+  monthly_rent INTEGER,
+  sqft INTEGER,
+  num_beds INTEGER,
+  num_baths INTEGER
 );
