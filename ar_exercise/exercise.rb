@@ -34,15 +34,15 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
-#   first_tenant = Tenant.find 1
+    first_tenant = Tenant.find 1
 # # # get all tenants older than 65
-#   old_tenants = Tenant.where(age > 65)
+    old_tenants = Tenant.where('age > 65', :age)
 # # # get all apartments whose price is greater than $2300
-#   price_check = Apartment.where(monthly_rent > 2300)
+    price_check = Apartment.where('monthly_rent > 2300', :monthly_rent)
 # # get the apartment with the address "6005 Damien Corners"
-#   get_address = Apartment.where(address = "6005 Damien Corners")
+    get_address = Apartment.where(address: "6005 Damien Corners")
 # # get all tenants in that apartment
-#   damien_corners_tenants = all_tenants.get_address
+    damien_corners_tenants = Tenant.where(apartment_id: 6)
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
@@ -75,5 +75,5 @@ all_tenants = Tenant.all
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
 
-binding.
+binding.pry
 puts "end of file"
