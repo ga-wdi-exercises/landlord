@@ -34,14 +34,21 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.find_by(:id 1)
 # get all tenants older than 65
+ova_65 = Tenant.find_by(:age > 65)
+
 # get all apartments whose price is greater than $2300
+hi_price = Apartment.find_by(:price > 2300)
 # get the apartment with the address "6005 Damien Corners"
+spec_address = Apartment.find(:address == '6005 Damien Corners')
 # get all tenants in that apartment
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+name_addres = Tenant.each(:name, :id)
 # Iterate over each apartment, for each apartment, display it's address and rent price
+
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 
 ################################################
