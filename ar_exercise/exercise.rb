@@ -106,5 +106,6 @@ apt.save
 millenials = Tenant.where("age < ?", 30)
 
 millenials.destroy_all
+Tenant.save
 
 binding.pry
