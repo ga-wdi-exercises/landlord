@@ -18,7 +18,6 @@ class Apartment < ActiveRecord::Base
   has_many :tenants
 end
 
-binding.pry
 
 ################################################
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
