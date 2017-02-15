@@ -1,0 +1,10 @@
+<h5><a href='/apartments'>Back to Apartment List</a></h5>
+
+<h2>Showing details for Apartment #<%= @apartment.id %></h2>
+<h3><em><%= @apartment.address %></em></h3>
+<h4>- <%= @apartment.num_beds %> beds, <%= @apartment.num_baths %> baths.</h4>
+<h4>- Monthly Rent: <%= @apartment.monthly_rent %></h4>
+<p>
+  <a href="/apartments/<%= @apartment.id %>/edit">Edit</a> ||
+  <a href="">Delete</a>
+</p>

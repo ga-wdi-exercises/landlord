@@ -1,17 +1,13 @@
 <h5><a href='/'>Back to Main Menu</a></h5>
 
-
 <% @apartments.each do |apt| %>
   <p> <%= '=' * 50 %></p>
-  <h2>Apartment ID: <%= apt.id %></h2>
+  <h2>Apartment #<%= apt.id %></h2>
   <h3><em><%= apt.address %></em></h3>
-  <h4>- <%= apt.num_beds %> beds, <%= apt.num_baths %> baths.</h4>
-  <h4>- Monthly Rent: <%= apt.monthly_rent %></h4>
   <p>
     <a href="/apartments/<%= apt.id %>/edit">Edit</a> ||
     <a href="">Delete</a>  ||
     <a href="/apartments/<%= apt.id %>">More information...</a>
   </p>
-
   <p> <%= '=' * 50 %></p>
 <% end %>
