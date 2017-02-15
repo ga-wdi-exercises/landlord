@@ -20,6 +20,7 @@ end
 ### Routes for viewing and editing existing apartments ###
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
+  @tenants = @apartment.tenants
   erb :'apartments/individual_apartment'
 end
 
