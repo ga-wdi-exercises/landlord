@@ -19,7 +19,6 @@ glove.tenants.create([{name: 'Tyler Parker', age: 30, gender: 'Male'},
   {name: 'Sweet Pea', age: 30, gender: 'Female'},
   {name: 'Donald Ross', age: 40, gender: 'Male'},
   {name: 'Brook Weathers', age: 70, gender: 'Female'},
-  {name: 'Joe Stalin', age: 60, gender: 'Male'}
 ]);
 
 brook.tenants.create([{name: 'Brook Weathers', age: 70, gender: 'Female'},
