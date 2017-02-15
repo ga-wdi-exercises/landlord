@@ -6,8 +6,11 @@
   <h3><em><%= apt.address %></em></h3>
   <p>
     <a href="/apartments/<%= apt.id %>/edit">Edit</a> ||
-    <a href="">Delete</a>  ||
     <a href="/apartments/<%= apt.id %>">More information...</a>
+    <form action = "/apartments/<%= apt.id %>" method = "post">
+      <input type = "hidden" name = "_method" value = "delete" />
+      <button type = "submit">Delete</button>
+    </form>
   </p>
   <p> <%= '=' * 50 %></p>
 <% end %>

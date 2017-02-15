@@ -40,5 +40,5 @@ end
 delete '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   @apartment.destroy
-  redirect '/apartments'
+  redirect "/apartments"
 end

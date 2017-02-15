@@ -12,6 +12,10 @@
 </ol>
 
 <p>
-  <a href="/apartments/<%= @apartment.id %>/edit">Edit</a> ||
-  <a href="/apartments/<%= @apartment.id %>">Delete</a>
+  <a href="/apartments/<%= @apartment.id %>/edit">Edit</a>
 </p>
+
+<form action = "/apartments/<%= @apartment.id %>" method = "post">
+  <input type="hidden" name="_method" value="delete" />
+  <button type="submit">Delete</button>
+</form>
