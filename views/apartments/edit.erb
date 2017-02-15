@@ -20,10 +20,3 @@
 
   <input type="submit" value="Update">
 </form>
-
-<h2>Delete Apartment</h2>
-
-<form action="/apartments/<%= @apartment.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete">
-</form>

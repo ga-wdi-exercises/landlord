@@ -4,17 +4,9 @@
   * Add an apartment(a link to `GET /apartments/new`)
   * List tenants (a link to `GET /apartments/1/tenants`)
 
-List tenants in show.erb
-
 The route `GET /apartments/1/tenants` should list all tenants for 1 apartment.
 
 The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
-
-Move delete link from edit.erb to show.erb.
-
-#### CLI Bonus
-
-  - extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
 
 ### BONUS
 
@@ -25,3 +17,7 @@ Choose one or more of the following features:
   - The form should have a dropdown which lets you select an existing tenant by name
   - **HINT**: You probably want a new route in your `app.rb` just for handling submissions of this form
   - **HINT**: It should probably use a PUT verb since you're updating a tenant's `apartment_id` property
+
+#### CLI Bonus
+
+    - extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
