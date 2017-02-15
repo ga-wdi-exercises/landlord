@@ -45,10 +45,10 @@ end
 #   damien_corners_residents = Apartment.find_by(address: '6005 Damien Corners').tenants
 
 # Use `each` and `puts` to:
-# Display the name and ID # of every tenant
-  # Tenant.all.each do |tenant|
-  #   puts "NAME: #{tenant.name}, ID: #{tenant.id}"
-  #   end
+# # Display the name and ID # of every tenant
+#   Tenant.all.each do |tenant|
+#     puts "NAME: #{tenant.name}, ID: #{tenant.id}"
+#     end
 # Iterate over each apartment, for each apartment, display it's address and rent price
   # Apartment.all.each do |apartment|
   #   puts "ADDRESS: #{apartment.address}, RENT: #{apartment.monthly_rent}"
