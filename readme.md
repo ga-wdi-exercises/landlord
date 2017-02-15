@@ -115,8 +115,8 @@ require "pry" # for debugging
 below without any errors
 
 ```ruby
-the_bat_cave = Apartment.create(address: "123 Main St", monthly_rent: 2000, sqft: 600, num_beds: 2, num_baths: 1)
-me = Tenant.create(name: "Adam", age: 30, gender: "Male", apartment: the_bat_cave)
+the_bat_cave = Apartments.create(address: "123 Main St", monthly_rent: 2000, sqft: 600, num_beds: 2, num_baths: 1)
+me = Tenants.create(name: "Adam", age: 30, gender: "Male", apartment_id: 23)
 ```
 
 #### Step 3 - Create a Seeds File
