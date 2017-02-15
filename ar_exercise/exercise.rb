@@ -68,44 +68,43 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-cherokee = Apartment.create(address: "234 Cherokee Way", monthly_rent: 2300, sqft: 190, num_beds: 2, num_baths: 2)
-glove = Apartment.create(address: "234 Glove Way", monthly_rent: 2200, sqft: 200, num_beds: 2, num_baths: 2)
-brook = Apartment.create(address: "234 Brook Way", monthly_rent: 2100, sqft: 160, num_beds: 2, num_baths: 2)
+  # cherokee = Apartment.create(address: "234 Cherokee Way", monthly_rent: 2300, sqft: 190, num_beds: 2, num_baths: 2)
+  # glove = Apartment.create(address: "234 Glove Way", monthly_rent: 2200, sqft: 200, num_beds: 2, num_baths: 2)
+  # brook = Apartment.create(address: "234 Brook Way", monthly_rent: 2100, sqft: 160, num_beds: 2, num_baths: 2)
 
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-  Tenant.create(
-    {name: 'Bill Lively', age: 80, gender: 'Female', apartment_id: 9},
-    {name: 'Tyler Jones', age: 90, gender: 'Female', apartment_id: 6},
-    {name: 'Loli Moin', age: 60, gender: 'Female', apartment_id: 2},
-    {name: 'Tyler Parker', age: 30, gender: 'Male', apartment_id: 3},
-    {name: 'Joe Moise', age: 60, gender: 'Male', apartment_id: 4},
-    {name: 'player1', age: 60, gender: 'Female', apartment_id: 2},
-    {name: 'tyler2', age: 60, gender: 'Male', apartment_id: 4},
-    {name: 'brook', age: 60, gender: 'Female', apartment_id: 6},
-    {name: 'Joe Stalin', age: 60, gender: 'Male', apartment_id: 1}
-  );
+  # Tenant.create(name: 'Bill Lively', age: 80, gender: 'Female', apartment_id: 1)
+  # Tenant.create(name: 'Tyler Jones', age: 90, gender: 'Female', apartment_id: 1)
+  # Tenant.create(name: 'Loli Moin', age: 60, gender: 'Female', apartment_id: 2)
+  # Tenant.create(name: 'Tyler Parker', age: 30, gender: 'Male', apartment_id: 2)
+  # Tenant.create(name: 'Joe Moise', age: 60, gender: 'Male', apartment_id: 2)
+  # Tenant.create(name: 'player1', age: 30, gender: 'Female', apartment_id: 2)
+  # Tenant.create(name: 'tyler2', age: 40, gender: 'Male', apartment_id: 3)
+  # Tenant.create(name: 'brook', age: 70, gender: 'Female', apartment_id: 3)
+  # Tenant.create(name: 'Joe Stalin', age: 60, gender: 'Male', apartment_id: 3)
+  # 
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
-kristen= Tenant.find_by name: "Kristin Wisoky";
-kristen.update age: 24;
+  # kristen= Tenant.find_by name: "Kristin Wisoky";
+  # kristen.update age: 24;
 
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
-verna = Apartment.find_by address: "62897 Verna Walk";
-verna.update num_beds: 3;
-verna.save
+  # verna = Apartment.find_by address: "62897 Verna Walk";
+  # verna.update num_beds: 3;
+  # verna.save
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
-verna.update monthly_rent: 2800;
-verna.save
+  # verna.update monthly_rent: 2800;
+  # verna.save
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
-Tenant.where("age <30", :age).destroy_all
+  # Tenant.where("age <30", :age).destroy_all
 
 binding.pry
