@@ -1,9 +1,3 @@
-## Sinatra Views and Templates
-
-> **At first, don't connect Sinatra to the DB.** Focus on creating the routes and views. Hardcode some sample HTML for each of the views.
-
-Create the (RESTful) routes and views for the following items:
-
 - The homepage should list several menu options:
   * List all apartments (a link to `GET /apartments`)
   * View an apartment's details(a link to `GET /apartments/1`)
@@ -18,10 +12,6 @@ Create the (RESTful) routes and views for the following items:
 - The route `GET /apartments/1/tenants` should list all tenants for 1 apartment.
 - The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
   * Make sure to get the appropriate input from the user to create your person as per schema
-
-## Sinatra & Active Record
-
-> **Now connect Sinatra to Active Record** so that the user gets the appropriate data for the corresponding route.
 
 You should complete as many of the following routes (aka features) as you can:
 

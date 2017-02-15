@@ -2,14 +2,32 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
-puts "There are #{Apartment.count} apartments"
-puts "There are #{Tenant.count} tenants"
-
-puts "*" * 50
-
-puts "The first apartment is at #{Apartment.first.address}."
-puts "It has  #{Apartment.first.tenants.count} tenants."
-
-binding.pry
-
-puts "ignore this line, it's just here so the binding.pry above works"
+while true
+  puts "Good day, Mr. Pizza. What would you like to do?"
+  puts "   1. List apartments"
+  puts "   2. List tenants"
+  puts "   3. List apartments with tenants"
+  puts "   4. Quit"
+  puts
+  input = gets.chomp.to_i
+  puts
+  if input == 1
+    Apartment.all.each do |apartment|
+      puts "#{apartment.id}: #{apartment.address}, $#{apartment.monthly_rent}"
+    end
+  elsif input == 2
+    Tenant.all.each{|tenant| puts "#{tenant.name}: #{tenant.age}"}
+  elsif input == 3
+    Apartment.all.each do |apartment|
+      puts "Tenants living at #{apartment.address} ..."
+      apartment.tenants.each do |tenant|
+        puts "  #{tenant.name}"
+      end
+    end
+  elsif input == 4
+    break
+  else
+    puts "Please enter one of the numerals in the list."
+  end
+  puts
+end
