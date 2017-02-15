@@ -34,3 +34,11 @@ put '/apartments/:id' do
   @apartment.update(params[:apartment])
   redirect "/apartments/#{@apartment.id}"
 end
+
+
+### Route to delete apartments ###
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect '/apartments'
+end
