@@ -17,7 +17,7 @@ get '/apartments' do
   erb :"apartments/index"
 end
 
-get '/apartmens/new' do
+get '/apartments/new' do
   erb :"apartments/new"
 end
 
