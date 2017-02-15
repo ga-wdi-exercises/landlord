@@ -1,45 +1,22 @@
-require_relative 'db/connection' # let app.rb connect with postgres database "landlord" (also comes with pg, activerecord, and pry)
-require_relative 'models/apartment' # let app.rb access the Apartment class defined in models
-require_relative 'models/tenant' # let app.rb access the Tenant class defined in models
+require 'sinatra'
+require 'sinatra/reloader'
+require 'active_record'
 
-puts "What would you like to do?"
-puts "(1) See a list of all apartments (including ID#, address, and monthly rent)."
-puts "(2) See a list of all tenants (include name and age)."
-puts "(3) See a list of all apartments and their associated tenants (just address and name)."
+# Load the file to connect to the db
+require_relative 'db/connection.rb'
 
-option = gets.chomp
+# Load sepcific routes / controllers
+require_relative 'controllers/apartments.rb'
+require_relative 'controllers/tenants.rb'
 
-if option == "1"
-  all_apartments = Apartment.all
-  all_apartments.each do |apt|
-    puts ' '
-    puts '=' * 20
-    puts "ID#: #{apt.id}"
-    puts "Address: #{apt.address}"
-    puts "Montly rent: #{apt.monthly_rent}"
-    puts '=' * 20
-    puts ' '
-  end
-elsif option == "2"
-  all_tenants = Tenant.all
-  all_tenants.each do |tenant|
-    puts ' '
-    puts '=' * 20
-    puts "Name: #{tenant.name}"
-    puts "Age: #{tenant.age}"
-    puts '=' * 20
-    puts ' '
-  end
-elsif option == "3"
-  Apartment.all.each do |apt|
-    puts ' '
-    puts '=' * 20
-    puts "Address: #{apt.address}"
-    tenants = apt.tenants
-    tenants.each do |tenant|
-      puts ' ' + tenant.name
-    end
-    puts '=' * 20
-    puts ' '
-  end
+# Load models
+require_relative 'models/apartment'
+require_relative 'models/tenant'
+
+##################
+# General Routes #
+##################
+
+get '/' do
+  erb :home
 end
