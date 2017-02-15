@@ -73,60 +73,21 @@ apt1.save
 apt2.save
 apt3.save
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-tenant1 = Tenant.new do |ten|
-  ten.name = "Carlos Pescario"
-  ten.age = 42
-  ten.gender = "Male"
-  ten.apartment_id = 32
-end
-tenant2 = Tenant.new do |ten|
-  ten.name = "Le-a Shawntaay"
-  ten.age = 23
-  ten.gender = "Female"
-  ten.apartment_id = 893
-end
-tenant3 = Tenant.new do |ten|
-  ten.name = "Kevin Keller"
-  ten.age = 23
-  ten.gender = "Male"
-  ten.apartment_id = 137
-end
-tenant4 = Tenant.new do |ten|
-  ten.name = "Erik Ekpa"
-  ten.age = 26
-  ten.gender = "Male"
-  ten.apartment_id = 429
-end
-tenant5 = Tenant.new do |ten|
-  ten.name = "Lallita Gupta"
-  ten.age = 34
-  ten.gender = "Female"
-  ten.apartment_id = 98
-end
-tenant6 = Tenant.new do |ten|
-  ten.name = "Denny Bangles"
-  ten.age = 16
-  ten.gender = "Male"
-  ten.apartment_id = 983
-end
-tenant7 = Tenant.new do |ten|
-  ten.name = "BoJack Horseman"
-  ten.age = 12
-  ten.gender = "Male"
-  ten.apartment_id = 2345
-end
-tenant8 = Tenant.new do |ten|
-  ten.name = "Archer Sterling"
-  ten.age = 30
-  ten.gender = "Male"
-  ten.apartment_id = 2312
-end
-tenant9 = Tenant.new do |ten|
-  ten.name = "Hillary Banks"
-  ten.age = 27
-  ten.gender = "Female"
-  ten.apartment_id = 53
-end
+apt1.tenants.create([
+  {name: "Carlos Rodriguez", age: 54, gender: "Male"},
+  {name: "Pablo Escobar", age: 34, gender: "Male"},
+  {name: "Jose Jalepeno", age: 12, gender: "Male"}
+  ])
+apt2.tenants.create([
+  {name: "Jack Reacher", age: 32, gender: "Male"},
+  {name: "Elaine Crofton", age: 31, gender: "Female"},
+  {name: "Hannah Banana", age: 25, gender: "Female"}
+  ])
+apt3.tenants.create([
+  {name: "Ted Mosby", age: 29, gender: "Male"},
+  {name: "Marshall Ericson", age: 30, gender: "Male"},
+  {name: "Lily Aldrin", age: 29, gender: "Female"}
+  ])
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
