@@ -68,41 +68,49 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-apartment1= Apartments.new(address: "26 Victory Lane", monthly_rent: 900, sqft: 567, num_beds: 3, num_baths: 2)
+(from pry)
+apartment1= Apartment.new(address: "26 Victory Lane", monthly_rent: 900, sqft: 567, num_beds: 3, num_baths: 2)
 
 apartment1.save
 
-apartment2= Apartments.new(address: "27 Victory Lane", monthly_rent: 900, sqft: 567, num_beds: 3, num_baths: 2)
+apartment2= Apartment.new(address: "27 Victory Lane", monthly_rent: 900, sqft: 567, num_beds: 3, num_baths: 2)
 apartment2.save
 
-apartment3= Apartments.new(address: "28 Victory Lane", monthly_rent: 900, sqft: 567, num_beds: 3, num_baths: 2)
+apartment3= Apartment.new(address: "28 Victory Lane", monthly_rent: 900, sqft: 567, num_beds: 3, num_baths: 2)
 apartment3.save
 
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
-INSERT INTO tenants (name, age, gender) VALUES ('Joe Schmo', 40, 'Male');
-INSERT INTO tenants (name, age, gender) VALUES ('Joe Jack', 30, 'Male');
-INSERT INTO tenants (name, age, gender) VALUES ('Kieth Love', 41, 'Male');
-INSERT INTO tenants (name, age, gender) VALUES ('Joe NoSchmo', 23, 'Male');
-INSERT INTO tenants (name, age, gender) VALUES ('Jame Schmo', 40, 'Female');
-INSERT INTO tenants (name, age, gender) VALUES ('Jackie something', 23, 'Female');
-INSERT INTO tenants (name, age, gender) VALUES ('Julie Clark', 40, 'Female');
-INSERT INTO tenants (name, age, gender) VALUES ('Cathy Something', 40, 'Female');
-INSERT INTO tenants (name, age, gender) VALUES ('Lady Gaga', 31, 'Female');
+INSERT INTO tenant (name, age, gender) VALUES ('Joe Schmo', 40, 'Male');
+INSERT INTO tenant (name, age, gender) VALUES ('Joe Jack', 30, 'Male');
+INSERT INTO tenant (name, age, gender) VALUES ('Kieth Love', 41, 'Male');
+INSERT INTO tenant (name, age, gender) VALUES ('Joe NoSchmo', 23, 'Male');
+INSERT INTO tenant (name, age, gender) VALUES ('Jame Schmo', 40, 'Female');
+INSERT INTO tenant (name, age, gender) VALUES ('Jackie something', 23, 'Female');
+INSERT INTO tenant (name, age, gender) VALUES ('Julie Clark', 40, 'Female');
+INSERT INTO tenant (name, age, gender) VALUES ('Cathy Something', 40, 'Female');
+INSERT INTO tenant (name, age, gender) VALUES ('Lady Gaga', 31, 'Female');
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
-UPDATE tenants SET age +1 WHERE name = 'Kristin Wisoky'; 
+UPDATE tenant SET age= 24 WHERE name = 'Kristin Wisoky';
+
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
+
+UPDATE apartments SET num_beds=3  WHERE address = '62897 Verna Walk';
 # Make sure to save the results to your database
 
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
 
+UPDATE apartments SET monthly_rent=2800  WHERE address = '62897 Verna Walk';
+
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+DELETE FROM tenants WHERE age < 30;
