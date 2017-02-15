@@ -18,3 +18,16 @@ CREATE TABLE apartments(
   num_baths INT
 
 );
+
+CREATE TABLE prompts(
+  id SERIAL PRIMARY KEY,
+  prompt TEXT
+);
+
+CREATE TABLE responses(
+  id SERIAL PRIMARY KEY,
+  response TEXT,
+  to_prompt INT,
+  function_id INT,
+  prompt_id INT
+);
