@@ -34,6 +34,7 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tendant = Apartment.first.tenants
 # get all tenants older than 65
 # get all apartments whose price is greater than $2300
 # get the apartment with the address "6005 Damien Corners"
@@ -51,7 +52,24 @@ all_tenants = Tenant.all
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+Apartment.create([
+  {address: "123 Main St", monthly_rent: 1500, sqft: 900, num_beds: 2, num_baths: 1},
+  {address: "34 Main St", monthly_rent: 600, sqft: 700, num_beds: 1, num_baths: 1},
+  {address: "99 Something St", monthly_rent: 900, sqft: 800, num_beds: 1, num_baths: 1}
+  ])
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+Apartment.all[0].tenants.create([
+  {name: "Chanler", age: 45, gender: "Male"},
+  {name: "Joey", age: 44, gender: "Male"},
+  ])
+Apartment.all[1].tenants.create([
+  {name:"Rachel", age: 40, gender: "Female"},
+  {name: "Monica". age: 41, gender: "Female"},
+  {name: "Pheobie", age: 40, gender: "Female"}
+  ])
+Apartment.all[2].tenants.create([
+  {name: "Ross", age: 45, gender: "Male"}
+  ])
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!

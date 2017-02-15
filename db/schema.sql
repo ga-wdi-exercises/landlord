@@ -1,5 +1,5 @@
-DROP TABLE tenants;
-DROP TABLE apartments;
+DROP TABLE IF EXISTS tenants;
+DROP TABLE IF EXISTS apartments;
 
 CREATE TABLE apartments(
   id SERIAL PRIMARY KEY,
