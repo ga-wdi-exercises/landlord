@@ -31,13 +31,24 @@ end
 
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
-all_tenants = Tenant.all
+@all_tenants = Tenant.all
 
 # get the first tenant in the DB
+@first_tenant = Tenant.first
+
 # get all tenants older than 65
+@older_than_65 = Tenant.where('age>?', 65)
+
+
 # get all apartments whose price is greater than $2300
+@rent_over_2300 = Apartment.where('monthly_rent>?', 2300)
+
 # get the apartment with the address "6005 Damien Corners"
+@damien_corners = Apartment.where(address: '6005 Damien Corners')
+
 # get all tenants in that apartment
+ # @damien_tenants = Apartment.where(address: '6005 Damien Corners').tenants
+ @damien_tenants = Tenant.where(apartment_id: (Apartment.where(address: '6005 Damien Corners')))
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant

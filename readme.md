@@ -132,7 +132,7 @@ Below that, add these two lines, to ensure running the seed script clears your D
 Tenant.destroy_all
 Apartment.destroy_all
 ```
-
+WES IS HERE
 Lastly, copy the code you wrote in `exercise.rb` that *JUST* creates ~9 tenants and ~3 apartments.
 
 Then, run your seed file from the command line: `ruby db/seeds.rb`
