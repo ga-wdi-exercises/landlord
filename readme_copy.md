@@ -1,29 +1,3 @@
-#### Step 3 - Create a Seeds File
-
-Create a `db/seeds.rb` file.
-
-At the very top, ensure your seed file loads the necessary files using `require_relative`:
-* the connection file `db/connection`
-* the 2 model files
-
-Below that, add these two lines, to ensure running the seed script clears your DB first.
-```ruby
-Tenant.destroy_all
-Apartment.destroy_all
-```
-
-Lastly, copy the code you wrote in `exercise.rb` that *JUST* creates ~9 tenants and ~3 apartments.
-
-Then, run your seed file from the command line: `ruby db/seeds.rb`
-
-**Verify**: Go look at the provided `console.rb`. See the commented out lines?
-Uncomment them and re-run `console.rb`. It should run without error and provide
-the expected output (in terms of the numbers of apartments and tenants.)
-
-![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
-
-Make a commit before you move on!
-
 #### Step 4 - Build out the CLI Interface
 
 Build out a simple command line interface that provides a menu prompt and allows
