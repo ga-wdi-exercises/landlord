@@ -1,8 +1,23 @@
+### Route to list all apartments ###
 get '/apartments' do
   @apartments = Apartment.all
   erb :'apartments/index'
 end
 
+
+### Routes for creating new apartments ###
+
+get '/apartments/new' do
+  erb :'apartments/new'
+end
+
+post '/apartments' do
+  @apartment = Apartment.create(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
+end
+
+
+### Routes for viewing and editing existing apartments ###
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   erb :'apartments/individual_apartment'
@@ -17,8 +32,4 @@ put '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   @apartment.update(params[:apartment])
   redirect "/apartments/#{@apartment.id}"
-end
-
-post '/apartments/:id' do
-  
 end
