@@ -34,14 +34,21 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+#   first_tenant = tenant.find(1)
 # get all tenants older than 65
+#   seniors = tenant.find_by age: "> 65"
 # get all apartments whose price is greater than $2300
+#   twok_apartment = apartment.find_by monthly_rent: ">2300"
 # get the apartment with the address "6005 Damien Corners"
+    # damien_corners= apartment.find_by address: "6005 Damien Corners"
 # get all tenants in that apartment
+#   
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+#
 # Iterate over each apartment, for each apartment, display it's address and rent price
+
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 
 ################################################
