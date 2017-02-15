@@ -63,12 +63,25 @@ adress_tenats = Apartment.all.each do |apartment|
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+new_Apartment = Apartment.create(address:"414 Ginkgo Tr", monthly_rent: 5000, sqft: 4000, num_beds:3, num_baths:2)
+new_Apartment = Apartment.create(address:"46690 Play St", monthly_rent: 2500, sqft:1000, num_beds:3, num_baths:2)
+new_Apartment = Apartment.create(address:"001 Dope St", monthly_rent: 3500, sqft:1500, num_beds:2, num_baths:1.5)
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+new_tenant = Tenant.create(name:"Kevin Keller", age:23, gender:"Male", apartment_id: 21)
+new_tenant = Tenant.create(name:"Dom Houston", age:40, gender:"Male", apartment_id: 20)
+new_tenant = Tenant.create(name:"Aaron Andrew", age:17, gender:"Male", apartment_id: 20)
+new_tenant = Tenant.create(name:"Gurpreet Gill", age:25, gender:"Male", apartment_id: 20)
+new_tenant = Tenant.create(name:"Justin Shin", age:30, gender:"Male", apartment_id: 20)
+new_tenant = Tenant.create(name:"Chrisy Johnson", age:16, gender:"Female", apartment_id: 20)
+new_tenant = Tenant.create(name:"Amrinder Gill", age:28, gender:"Male", apartment_id: 20)
+new_tenant = Tenant.create(name:"Amandeep Gill", age:30, gender:"Female", apartment_id: 22)
+new_tenant = Tenant.create(name:"Will Smith", age:45, gender:"Male", apartment_id: 22)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
+birthday_kristen = Tenant.update(Tenant.find_by(name:"Kristin Wisoky").id, :age=> Tenant.find_by(name:"Kristin Wisoky").age + 1)
 
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
@@ -81,3 +94,4 @@ adress_tenats = Apartment.all.each do |apartment|
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+all_tenants = Tenant.where("age<30").destroy_all
