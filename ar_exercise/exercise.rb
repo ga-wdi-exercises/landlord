@@ -17,7 +17,7 @@ end
 class Apartment < ActiveRecord::Base
   has_many :tenants
 end
-
+binding.pry
 ################################################
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
@@ -34,23 +34,23 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
-first_tenant = Tenant.find_by(:id 1)
+first_tenant = Tenant.find(1)
 # get all tenants older than 65
-ova_65 = Tenant.find_by(:age > 65)
+ova_65 = Tenant.where('age > 65')
 
 # get all apartments whose price is greater than $2300
-hi_price = Apartment.find_by(:price > 2300)
+hi_price = Apartment.where('monthly_rent > 2300')
 # get the apartment with the address "6005 Damien Corners"
-spec_address = Apartment.find(:address == '6005 Damien Corners')
+spec_address = Apartment.where('address == "6005 Damien Corners"')
 # get all tenants in that apartment
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
-name_addres = Tenant.each(:name, :id)
+name_addres = Tenant.all.each(|ten| p :name, :id)
 # Iterate over each apartment, for each apartment, display it's address and rent price
-
+add_price = Apartment.all.each{|ten| puts :address, :monthly_rent}
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-
+ap_add_ten = Apartment.all.each.map{|ten| puts :address, (Tenants.all.each{puts :}) }
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
