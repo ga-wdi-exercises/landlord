@@ -1,20 +1,3 @@
-#### Step 4 - Build out the CLI Interface
-
-Build out a simple command line interface that provides a menu prompt and allows
-the user to:
-
-1. See a list of all apartments (include ID#, address, and monthly rent)
-2. See a list of all tenants (include name and age)
-3. See a list of all apartments and their associated tenants (just address and name)
-
-![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
-Make a commit before you move on!
-
-
-#### Bonus
-
-- extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
-
 ## Sinatra Views and Templates
 
 > **At first, don't connect Sinatra to the DB.** Focus on creating the routes and views. Hardcode some sample HTML for each of the views.
@@ -65,6 +48,10 @@ You should complete as many of the following routes (aka features) as you can:
   - after updating it should redirect to the updated apartments show route
 - Have a delete route for a single apartment specified by the params value in the URL. (e.g. `DELETE /apartments/4`)
   - when there's a `DELETE` request to this route, it will delete the apartment specified.
+
+#### CLI Bonus
+
+  - extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
 
 ### BONUS
 
