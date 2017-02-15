@@ -13,7 +13,7 @@ CREATE TABLE apartments(
   id SERIAL PRIMARY KEY,
   address VARCHAR,
   monthly_rent INTEGER,
+  sqft INTEGER,
   num_beds INTEGER,
-  num_baths INTEGER,
-  img_url VARCHAR
+  num_baths INTEGER
 );
