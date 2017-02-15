@@ -38,6 +38,11 @@ get "/apartments/:id/tenants" do
   erb :apartment_tenants
 end
 
+post "/apartments" do
+  @apartment = Apartment.create(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
+end
+
 get "/apartments/:id" do
   @apartments = Apartment.find(params[:id])
   erb :apartment
