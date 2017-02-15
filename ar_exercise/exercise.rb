@@ -40,23 +40,50 @@ old_tentants = Tenant.where('age > 65')
 # get all apartments whose price is greater than $2300
 pricey_apt = Apartment.where('monthly_rent > 2300')
 # get the apartment with the address "6005 Damien Corners"
-damien = Apartment.where(address: "6005 Damien Corners")
+damien = Apartment.find_by(address: "6005 Damien Corners")
 # get all tenants in that apartment
-
+damien_tenants = Apartment.find_by(address: "6005 Damien Corners").tenants
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+apt_id = Tenant.all.each do |tenant|
+  puts "#{tenant.name} #{tenant.id.to_s}"
+end
 # Iterate over each apartment, for each apartment, display it's address and rent price
+apt_dets = Apartment.all.each do |apartment|
+  puts "#{apartment.address} #{apartment.id.to_s}"
+end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-
+# apt_tenants = Apartment.all.each do |apartment|
+#     Tenant.all.each do |tenant|
+#   puts "#{apartment.address.tenants}"
+#   end
+# end
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
-
+# id SERIAL PRIMARY KEY,
+# name VARCHAR,
+# age INTEGER,
+# gender VARCHAR,
+# apartment_id INTEGER
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+fieldhouse1 = Apartment.create!(address: "098 bib dr", monthly_rent: "9", sqft: "8x10", num_beds: "5", num_baths: "10")
+fieldhouse2 = Apartment.create!(address: "099 bib dr", monthly_rent: "9", sqft: "8x10", num_beds: "5", num_baths: "10")
+fieldhouse3 = Apartment.create!(address: "100 bib dr", monthly_rent: "9", sqft: "8x10", num_beds: "5", num_baths: "10")
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
+jose = Tenant.create!(name: "Jose Andres", age: "40", gender: "M",apartment_id "5" )
+andre = Tenant.create!(name: "Andre Andres", age: "40", gender: "M",apartment_id "5" )
+sammy = Tenant.create!(name: "Sammy Andres", age: "40", gender: "M",apartment_id "5" )
+ashley = Tenant.create!(name: "Ashley Andres", age: "40", gender: "M",apartment_id "5" )
+john= Tenant.create!(name: "John Andres", age: "40", gender: "M",apartment_id "5" )
+casey = Tenant.create!(name: "Casey Andres", age: "40", gender: "M",apartment_id "5" )
+clara = Tenant.create!(name: "Clara Andres", age: "40", gender: "M",apartment_id "5" )
+josh = Tenant.create!(name: "Josh Andres", age: "40", gender: "M",apartment_id "5" )
+kobe = Tenant.create!(name: "Kobe Andres", age: "40", gender: "M",apartment_id "5" )
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
