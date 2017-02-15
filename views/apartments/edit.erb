@@ -1,0 +1,25 @@
+<h1> Edit Listing </h1>
+
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <p><label> Address:</label></p>
+  <input type="text" name='apartment[address]' value="<%= @apartment.address %>" >
+
+  <p><label> Monthly Rent: </label></p>
+  <input type='number' name='apartment[monthly_rent]' value="<%= @apartment.monthly_rent %>"  min="0">
+
+  <p><label> Square Feet: </label></p>
+  <input type='number' name='apartment[sqft]' value="<%= @apartment.sqft %>" min="0">
+
+  <p><label> Number of Bedrooms: </label></p>
+  <input type='number' name='apartment[num_beds]' value="<%= @apartment.num_beds %>" min="0">
+
+  <p><label> Number of Bathrooms: </label></p>
+  <input type='number' name='apartment[num_baths]' value='<%= @apartment.num_baths %>' min="0">
+
+  <p><input class='button-style' type='submit' value='Edit Listing'></p>
+
+</form>
+
+<h3><a href='/apartments'>< Back</a></h3>

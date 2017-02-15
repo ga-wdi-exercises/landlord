@@ -17,15 +17,29 @@ get '/apartments' do
   erb :"apartments/apartments"
 end
 
-get 'apartments/new' do
+get '/apartments/new' do
   erb :"apartments/new"
 end
 
 post '/apartments' do
-  @aparment = Apartment.create(address: params[:address], monthly_rent: params[:monthly_rent], sqft: params[:sqft], num_beds: params[:num_beds], num_baths: params[:num_baths])
+  @apartment = Apartment.create(address: params[:address], monthly_rent: params[:monthly_rent], sqft: params[:sqft], num_beds: params[:num_beds], num_baths: params[:num_baths])
   redirect "apartments/#{@apartment.id}"
 end
+
 get '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
   erb :"apartments/show"
 end
+
+get '/apartments/:id/edit' do
+  @apartment = Apartment.find(params[:id])
+  erb :"apartments/edit"
+end
+
+put '/apartments/:id' do
+@apartment = Apartment.find(params[:id])
+  @apartment.update(params[:apartment])
+  redirect("/apartments/#{@apartment.id}")
+end
+
+ 

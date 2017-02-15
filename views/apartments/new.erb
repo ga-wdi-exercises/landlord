@@ -1,10 +1,22 @@
 <h1> Create A Listing </h1>
 
 <form action="/apartments" method="post">
-  <p><label> Addres:</label></p>
-  <input type="text"
+  <p><label> Address:</label></p>
+  <input type="text" name='address'>
 
+  <p><label> Monthly Rent: </label></p>
+  <input type='number' name='monthly_rent' min="0">
 
+  <p><label> Square Feet: </label></p>
+  <input type='number' name='sqft' min="0">
 
+  <p><label> Number of Bedrooms: </label></p>
+  <input type='number' name='num_beds' min="0">
 
+  <p><label> Number of Bathrooms: </label></p>
+  <input type='number' name='num_baths' min="0">
+
+  <p><input class='button-style' type='submit' value='Create Listing'></p>
+
+</form>
 <p><a href="/apartments"> < Back </a></p>
