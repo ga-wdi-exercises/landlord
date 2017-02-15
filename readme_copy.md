@@ -1,14 +1,3 @@
-## Active Record Exercises
-
-### Complete the AR Exercises
-
-Look in the `ar_exercises` folder. Update the `exercise.rb` file to solve each
-challenge.
-
-![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
-
-Make a commit before you move on!
-
 ### Command Line Landlord Manager (Using ActiveRecord)
 
 We're going to recreate our command line app, only this time we'll use ActiveRecord
