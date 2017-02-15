@@ -110,7 +110,7 @@ all_tenants = Tenant.all
 # Find all tenants who are under 30 years old
     millenials = Tenant.where('age < 30', :age)
 # Delete their records from the DB
-    millenials.destroy
+    bye_millenials = millenials.destroy
 
 binding.pry
 puts "end of file"

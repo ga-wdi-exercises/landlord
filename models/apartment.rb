@@ -1,3 +1,3 @@
 class Apartment < ActiveRecord::Base
-  has_many :tenants, dependent: :destroy
+  has_many :tenants
 end
