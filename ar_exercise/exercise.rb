@@ -34,9 +34,13 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.find(1)
 # get all tenants older than 65
+old_tentants = Tenant.where('age > 65')
 # get all apartments whose price is greater than $2300
+pricey_apt = Apartment.where('monthly_rent > 2300')
 # get the apartment with the address "6005 Damien Corners"
+damien = Apartment.where(address: "6005 Damien Corners")
 # get all tenants in that apartment
 
 # Use `each` and `puts` to:
