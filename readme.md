@@ -56,10 +56,10 @@ Create a `schema.sql` in the `db` folder. It should contain the following:
 > Note: If at any point you need a new clean set of data, run the following commands (replacing `database_name` and `name_of_file.sql` with the actual names of the database and files you're using).
 
 ```bash
-$ dropdb database_name
-$ createdb database_name
-$ psql -d database_name < name_of_schema_file.sql
-$ psql -d database_name < name_of_seed_file.sql
+$ dropdb landlord
+$ createdb landlord
+$ psql -d landlord < db/schema.sql
+$ psql -d landlord < db/seeds.sql
 ```
 
 ![Commit!](http://vignette1.wikia.nocookie.net/uncyclopedia/images/5/5a/Checkmark.png/revision/latest/scale-to-width-down/50?cb=20110702210942)
