@@ -2,6 +2,29 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
+    while 1
+      puts "Choose one of the following:"
+      puts "1 - See all apartemnts"
+      puts "2 - See all tenants"
+      input = gets.chomp
+      if (input == "1")
+         Apartment.each do |apartments|
+          puts "#{apartments.all}"
+          end
+      elsif (input == "2")
+         Tenant.each do |tenants|
+          puts "#{tenants.all}"
+          end
+      else
+        puts "Invalid option."
+      end
+    end
+
+
+
+
+
+
 
 # puts "There are #{Apartment.count} apartments"
 # puts "There are #{Tenant.count} tenants"

@@ -34,7 +34,7 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
-SELECT FIRST(name) FROM tenants;
+
 # get all tenants older than 65
 SELECT * FROM tenants WHERE age >= 65;
 # get all apartments whose price is greater than $2300
@@ -82,15 +82,15 @@ apartment3.save
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
-INSERT INTO tenant (name, age, gender) VALUES ('Joe Schmo', 40, 'Male');
-INSERT INTO tenant (name, age, gender) VALUES ('Joe Jack', 30, 'Male');
-INSERT INTO tenant (name, age, gender) VALUES ('Kieth Love', 41, 'Male');
-INSERT INTO tenant (name, age, gender) VALUES ('Joe NoSchmo', 23, 'Male');
-INSERT INTO tenant (name, age, gender) VALUES ('Jame Schmo', 40, 'Female');
-INSERT INTO tenant (name, age, gender) VALUES ('Jackie something', 23, 'Female');
-INSERT INTO tenant (name, age, gender) VALUES ('Julie Clark', 40, 'Female');
-INSERT INTO tenant (name, age, gender) VALUES ('Cathy Something', 40, 'Female');
-INSERT INTO tenant (name, age, gender) VALUES ('Lady Gaga', 31, 'Female');
+INSERT INTO tenants (name, age, gender) VALUES ('Joe Schmo', 40, 'Male');
+INSERT INTO tenants (name, age, gender) VALUES ('Joe Jack', 30, 'Male');
+INSERT INTO tenants (name, age, gender) VALUES ('Kieth Love', 41, 'Male');
+INSERT INTO tenants (name, age, gender) VALUES ('Joe NoSchmo', 23, 'Male');
+INSERT INTO tenants (name, age, gender) VALUES ('Jame Schmo', 40, 'Female');
+INSERT INTO tenants_id_seq (name, age, gender) VALUES ('Jackie something', 23, 'Female');
+INSERT INTO tenants (name, age, gender) VALUES ('Julie Clark', 40, 'Female');
+INSERT INTO tenants (name, age, gender) VALUES ('Cathy Something', 40, 'Female');
+INSERT INTO tenants (name, age, gender) VALUES ('Lady Gaga', 31, 'Female');
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
