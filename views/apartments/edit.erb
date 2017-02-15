@@ -22,4 +22,9 @@
 
 </form>
 
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-style" type="submit" value="Delete Listing">
+</form>
+
 <h3><a href='/apartments'>< Back</a></h3>

@@ -42,4 +42,8 @@ put '/apartments/:id' do
   redirect("/apartments/#{@apartment.id}")
 end
 
- 
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect "/apartments"
+end
