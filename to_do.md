@@ -12,4 +12,4 @@ Choose one or more of the following features:
 
 #### CLI Bonus
 
-    - extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
+- extend functionality of the command line app where you, the landlord, can assign people to apartments, evict tenants, change rent and .... whatever you want!
