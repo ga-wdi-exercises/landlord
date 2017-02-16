@@ -1,0 +1,18 @@
+<h5><a href='/'>Main Menu</a></h5>
+
+<% @apartments.each do |apt| %>
+  <p> <%= '=' * 50 %></p>
+  <h2>Apartment #<%= apt.id %></h2>
+  <h3><em><%= apt.address %></em></h3>
+  <p>
+    <a href="/apartments/<%= apt.id %>/edit">Edit</a> ||
+    <a href="/apartments/<%= apt.id %>">More information...</a>
+    <form action = "/apartments/<%= apt.id %>/delete" method = "post">
+      <input type = "hidden" name = "_method" value = "delete" />
+      <button type = "submit">Delete</button>
+    </form>
+  </p>
+  <p> <%= '=' * 50 %></p>
+<% end %>
+
+<h2><strong><a href='/apartments/new'>Add an Apartment</a></strong></h2>
