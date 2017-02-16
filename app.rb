@@ -6,14 +6,9 @@ require_relative 'db/connection'
 require_relative '../models/apartment'
 require_relative '../models/tenant'
 
-get "/" do
-  @apartments = Apartment.all
-  erb :"index"
-end
-
 get "/apartments" do
   @apartments = Apartment.all
-  erb :"apartments_all"
+  erb :"index"
 end
 
 get "/apartments/:id" do
@@ -25,18 +20,11 @@ get "/apartments/new" do
   erb :"apartments_new"
 end
 
-get "/apartments/:id/tenants" do
-  @apartments = Apartment.find(params[:id])
-  @tenants = Tenant.find(params[:id])
-  erb :apartment_tenants
-end
-
-get "/tenants" do
-  @tenants = Tenant.all
-  erb :"tenants_all"
-end
-
-get "/tenants/:id" do
-  @atenants = Tenant.find(params[:id])
-  erb :"tenants"
+post "/apartments" do
+  @apartments = Apartment.create({address: params[:address],
+                                  monthly_rent: params[:monthly_rent],
+                                  sqft: params[:sqft],
+                                  num_beds: params[:num_beds],
+                                  num_baths: params[:num_baths]})
+  redirect "/apartments/#{@apartments.id}"
 end
