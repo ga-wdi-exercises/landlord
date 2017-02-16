@@ -1,0 +1,6 @@
+Hi!
+<h2>Apartment Index</h2>
+<% @apartments.each do |apt|%>
+<p> <a href="/apartments/<%=apt[:address] %>"><%=apt[:address] %></a> </p>
+<% end %>
+<p> <a href="/apartments/new">Add a New Apartment</a> </p>
