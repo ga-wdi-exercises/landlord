@@ -1,0 +1,11 @@
+<h2><a href="/tenants">All Tenants</a></h2>
+
+<h3>Tenant #<%=@tenant.id %></h3>
+<h4>Name: <%= @tenant.name%></h4>
+<h4>Age: <%= @tenant.age %></h4>
+<h4>Gender: <%= @tenant.gender %></h4>
+<h4>Apartment: <%= @tenant.apartment_id %></h4>
+
+
+<h3><a href="/apartments/<%=@tenant.apartment_id%>">View Apartment</a></h3>
+<h3><a href="/tenants/<%=@tenant.id%>/edit">Edit this Tenant</a></h3>

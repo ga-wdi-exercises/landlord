@@ -1,0 +1,6 @@
+<h2>Tenants of Apartment # <%= @apartment.id %></h2>
+<ol>
+  <% @tenants.each do |tenant| %>
+  <li><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></li>
+  <% end %>
+</ol>

@@ -1,0 +1,21 @@
+<h3>Edit this Tenant</h3>
+<form action="/tenants/<%= @tenant.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label>Name: </label>
+  <input name="tenant[name]" value="<%= @tenant.name %>">
+  <br>
+  <label>Age: </label>
+  <input name="tenant[age]" value="<%= @tenant.age %>">
+  <br>
+  <label>Gender: </label>
+  <input name="tenant[gender]" value="<%= @tenant.gender %>">
+  <br>
+  <label>Apartment ID: </label>
+  <input name="tenant[apartment_id]" value="<%= @tenant.apartment_id %>">
+  <input type="submit" value="Save">
+</form>
+
+<form action="/tenants/<%=@tenant.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete">
+</form>
