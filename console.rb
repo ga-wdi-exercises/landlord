@@ -29,3 +29,21 @@ puts "ignore this line, it's just here so the binding.pry above works"
 # 3. Apartment.all.each do |apartment|
 #       puts #{apartment.address} #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.find_by(apartment_id: apartment.id).name
 #     end
+
+get '/apartments' do
+  @apartment = Apartment.all
+  erb :"apartment/index"
+
+get 'apartments/1'
+  @apartment = Apartment.find(params[:id])
+  erb :"apartment/show"
+
+get 'apartment/new'
+  @apartment = Apartment.create
+  erb :"apartment/new"
+
+  get 'apartments/1/tenants'
+    @tenant = Tenant.all
+    erb :"apartment/show"
+
+# stopping point. ran out of time. Started the Sinatra Views/ Template portion. Need to continue to complete and create routes for the above destinations.
