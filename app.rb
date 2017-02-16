@@ -20,3 +20,23 @@ require_relative 'models/tenants'
 get "/" do
   erb :"index"
 end
+
+#home page for apt
+get "/apartments" do
+  @apt = Apartment.all
+  erb (:"apartments/index")
+end
+
+#show single apt
+get '/apartments/:id' do
+  erb (:"apartments/show")
+end
+
+#create new
+get '/apartments/new' do
+  erb (:"apartments/new")
+end
+
+get '/apartments/:id/tenants' do
+  erb (:"tenants/index")
+end

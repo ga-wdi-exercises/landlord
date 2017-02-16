@@ -12,14 +12,13 @@ end
 
 #create new
 get '/apartments/new' do
-  erb (:"apartments/new")
+  @apt = Apartment.create(params[:apt])
+
+  redirect "/apartments/#{@apt.id}"
 end
 
 #show single apt
 get '/apartments/:id' do
+  @apt = Apartment.find(params[:id])
   erb (:"apartments/show")
-end
-
-get '/apartments/:id/tenants' do
-  erb (:"tenants/index")
 end
