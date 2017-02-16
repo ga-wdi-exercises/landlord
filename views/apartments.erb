@@ -1,0 +1,12 @@
+<h2>Apartment information!</h2>
+
+<p>Address: <%= @apartments.address%></p>
+<p>Monthly Rent: <%= @apartments.monthly_rent%></p>
+<p>Square Ft: <%= @apartments.sqft%></p>
+<p>Number of Bedrooms: <%= @apartments.num_beds%></p>
+<p>Number of Bathrooms: <%= @apartments.num_baths%></p>
+
+<form action="/apartments/<%= @apartments.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete">
+</form> <br>
