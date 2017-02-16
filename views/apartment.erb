@@ -1,0 +1,18 @@
+<h2><%=@apartments.address %></h2>
+<h3>Address:</h3>
+<p><%=@apartments.address %></p>
+<h3>Rent:</h3>
+<p>$<%=@apartments.monthly_rent %>/month</p>
+<h3>Square Footage:</h3>
+<p><%=@apartments.sqft %>ft</p>
+<h3>Beds:</h3>
+<p><%=@apartments.num_beds %> beds</p>
+<h3>Bathroom:</h3>
+<p><%=@apartments.num_baths %> bathrooms</p>
+<h3><a href="/apartments/<%= @apartments.id %>/tenants">See Tenants</a></h3>
+<h3><a href="/apartments/<%= @apartments.id %>/edit">EDIT</a></h3>
+<form action="/apartments/<%= @apartments.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input class="button " type="submit" value="DESTROY">
+    </form>
+<h3><a href="/">HOME</a></h3>
