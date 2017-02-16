@@ -1,0 +1,36 @@
+body {
+  letter-spacing: .25em;
+  font-size: 200%;
+  color: rgb(241, 235, 0);
+}
+
+
+a, p, h2, h3 {
+  color: rgb(241, 235, 0);
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.wrapper{
+  background-image: url(../images/exp-apartment.jpg);
+  background-repeat: repeat;
+  margin: 0 auto;
+  width:800px;
+  background-color: black;
+}
+.wrapper=>img{
+
+   min-width: 100%;
+   min-height: 100%;
+}
+
+input[type=text] {padding:5px; border:2px solid #ccc;
+-webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+input[type=text]:focus {border-color:#333; }
+
+input[type=submit] {padding:10px 15px; background:#000; border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;  color:#fff; font-size: 20px; width:220px;}
