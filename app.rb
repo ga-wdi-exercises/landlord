@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 require 'active_record'
 require 'pry'
 require 'pg'
-# require_relative 'db/connection'
+require_relative 'db/connection'
 require_relative 'models/apartment'
 require_relative 'models/tenant'
 
@@ -34,20 +34,21 @@ get '/apartments/:id/edit' do
 
 end
 
-get 'apartments/:id/tenants' do
-  @tenants = Tenant.find(params[:id])
-  erb :"tenants/index"
-end
-
-get 'apartments/:id/tenants/new' do
-  erb :"tenants/new"
-end
-
 put '/apartments/:id' do
     @apartment = Apartment.find(params[:id])
     @apartment.update(params[:apartment])
     redirect "/apartments/#{@apartment.id}"
 end
+
+# get 'apartments/:id/tenants' do
+#   @tenants = Tenant.find(params[:id])
+#   erb :"tenants/index"
+# end
+#
+# get 'apartments/:id/tenants/new' do
+#   erb :"tenants/new"
+# end
+
 
 delete '/apartments/:id' do
   @apartment = Apartment.find(params[:id])

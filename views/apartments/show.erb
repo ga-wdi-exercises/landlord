@@ -1,1 +1,10 @@
-<h2>I will be your realtor and show all your apartments for people</h2>
+
+<h2><a href="/apartments"> Show me All Apartments</a> </h2>
+
+<p>address: <%= @apartments.address %> </p>
+<p> monthly rent: <%= @apartments.monthly_rent %></p>
+<p> sqft: <%= @apartments.sqft %></p>
+<p> number of beds: <%= @apartments.num_beds %></p>
+<p> number of baths: <%= @apartments.num_baths %></p>
+
+<h3><a href="/apartments/<%= @apartments.id %>/edit"> Edit this Apartment</a> </h3>

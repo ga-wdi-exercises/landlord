@@ -1,1 +1,20 @@
-<h2>I will create a new apartment for you out of thin air and some 1s' and 0s'!</h2>
+
+<form action="/apartments" method="post">
+  <label>address:</label>
+  <input type="text" name="apartment[address]">
+
+  <label>monthly rent:</label>
+  <input type="text" name="apartment[monthly_rent]">
+
+  <label> sqft:</label>
+  <input type="text" name="apartment[sqft]">
+
+
+  <label> num of beds:</label>
+  <input type="text" name="apartment[num_beds]">
+
+  <label> num of baths:</label>
+  <input type="text" name="apartment[num_baths]">
+
+  <input type="submit" value="Add Apartment">
+</form>
