@@ -1,0 +1,17 @@
+<h2>New Tenant</h2>
+
+<form action="/apartments/<%= @apartment.id %>/tenants" method="post" >
+
+  <p><label>Name: </label></p>
+  <input type="text" name="name">
+
+  <p><label>Age: </label></p>
+  <input type="number" min="0" name="age">
+
+  <p><label>Gender: </label></p>
+  <input type="text" name="gender">
+
+  <p><input type="submit" value="Post"></p>
+  </form>
+
+<h3><a href="/apartments">Back</a></h3>
