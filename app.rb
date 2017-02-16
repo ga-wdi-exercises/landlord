@@ -6,8 +6,8 @@ require 'active_record'
 require_relative 'db/connection.rb'
 
 # Load specific routes / controllers
-# require_relative 'controllers/artists.rb'
-# require_relative 'controllers/songs.rb'
+require_relative 'controllers/apartments.rb'
+require_relative 'controllers/tenants.rb'
 
 # Load models
 require_relative 'models/apartments'
@@ -17,6 +17,6 @@ require_relative 'models/tenants'
 #  General routes  #
 ####################
 
-# get "/" do
-#   erb :home
-# end
+get "/" do
+  erb :"index"
+end
