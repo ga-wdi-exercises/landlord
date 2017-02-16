@@ -16,4 +16,6 @@ puts "It has  #{Apartment.first.tenants.count} tenants."
 
 binding.pry
 
-puts "ignore this line, it's just here so the binding.pry above works"
+puts "ignore this line, it's just here so the binding.pry above works
+
+
