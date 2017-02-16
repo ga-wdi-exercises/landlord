@@ -33,6 +33,7 @@ if answer.to_i == 1
         puts "Tenant Name: #{person.name}, "
       end
    end
+   
  end
 
 # binding.pry
