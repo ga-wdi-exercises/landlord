@@ -63,20 +63,20 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `update`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-apartment1 = Apartment.new(address: "123 Fake Street", monthly_rent: 1000, sqft: 700, num_beds: 3, num_baths: 2);
-apartment2 = Apartment.new(address: "123 Fake Street", monthly_rent: 1000, sqft: 700, num_beds: 3, num_baths: 2);
-apartment3 = Apartment.new(address: "123 Fake Street", monthly_rent: 1000, sqft: 700, num_beds: 3, num_baths: 2);
+Apartment.create(address: "123 Fear Street", monthly_rent: 1000, sqft: 700, num_beds: 3, num_baths: 2)
+Apartment.create(address: "1833 Dawsons Creek", monthly_rent: 1000, sqft: 700, num_beds: 3, num_baths: 2)
+Apartment.create(address: "", monthly_rent: 1000, sqft: 700, num_beds: 3, num_baths: 2)
 
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-tenant1 = Tenant.new(name: "Spartacus", age: 21, gender: "Male", apartment_id: 21)
-tenant2 = Tenant.new(name: "Crixus", age: 22, gender: "Male", apartment_id: 21)
-tenant3 = Tenant.new(name: "Gannicus", age: 21, gender: "Male", apartment_id: 21)
-tenant4 = Tenant.new(name: "Ragner", age: 22, gender: "Male", apartment_id: 22)
-tenant5 = Tenant.new(name: "Bjorn", age: 24, gender: "Male", apartment_id: 22)
-tenant6 = Tenant.new(name: "Hagertha", age: 26, gender: "Female", apartment_id: 22)
-tenant7 = Tenant.new(name: "Aslaug", age: 29, gender: "Female", apartment_id: 22)
-tenant8 = Tenant.new(name: "Onomaeus", age: 22, gender: "Male", apartment_id: 21)
-tenant9 = Tenant.new(name: "Fiona", age: 21, gender: "Female", apartment_id: 23)
+Tenant.create(name: "Spartacus", age: 21, gender: "Male", apartment_id: 21)
+Tenant.create(name: "Crixus", age: 22, gender: "Male", apartment_id: 21)
+Tenant.create(name: "Gannicus", age: 21, gender: "Male", apartment_id: 21)
+Tenant.create(name: "Ragner", age: 22, gender: "Male", apartment_id: 22)
+Tenant.create(name: "Bjorn", age: 24, gender: "Male", apartment_id: 22)
+Tenant.create(name: "Hagertha", age: 26, gender: "Female", apartment_id: 22)
+Tenant.create(name: "Aslaug", age: 29, gender: "Female", apartment_id: 22)
+Tenant.create(name: "Onomaeus", age: 22, gender: "Male", apartment_id: 21)
+Tenant.create(name: "Fiona", age: 21, gender: "Female", apartment_id: 23)
 
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
