@@ -7,8 +7,8 @@ ActiveRecord::Base.establish_connection(
   :database => "landlord"
 )
 
-# if defined? Sinatra
-# 	after do
-# 	  ActiveRecord::Base.connection.close
-# 	end
-# end
+if defined? Sinatra
+	after do
+	  ActiveRecord::Base.connection.close
+	end
+end
