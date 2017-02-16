@@ -56,6 +56,7 @@ delete '/apartments/:id' do
   redirect "/apartments"
 end
 get '/' do
-  # redirect("/apartments")
+  
+  @apartments = Apartment.all
   erb :"apartments/index"
 end
