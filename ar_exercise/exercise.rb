@@ -69,23 +69,16 @@ wests_apt = Aparment.create(address: "22222 Where Court", monthly_rent: 5500, sq
 laters_apt = Aparment.create(address: "33333 Food Blvd", monthly_rent: 2500, sqft: 1000, num_beds: 2, num_baths: 2)
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
-johnsons_apt.tenants.create([
-  {name: "John Johnson", age: 55, gender: male},
-  {name: "Mildred Johnson", age: 53, gender: female},
-  {name: "Johnny Johnson", age: 8, gender: male},
-  {name: "Jimmy Johnson", age: 6, gender: male}
-  ])
 
-wests_apt.tenants.create([
-  {name: "Kanye West", age: 35, gender: male},
-  {name: "Kim West", age: 32, gender: female},
-  {name: "North West", age: 4, gender: female}
-  ])
-
-laters_apt.tenants.create([
-  {name: "Seeya Laters", age: 40, gender: male},
-  {name: "Catchya Laters", age: 45, gender: female}
-  ])
+Tenant.create(name: "John Johnson", age: 55, gender: "male", apartment_id: 21)
+Tenant.create(name: "Mildred Johnson", age: 53, gender: "female", apartment_id: 21)
+Tenant.create(name: "Johnny Johnson", age: 8, gender: "male", apartment_id: 21)
+Tenant.create(name: "Jimmy Johnson", age: 6, gender: "male", apartment_id: 21)
+Tenant.create(name: "Kanye West", age: 35, gender: "male", apartment_id: 22)
+Tenant.create(name: "Kim West", age: 32, gender: "female", apartment_id: 22)
+Tenant.create(name: "North West", age: 4, gender: "female", apartment_id: 22)
+Tenant.create(name: "Seeya Laters", age: 40, gender: "male", apartment_id: 23)
+Tenant.create(name: "Catchya Laters", age: 45, gender: "female", apartment_id: 23)
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
@@ -111,4 +104,4 @@ verna_walk_apt.save
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
 tenants_under30 = Tenant.where(age: < 30)
-tenants_under30.destroyall
+tenants_under30.destroy_all
