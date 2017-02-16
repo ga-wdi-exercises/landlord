@@ -52,20 +52,20 @@ all_tenants = tenant.apartments
 
 # Display the name and ID # of every tenant
 tenants.each do |tenant|
-  puts "#{name} #{id}"
+  puts "#{tenant.name} #{tenant.id}"
 end
 
 # Iterate over each apartment, for each apartment, display it's address and rent price
-apartments.each do |apartmesnt|
-  puts "#{address} #{monthly_rent}"
+apartments.each do |apt|
+  puts "#{apt.address} #{apt.monthly_rent}"
 end
 
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-apartments.each do |apartment|
-  puts "#{address}".join
+apartments.each do |apt|
+  puts "#{apt.address}".join
 end
   tenants.each do |tenant|
-    puts "#{name}"
+    puts "#{apt.name}"
   end
 
 ################################################
