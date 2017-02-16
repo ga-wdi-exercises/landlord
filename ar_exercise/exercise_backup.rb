@@ -141,8 +141,6 @@ x = Apartment.joins(:tenants)
 x = Apartment.joins(:tenants).name
                           # [54] pry(main)> x = Apartment.joins(:tenants).name
                           # => "Apartment"
-                                  # THIS .joins IS A COOL TOOL, SHOWS ME AN INNER JOIN EQUIV
-                                  # FOR ONLY APARTMENTS THAT HAVE TENANTS
                                   # http://guides.rubyonrails.org/active_record_querying.html#joins
                           # Article.joins(comments: :guest)
 x = Apartment.joins(tenants: :apartment)
@@ -238,75 +236,9 @@ BECAUSE THE find/find_byS ONLY RETURN THE FIRST RECORD THAT MEETS THE SELECTION 
               # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
               # Create 3 new apartments, and save them to the DB
-              landlord=# INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ( '1 roadToHell Way', 888 , 888 , 11 , 1  );
-              landlord=# INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ( '2 roadToHell Way', 1776 , 1776 , 22 , 2  );
-              landlord=# INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ( '3 roadToHell Way', 2664 , 2664 , 33 , 3  );
-              landlord=# commit;
-              landlord=# select * from apartments;
-                          #   id |            address            | monthly_rent | sqft | num_beds | num_baths
-                          #   ----+-------------------------------+--------------+------+----------+-----------
-                          #   1 | 70335 Clemenargaertine Tunnel |          800 | 1900 |        3 |         2
-                          # ...
-                          #  20 | 1 roadToHell Way              |          888 |  888 |       11 |         1
-                          #  21 | 2 roadToHell Way              |         1776 | 1776 |       22 |         2
-                          #  22 | 3 roadToHell Way              |         2664 | 2664 |       33 |         3
-                          # (22 rows)
-
-                  # THIS WORKS TOO IN A SINGLE LINE, NOT A BLOCK
-                  # REQUIRES CURLY BRACES AROUND TH CONTENTS OF THE
-                  # do .. end BLOCK
-apartment = Apartment.new do |a| {a.address = "999 roadToHell Way" a.monthly_rent = 111 a.sqft = 111 a.num_beds = 111 a.num_baths = 111 } end
-                  # AND THIS BLOCK WAY WORKS TOO
-apartment = Apartment.new do |a|
-  a.address = "999 roadToHell Way"
-  a.monthly_rent = 111
-  a.sqft = 111
-  a.num_beds = 111
-  a.num_baths = 111
-  puts "---------------------- THE ------ID------ FOR THIS NEW APARTMENT IS:  #{apartment.id}"
-  puts "---------------------- THE ADDRESS FOR THIS NEW APARTMENT IS:  #{apartment.address}"
-end
-puts "save apartment now"
-apartment.save
-puts "---------------------- THE ------ID------ FOR THIS NEW APARTMENT IS:  #{apartment.id}"
-Apartment.all
-                    # [151] pry(main)*   a.num_baths = 111
-                    # [151] pry(main)*   puts "---------------------- THE ------ID------ FOR THIS NEW APARTMENT IS:  #{apartment.id}"
-                    # [151] pry(main)*   puts "---------------------- THE ADDRESS FOR THIS NEW APARTMENT IS:  #{apartment.address}"
-                    # [151] pry(main)* end
-                    # ---------------------- THE ------ID------ FOR THIS NEW APARTMENT IS:  34
-                    # ---------------------- THE ADDRESS FOR THIS NEW APARTMENT IS:  999 roadToHell Way
-                    # => #<Apartment:0x007f8070e6d9d8 id: nil, address: "999 roadToHell Way", monthly_rent: 111, sqft: 111, num_beds: 111, num_baths: 111>
-                    # [152] pry(main)> puts "save apartment now"
-                    # save apartment now
-                    # => nil
-                    # [153] pry(main)> apartment.save
-                    # => true
-                    # [154] pry(main)> puts "---------------------- THE ------ID------ FOR THIS NEW APARTMENT IS:  #{apartment.id}"
-                    # ---------------------- THE ------ID------ FOR THIS NEW APARTMENT IS:  35
-                    # => nil
-                    # [155] pry(main)> Apartment.all
-                    # => [#<Apartment:0x007f806fa16c78 id: 1, address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 1900, num_beds: 3, num_baths: 2>,
-                    #  #<Apartment:0x007f806fa15c60 id: 2, address: "44010 Lemke Crossroad", monthly_rent: 1000, sqft: 1300, num_beds: 1, num_baths: 3>,
-                    #  #<Apartment:0x007f806fa15a58 id: 3, address: "77841 Jany Lane", monthly_rent: 700, sqft: 2300, num_beds: 4, num_baths: 3>,
-                    #  #<Apartment:0x007f806fa15530 id: 4, address: "4518 Ivy Spur", monthly_rent: 2000, sqft: 1000, num_beds: 1, num_baths: 2>,
-                    #  #<Apartment:0x007f806fa153c8 id: 5
-
               # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
               # Note: you'll use this little bit of code as a `seeds.rb` file later on.
-              tenant = Tenant.new do |t|
-                t.name = "Betty Boop"
-                t.age = 111
-                t.gender = "Female"
-                t.apartment_id = "20"
-                puts "---------------------- THE ------NAME------ FOR THIS NEW TENANT IS:  #{tenant.name}"
-              end
-              puts "save tenant now"
-              tenant.save
-              puts "---------------------- THE ------ID------ FOR THIS NEW TENANT IS:  #{tenant.id}"
-              Tenant.all
-              tenant = Tenant.new(name = "Betty Boop",  age = 111, gender = "Female", apartment_id = "20")
-              tenant.save
+
               # Birthday!
               # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
               # Note: She's in the seed data, so she should be in your DB
