@@ -11,7 +11,7 @@ CREATE TABLE tenants(
 CREATE TABLE apartments(
   id SERIAL PRIMARY KEY,
   address VARCHAR NOT NULL,
-  monthly_rent VARCHAR NOT NULL,
+  monthly_rent INT NOT NULL,
   sqft INT NOT NULL,
   num_beds INT NOT NULL,
   num_baths INT NOT NULL
