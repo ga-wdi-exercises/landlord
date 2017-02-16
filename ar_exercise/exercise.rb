@@ -34,22 +34,37 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
-first_tenant = 
+first_tenant = Tenant.find(1)
 # get all tenants older than 65
+older_65 = Tenant.where('age > 65', :age)
 # get all apartments whose price is greater than $2300
+over_2300 = Apts.where('monthly_rent > 2300', :monthly_rent)
 # get the apartment with the address "6005 Damien Corners"
+apt_add = Apts.find_by address: '6005 Damien Corners'
 # get all tenants in that apartment
+apt4_tenants = Tenant.where("apts_id=4", :apts_id)
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+  Tenant.all.each do |tenant|
+    puts tenant.name , tenant.id
+  end
 # Iterate over each apartment, for each apartment, display it's address and rent price
+  Apts.all.each.do |apt|
+    puts apts.address, apts.monthly_rent
+  end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-
+  Apts.all.each do |apt|
+    house_tenants = Tenant.select{|tenant| tenant[apts_id] == apts[:id]}
+    puts apts.address
+    puts house_tenantsj
+  end
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
 
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
+
 
 # Create 3 new apartments, and save them to the DB
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
