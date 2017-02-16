@@ -32,7 +32,11 @@ end
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
 all_tenants = Tenant.all
-
+first_tenants = Tenant.first
+age_tenants = Tenant.find_by(age: "< 65")
+price_apartments = Apartment.find_by(price: "< 2300")
+address_apartment = Apartment.where(address: "6005 Damien Corners")
+tenants_apartments = Tenant.where(address: "6005 Damien Corners")
 # get the first tenant in the DB
 # get all tenants older than 65
 # get all apartments whose price is greater than $2300
@@ -41,6 +45,18 @@ all_tenants = Tenant.all
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+# Print all names and addresses for tenants
+tenants.each do |tenant|
+  puts tenant[:name,:id]
+end
+
+tenants.each do |tenant|
+  puts tenant[:name,:address]
+end
+
+
+
+Appartment.joins(:tenants).name
 # Iterate over each apartment, for each apartment, display it's address and rent price
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 
@@ -57,15 +73,21 @@ all_tenants = Tenant.all
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
-
+ kristin = Tenant.find_by (name: "Kristin Wisoky")
+  kristin.update(age: kristin.age + 1)
+  end
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
-
+verna_walk = apartment.find_by (address: "62897 Verna Walk")
+  verna_walk.update(num_beds: verna_walk.num_beds +1)
+  end
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
-
+ verna_walk.update(monthly_rent: verna_walk + 400)
+   Millenial Eviction!
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+ under_thirty = tenant.find_by(age: >30 ).destroy
