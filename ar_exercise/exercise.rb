@@ -59,20 +59,20 @@ all_apartments_address_and_tenants = puts Apartment.each(address, Tenant.each(ap
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-Apartment.create("1133 15th Street NW", 6000, 6, 3)
-Apartment.create("4306 Raleigh Ave", 1400, 2, 3)
-Apartment.create("2223 Hamway Dr", 1100, 2, 3)
+northwest =Apartment.create("1133 15th Street NW", 6000, 1, 3)
+raleigh = Apartment.create("4306 Raleigh Ave", 1400, 2, 3)
+hamway = Apartment.create("2223 Hamway Dr", 1100, 2, 3)
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
-Tenant.create('Frodo', 50, 'Male', 1);
-Tenant.create('Sam', 33, 'Male', 1);
-Tenant.create('Gandalf', 3234, 'Male', 2);
-Tenant.create('Aragorn', 62, 'Male', 3);
-Tenant.create('Legolas', 339, 'Male', 4);
-Tenant.create('Gimly', 174, 'Male', 4);
-Tenant.create('Merry', 30, 'Male', 5);
-Tenant.create('Pipin', 25, 'Male', 5);
-Tenant.create('Boromir', 34, 'Male', 6);
+Tenant.create('Frodo', 50, 'Male', hamway.id);
+Tenant.create('Sam', 33, 'Male', hamway.id);
+Tenant.create('Gandalf', 3234, 'Male', northwest.id);
+Tenant.create('Aragorn', 62, 'Male', raleigh.id);
+Tenant.create('Legolas', 339, 'Male', raleigh.id);
+Tenant.create('Gimly', 174, 'Male', raleigh.id);
+Tenant.create('Merry', 30, 'Male', hamway.id);
+Tenant.create('Pipin', 25, 'Male', hamway.id);
+Tenant.create('Boromir', 34, 'Male', raleigh.id);
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
