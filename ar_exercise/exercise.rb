@@ -34,15 +34,44 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+
+first_tenant = Tenant.first
+
 # get all tenants older than 65
+
+older_tenants = Tenant.where("age >= '65'")
+
 # get all apartments whose price is greater than $2300
+
+pricy_apartments = Apartment.where("monthly_rent > '2300'")
+
 # get the apartment with the address "6005 Damien Corners"
+
+apt_6005_damien_corners = Apartment.where(address: "6005 Damien Corners")
+
 # get all tenants in that apartment
 
+apt_6_tenants = Tenant.where(apartment_id: 6)
+
 # Use `each` and `puts` to:
+
 # Display the name and ID # of every tenant
+
+Tenant.find_each do |tenant|
+  puts "Tenant Name: #{tenant.name}, Tenant ID: #{tenant.id}"
+end
+
 # Iterate over each apartment, for each apartment, display it's address and rent price
+
+Apartment.find_each do |apartment|
+  puts "Address: #{apartment.address}, Rent: #{apartment.monthly_rent}"
+end
+
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+
+Apartment.select('tenants.aprtment_id, tenants.name').joins(:tenants).find_each do
+  puts "Address: #{apartment.address}, Rent: #{apartment.monthly_rent}"
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -51,7 +80,17 @@ all_tenants = Tenant.all
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+
+Apartment.create(address: "1234 Mainstay Rd.", monthly_rent: "1200", sqft: "650", num_beds: "1", num_baths: "1")
+
+apartment = Apartment.create(address: "85 Chumley Ln.", monthly_rent: "5500", sqft: "3650", num_beds: "5", num_baths: "7")
+
+Apartment.create(address: "1234 Mainstay Rd.", monthly_rent: "1200", sqft: "650", num_beds: "1", num_baths: "1")
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+
+
+
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
