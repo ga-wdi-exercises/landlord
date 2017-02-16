@@ -1,0 +1,12 @@
+body {
+  font-family: tahoma;
+}
+
+nav ul li {
+  display: inline;
+  padding: 0 10px;
+}
+
+nav ul li:nth-child(n+2) {
+  border-left: 1px solid black;
+}
