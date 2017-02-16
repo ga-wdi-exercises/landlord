@@ -1,11 +1,3 @@
-- The homepage should list several menu options:
-  * List all apartments (a link to `GET /apartments`)
-  * View an apartment's details(a link to `GET /apartments/1`)
-  * Add an apartment(a link to `GET /apartments/new`)
-  * List tenants (a link to `GET /apartments/1/tenants`)
-
-The route `GET /apartments/1/tenants` should list all tenants for 1 apartment.
-
 The route `GET /apartments/1/tenants/new` should show a form for adding a new tenant.
 
 ### BONUS
