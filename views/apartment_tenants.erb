@@ -1,4 +1,4 @@
-<h3>Whatup, Apartment Tenants</h3>
+<h3><%=@apartments.address %> Tenants</h3>
 
 <%@apartments.tenants.each do |tenant| %>
 <p><a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a></p>

@@ -49,6 +49,20 @@ post "/tenants" do
   redirect "/tenants/#{@tenant.id}"
 end
 
+
+
+get "/apartments/:id/edit" do
+  @apartments = Apartment.find(params[:id])
+  erb :"/apartments_edit"
+end
+
+put "/apartments/:id" do
+  @apartments = Apartment.find(params[:id])
+  @apartments.update(params[:apartments])
+  redirect("/apartments/#{@apartments.id}")
+end
+
+
 get "/apartments/:id" do
   @apartments = Apartment.find(params[:id])
   erb :apartment
@@ -63,4 +77,10 @@ get "/apartments/:id/tenants/new" do
   @tenants = Tenant.find(params[:id])
   @apartments = Apartment.find(params[:id])
   erb :tenant_new
+end
+
+delete "/apartments/:id" do
+  @apartments = Apartment.find(params[:id])
+  @apartments.destroy
+  redirect("/")
 end
