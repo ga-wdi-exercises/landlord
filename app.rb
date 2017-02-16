@@ -51,6 +51,7 @@ end
 
 get '/' do
   erb :index
+  redirect "/apartments"
 end
 
 get '/apartments' do
