@@ -49,6 +49,11 @@ end
 #   erb :"tenants/new"
 # end
 
+get '/apartments/:id/tenants' do
+ @apartment = Apartment.find(params[:id])
+ @tenants = Tenant.select{|tenant| tenant[:apartment_id] == @apartment[:id]}
+ erb :"/apartments/tenants"
+end
 
 delete '/apartments/:id' do
   @apartment = Apartment.find(params[:id])
@@ -56,7 +61,7 @@ delete '/apartments/:id' do
   redirect "/apartments"
 end
 get '/' do
-  
+
   @apartments = Apartment.all
   erb :"apartments/index"
 end
