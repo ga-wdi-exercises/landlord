@@ -1,0 +1,10 @@
+<h2>All Apartments</h2>
+
+<% @apartments.each do |apartment| %>
+  <a href="/apartments/<%= apartment.id %>"><%= apartment.address %></a>
+  <br>
+<% end %>
+<br>
+<form action="/apartments/new" method="get">
+  <input type="submit" name="" value="Add New">
+</form>

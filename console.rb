@@ -12,8 +12,6 @@ require_relative "models/tenant"
 # puts "The first apartment is at #{Apartment.first.address}."
 # puts "It has  #{Apartment.first.tenants.count} tenants."
 
-
-
 user_input = nil
 
 loop do
@@ -46,5 +44,3 @@ loop do
    end
   end
 end
-
-puts "ignore this line, it's just here so the binding.pry above works"
