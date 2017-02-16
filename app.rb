@@ -28,3 +28,9 @@ post "/apartments" do
                                   num_baths: params[:num_baths]})
   redirect "/apartments/#{@apartments.id}"
 end
+
+delete '/apartments/:id' do
+  @apartments = Apartment.find(params[:id])
+  @apartments.destroy
+  redirect ("/pokemon")
+end
