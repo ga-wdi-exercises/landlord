@@ -47,3 +47,25 @@ delete '/apartments/:id' do
   @apartment.destroy
   redirect "/apartments"
 end
+
+get '/apartments/:id/tenants' do
+  @apartment = Apartment.find(params[:id])
+  @tenants = Tenant.select{|tenant| tenant[:apartment_id] == @apartment[:id]}
+  erb :"tenants/tenants"
+end
+
+get '/apartments/:id/tenants/new' do
+  @apartment = Apartment.find(params[:id])
+  erb :"tenants/new"
+end
+
+post '/apartments/:id/tenants' do
+  @apartment = Apartment.find(params[:id])
+  @tenant = Tenant.create(name: params[:name], age: params[:age], gender: params[:gender], apartment_id: @apartment[:id])
+  redirect "apartments/#{@apartment.id}/tenants/#{@tenant.id}"
+end
+
+get '/apartments/:id/tenants/:id' do
+  @tenant = Tenant.find(params[:id])
+  erb :"/tenants/show"
+end

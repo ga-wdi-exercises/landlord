@@ -1,0 +1,9 @@
+<h1><%= @apartment.address %></h1>
+
+<h2> Tenants: </h3>
+  <% @tenants.each do |tenant| %>
+    <p> <a href='/apartments/<%= @apartment.id %>/tenants/<%= tenant.id %>'><%= tenant.name %></a></p>
+    <%end%>
+
+
+  <h4> <a href="/apartments/<%= @apartment.id%>/tenants/new">Create A New Tenant </a></h4>

@@ -7,4 +7,11 @@
 
   <p><a href="/apartments/<%= @apartment.id %>/edit">Edit Listing</a></p>
 
+  <form action="/apartments/<%= @apartment.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input class="button-style" type="submit" value="Delete Listing">
+  </form>
+
+  <p><a href='/apartments/<%= @apartment.id %>/tenants'> Show Tenants</a></p>
+
 <h3><a href='/apartments'>< Back</a></h3>
