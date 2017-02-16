@@ -32,14 +32,17 @@ end
               # Use Active record to do the following, and store the results **in a variable**
               # example: get every tenant in the DB
 all_tenants = Tenant.all
+################################################
 
 pry
               # [2] pry(main)>
 
+################################################
               # get the first tenant in the DB
 tenant_first = Tenant.first
                   # => #<Tenant:0x007f8070f6db30 id: 1, name: "Maudie Mosciski", age: 90, gender: "Female", apartment_id: 1>
 
+################################################
               # get all tenants older than 65
 tenant_65 = Tenant.where("age > 65")
                   # [10] pry(main)> tenant_65 = Tenant.where("age > 65")
@@ -59,6 +62,7 @@ tenant_65 = Tenant.where("age > 65")
                    #<Tenant:0x007f8070dd46e8 id: 53, name: "Bennett Jakubowski", age: 69, gender: "Female", apartment_id: 20>,
                    #<Tenant:0x007f8070dd45a8 id: 54, name: "Annette Stamm", age: 76, gender: "Male", apartment_id: 20>]
 
+################################################
               # get all apartments whose price is greater than $2300
 apt_gt_2300 = Apartment.where("monthly_rent > 2300")
                   [12] pry(main)> apt_gt_2300 = Apartment.where("monthly_rent > 2300")
@@ -69,17 +73,22 @@ apt_gt_2300 = Apartment.where("monthly_rent > 2300")
                    <Apartment:0x007f806fab9270 id: 16, address: "359 Gutmann Pike", monthly_rent: 2700, sqft: 1900, num_beds: 2, num_baths: 1>,
                    <Apartment:0x007f806fab9130 id: 19, address: "7357 Emard Row", monthly_rent: 2600, sqft: 2300, num_beds: 3, num_baths: 2>]
 
+
+################################################
               # get the apartment with the address "6005 Damien Corners"
 apt_6005_damien = Apartment.find_by(address: "6005 Damien Corners")
                   # [13] pry(main)> apt_6005_damien = Apartment.find_by(address: "6005 Damien Corners")
                   # => #<Apartment:0x007f8070e8d558 id: 6, address: "6005 Damien Corners", monthly_rent: 400, sqft: 2300, num_beds: 4, num_baths: 1>
 
+
+################################################
               # get all tenants in that apartment
 apt_6005_damien_tenants = Apartment.find_by(address: "6005 Damien Corners").tenants
                   # [14] pry(main)> apt_6005_damien_tenants = Apartment.find_by(address: "6005 Damien Corners").tenants
                   # => [#<Tenant:0x007f8070d87118 id: 7, name: "Ms. Garland Beatty", age: 60, gender: "Female", apartment_id: 6>,
                    #<Tenant:0x007f806fa3f470 id: 8, name: "Eryn Lynch", age: 12, gender: "Male", apartment_id: 6>]
 
+################################################
       # Use `each` and `puts` to:
               # Display the name and ID # of every tenant
               # http://stackoverflow.com/questions/7911014/activerecord-find-and-only-return-selected-columns
@@ -92,6 +101,8 @@ tenant_name_n_id = Tenant.pluck(:name, :id)
                             #  ["Rosalinda Champlin", 5],
                             # ...
 
+
+################################################
                     # http://guides.rubyonrails.org/active_record_querying.html#conditions
               # Iterate over each apartment, for each apartment, display it's address and rent price
 apt_addr_n_rent = Apartment.pluck(:address, :monthly_rent)
@@ -103,133 +114,42 @@ apt_addr_n_rent = Apartment.pluck(:address, :monthly_rent)
                             #  ["95287 Kamille Underpass", 2800],
                             # ...
 
+################################################
               # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-apt_addr_n_tenants = Apartment.includes(:tenants).find_each do |apartment| puts "x" end
-                            # [44] pry(main)> apt_addr_n_tenants = Apartment.includes(:tenants).find_each do |apartment| puts "x" end
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # x
-                            # => nil
-                            # [45] pry(main)>
-x = Apartment.count
-                            # [45] pry(main)> x = Apartment.count
-                            # => 19
-x = Apartment.joins(:tenants)
-                             #<Apartment:0x007f806fb122d0 id: 18, address: "8865 Borer Viaduct", monthly_rent: 600, sqft: 600, num_beds: 1, num_baths: 4>]
-                              # [48] pry(main)> x
-                              # => 19
-                              # [49] pry(main)> x = Apartment.joins(:tenants)
-                              # => [#<Apartment:0x007f806f8f6e60 id: 1, address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 1900, num_beds: 3, num_baths: 2>,
-                              #  <Apartment:0x007f806f8f6988 id: 1, address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 1900, num_beds: 3, num_baths: 2>,
-                              #  <Apartment:0x007f806f8f6820 id: 2, address: "44010 Lemke Crossroad", monthly_rent: 1000, sqft: 1300, num_beds: 1, num_baths: 3>,
-x = Apartment.joins(:tenants).name
-                          # [54] pry(main)> x = Apartment.joins(:tenants).name
-                          # => "Apartment"
-                                  # THIS .joins IS A COOL TOOL, SHOWS ME AN INNER JOIN EQUIV
-                                  # FOR ONLY APARTMENTS THAT HAVE TENANTS
-                                  # http://guides.rubyonrails.org/active_record_querying.html#joins
-                          # Article.joins(comments: :guest)
-x = Apartment.joins(tenants: :apartment)
-                            # [59] pry(main)> Apartment.joins(tenants: :apartment)
-                  # => [#<Apartment:0x007f8070a875a8 id: 1, address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 1900, num_beds: 3, num_baths: 2>,
-                  #  <Apartment:0x007f8070a87080 id: 1, address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 1900, num_beds: 3, num_baths: 2>,
-                  #  <Apartment:0x007f8070a85ed8 id: 2, address: "44010 Lemke Crossroad", monthly_rent: 1000, sqft: 1300, num_beds: 1, num_baths: 3>,
-                  #  # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-                  # x = Apartment.all.each do |apartment|
-                  # puts "#{apartment.address} #{Tenant.find_by(apartment_id: apartment.id).name ? Tenant.find_by(apartment_id: apartment.id).name : ''}"
-                  # end
-x = Apartment.all.each do |apartment|
-puts "#{apartment.address} #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.find_by(apartment_id: apartment.id).name : '______________AINT_NOBODY_TO_HOME'}"
+                            # !!!
+                            # DING DING DING
+                            # !!!
+                            # HERES OUR WINNER !!!
+                            # THIS IS HOW THE OUTPUT SHOULD LOOK,
+                            # USING THE where CLAUSE FOR Tenant
+                            # INSTEAD OF THE 2 find_byS FROM THE ORIGINAL
+                            # BECAUSE THE find/find_byS ONLY RETURN THE FIRST RECORD THAT MEETS THE SELECTION CRITERIA
+Apartment.all.each do |apartment|
+puts "#{apartment.address} #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.where('apartment_id=?',apartment.id).pluck(:name).join(', ') : ''}"
 end
-                  # [72] pry(main)> x = Apartment.all.each do |apartment|
-                  # [72] pry(main)*   puts "#{apartment.address} #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.find_by(apartment_id: apartment.id).name : '______________AINT_NOBODY_TO_HOME'}"
-                  # [72] pry(main)* end
-                            70335 Clemenargaertine Tunnel Maudie Mosciski
-                            44010 Lemke Crossroad Demario King
-                            77841 Jany Lane Kaitlin Cormier
-                            4518 Ivy Spur ______________AINT_NOBODY_TO_HOME
-                            95287 Kamille Underpass Valentin Keebler Sr.
-                            6005 Damien Corners Ms. Garland Beatty
-                            95599 Koch Stream Tiara Conn
-                            40583 Hal Crossing Josh Gottlieb
-                            62897 Verna Walk Mabelle Eichmann
-                            351 Dibbert Fields Titus Harvey
-                            3710 Buford Passage Caleb Maggio
-                            64329 Tyree Creek ______________AINT_NOBODY_TO_HOME
-                            17297 Runte Bypass ______________AINT_NOBODY_TO_HOME
-                            0889 Marvin Radial Helmer Grimes
-                            2745 Freddy Vista Christophe Boyle DVM
-                            359 Gutmann Pike Aurelia Harvey
-                            08465 Howell Harbor Bo Medhurst
-                            8865 Borer Viaduct Elta Fay
-                            7357 Emard Row ______________AINT_NOBODY_TO_HOME
-                            => [<Apartment:0x007f8070d9e700 id: 1, address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 1900, num_beds: 3, num_baths: 2>,
-                                  # ...
-
-x = Apartment.all.each do |apartment|
-puts "#{apartment.address} #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.find_by(apartment_id: apartment.id).name : '______________AINT_NOBODY_TO_HOME'}"
-end
-                  # [65] pry(main)> x = Apartment.all.each do |apartment|
-                  # [65] pry(main)*   puts "#{apartment.address} #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.find_by(apartment_id: apartment.id).name : '______________AINT_NOBODY_TO_HOME'}"
-                  # [65] pry(main)* end
-                            70335 Clemenargaertine Tunnel Maudie Mosciski
-                                ...
-                            8865 Borer Viaduct Elta Fay
-                            7357 Emard Row ______________AINT_NOBODY_TO_HOME
-x = Apartment.all.each do |apartment|
-puts "#{apartment.address}     xxx    #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.find_by(apartment_id: apartment.id).name : '______________AINT_NOBODY_TO_HOME'}"
-end                             ...
-                            08465 Howell Harbor xxx Bo Medhurst
-                                ...
-                            7357 Emard Row xxx ______________AINT_NOBODY_TO_HOME
-                                ...
-!!!
-DING DING DING
-!!!
-HERES OUR WINNER !!!
-THIS IS HOW THE OUTPUT SHOULD LOOK,
-USING THE where CLAUSE FOR Tenant
-INSTEAD OF THE 2 find_byS FROM THE ORIGINAL
-BECAUSE THE find/find_byS ONLY RETURN THE FIRST RECORD THAT MEETS THE SELECTION CRITERIA
-              [77] pry(main)> Apartment.all.each do |apartment|
-              [77] pry(main)*   puts "#{apartment.address} #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.where('apartment_id=?',apartment.id).pluck(:name).join(', ') : ''}"
-              [77] pry(main)* end
-                            70335 Clemenargaertine Tunnel Maudie Mosciski, Kristin Wisoky
-                            44010 Lemke Crossroad Demario King
-                            77841 Jany Lane Kaitlin Cormier, Rosalinda Champlin
-                            4518 Ivy Spur
-                            95287 Kamille Underpass Valentin Keebler Sr.
-                            6005 Damien Corners Ms. Garland Beatty, Eryn Lynch
-                            95599 Koch Stream Tiara Conn, Tillman Schroeder, Amber Jewess, America Pollich, Mylene Krajcik
-                            40583 Hal Crossing Josh Gottlieb, Sherwood Stiedemann, Katarina Kunde
-                            62897 Verna Walk Mabelle Eichmann, Mason Blanda, Sonny Dibbert I, Gus Herman II, Delia Christiansen MD, Willow Ledner Jr.
-                            351 Dibbert Fields Titus Harvey, Ms. Randal Konopelski
-                            3710 Buford Passage Caleb Maggio, Hilbert Effertz, Bartholome Herman, Merritt Durgan
-                            64329 Tyree Creek
-                            17297 Runte Bypass
-                            0889 Marvin Radial Helmer Grimes, Derrick Farrell, Enola Sauer V, Jimmy Bartell
-                            2745 Freddy Vista Christophe Boyle DVM, Miss Wanda Kris, Miss Maeve Goldner, Noemie Daniel, Shanna Jacobson, Javier Boehm
-                            359 Gutmann Pike Aurelia Harvey, Dangelo Bogisich, Benton Abernathy, Marina Kemmer, Dasia Vandervort
-                            08465 Howell Harbor Bo Medhurst
-                            8865 Borer Viaduct Elta Fay, Conner Dare, Dr. Lindsey Reichert, Carlee Nolan, Bernie Weimann, Jose Denesik
-                            7357 Emard Row
-                            => [#<Apartment:0x007f80701048c8 id: 1, address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 1900, num_beds: 3, num_baths: 2>,
+              # [77] pry(main)> Apartment.all.each do |apartment|
+              # [77] pry(main)*   puts "#{apartment.address} #{Tenant.find_by(apartment_id: apartment.id) ? Tenant.where('apartment_id=?',apartment.id).pluck(:name).join(', ') : ''}"
+              # [77] pry(main)* end
+              #               70335 Clemenargaertine Tunnel Maudie Mosciski, Kristin Wisoky
+              #               44010 Lemke Crossroad Demario King
+              #               77841 Jany Lane Kaitlin Cormier, Rosalinda Champlin
+              #               4518 Ivy Spur
+              #               95287 Kamille Underpass Valentin Keebler Sr.
+              #               6005 Damien Corners Ms. Garland Beatty, Eryn Lynch
+              #               95599 Koch Stream Tiara Conn, Tillman Schroeder, Amber Jewess, America Pollich, Mylene Krajcik
+              #               40583 Hal Crossing Josh Gottlieb, Sherwood Stiedemann, Katarina Kunde
+              #               62897 Verna Walk Mabelle Eichmann, Mason Blanda, Sonny Dibbert I, Gus Herman II, Delia Christiansen MD, Willow Ledner Jr.
+              #               351 Dibbert Fields Titus Harvey, Ms. Randal Konopelski
+              #               3710 Buford Passage Caleb Maggio, Hilbert Effertz, Bartholome Herman, Merritt Durgan
+              #               64329 Tyree Creek
+              #               17297 Runte Bypass
+              #               0889 Marvin Radial Helmer Grimes, Derrick Farrell, Enola Sauer V, Jimmy Bartell
+              #               2745 Freddy Vista Christophe Boyle DVM, Miss Wanda Kris, Miss Maeve Goldner, Noemie Daniel, Shanna Jacobson, Javier Boehm
+              #               359 Gutmann Pike Aurelia Harvey, Dangelo Bogisich, Benton Abernathy, Marina Kemmer, Dasia Vandervort
+              #               08465 Howell Harbor Bo Medhurst
+              #               8865 Borer Viaduct Elta Fay, Conner Dare, Dr. Lindsey Reichert, Carlee Nolan, Bernie Weimann, Jose Denesik
+              #               7357 Emard Row
+              #               => [#<Apartment:0x007f80701048c8 id: 1, address: "70335 Clemenargaertine Tunnel", monthly_rent: 800, sqft: 1900, num_beds: 3, num_baths: 2>,
 
               ################################################
               # CREATING / UPDATING / DELETING
@@ -237,21 +157,10 @@ BECAUSE THE find/find_byS ONLY RETURN THE FIRST RECORD THAT MEETS THE SELECTION 
 
               # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
-              # Create 3 new apartments, and save them to the DB
-              landlord=# INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ( '1 roadToHell Way', 888 , 888 , 11 , 1  );
-              landlord=# INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ( '2 roadToHell Way', 1776 , 1776 , 22 , 2  );
-              landlord=# INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ( '3 roadToHell Way', 2664 , 2664 , 33 , 3  );
-              landlord=# commit;
-              landlord=# select * from apartments;
-                          #   id |            address            | monthly_rent | sqft | num_beds | num_baths
-                          #   ----+-------------------------------+--------------+------+----------+-----------
-                          #   1 | 70335 Clemenargaertine Tunnel |          800 | 1900 |        3 |         2
-                          # ...
-                          #  20 | 1 roadToHell Way              |          888 |  888 |       11 |         1
-                          #  21 | 2 roadToHell Way              |         1776 | 1776 |       22 |         2
-                          #  22 | 3 roadToHell Way              |         2664 | 2664 |       33 |         3
-                          # (22 rows)
 
+################################################
+              # Create 3 new apartments, and save them to the DB
+                  ################################################
                   # THIS WORKS TOO IN A SINGLE LINE, NOT A BLOCK
                   # REQUIRES CURLY BRACES AROUND TH CONTENTS OF THE
                   # do .. end BLOCK
@@ -263,8 +172,7 @@ apartment = Apartment.new do |a|
   a.sqft = 111
   a.num_beds = 111
   a.num_baths = 111
-  puts "---------------------- THE ------ID------ FOR THIS NEW APARTMENT IS:  #{apartment.id}"
-  puts "---------------------- THE ADDRESS FOR THIS NEW APARTMENT IS:  #{apartment.address}"
+  puts "---------------------- THE ADDRESS FOR THIS NEW APARTMENT IS:  #{a.address}"
 end
 puts "save apartment now"
 apartment.save
@@ -291,22 +199,34 @@ Apartment.all
                     #  #<Apartment:0x007f806fa15a58 id: 3, address: "77841 Jany Lane", monthly_rent: 700, sqft: 2300, num_beds: 4, num_baths: 3>,
                     #  #<Apartment:0x007f806fa15530 id: 4, address: "4518 Ivy Spur", monthly_rent: 2000, sqft: 1000, num_beds: 1, num_baths: 2>,
                     #  #<Apartment:0x007f806fa153c8 id: 5
+                    ...
+                     #<Apartment:0x007fd125d3c478 id: 19, address: "7357 Emard Row", monthly_rent: 2600, sqft: 2300, num_beds: 3, num_baths: 2>,
+                     #<Apartment:0x007fd125d3c270 id: 20, address: "999 roadToHell Way", monthly_rent: 111, sqft: 111, num_beds: 111, num_baths: 111>,
+                     #<Apartment:0x007fd125d3c108 id: 21, address: "999 roadToHell Way", monthly_rent: 111, sqft: 111, num_beds: 111, num_baths: 111>,
+                     #<Apartment:0x007fd125d37ef0 id: 22, address: "999 roadToHell Way", monthly_rent: 111, sqft: 111, num_beds: 111, num_baths: 111>,
+                     #<Apartment:0x007fd125d37ce8 id: 23, address: "999 roadToHell Way", monthly_rent: 111, sqft: 111, num_beds: 111, num_baths: 111>]
 
+
+################################################
               # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
               # Note: you'll use this little bit of code as a `seeds.rb` file later on.
               tenant = Tenant.new do |t|
-                t.name = "Betty Boop"
+                t.name = "Betty Boop 111"
                 t.age = 111
                 t.gender = "Female"
                 t.apartment_id = "20"
-                puts "---------------------- THE ------NAME------ FOR THIS NEW TENANT IS:  #{tenant.name}"
+                puts "---------------------- THE ------NAME------ FOR THIS NEW TENANT IS:  #{t.name}"
               end
               puts "save tenant now"
               tenant.save
-              puts "---------------------- THE ------ID------ FOR THIS NEW TENANT IS:  #{tenant.id}"
+              puts "---------------------- THE ------ID------ FOR THIS NEW TENANT IS:  #{t.id}"
               Tenant.all
-              tenant = Tenant.new(name = "Betty Boop",  age = 111, gender = "Female", apartment_id = "20")
-              tenant.save
+
+                  #                 $ for x in {1..11}; do echo  "tenant = Tenant.new(name = 'betty_boop_${x}', age = ${x}, gender = 'Female', apartment_id = ${x} )"; done;
+                  # tenant = Tenant.new(name = 'betty_boop_1', age = 1, gender = 'Female', apartment_id = 1 )
+                  # tenant = Tenant.new(name = 'betty_boop_2', age = 2, gender = 'Female', apartment_id = 2 )
+              # ...
+
               # Birthday!
               # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
               # Note: She's in the seed data, so she should be in your DB
