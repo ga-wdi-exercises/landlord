@@ -56,7 +56,7 @@ puts "Choose a category"
              end
 
 
-  # end
-# binding.pry
+
+binding.pry
 
 puts "ignore this line, it's just here so the binding.pry above works"
