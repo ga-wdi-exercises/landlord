@@ -37,7 +37,7 @@ end
 
 
 ### Route to delete apartments ###
-delete '/apartments/:id' do
+delete '/apartments/:id/delete' do
   @apartment = Apartment.find(params[:id])
   @apartment.destroy
   redirect "/apartments"

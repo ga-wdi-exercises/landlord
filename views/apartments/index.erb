@@ -7,7 +7,7 @@
   <p>
     <a href="/apartments/<%= apt.id %>/edit">Edit</a> ||
     <a href="/apartments/<%= apt.id %>">More information...</a>
-    <form action = "/apartments/<%= apt.id %>" method = "post">
+    <form action = "/apartments/<%= apt.id %>/delete" method = "post">
       <input type = "hidden" name = "_method" value = "delete" />
       <button type = "submit">Delete</button>
     </form>

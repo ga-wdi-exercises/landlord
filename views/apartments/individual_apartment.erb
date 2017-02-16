@@ -15,7 +15,7 @@
   <a href="/apartments/<%= @apartment.id %>/edit">Edit</a>
 </p>
 
-<form action = "/apartments/<%= @apartment.id %>" method = "post">
+<form action = "/apartments/<%= @apartment.id %>/delete" method = "post">
   <input type="hidden" name="_method" value="delete" />
   <button type="submit">Delete</button>
 </form>
