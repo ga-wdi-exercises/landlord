@@ -36,13 +36,13 @@ all_tenants = Tenant.all
 # get the first tenant in the DB
 first_tenant = Tenant.first
 # get all tenants older than 65
-older_than_65 = Tenant.find(age > 65)
+older_than_65 = Tenant.where("age > 65", :age)
 # get all apartments whose price is greater than $2300
-over_2300 = Apartment.find(monthly_rent > 2300)
+over_2300 = Apartment.where("monthly_rent > 2300", :monthly_rent)
 # get the apartment with the address "6005 Damien Corners"
-find_address = Apartment.find_by "6005 Damien Corners"
+find_address = Apartment.where("6005 Damien Corners", :address)
 # get all tenants in that apartment
-tenants_of_that_apartment = Tenant.find(find_address(id))
+tenants_of_that_apartment = Tenant.where(find_address, :apartment_id)
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
@@ -78,7 +78,7 @@ Tenant.create('Boromir', 34, 'Male', raleigh.id);
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
 
-
+Tenant.find(name: "Kristin Wisoky").update(age: +1)
 
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
@@ -91,3 +91,4 @@ Tenant.create('Boromir', 34, 'Male', raleigh.id);
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+ binding.pry
