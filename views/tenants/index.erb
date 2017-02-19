@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tenant Info</title>
+</head>
+<body>
+  <h2>Tenant List</h2>
+
+  <% @tenants.each do |tenant| %>
+  <p class="tenant">
+    <a href="/tenants/<%= tenant.apartment_id %>"><%= tenant.name %></a>
+  </p>
+  <% end %>
+
+
+</body>
+</html>

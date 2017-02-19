@@ -1,0 +1,30 @@
+<a href='/apartments/<%= @apartment.id %>/edit'>Edit This Apartment</a>
+
+<div class= "apt_listing">
+<p>Address: <%= @apartment.address %></p>
+<p>Monthly Rent: $<%= @apartment.monthly_rent %></p>
+<p>Square Feet: <%= @apartment.sqft %></p>
+<p>Bedrooms: <%= @apartment.num_beds %></p>
+<p>Bathrooms: <%= @apartment.num_baths %></p>
+
+<p> <%= "*" * 50 %> </p>
+
+<p> Tenants: </p>
+<p>
+  <% @apartment.tenants.each do |person| %>
+  <p><a href="/tenants/<%= person.id %>"><%= person.name %></a> </p>
+  <% end %>
+</p>
+
+<p> <%= "*" * 50 %> </p>
+
+<p><b><i>Add an existing tenant to this apartment!</i></b></p>
+<form action="/add_tenant" method="post">
+  <input type="hidden" name="apartment_id" value="<%=@apartment.id%>">
+  <label>Tenant ID:</label>
+  <input type="text" name="tenant_id">
+  <input type="submit">
+</form>
+
+
+</div>
