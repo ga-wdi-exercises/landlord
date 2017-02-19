@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ApartmentManager.com</title>
+  <style>
+    h1, h2, h4 {
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+    }
+    p {
+      text-align: center;
+    }
+    input {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MY APARTMENT MANAGER</h1>
+
+  <h2><a href="/apartments/new">Add New Appartment</a></h2>
+
+  <h2>Your Apartments</h2>
+  <h4>Click Apartment For Details</h4>
+  <% @apartments.each do |apartment| %>
+    <p><a href="apartments/<%= apartment.id %>"><%= apartment.address %></a></p>
+  <% end %>
+
+
+</body>
+</html>
