@@ -1,0 +1,21 @@
+<h2><a href="/apartments">Apartment List</a></h2>
+<div class="apartments">
+  <p>
+    Apartment Address: <%= @apartment.address %>
+  </p>
+  <p>
+    Monthly Rent: $<%= @apartment.monthly_rent %>
+  </p>
+  <p>
+    Size: <%= @apartment.sqft %> in sqft
+  </p>
+  <p>
+    Number of beds: <%= @apartment.num_beds %>
+  </p>
+  <p>
+    Number of baths: <%= @apartment.num_baths %>
+  </p>
+
+  <p><a href="/apartments/<%= @apartment.id %>/tenants">Tenant List</a></p>
+
+</div>

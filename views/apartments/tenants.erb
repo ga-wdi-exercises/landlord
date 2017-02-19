@@ -1,0 +1,28 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("button").click(function(){
+        if (this.innerHTML == "Add A Tenant"){
+          $("form").hide(1000);
+          $("#create").toggle('slow','swing');
+        }
+      });
+  });
+</script>
+
+
+<p>Tenants</p>
+  <% @apartment.tenants.each do |tenant|%>
+  <p><a href="/tenants/<%=tenant.id%>"><%= tenant.name %></a></p>
+  <% end %>
+
+  <!--Buttons for selection options  -->
+  <button type="button">Add A Tenant</button>
+
+
+  <!--Create Tenant-->
+  <form id = "create" action = '/apartments/<%= @apartment.id %>/tenants/new' method="post" style="display:none; width:15vw;">
+    <input name='tenantName' placeholder="Add Tenant Name">
+    <input name='tenantAge' placeholder="Add Tenant Age (optional)">
+    <input name='tenantGender' placeholder="Add Tenant Gender (optional)">
+    <input type="submit" value="Add This Tenant">
+  </form>
