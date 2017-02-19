@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Tenant</title>
+</head>
+<body>
+<form action="/tenants" method="post">
+<p><label>Name: </label>
+<input class="input" type="text" name="tenant[name]"></p>
+<p><label>Age: </label>
+<input class="input" type="text" name="tenant[age]"></p>
+<p><label>Gender: </label>
+<input class="input" type="radio" name="tenant[gender]" value="Male">Male
+<input class="input" type="radio" name="tenant[gender]" value="Female">Female
+</p>
+
+<select name="tenant[apartment_id]">
+  <% @apartments.each do |apartment| %>
+  <option value="<%= apartment.id %>"><%= apartment.address %></option>
+  <% end %>
+</select>
+  <p><input type="submit" value="Create"></p>
+</form>
+
+</body>
+</html>
