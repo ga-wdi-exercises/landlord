@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> <% @apartments.name %> </title>
+  </head>
+  <body>
+  <p>
+    <h2><a href="/apartments">Apartments</a></h2>
+  </p>
+
+    <div class="apartments">
+    <p> Address: <%= @apartment.address %> </p>
+    <p> Monthly Rent: <%= @apartment.monthly_rent %> </p>
+    <p> Square Feet: <%= @apartment.sqft %> </p>
+    <p> Beds: <%= @apartment.num_beds %> </p>
+    <p> Baths: <%= @apartment.num_baths %> </p>
+ </div>
+
+
+  </body>
+</html>
