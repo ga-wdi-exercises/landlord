@@ -1,0 +1,35 @@
+<a href='/apartments/<%= @apartments.id %>/edit'>Edit This Apartment</a>
+
+<div class ="apartment">
+  <p>
+    Address: <%= @apartments.address %>
+  </p>
+  <p>
+    Monthly Rent:  $<%= @apartments.monthly_rent %>
+  </p>
+  <p>
+    Square Feet:  <%= @apartments.sqft %>
+  </p>
+  <p>
+  Beds:  <%= @apartments.num_beds %>
+  </p>
+  <p>
+    Baths:  <%= @apartments.num_baths %>
+  </p>
+
+<p>
+  <%= "*" * 50 %>
+</p>
+
+  <p><b> Tenants: </b></p>
+  <p>
+   <% @apartments.tenants.each do |person| %>
+    <p><a href="/tenants/<%= person.id %>"><%= person.name %></a></p>
+   <% end %>
+  </p>
+
+  <p>
+    <%= "*" * 50 %>
+  </p>
+
+</div>

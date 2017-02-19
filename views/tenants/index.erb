@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>All Tenants</h1>
+  <% @tenants.each do |tenant| %>
+  <p class ="tenant">
+    <a href="/tenants/<%= tenant.id %>"><%= tenant.name %></a>
+  </p>
+  <% end %>
+</body>
+</html>
