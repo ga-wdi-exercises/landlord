@@ -23,26 +23,41 @@ end
 ################################################
 
 
-################################################
+# ###############################################
 # FINDING / SELECTING
-################################################
+# ###############################################
 
 # Hint, the following methods will help: `where`, `all`, `find`, `find_by`
 
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
 all_tenants = Tenant.all
-
+binding.pry
 # get the first tenant in the DB
+first_tenant = Tenant.first
+binding.pry
 # get all tenants older than 65
-# get all apartments whose price is greater than $2300
-# get the apartment with the address "6005 Damien Corners"
-# get all tenants in that apartment
+elders = Tenant.where("age > ?", "65")
 
+# get all apartments whose price is greater than $2300
+expensive = Tenant.where("monthly_rent > ?", "2300")
+# get the apartment with the address "6005 Damien Corners"
+damien_corners = Apartment.find_by(address: "6005 Damien Corners")
+# get all tenants in that apartment
+damien_tenants = Tenant.all.where(apartment: damien_corners)
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+all_tenants.each do |x|
+  puts x[:name] + " " + x[:id].to_s
+end
 # Iterate over each apartment, for each apartment, display it's address and rent price
+Apartment.all.each do |x|
+  puts x[:address] + " " + x[:monthly_rent].to_s
+end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+# Apartment.all.each do |x|
+#   puts x[:address] + " " + x[:tenants].to_s
+# end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -51,11 +66,25 @@ all_tenants = Tenant.all
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+the_avalon = Apartment.create(address: "181 main street", monthly_rent: 1500, sqft: 1200, num_beds: 2, num_baths: 1)
+the_square = Apartment.create(address: "146 main street", monthly_rent: 1700, sqft: 1200, num_beds: 2, num_baths: 2)
+the_flowery = Apartment.create(address: "126 main street", monthly_rent: 1850, sqft: 1200, num_beds: 3, num_baths: 2)
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+semanta = Tenant.create(name: "Semanta", age: 32, gender: "Female", apartment_id:the_avalon)
+jij = Tenant.create(name: "Jiji", age: 35, gender: "Female", apartment_id: the_avalon)
+daniel = Tenant.create(name: "Daniel", age: 55, gender: "Female", apartment_id: the_avalon)
+olga = Tenant.create(name: "Olga", age: 32, gender: "Female", apartment_id: the_square)
+megan = Tenant.create(name: "Megan", age: 35, gender: "Female", apartment_id: the_square)
+pat = Tenant.create(name: "Pat", age: 52, gender: "Female", apartment_id: the_square)
+joerge = Tenant.create(name: "Joerge", age: 48, gender: "Female", apartment_id: the_flowery)
+lilford = Tenant.create(name: "Lilford", age: 64, gender: "Female", apartment_id: the_flowery)
+reshoketjoe = Tenant.create(name: "Reshoketjoe", age: 42, gender: "Female", apartment_id: the_flowery)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
+
 # Note: She's in the seed data, so she should be in your DB
 
 # Rennovation!
