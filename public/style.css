@@ -1,0 +1,20 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-image: url("city.jpg");
+  color: white;
+  text-align: center;
+}
+div{
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 1400px;
+  width: 1400px;
+  position: relative;
+}
+a{
+  color: white;
+}
+p{
+  font-size: 8px;
+}
