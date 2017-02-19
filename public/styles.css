@@ -1,0 +1,21 @@
+body {
+  background-color: lemonchiffon;
+}
+
+h1 {
+  color: dodgerblue;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background: grey;
+}
+ul {
+  text-decoration: none;
+  
+}
