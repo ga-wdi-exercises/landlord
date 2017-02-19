@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit <%= @tenant.name %></title>
+</head>
+<body>
+  <form action="/tenants/<%=@tenant.id%>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <span>Name: </span>
+    <input type="text" name="tenant[name]" value="<%=@tenant.name%>"><br>
+    <span>Age: </span>
+    <input type="text" name="tenant[age]" value="<%=@tenant.age%>"><br>
+    <span>Gender: </span>
+    <input type="text" name="tenant[gender]" value="<%=@tenant.gender%>"><br>
+    <span>Apartment: </span>
+    <select name="tenant[apartment_id]">
+      <% @apartments.each do |apartment| %>
+      <option value=<%=apartment.id%>><%= apartment.address %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Edit info">
+  </form>
+</body>
+</html>

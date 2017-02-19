@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @apartment.address%></title>
+</head>
+<body>
+  <h1><%= @apartment.address %></h1>
+  <ul>
+    <li>Monthly rent: $<%=@apartment.monthly_rent%></li>
+    <li>Square feet: <%=@apartment.sqft%></li>
+    <li>Bedrooms: <%=@apartment.num_beds%></li>
+    <li>Bathrooms: <%=@apartment.num_baths%></li>
+    <li>Current tenants:</li>
+    <ul>
+        <%@tenants.each do |tenant|%>
+        <li><%= tenant.name %></li>
+        <% end %>
+    </ul>
+  </ul>
+  <a href="/apartments/<%= @apartment.id %>/edit">Edit this apartment</a>
+  <a href="/apartments/<%= @apartment.id %>/delete">Delete this apartment</a>
+</body>
+</html>

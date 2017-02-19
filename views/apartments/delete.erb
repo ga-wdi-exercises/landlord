@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @apartment.address%></title>
+</head>
+<body>
+  <h2>Please confirm:</h2>
+  <form action="/apartments/<%= @apartment.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input class="button-delete" type="submit" value="Delete apartment?">
+  </form>
+</body>
+</html>

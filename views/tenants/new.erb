@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New tenant</title>
+</head>
+<body>
+  <h2>Current tenants</h2>
+  <ul>
+    <% @tenants.each do |tenant| %>
+    <li><%= tenant.name %></li>
+    <% end %>
+  </ul>
+  <h2>Add tenant</h2>
+  <form action="/new_tenant" method="post">
+    <span>Name: </span>
+    <input type="text" name="name"><br>
+    <span>Age: </span>
+    <input type="text" name="age"><br>
+    <span>Gender: </span>
+    <input type="text" name="gender"><br>
+    <span>Apartment: </span>
+    <select name="apartment_id">
+      <% @apartments.each do |apartment| %>
+      <option value=<%=apartment.id%>><%= apartment.address %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Add new tenant">
+  </form>
+</body>
+</html>

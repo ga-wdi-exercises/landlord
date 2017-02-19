@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New apartment</title>
+</head>
+<body>
+  <h2>Current apartments</h2>
+  <ul>
+    <% @apartments.each do |apartment| %>
+    <li><%= apartment.address %></li>
+    <% end %>
+  </ul>
+  <h2>Add apartment</h2>
+  <form action="/new_apartment" method="post">
+    <span>Address: </span>
+    <input type="text" name="address"><br>
+    <span>Monthly rent: </span>
+    <input type="text" name="monthly_rent"><br>
+    <span>Square feet: </span>
+    <input type="text" name="sqft"><br>
+    <span>Bedrooms: </span>
+    <input type="text" name="num_beds"><br>
+    <span>Bathrooms: </span>
+    <input type="text" name="num_baths"><br>
+    <input type="submit" value="Add new apartment">
+  </form>
+</body>
+</html>
