@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Landlord Property Management System</title>
+</head>
+<style>
+p {display: inline-block;}
+</style>
+<body>
+
+<h2>All Tenants</h2>
+	<% @tenants.each do |tenant| %>
+	<div>
+ 	 <p>:<%= tenant.id.to_s %></p>
+ 	 <p><%= tenant.name%></p>
+ 	 <p>:<%= tenant.age %></p>
+ 	 <p><%= tenant.gender.to_s%></p>
+ 	 <p>:<%= tenant.apartment_id.to_s %></p>
+ 	 </div>
+<% end %>
+
+</body>
+</html>

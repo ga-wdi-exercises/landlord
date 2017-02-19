@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Landlord Property Management System</title>
+</head>
+<style>
+input {display: block;}
+</style>
+<body>
+
+<h2>Landlord Property Management System</h2>
+	<% @apartment.id %>
+
+	<form action="/apartments/<%= @apartment.id %>" method="post">
+		<label for="id">Apartment ID</label><input type="text" id=id VALUE=<%=@apartment.id %>> 
+		<label for="addr">Address</label><input type="text" id=addr VALUE=<%=@apartment.address %>> 
+		<label for="Rent">Monthly Rent</label><input type="text" id=rent VALUE=<%=@apartment.monthly_rent %>> 
+		<label for="sqft">Apt Square Feet</label><input type="text" id=sqft VALUE=<%=@apartment.sqft %>> 
+		<label for="beds">Bedrooms</label><input type="text" id=beds VALUE=<%=@apartment.num_beds %>> 
+		<label for="baths">Bathrooms</label><input type="text" id=baths VALUE=<%=@apartment.num_baths %>> 
+		
+	</form>
+
+
+	<p><a href='/apartments/<%= @apartment.id %>/edit'>Edit this Apartment</a></p>
+
+</body>
+</html>

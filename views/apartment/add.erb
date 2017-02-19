@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Landlord Property Management System</title>
+</head>
+<style>
+input {display: block;}
+</style>
+<body>
+
+<h2>Landlord Property Management System</h2>
+	<!-- <% @apartment.id %> -->
+
+	<form action="add_apartment" method="post">
+		<label for="id">Apartment ID</label><input type="text" id=id name="id" >
+		<label for="addr">Address</label><input type="text" id=addr name="address"> 
+		<label for="rent">Monthly Rent</label><input type="text" id=rent name="monthly_rent"> 
+		<label for="sqft">Apt Square Feet</label><input type="text" id=sqft name="sqft"> 
+		<label for="beds">Bedrooms</label><input type="text" id=beds name="num_beds"> 
+		<label for="baths">Bathrooms</label><input type="text" id=baths name="num_baths"> 
+
+	</form>
+
+
+<!-- 	<p><a href='/update/<%= @apartment.id %>'>Update Apartment</a></p> -->
+
+</body>
+</html>
