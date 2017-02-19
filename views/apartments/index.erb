@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bob Pizza's Apartments</title>
+</head>
+<body>
+  <center>
+  <h1>Apartments</h1>
+  <table style="width:70%">
+    <a href="/apartments/new/">Add Apartment</a>
+  <tr>
+    <td>Unit #</td>
+    <td>Address</td>
+    <td>Rent</td>
+    <td>Square Feet</td>
+    <td>Beds</td>
+    <td>Bathrooms</td>
+
+  </tr>
+  <% @apartments.each do |unit| %>
+  <tr>
+    <td><%= unit.id %></td>
+    <td>
+      <a href="/apartments/<%= unit.id %>">
+      <%= unit.address%>
+    </a>
+    </td>
+    <td><%= unit.monthly_rent%></td>
+    <td><%= unit.sqft%></td>
+    <td><%= unit.num_beds%></td>
+    <td><%= unit.num_baths%></td>
+  </tr>
+  <% end %>
+</table>
+</center>
+</body>
+</html>

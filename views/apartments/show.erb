@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Apartment #<%= @apartment.id%></title>
+</head>
+<body>
+  <center>
+  <h1><a href="/apartments">Apartment</a> #<%= @apartment.id%></h1>
+  <p>
+ <a href="/apartments/<%=@apartment.id%>/edit/">Edit Apartment</a>
+  | |
+  <a href="/apartments/<%=@apartment.id%>/delete/">Delete Apartment</a>
+
+  </p>
+  <table>
+    <tr>
+      <td><%= @apartment.id %></td>
+      <td><%= @apartment.address%>, </td>
+      <td>$<%= @apartment.monthly_rent%>/mo, </td>
+      <td><%= @apartment.sqft%> sq. ft., </td>
+      <td><%= @apartment.num_beds%> Beds, </td>
+      <td><%= @apartment.num_baths%> Bathrooms</td>
+
+    </tr>
+  </table>
+
+  <p>Occupied by:</p>
+  <%@tenants.each do |person|%>
+  <p>
+    <a href="/tenants/<%=person.id%>">
+    <%= person.name %>
+    </a>
+  </p>
+  <%end%>
+  </center>
+</body>
+</html>

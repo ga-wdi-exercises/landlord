@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tenants</title>
+</head>
+<body>
+  <center>
+    <h1>Tenants</h1>
+    <table style="width:70%">
+      <tr>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Gender</td>
+        <td>Apartment</td>
+      </tr>
+
+      <% @tenants.each do |person| %>
+      <tr>
+        <td>
+          <a href="tenants/<%=person.id%>">
+          <%= person.name%>
+          </a>
+        </td>
+        <td><%= person.age%></td>
+        <td><%= person.gender%></td>
+        <td><%= person.apartment_id%></td>
+
+        <!-- <td> clownhat = @apartments.find(person.apartment_id).address clownhat </td> -->
+      </tr>
+      <% end %>
+    </table>
+  </center>
+</body>
+</html>
