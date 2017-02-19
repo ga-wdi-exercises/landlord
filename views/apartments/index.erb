@@ -1,0 +1,6 @@
+<h2>Apartments Listing in Starling City<a href="/new"> (+)</a></h2>
+
+<% @apartments_all.each do |apartment| %>
+<h3><p><a href='/apartments/<%= apartment.id %>'><%= apartment.address %>
+<% end %></h3></p>
+
