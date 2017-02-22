@@ -1,0 +1,48 @@
+html {
+  background: url(https://upload.wikimedia.org/wikipedia/en/e/e2/Keota_CO_outhouse.JPG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+h1, h2, h3, label {
+  font-family: 'Kaushan Script', cursive;
+  color: rgb(174, 225, 230);
+}
+h1 {
+  font-size: 4em;
+}
+h2 {
+  font-size: 3em;
+}
+h3, label {
+  font-size: 2em;
+}
+a, h4 {
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(252, 225, 104);
+}
+button, .click {
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 2em;
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+  margin: 20px;
+}
+
+.container, h1 {
+  background: rgba(0, 0, 0, .5);
+  width: 70%;
+  margin: auto;
+  border-radius: 8px;
+  text-align: center;
+}
