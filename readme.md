@@ -29,11 +29,7 @@ the next one.
 Create a `schema.sql` in the `db` folder. It should contain the following:
 
 - Tenants table (with the following attributes):
-  - id
-  - name
-  - age
-  - gender
-  - apartment_id
+
 
 - Apartments table (with the following attributes):
   - id

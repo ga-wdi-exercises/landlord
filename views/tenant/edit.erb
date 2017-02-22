@@ -1,0 +1,22 @@
+<h2> EDIT A TENANT </h2>
+<form action="/tenant/<%=@tenant.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+    <label>Name</label>
+    <input type="text" name="tenant[name]" value= "<%=@tenant.name%>">
+    <label>Age</label>
+    <input type="text" name="tenant[age]" value= "<%=@tenant.age%>">
+    <label>Gender</label>
+    <input type="text" name="tenant[gender]" value= "<%=@tenant.gender%>">
+    <label>Apartment</label>
+    <% @apartments.each do |apartment| %>
+      <p> <%=apartment.address%>
+      <input type="radio" name="tenant[apartment_id]" value ="<%=apartment.id%>">
+      <%end%>
+    <input type="submit" value="Update Apartment">
+</form>
+
+<h2> Delete Tenant </h2>
+  <form action="/tenant/<%=@tenant.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete this Apartment! Beware! THERE IS NO WARNING IT WILL JUST GET DELETED!">
+  </form>

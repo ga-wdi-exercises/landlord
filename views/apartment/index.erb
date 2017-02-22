@@ -1,0 +1,9 @@
+<h2>| Apartment's You Are Currently Managing | </h2>
+<a href="/apartment/new"> Make a New Apartment </a>
+<% @apartments.each do |apartment| %>
+<div class="apartments">
+  <p><%=apartment.address%></p>
+  <p>$<%=apartment.monthly_rent%></p>
+  <a href="/apartment/<%=apartment.id%>"><p> Click here to learn more information about the apartment.</p></a>
+</div>
+<%end%>
