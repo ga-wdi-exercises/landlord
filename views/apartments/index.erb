@@ -1,0 +1,9 @@
+<h2>Please Click on the Apartment To View the Current Tenants</h2>
+<h3><a href="/apartments/create">Click here add a new Apartment</a></h3>
+<% @apartment.each do |apart| %>
+  <h3 class="apartment_address"><a href="/apartments/<%= apart.id %>"><%= apart.address %></a></h3>
+    <div class="apartment_info">Rent: $<%= apart.monthly_rent %></div>
+    <div class="apartment_info">Square feet: <%= apart.sqft%> ft&#178</div>
+    <div class="apartment_info">Number of Bedrooms: <%= apart.num_beds%></div>
+    <div class="apartment_info">Number of Baths: <%= apart.num_baths%></div>
+<% end %>
