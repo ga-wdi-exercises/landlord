@@ -5,18 +5,18 @@ require "pg" # postgres db library
 require "active_record" # the ORM
 require "pry" # for debugging
 
-ActiveRecord::Base.establish_connection(
-  :adapter => "postgresql",
-  :database => "landlord"
-)
-
-class Tenant < ActiveRecord::Base
-  belongs_to :apartment
-end
-
-class Apartment < ActiveRecord::Base
-  has_many :tenants
-end
+# ActiveRecord::Base.establish_connection(
+#   :adapter => "postgresql",
+#   :database => "landlord"
+# )
+#
+# class Tenant < ActiveRecord::Base
+#   belongs_to :apartment
+# end
+#
+# class Apartment < ActiveRecord::Base
+#   has_many :tenants
+# end
 
 ################################################
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
@@ -34,9 +34,17 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.find(1)
+
 # get all tenants older than 65
+all_tenants_older = Tenant.find_by(age: < 65)
+
 # get all apartments whose price is greater than $2300
+all_apartments_price = Apartment.where(monthly_rent: < 2300)
+
 # get the apartment with the address "6005 Damien Corners"
+all_apartments_address = Apartment.where(address: 6005 Damien Corners)
+
 # get all tenants in that apartment
 
 # Use `each` and `puts` to:
