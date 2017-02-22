@@ -1,0 +1,20 @@
+<% @apartments.each do |apartment| %>
+    <h1><a href="/apartments/<%= apartment.id %>">APARTMENT</a></h1>
+    <p>
+      Address:  <%= apartment.address %>
+    </p>
+    <p>
+      Monthly Rent: <%= apartment.monthly_rent %>
+    </p>
+    <p>
+      Square Feet: <%= apartment.sqft %>
+    </p>
+    <p>
+      Number of Bedrooms: <%= apartment.num_beds %>
+    </p>
+    <p>
+      Number of Bathrooms: <%= apartment.num_baths %>
+    </p>
+<% end %>
+
+<h1><a href="/apartments/new">CLICK TO MAKE NEW APARTMENT</a></h1>
