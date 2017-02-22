@@ -1,0 +1,64 @@
+*{
+  font-family: 'Quicksand', sans-serif;
+}
+header{
+  margin: 0 auto;
+  width: 25%;
+}
+.title{
+  font-size: 60px;
+}
+.title a:hover{
+  text-decoration: none;
+  color: blue;
+}
+.row{
+  display: block;
+  margin-top: 10%;
+  width: 105%;
+  margin-left: 15%;
+}
+
+#viewapt{
+  font-size: 60px;
+}
+
+#viewten{
+  font-size: 60px;
+}
+
+#aptaddress a{
+margin-left: 35%;
+font-size: 16px;
+}
+
+#alltenants a{
+  margin-left: 35%;
+  font-size: 16px;
+}
+
+.new a{
+  margin-left: 35%;
+  font-size: 20px;
+}
+
+.container{
+  margin-left: 10%;
+}
+
+.container h1 a{
+  font-size: 50px;
+}
+
+.container h1 a:hover{
+  text-decoration: none;
+  color: blue;
+}
+
+.container h3{
+  font-size: 38px;
+}
+
+.container p{
+  font-size: 30px;
+}

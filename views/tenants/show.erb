@@ -1,0 +1,13 @@
+<div class="container">
+<h1><a href="/tenants">All Tenants</a></h1>
+
+<h3>
+  Name: <%= @tenant.name %>
+</h3>
+
+<p>Age: <%= @tenant.age %></p>
+<p>Gender: <%= @tenant.gender %></p>
+<br>
+<br>
+<a class="btn btn-success" href="/tenants/<%= @tenant.id %>/edit">Edit Tenant</a>
+</div>
