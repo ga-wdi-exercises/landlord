@@ -33,7 +33,7 @@ end
 # example: get every tenant in the DB
 all_tenants = Tenant.all
 # get the first tenant in the DB
-# first_tenant = Tenant.first
+first_tenant = Tenant.first
 
 # get all tenants older than 65
 
