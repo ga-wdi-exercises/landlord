@@ -1,0 +1,12 @@
+<% @tenants.each do |tenant| %>
+<div class="container">
+  <div class="row">
+    <div class="tenant">
+      <h2><span>Name: </span><%= tenant.name %></h2>
+      <h2><span>Age:  </span><%= tenant.age %></h2>
+      <h2><span>Gender:  </span><%= tenant.gender %></h2>
+      <h3><a href='/tenants/<%= tenant.id %>'>More info</a></h3>
+    </div>
+  </div>
+</div>
+<% end %>
