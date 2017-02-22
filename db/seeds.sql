@@ -1,3 +1,4 @@
+#could I have used this for the last part of the exercise.rb file?
 TRUNCATE TABLE apartments CASCADE;
 TRUNCATE TABLE tenants CASCADE;
 
