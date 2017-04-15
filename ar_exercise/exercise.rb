@@ -59,11 +59,7 @@ end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 all_apartments.each do |apartment|
   puts apartment.address
-  id = apartment.id
-  their_tenants = all_tenants.where('apartment_id = id')
-  their_tenants.each do |tenant|
-    puts tenant.name
-    end
+  puts apartment.tenants
   end
 
 
