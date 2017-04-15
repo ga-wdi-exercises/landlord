@@ -76,7 +76,15 @@ all_apartments.each do |apartment|
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-#new_apartment_one = Apartment.create(address: "394 Green Acres Lane", monthly_rent: 5600, sqft: 700, num_beds: 5, num_baths: 3)
+
+new_apartment_one = Apartment.create(address: "394 Green Acres Lane", monthly_rent: 5600, sqft: 700, num_beds: 5, num_baths: 3)
+new_apartment_two = Apartment.create(address: "123 Cherry Hill Lane", monthly_rent: 9600, sqft: 900, num_beds: 8, num_baths: 2)
+new_apartment_three = Apartment.create(address: "600 City Lane", monthly_rent: 600, sqft: 90, num_beds: 7, num_baths: 3)
+Apartment.create([
+  {address: "786 Green Hill Road", monthly_rent: 899, sqft: 897, num_beds: 8, num_baths: 8},
+  {address: "908 Loop Lane", monthly_rent: 7899, sqft: 897, num_beds: 1, num_baths: 1},
+  {address: "456 My Street", monthly_rent: 7890, sqft: 500, num_beds: 6, num_baths: 3},
+  ])
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 
 Tenant.create([
@@ -113,7 +121,8 @@ Tenant.create([
   millenials = Tenant.where('age < 30')
 
 # Delete their records from the DB
-  millenials.destroy_all
+  #millenials.destroy_all
+
 
 binding.pry
 

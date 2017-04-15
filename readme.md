@@ -59,6 +59,7 @@ DONE
 $ dropdb database_name
 $ createdb database_name
 $ psql -d database_name < name_of_schema_file.sql
+
 $ psql -d database_name < name_of_seed_file.sql
 ```
 
