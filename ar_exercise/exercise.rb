@@ -85,6 +85,7 @@ wil = Tenant.create(name: "Wil Liem",age: 24,gender: "Male",apartment_id: 8)
 gene = Tenant.create(name: "Gene Hamburger",age: 12,gender: "Male",apartment_id: 1)
 quinn = Tenant.create(name: "Quinn Ton",age: 42,gender: "Male",apartment_id: 8)
 liz = Tenant.create(name: "Lizzy Izzard",age: 26,gender: "Female",apartment_id: 1)
+guy = Tenant.create(name: "Buddy Buy",age: 124,gender: "Male",apartment_id: 25)
 
 
 # Birthday!
