@@ -73,6 +73,7 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+
 apt_1 = Apartment.create(address: "111 general assembly", monthly_rent: 1000, sqft: 1000, num_beds: 1, num_baths: 1)
 apt_1.save
 
