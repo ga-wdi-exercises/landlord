@@ -1,20 +1,19 @@
-DROP TABLE IF EXISTS tenants;
+
 
 CREATE TABLE tenants (
   id serial PRIMARY KEY,
-  name varchar(50) NOT NULL,
-  age integer NOT NULL,
-  gender varchar NOT NULL,
-  apartment_id integer NOT NULL
+  name varchar(50),
+  age integer,
+  gender varchar,
+  apartment_id integer
 );
 
-DROP TABLE IF EXISTS apartments;
 
-CREATE TABLE tenants (
+CREATE TABLE apartments (
   id serial PRIMARY KEY,
-  address varchar(50) NOT NULL,
-  monthly_rent integer NOT NULL,
-  sqft integer NOT NULL,
-  num_beds integer NOT NULL,
-  num_baths integer NOT NULL,
+  address varchar(50),
+  monthly_rent integer,
+  sqft integer,
+  num_beds integer,
+  num_baths integer
 );
