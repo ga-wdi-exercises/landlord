@@ -1,0 +1,4 @@
+<h2>Apartments:</h2>
+<% @apts.each do |apartment| %>  <!-- note the missing `=` -->
+  <p><%= apartment %><a href="/apartments/1" style="padding-left: 10px;">Details</a></p>
+<% end %>
