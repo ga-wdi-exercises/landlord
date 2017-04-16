@@ -48,6 +48,7 @@ damien_apartment = Apartment.where address: "6005 Damien Corners"
 # get all tenants in that apartment
 verona = Apartment.find_by(address: "6005 Damien Corners")
 verona.tenants
+
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
 Tenant.all.each do |tenant|
