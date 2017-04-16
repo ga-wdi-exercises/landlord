@@ -50,10 +50,21 @@ damien_tnts = Tenant.where(apartment_id: 6)
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
-tenant_id = 
+tenants_id = all_tenants.each do |tenant|
+  puts "#{tenant.name} ID # is #{tenant.id}"
+end
 
 # Iterate over each apartment, for each apartment, display it's address and rent price
+all_apartments = Apartment.all
+
+apartment_info = all_apartments.each do |apartment|
+  puts "#{apartment.address} is $#{apartment.monthly_rent} monthly"
+end
+
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+apartment_info2 = all_apartments.each do |apartment|
+  puts "Residents of #{apartment.address} include #{apartment.tenants}" ##apartment.tenants doesn't show the names, but shows this: #<Tenant:0x007f9c8ab44280>
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
