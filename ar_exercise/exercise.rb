@@ -49,14 +49,23 @@ damien = Apartment.find_by(address: '6005 Damien Corners')
 damien.tenants
 
 # Use `each` and `puts` to:
+# I had skipped these 3 but went back and filled these in once I peaked at the answers for the console.rb part
 # Display the name and ID # of every tenant
-#?
+Tenant.all.each do |tenant|
+		puts "Name: #{tenant.name}, Age: #{tenant.age}."
+		end
 
 # Iterate over each apartment, for each apartment, display it's address and rent price
-#?
+Apartment.all.each do |apartment|
+		puts "ID: #{apartment.id}, Address: #{apartment.address}, Rent: $#{apartment.monthly_rent}."
+ 		end
 
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-#?
+	Apartment.all.each do |apartment|
+		puts "Address: #{apartment.address}"
+		apartment.tenants.each do |tenant|
+			puts "Tenants: #{tenant.name}"
+		end
 
 ################################################
 # CREATING / UPDATING / DELETING
