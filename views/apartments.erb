@@ -1,0 +1,12 @@
+<h1>Landlord App</h1>
+
+<nav>
+  <a href='/apartments'>List All Apartments</a>
+  <a href="/apartments/1">See Apartment Details</a>
+  <a href="/apartments/new">Add a Apartment</a>
+  <a href="/apartments/1/tenants">View Tenants</a>
+</nav>
+
+<% @apartments.each do |apartment| %>
+  <h3>Id: <%= apartment[:id] %> Address: <%= apartment[:address] %></h3>
+<% end %>
