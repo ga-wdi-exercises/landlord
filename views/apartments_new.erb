@@ -1,0 +1,14 @@
+<% @apartments.each do |apartment| %>
+	<%= apartment %>
+<% end %>
+
+<form action = "/apartments/new" method = 'post'>
+	<input type="text" name="address">
+	<input type="integer" name="monthly_rent">
+	<input type="integer" name="sqft">
+	<input type="integer" name="num_beds">
+	<input type="integer" name="num_baths">
+	<input type="submit">
+</form>
+
+
