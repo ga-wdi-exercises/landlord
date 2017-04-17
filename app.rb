@@ -1,11 +1,14 @@
-<a href='/apartments'>List all apartments</a>
-<a href='/apartments/[:num]'>View an apartments details</a>
-<a href='/apartments/new'>Add an apartment</a>
-<a href='/apartments/[:num]/tenants'>List tenants</a>
+require "sinatra"
+require "sinatra/reloader"
 
+require_relative "db/connection"
+require_relative "models/apartment"
+require_relative "models/tenant"
+
+# got stuck, peeked at solutions, realized should move anchor tags to a separate layout.erb file, and that I needed to require_relative all those files
 
 get '/apartments' do
-	@apartments = apartments
+	@apartments = Apartment.all
 	erb :apartments
 end
 
