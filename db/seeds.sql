@@ -80,3 +80,20 @@ INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Bennett Jakubowsk
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Annette Stamm', 76, 'Male', 20);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Dr. Raquel Carter', 61, 'Female', 20);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Grover Rath', 9, 'Female', 20);
+
+Tenant.destroy_all
+Apartment.destroy_all
+
+biff = Tenant.create(name: "just biff",age: 26,gender: "Female",apartment_id: 2);
+al = Tenant.create(name: "al",age: 36,gender: "Male",apartment_id: 2);
+big_al = Tenant.create(name: "big Al",age: 8,gender: "Male",apartment_id: 1);
+sharon = Tenant.create(name: "sharon",age: 23,gender: "Female",apartment_id: 3);
+jo = Tenant.create(name: "jo",age: 45,gender: "female",apartment_id: 3);
+perry = Tenant.create(name: "perry winkle",age: 33,gender: "Male",apartment_id: 2);
+beth = Tenant.create(name: "Beth",age: 75,gender: "Female",apartment_id: 1);
+johnson = Tenant.create(name: "johnson",age: 55,gender: "Male",apartment_id: 3);
+bertha = Tenant.create(name: "bertha",age: 26,gender: "Female",apartment_id: 2);
+
+apt1 = Apartment.create(address: "2 huntington place", monthly_rent: 500, sqft: 750, num_beds: 12, num_baths: 1);
+apt2 = Apartment.create(address: "3434 everclear rd", monthly_rent: 1200, sqft: 50, num_beds: 0, num_baths: 3);
+apt3 = Apartment.create(address: "47 boneville", monthly_rent: 800, sqft: 950, num_beds: 4, num_baths: 4);
