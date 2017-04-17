@@ -128,8 +128,8 @@ ben = Tenant.new(name: "Meghan", age: 29, gender: "female", apartment_id: 13)
 kristin_birthday = Tenant.find_by(name:'Maudie Mosciski')
 kristin_birthday.update(age: 24)
 
-#kristin_new_age = (kristin_birthday.age + 1)
-#kristin_birthday.update("#{kristin_new_age}")
+# kristin_new_age = (kristin_birthday.age + 1)
+# kristin_birthday.update("#{kristin_new_age}")
 
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
@@ -148,10 +148,5 @@ update_verna.update(monthly_rent: 2800)
 # Find all tenants who are under 30 years old
 Tenant.where('age <30')
 # Delete their records from the DB
-
-$ dropdb landlord
-$ createdb landlord
-$ psql -d landlord < db/schema.sql
-$ psql -d landlord < db/seeds.sql
 
 binding.pry
