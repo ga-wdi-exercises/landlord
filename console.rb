@@ -21,9 +21,10 @@ Tenant.find_each do |tenant|
 end
 # See a list of all apartments and their associated tenants (just address and name)
 Apartment.find_each do |apartment|
+  puts apartment.address
   Tenant.find_each do |tenant|
     if apartment.id == tenant.apartment_id
-      puts apartment.address, tenant.name
+      puts tenant.name
     end
   end
 end
