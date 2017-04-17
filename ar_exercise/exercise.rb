@@ -156,3 +156,5 @@ verna_walk.save
 
 millenials = Tenant.find_by("age < 30")
 millenials.destroy_all
+
+#not following thru with this - love my tenants!!
