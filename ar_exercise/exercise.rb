@@ -52,12 +52,32 @@ damien_corners = Apartment.find_by(address: "6005 Damien Corners")
 
 # get all tenants in that apartment
 
-damien_tenants = Apartment.find(6).tenants
+damien_corners.tenants
+
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+all_tenants.each do |tenant|
+  puts "NAME: #{tenant.name} ID: #{tenant.id}"
+end
+
+
 # Iterate over each apartment, for each apartment, display it's address and rent price
+
+Apartment.all.each do |apartment|
+  puts "Address is #{apartment.address}.  Rent is #{apartment.monthly_rent} per month"
+end
+
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+
+Apartment.all.each do |apartment|
+  puts "Address is #{apartment.address}."
+  all_tenants.each do |tenant|
+    if tenant.apartment_id == apartment.id
+      puts tenant.name
+    end
+  end
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -66,6 +86,16 @@ damien_tenants = Apartment.find(6).tenants
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+
+first_apt = Apartment.create(address: "1235 Fake St.", monthly_rent: 1500, sqft: 950, num_beds: 22, num_baths: 48)
+first_apt.save
+
+devil_apt = Apartment.create(address: "666 Devil's Ridge Rd.", monthly_rent: 666, sqft: 666, numb_beds: 666, num_baths: 0)
+devil_apt.save
+
+weird_apt = Apartment.create(address: "33 ZZyyzzk Rd.", monthly_rent: 200, sqft: 800, num_beds: 3, num_baths:4)
+weird_apt.save
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
