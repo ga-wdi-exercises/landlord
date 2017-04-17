@@ -32,17 +32,31 @@ end
 # Use Active record to do the following, and store the results **in a variable**
 # example: get every tenant in the DB
 all_tenants = Tenant.all
-
 # get the first tenant in the DB
+first_tenant = Tenant.first
 # get all tenants older than 65
+old_tenants = Tenant.where("age > 65")
 # get all apartments whose price is greater than $2300
+expensive_apts = Apartment.where('monthly_rent > 2300')
 # get the apartment with the address "6005 Damien Corners"
+damien_corners = Apartment.find_by(address: "6005 Damien Corners")
 # get all tenants in that apartment
-
+dc_tenants = Apartment.find(6).tenants
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+all_tenants.each { |tenant| puts "#{tenant.name} - #{tenant.id}" }
 # Iterate over each apartment, for each apartment, display it's address and rent price
+apartments = Apartment.all
+apartments.each { |apt| puts "#{apt.address} - #{apt.monthly_rent}" }
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+apartments.each do |apt|
+  puts apt.address
+  all_tenants.each do |tenant|
+    if tenant.apartment_id == apt.id
+      puts tenant.name
+    end
+  end
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
