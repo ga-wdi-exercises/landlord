@@ -76,6 +76,7 @@ lily = Tenant.create(name: "lily munchkin",age: 25,gender: "Female",apartment_id
 kelly = Tenant.create(name: "Kelly Burke",age: 19,gender: "Female",apartment_id: 1)
 kendrick = Tenant.create(name: "kendrick lamar",age: 29,gender: "Male",apartment_id: 7)
 cynthia = Tenant.create(name: "Cynthia Mcbay",age: 26,gender: "Female",apartment_id: 1)
+charles = Tenant.create(name: "Charles Barkley",age: 45,gender: "Male",apartment_id: 9)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
