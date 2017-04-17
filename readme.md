@@ -116,7 +116,7 @@ below without any errors
 
 ```ruby
 the_bat_cave = Apartment.create(address: "123 Main St", monthly_rent: 2000, sqft: 600, num_beds: 2, num_baths: 1)
-me = Tenant.create(name: "Adam", age: 30, gender: "Male", apartment: the_bat_cave)
+me = Tenant.create(id: 500,name: "Adam", age: 30, gender: "Male", apartment: the_bat_cave)
 ```
 
 #### Step 3 - Create a Seeds File
