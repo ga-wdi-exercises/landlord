@@ -13,7 +13,7 @@ INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('6005 Damien Corners', 400, 2300, 4, 1);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('95599 Koch Stream', 2400, 1900, 2, 4);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('40583 Hal Crossing', 200, 800, 3, 2);
-INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('62897 Verna Walk', 2400, 700, 2, 3);
+INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('62897 Verna Walk', 2800, 700, 3, 3);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('351 Dibbert Fields', 2300, 1300, 2, 1);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('3710 Buford Passage', 500, 700, 1, 4);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('64329 Tyree Creek', 500, 2000, 1, 3);
@@ -24,8 +24,11 @@ INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('08465 Howell Harbor', 300, 1300, 3, 1);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('8865 Borer Viaduct', 600, 600, 1, 4);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('7357 Emard Row', 2600, 2300, 3, 2);
+INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('1235 Fake St.', 1500, 950, 22, 48);
+INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('666 Devils Ridge Rd.', 666, 666, 666, 0);
+INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('33 ZZyyzzk Rd.', 200, 800, 3, 4);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Maudie Mosciski', 90, 'Female', 1);
-INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Kristin Wisoky', 23, 'Female', 1);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Kristin Wisoky', 24, 'Female', 1);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Demario King', 71, 'Female', 2);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Kaitlin Cormier', 91, 'Male', 3);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Rosalinda Champlin', 39, 'Male', 3);
@@ -80,3 +83,12 @@ INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Bennett Jakubowsk
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Annette Stamm', 76, 'Male', 20);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Dr. Raquel Carter', 61, 'Female', 20);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Grover Rath', 9, 'Female', 20);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Lucifer', 666, 'Male', 21);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('John Snow', 28, 'Male', 4);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Kirk Cousins', 28, 'Male', 8);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Lara Croft', 25, 'Female', 13);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Bruce Wayne', 33, 'Male', 9);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Diana Prince', 26, 'Female', 20);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Peter Quill', 30, 'Male', 19);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Clark Kent', 36, 'Male', 18);
+INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Holly Robinsion', 29, 'Female', 17);
