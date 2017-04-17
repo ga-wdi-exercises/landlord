@@ -99,6 +99,34 @@ weird_apt.save
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
+lucifer = Tenant.create(name:"Lucifer", age: "666", gender:"Male", apartment_id:21)
+lucifer.save
+
+john_snow = Tenant.create(name: "John Snow", age: "28", gender:"Male", apartment_id:4)
+john_snow.save
+
+kirk_cousins = Tenant.create(name: "Kirk Cousins", age: "28", gender:"Males", apartment_id:8)
+kirk_cousins.save
+
+lara_croft = Tenant.create(name: "Lara Croft", age: "25", gender:"Female", apartment_id:13)
+lara_croft.save
+
+batman = Tenant.create(name: "Bruce Wayne", age: "33", gender:"Male", apartment_id: 9)
+batman.save
+
+wonder_woman = Tenant.create(name:"Diana Prince", age:"26", gender:"Female", apartment_id: 20)
+wonder_woman.save
+
+star_lord = Tenant.create(name:"Peter Quill", age:"30", gender:"Male", apartment_id: 19)
+star_lord.save
+
+superman = Tenant.create(name:"Clark Kent", age:"36", gender:"Male", apartment_id: 18)
+superman.save
+
+cat_woman = Tenant.create(name: "Holly Robinson", age: "29", gender: "Female", apartment_id: 17)
+cat_woman.save
+
+
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
