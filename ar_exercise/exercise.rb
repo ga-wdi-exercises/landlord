@@ -147,6 +147,12 @@ verna_walk.save
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
 
+verna_walk.monthly_rent += 400
+verna_walk.save
+
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+millenials = Tenant.find_by("age < 30")
+millenials.destroy_all
