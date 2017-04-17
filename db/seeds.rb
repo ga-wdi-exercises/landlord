@@ -5,9 +5,9 @@ require_relative "../models/tenant"
 Tenant.destroy_all
 Apartment.destroy_all
 
-Apartment.create(address: "new address1", monthly_rent: "2000", sqft: "700", num_beds: "3", num_baths: "2")
-Apartment.create(address: "new address2", monthly_rent: "200", sqft: "1700", num_beds: "3", num_baths: "2")
-Apartment.create(address: "new address3", monthly_rent: "4200", sqft: "3700", num_beds: "4", num_baths: "3")
+Apartment.create(address: "335 Clemenargaertine Tunnel", monthly_rent: "2000", sqft: "700", num_beds: "3", num_baths: "2")
+Apartment.create(address: "4010 Lemke Crossroad", monthly_rent: "200", sqft: "1700", num_beds: "3", num_baths: "2")
+Apartment.create(address: "99 Koch Stream", monthly_rent: "4200", sqft: "3700", num_beds: "4", num_baths: "3")
 
 Tenant.create(name: "John Smith", age: "20", gender: "Male", apartment_id: "21")
 Tenant.create(name: "Sam Herd", age: "40", gender: "Male", apartment_id: "21")

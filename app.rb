@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
+
 get '/' do
-  return 'Hello world!'
+  erb :index
 end
