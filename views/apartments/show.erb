@@ -1,0 +1,14 @@
+<h2><a href="/apartments">Apartment: <%= @apartment.address %>. Click here to return back to Master List </a></h2>
+<div>
+  <p>Address: <%= @apartment.address %></p>
+  <p>Monthly Rent: <%= @apartment.monthly_rent %></p>
+  <p>Square Footage: <%= @apartment.sqft %></p>
+  <p>Bedrooms: <%= @apartment.num_beds %></p>
+  <p>Full Bathrooms: <%= @apartment.num_baths %></p>
+</div>
+
+<p>Delete This Apartment</p>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>

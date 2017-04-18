@@ -27,7 +27,7 @@ the next one.
 ### Create a schema file
 
 Create a `schema.sql` in the `db` folder. It should contain the following:
-
+DONE
 - Tenants table (with the following attributes):
   - id
   - name
@@ -59,6 +59,7 @@ Create a `schema.sql` in the `db` folder. It should contain the following:
 $ dropdb database_name
 $ createdb database_name
 $ psql -d database_name < name_of_schema_file.sql
+
 $ psql -d database_name < name_of_seed_file.sql
 ```
 
@@ -84,17 +85,22 @@ to store / read our data (instead of hashes and/or plain ruby objects like we di
 #### Step 0 - Create a Gemfile
 
 Create a `Gemfile` in the root of your project directory.
+DONE
 
 > Can be done with `$ bundler init`
+DONE
 
 Decide which gems to include, add those to your gemfile, then run `$ bundle install` to install those gems locally.
 
 > **Hint**: You might need to install more gems, as this application grows, make sure to run a `$ bundle install` after each new gem you add
+DONE
 
 #### Step 1 - Define Your Models
 
 Create a `models` folder. Inside that, you should create models for Apartment
 and Tenant. Ensure you set up the correct `has_many` / `belongs_to` associations.
+DONE
+
 
 > **Hint**: you can look at the top of `exercise.rb` for code for each model.
 
@@ -113,15 +119,17 @@ require "pry" # for debugging
 
 **VERIFY:** Run the provided `console.rb` and ensure you can run commands like those
 below without any errors
-
+DONE
 ```ruby
 the_bat_cave = Apartment.create(address: "123 Main St", monthly_rent: 2000, sqft: 600, num_beds: 2, num_baths: 1)
 me = Tenant.create(name: "Adam", age: 30, gender: "Male", apartment: the_bat_cave)
 ```
+DONE
 
 #### Step 3 - Create a Seeds File
 
 Create a `db/seeds.rb` file.
+DONE
 
 At the very top, ensure your seed file loads the necessary files using `require_relative`:
 * the connection file `db/connection`
