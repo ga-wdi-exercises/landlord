@@ -71,19 +71,19 @@ end
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
-summit = Apartment.create(id: 20 , address: "215 Grant ave.", monthly_rent: 1200, sqft: 500, num_beds: 1,num_bath: 1)
-pearl = Apartment.create(id: 21, address: "616 Pearl ave.", monthly_rent: 1600, sqft: 1200, num_beds: 3,num_bath: 2)
-copper_beach = Apartment.create(id: 22, address: "300 Mile Ground rd.", monthly_rent: 1800, sqft: 1000, num_beds: 3,num_bath: 2)
+summit = Apartment.create(id: 1 , address: "215 Grant ave.", monthly_rent: 1200, sqft: 500, num_beds: 2,num_bath: 1)
+pearl = Apartment.create(id: 2, address: "616 Pearl ave.", monthly_rent: 1600, sqft: 1200, num_beds: 3,num_bath: 2)
+copper_beach = Apartment.create(id: 3, address: "300 Mile Ground rd.", monthly_rent: 1800, sqft: 1000, num_beds: 4,num_bath: 2)
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
-shmitty = Tenant.create(id:,name: "Shmitty Werben-Jagerman-Jenson",age: 77,gender: "Male",apartment_id: 21)
-sponge= Tenant.create(id:,name: "Sponge-Bob Square-Pants",age: 26,gender: "Male",apartment_id: 3)
-patrick = Tenant.create(id:,name: "Patrick Star",age: 27,gender: "Male",apartment_id: 21)
-sandy = Tenant.create(id:,name: "Sandy Cheeks",age: 28,gender: "Female",apartment_id: 22)
+shmitty = Tenant.create(id:,name: "Shmitty Werben-Jagerman-Jenson",age: 77,gender: "Male",apartment_id: 1)
+sponge= Tenant.create(id:,name: "Sponge-Bob Square-Pants",age: 26,gender: "Male",apartment_id: 2)
+patrick = Tenant.create(id:,name: "Patrick Star",age: 27,gender: "Male",apartment_id: 2)
+sandy = Tenant.create(id:,name: "Sandy Cheeks",age: 28,gender: "Female",apartment_id: 2)
 krabs = Tenant.create(id:,name: "Mr. Krabs",age: 45,gender: "Male",apartment_id: 3)
-pk = Tenant.create(id:,name: "Pearl Krabs",age: 19,gender: "Female",apartment_id: 20)
+pk = Tenant.create(id:,name: "Pearl Krabs",age: 19,gender: "Female",apartment_id: 3)
 squid = Tenant.create(id:,name: "Squidward",age: 34,gender: "Male",apartment_id: 3)
-plank = Tenant.create(id:,name: "Plankton",age: 28,gender: "Male",apartment_id: 22)
-mm = Tenant.create(id:,name: "Mermaid Man",age: 88,gender: "Male",apartment_id: 22)
+plank = Tenant.create(id:,name: "Plankton",age: 28,gender: "Male",apartment_id: 1)
+mm = Tenant.create(id:,name: "Mermaid Man",age: 88,gender: "Male",apartment_id: 3)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
