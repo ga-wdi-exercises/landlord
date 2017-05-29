@@ -60,7 +60,7 @@ end
 
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 all_apartment.each do |i|
-  puts "#{i[:address]} #{:tenants}"
+  puts "#{i[:address]} #{:tenants:apartment_id}"
 end
 
 
