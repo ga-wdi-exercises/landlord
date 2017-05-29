@@ -64,15 +64,15 @@ apartment_two = Apartment.create(address: "345 Peachland St.", monthly_rent: 800
 apartment_three = Apartment.create(address: "678 Toadland Ct.", monthly_rent: 1200, sqft: 850, num_beds: 4, num_baths: 4)
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 Tenant.create([
-  {name: "John Rogers", age: 35, gender: "Male", apartment_id: 20},
-  {name: "Helen Hershey", age: 48, gender: "Female", apartment_id: 20},
-  {name: "Greg Hershey", age: 8, gender: "Male", apartment_id: 20},
-  {name: "Josehp Lee", age: 18, gender: "Male", apartment_id: 21},
-  {name: "Matt Ng", age: 26, gender: "Male", apartment_id: 21},
-  {name: "Jenny Vo", age: 25, gender: "Female", apartment_id: 21},
-  {name: "Andrew Rodriguez", age: 5, gender: "Male", apartment_id: 22},
-  {name: "Joese Rodriguez", age: 65, gender: "Male", apartment_id: 22},
-  {name: "Maria Rodriguez", age: 45, gender: "Female", apartment_id: 22}
+  {name: "John Rogers", age: 35, gender: "Male", apartment_id: apartment_one},
+  {name: "Helen Hershey", age: 48, gender: "Female", apartment_id: apartment_one},
+  {name: "Greg Hershey", age: 8, gender: "Male", apartment_id: apartment_one},
+  {name: "Josehp Lee", age: 18, gender: "Male", apartment_id: apartment_two},
+  {name: "Matt Ng", age: 26, gender: "Male", apartment_id: apartment_two},
+  {name: "Jenny Vo", age: 25, gender: "Female", apartment_id: apartment_two},
+  {name: "Andrew Rodriguez", age: 5, gender: "Male", apartment_id: apartment_three},
+  {name: "Joese Rodriguez", age: 65, gender: "Male", apartment_id: apartment_three},
+  {name: "Maria Rodriguez", age: 45, gender: "Female", apartment_id: apartment_three}
   ])
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
