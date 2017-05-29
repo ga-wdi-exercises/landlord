@@ -1,12 +1,10 @@
-require 'bundler/setup'
-require 'pry'
+require_relative "connection"
+require_relative "../models/apartment"
+require_relative "../models/tenant"
 
-require_relative "db/connection"
-require_relative "models/apartment"
-require_relative "models/tenant"
 
-Tenant.destroy_all
 Apartment.destroy_all
+Tenant.destroy_all
 
 
 apartment_one = Apartment.create(address: "123 Koopaland Dr.", monthly_rent: 7000, sqft: 290, num_beds: 3, num_baths: 2)
