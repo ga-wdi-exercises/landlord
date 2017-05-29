@@ -13,13 +13,13 @@ apartment_three = Apartment.create(address: "678 Toadland Ct.", monthly_rent: 12
 
 
 Tenant.create([
-  {name: "John Rogers", age: 35, gender: "Male", apartment_id: apartment_one},
-  {name: "Helen Hershey", age: 48, gender: "Female", apartment_id: apartment_one},
-  {name: "Greg Hershey", age: 8, gender: "Male", apartment_id: apartment_one},
-  {name: "Josehp Lee", age: 18, gender: "Male", apartment_id: apartment_two},
-  {name: "Matt Ng", age: 26, gender: "Male", apartment_id: apartment_two},
-  {name: "Jenny Vo", age: 25, gender: "Female", apartment_id: apartment_two},
-  {name: "Andrew Rodriguez", age: 5, gender: "Male", apartment_id: apartment_three},
-  {name: "Joese Rodriguez", age: 65, gender: "Male", apartment_id: apartment_three},
-  {name: "Maria Rodriguez", age: 45, gender: "Female", apartment_id: apartment_three}
+  {name: "John Rogers", age: 35, gender: "Male", apartment_id: apartment_one.id},
+  {name: "Helen Hershey", age: 48, gender: "Female", apartment_id: apartment_one.id},
+  {name: "Greg Hershey", age: 8, gender: "Male", apartment_id: apartment_one.id},
+  {name: "Josehp Lee", age: 18, gender: "Male", apartment_id: apartment_two.id},
+  {name: "Matt Ng", age: 26, gender: "Male", apartment_id: apartment_two.id},
+  {name: "Jenny Vo", age: 25, gender: "Female", apartment_id: apartment_two.id},
+  {name: "Andrew Rodriguez", age: 5, gender: "Male", apartment_id: apartment_three.id},
+  {name: "Joese Rodriguez", age: 65, gender: "Male", apartment_id: apartment_three.id},
+  {name: "Maria Rodriguez", age: 45, gender: "Female", apartment_id: apartment_three.id}
   ])
