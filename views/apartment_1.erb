@@ -1,0 +1,3 @@
+<% @apartments.each do |apartment| %>
+      <p><%= "Address: #{apartment.address}, Monthly Rent: #{apartment.monthly_rent}, SQFT: #{apartment.sqft}, No. Bedrooms: #{apartment.num_beds}, No. Bathrooms: #{apartment.num_baths}" %></p>
+  <% end %>

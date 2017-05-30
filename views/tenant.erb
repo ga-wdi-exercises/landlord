@@ -1,0 +1,8 @@
+<%@apartment.each do |apartment|%>
+<p><%="address: #{apartment.address}"%></p>
+<%@tenant.each do |tenant|%>
+         <%if  apartment.id == tenant.apartment_id%>
+         <p><%="#{tenant.name}"%></p>
+         <% end %>
+<% end %>
+<% end %>
