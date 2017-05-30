@@ -6,3 +6,8 @@ source "https://rubygems.org"
 gem "pg"
 gem "activerecord"
 gem "pry"
+
+
+# Sinatra
+gem "sinatra"
+gem "sinatra-contrib"
