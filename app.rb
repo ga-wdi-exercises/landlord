@@ -66,13 +66,17 @@ get '/apartments/:num/tenants' do
 end
 
 get '/apartments/new' do
-	@apartments = Apartment.all
+	
 	erb :new_apt
 end
 
+post '/apartments/new' do
+	# new_apartment = Apartment.create(address:,monthly_rent:,sqft:,num_beds:,num_baths:)
+	erb :new_apt
+end
+
+
 get '/apartments/:num/tenants/new' do
-	# post'/' do
-	# end
 
 	erb :new_res
 end
