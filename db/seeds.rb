@@ -1,5 +1,3 @@
-require 'bundler/setup'
-require 'pry'
 
 require_relative "connection"
 require_relative "../models/apartments"
