@@ -34,15 +34,39 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant[0]
+
 # get all tenants older than 65
+old_tenants = Tenant.where(params[:age] > 65)
+
 # get all apartments whose price is greater than $2300
+price_app = Apartment.where(params[:monthly_rent] > 2300)
+
 # get the apartment with the address "6005 Damien Corners"
+damien_app = Apartment.where(params[:address] == "6005 Damien Corners")
+
 # get all tenants in that apartment
+all_damien_app = Apartment.all(params[:address] == "6005 Damien Corners")
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+Tenant.each do |item|
+  puts "params[:name], params[:id]"
+end
+
 # Iterate over each apartment, for each apartment, display it's address and rent price
+for Apartment.each do |item|
+  puts "params[:address], params[:monthly_rent]"
+end
+
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+for Apartment.each do |item|
+  puts "params[:address]"
+  for Tenants.each do |items|
+    puts "params[:name]"
+  end
+end
+
 
 ################################################
 # CREATING / UPDATING / DELETING
