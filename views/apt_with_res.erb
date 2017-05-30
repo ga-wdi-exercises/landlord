@@ -1,0 +1,10 @@
+
+
+<ul>Apartments and Residents
+	<li><a href="/apartments" ><%= @apartment[0] %></a></li>
+	<% @res.each do |person|%>
+	<li><%= person %></li>
+	<%end%>
+</ul>
+
+<a href="/apartments/<%=params[:num]%>/tenants/new">Add Tenant</a>

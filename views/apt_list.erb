@@ -1,0 +1,7 @@
+
+
+<ul>Apartments
+	<% @apt.each do|x| %>
+		<li><a href="/apartments/<%=x[:id]%>" ><%= x[:address] %></a></li>
+	<% end %>
+</ul>
