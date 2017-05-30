@@ -77,10 +77,11 @@ get '/apartments/:num/tenants/new' do
 	erb :new_res
 end
 
-post '/apartments/:num/tenants' do
-	new_resident = Tenant.create(name: params[:name],age: params[:age], gender: params[:gender], apartment_id: params[:num])
+post '/' do
+	new_resident = Tenant.create(name: params[:name],age: params[:age], gender: params[:gender], apartment_id: params[:apt_id])
 	#new_resident.save
-	redirect_to '/' 
+	erb :new_res
+	redirect_to '/apartments' 
 end
 
 
