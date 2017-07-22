@@ -22,7 +22,8 @@ puts "2 for tenant list, "
 puts "3 to view apartments with associated tenants, "
 puts "4 to adjust rent"
 puts "5 to evict tenant"
-puts "6 to exit"
+puts "6 to create propery record"
+puts "7 to exit"
 input = gets.chomp
 while true do
 Apartment.find_each do |apart|
@@ -64,6 +65,23 @@ if input == "5"
   puts "tenant evicted"
 end
 if input == "6"
+  puts "welcome to the property creation tool"
+  puts "please follow the prompts and be mindful of spelling / capitalization"
+  puts "enter propery address:"
+  new_address = gets.chomp
+  puts "enter monthly rent:"
+  new_rent = gets.chomp.to_i
+  puts "enter square feet"
+  new_sqft = gets.chomp.to_i
+  puts "enter number of beds:"
+  new_beds = gets.chomp.to_i
+  puts "enter number of baths"
+  new_baths = gets.chomp.to_i
+  # {address:"123 barber st", monthly_rent: 900, sqft: 3000, num_beds: 3, num_baths: 2},
+  r = Apartment.create(address: new_address, monthly_rent: new_rent, sqft: new_sqft, num_beds: new_beds, num_baths: new_baths)
+  puts "Success! press 1 for apartment list "
+end
+if input == "7"
   break
 end
 input = gets.chomp
