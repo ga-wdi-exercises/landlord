@@ -34,6 +34,7 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+all_tenants.first
 # get all tenants older than 65
 # get all apartments whose price is greater than $2300
 # get the apartment with the address "6005 Damien Corners"
@@ -69,3 +70,7 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+binding.pry
+
+puts "ignore this line, it's just here so the binding.pry above works"
