@@ -23,7 +23,8 @@ puts "3 to view apartments with associated tenants, "
 puts "4 to adjust rent"
 puts "5 to evict tenant"
 puts "6 to create propery record"
-puts "7 to exit"
+puts "7 to create tenant record"
+puts "8 to exit"
 input = gets.chomp
 while true do
 Apartment.find_each do |apart|
@@ -63,6 +64,7 @@ if input == "5"
   j = Tenant.find(evict_tenant)
   j.destroy
   puts "tenant evicted"
+  puts "press 2 to view updated list"
 end
 if input == "6"
   puts "welcome to the property creation tool"
@@ -78,10 +80,39 @@ if input == "6"
   puts "enter number of baths"
   new_baths = gets.chomp.to_i
   # {address:"123 barber st", monthly_rent: 900, sqft: 3000, num_beds: 3, num_baths: 2},
-  r = Apartment.create(address: new_address, monthly_rent: new_rent, sqft: new_sqft, num_beds: new_beds, num_baths: new_baths)
-  puts "Success! press 1 for apartment list "
+  r = Apartment.new(address: new_address, monthly_rent: new_rent, sqft: new_sqft, num_beds: new_beds, num_baths: new_baths)
+  puts "press 1 to save, 2 to cancel"
+  apart_save = gets.chomp
+  if apart_save == "1"
+    r.save
+    puts "SUCCESS! press 1 for updated list"
+  elsif apart_save == "2"
+    puts "apartment not saved"
+  end
 end
 if input == "7"
+  puts "welcome to the tenant creation tool"
+  puts "please follow the prompts and be mindful of spelling / capitalization"
+  puts "enter tenant name:"
+  new_name = gets.chomp
+  puts "enter tenant age:"
+  new_age = gets.chomp.to_i
+  puts "enter tenant gender:"
+  new_gender = gets.chomp
+  puts "enter apartment id#:"
+  new_id = gets.chomp.to_i
+  new_tenant = Tenant.new(name: new_name, age: new_age, gender: new_gender, apartment_id: new_id)
+  puts "press 1 to save, 2 to cancel"
+  save = gets.chomp
+    if save == "1"
+      new_tenant.save
+      puts "SUCCESS! press 2 for updated list"
+    elsif save == "2"
+      puts "tenant not saved"
+    end
+  # {name:"Jacob Greenwald", age: 28, gender: 'Male', apartment_id: 52},
+end
+if input == "8"
   break
 end
 input = gets.chomp
