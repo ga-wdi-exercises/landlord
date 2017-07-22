@@ -6,3 +6,4 @@ ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
   :database => "landlord"
 )
+# ActiveRecord::Base.connection.execute('ALTER TABLE apartments AUTO_INCREMENT = 1')
