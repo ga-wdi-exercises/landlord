@@ -44,10 +44,20 @@ damien_apt = Apartment.where(address: "6005 Damien Corners")
 damien_tenants = Tenant.where(apartment_id: 6)
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
-
+Tenant.all.each do |tenant|
+  puts tenant.name
+  puts tenant.id
+end
 # Iterate over each apartment, for each apartment, display it's address and rent price
+Apartment.all.each do |apartment|
+  puts apartment.address
+  puts apartment.monthly_rent
+end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
-
+Apartment.all.each do |apartment|
+    puts apartment.address
+    puts Tenant.where(apartment_id: apartment.id)
+end
 ################################################
 # CREATING / UPDATING / DELETING
 ################################################
@@ -56,20 +66,26 @@ damien_tenants = Tenant.where(apartment_id: 6)
 
 # Create 3 new apartments, and save them to the DB
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
+aquaman_house, spiderman_house, bat_cave
+dave, juan, steve, jessie, laura, michelle, daisy, kristin, emily
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
-
+wisoky = Tenant.where(name: "Kristin Wisoky")
+wisoky.update(age: 24)
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
-
+verna = Apartment.where(address: "62897 Verna Walk")
+verna.update(num_beds: 3)
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
-
+verna.update(monthly_rent: 2800)
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+millenials = Tenant.where("age < ?", 30)
+millenials.destroy_all
