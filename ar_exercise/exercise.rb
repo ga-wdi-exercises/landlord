@@ -56,7 +56,8 @@ end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 Apartment.all.each do |apartment|
     puts apartment.address
-    puts Tenant.find_by(apartment_id: apartment.id)
+    apartments = Apartment.find_by(address: "123 Batcave Lane")
+    puts apartments.tenants
 end
 ################################################
 # CREATING / UPDATING / DELETING

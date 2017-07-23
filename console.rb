@@ -30,13 +30,12 @@ puts "Hello, please enter ...\n
         end
       elsif input == "3"
         Apartment.all.each do |apartment|
-          Tenant.all.each do |tenant|
+            Tenant.all.each do |tenant|
             puts apartment.address
-            puts tenant.find_by(apartment_id: apartment.id)
+            puts apartment.tenants
           end
         end
-      end
-
+        end
 
 
 
