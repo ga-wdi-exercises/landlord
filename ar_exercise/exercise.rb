@@ -22,7 +22,6 @@ end
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
 
-
 ################################################
 # FINDING / SELECTING
 ################################################
@@ -34,15 +33,33 @@ end
 all_tenants = Tenant.all
 
 # get the first tenant in the DB
+first_tenant = Tenant.first
+
 # get all tenants older than 65
+old_tenants = Tenant.where("age > ?", 65)
+
 # get all apartments whose price is greater than $2300
+fancy_apartments = Apartment.where("monthly_rent > ?", 2300)
+
 # get the apartment with the address "6005 Damien Corners"
+dam_corners = Apartment.find_by(address: "6005 Damien Corners")
+
 # get all tenants in that apartment
+dam_corners_tenants = Apartment.find_by(address: "6005 Damien Corners").tenants
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
+Tenant.all.each do |ten|
+  puts "Name: #{ten.name}, ID: #{ten.id}"
+end
 # Iterate over each apartment, for each apartment, display it's address and rent price
+Apartment.all.each do |apt|
+  puts "Address: #{apt.address}, Rent Price: $#{apt.monthly_rent}"
+end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
+Apartment.all.each do |apt|
+  puts "Tenants living at #{apt.address} include #{(Tenant.where(apartment_id: apt.id).pluck(:name)).join(", ")}"
+end
 
 ################################################
 # CREATING / UPDATING / DELETING
@@ -51,6 +68,8 @@ all_tenants = Tenant.all
 # Hint, the following methods will help: `new`, `create`, `save`, `uddate`, `destroy`
 
 # Create 3 new apartments, and save them to the DB
+
+
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
 
@@ -69,3 +88,6 @@ all_tenants = Tenant.all
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+
+
+binding.pry
