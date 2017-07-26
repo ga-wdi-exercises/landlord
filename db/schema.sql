@@ -15,5 +15,5 @@ CREATE TABLE tenants(
   name VARCHAR(255),
   age INTEGER,
   gender VARCHAR(255),
-  apartment_id INTEGER REFERENCES apartments(id)
+  apartment_id INTEGER REFERENCES apartment(id)
 );
