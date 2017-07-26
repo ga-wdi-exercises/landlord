@@ -1,0 +1,19 @@
+<h2>Update <%= @tenant.name %> </h2>
+
+<form action="/tenants/<%= @tenant.id %>" method="post">
+
+  <input type="hidden" name ="_method" value="put">
+
+  <label>Name:</label>
+  <input type="text" name="tenant[name]" value="">
+
+  <label>Age:</label>
+  <input type="text" name="tenant[age]" value="">
+
+  <label>Gender:</label>
+  <input type="text" name="tenant[gender]" value="">
+
+<input type="submit" value = "Update Tenant">
+</form>
+
+<p><a href="/">Back to home</a></p>
