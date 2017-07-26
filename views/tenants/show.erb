@@ -1,0 +1,15 @@
+
+<h2>ID: <%= @tenant.id %></h2>
+<h2>Name: <%= @tenant.name %></h2>
+<h2>Age: <%= @tenant.age %></h2>
+<h2>Gender: <%= @tenant.gender %></h2>
+
+<a href="/tenants/<%= @tenant.id %>/edit">Edit Tenant</a>
+
+<form action="/tenants/<%= @tenant.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Kill this Tenant">
+</form>
+
+
+<a href="/tenants">Back to tenants</a>

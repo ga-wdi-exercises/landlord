@@ -1,0 +1,5 @@
+<h2>Apartments</h2>
+
+<% @apartments.each do |apartment| %>
+  <p>ID: <%= apartment.id %>, Address: <%= apartment.address %>, Monthly Rent: <%= apartment.monthly_rent %></p>
+<% end %>
