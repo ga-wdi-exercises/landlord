@@ -1,3 +1,6 @@
+require 'active_record'
+require 'pg'
+require 'pry'
 require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
@@ -30,14 +33,12 @@ puts "Hello, please enter ...\n
         end
       elsif input == "3"
         Apartment.all.each do |apartment|
-            Tenant.all.each do |tenant|
             puts apartment.address
-            puts apartment.tenants
+            apartment.tenants.each do |tenant|
+              puts tenant.name
+            end
           end
         end
-        end
-
-
 
 
 
