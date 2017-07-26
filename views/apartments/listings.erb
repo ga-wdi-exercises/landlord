@@ -1,0 +1,7 @@
+<h1>apartments</h1>
+<% @apartments.each do |apartment| %>
+  <p><a href="/apartments/<%= apartment.id %>"><%= apartment.address %></a></p>
+<% end %>
+
+<a href="/apartments/new">add new apartment</a> <br>
+<a href="/directory">back to directory</a> 
