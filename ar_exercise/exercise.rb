@@ -22,7 +22,7 @@ end
 #### NOTE: DON'T MODIFY ABOVE THIS LINE     ####
 ################################################
 
-
+#NOTE TO SELF: RUN EXERCISE.RB TO TEST CODE
 ################################################
 # FINDING / SELECTING
 ################################################
@@ -36,13 +36,13 @@ all_tenants = Tenant.all
 # get the first tenant in the DB
 first_tenant = Tenant.first
 # get all tenants older than 65
-over_65 = Tenant.where(age: > 65)
+over_65 = Tenant.where('age > 65')
 # get all apartments whose price is greater than $2300
-over_2300 = Apartment.where(rent: > 2300)
+over_2300 = Apartment.where('rent > 2300')
 # get the apartment with the address "6005 Damien Corners"
-6005_damien = Apartment.where(address: "6005 Damien Corners")
+6005_damien = Apartment.where('address == "6005 Damien Corners"')
 # get all tenants in that apartment
-damien_tenants = Tenant.where(address: "6005 Damien Corners")
+damien_tenants = Tenant.where('address == "6005 Damien Corners"')
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
@@ -111,11 +111,11 @@ Verna_Walk.save
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
-update.Verna_Walk(monthly_rent: 2800)
+update.Verna_Walk('monthly_rent += 400')
 Verna_Walk.save
 
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
-under_30 = Tenant.where(age: < 30)
+under_30 = Tenant.where('age < 30')
 under_30.destroy
