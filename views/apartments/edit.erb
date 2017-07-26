@@ -1,0 +1,19 @@
+<h2>Edit Your Properties Here</h2>
+
+<form action="/apartments/<%= @apartment.id  %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="apartment[address]">Name:</label>
+  <input name="apartment[address]" value= "<%= @apartment.address %>"></label>
+
+
+  <label for="apartment[monthly_rent]">Type:</label>
+  <input name="apartment[monthly_rent]" value= "<%= @apartment.monthly_rent %>"></label>
+
+
+<h2> Delete your property here</h2>
+<form action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+
+  <input class="button-delete" type="submit" value="Delete!">
+</form>
