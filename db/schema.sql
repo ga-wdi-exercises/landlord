@@ -1,17 +1,4 @@
-- Tenants table (with the following attributes):
-  - id
-  - name
-  - age
-  - gender
-  - apartment_id
 
-- Apartments table (with the following attributes):
-  - id
-  - address
-  - monthly_rent
-  - sqft
-  - num_beds
-  - num_baths
 
 DROP TABLE IF EXISTS tenants;
 DROP TABLE IF EXISTS apartments;
