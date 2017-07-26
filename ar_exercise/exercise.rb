@@ -66,39 +66,30 @@ end
 # Create 3 new apartments, and save them to the DB
 # Create at least 9 new tenants and save them to the DB. (Make sure they belong to an apartment)
 # Note: you'll use this little bit of code as a `seeds.rb` file later on.
-Shady_Pines = Apartment.new (address: "2536 Rainbow Lane", monthly_rent: 600, sqft: 920:, num_beds: 0, num_baths: 1)
-Shady_Pines.save
-New_Horizons = Apartment.new (address: "7720 Trout Run", monthly_rent: 820, sqft: 1020:, num_beds: 1, num_baths: 1)
-New_Horizons.save
-Twin_Falls = Apartment.new (address: "2430 Peake Road", monthly_rent: 1100, sqft: 2000:, num_beds: 2, num_baths: 2)
-Twin_Falls.save
+Apartment.create ([
+  {address: "2536 Rainbow Lane", monthly_rent: 600, sqft: 920:, num_beds: 0, num_baths: 1}
+  {address: "7720 Trout Run", monthly_rent: 820, sqft: 1020:, num_beds: 1, num_baths: 1}
+  {address: "2430 Peake Road", monthly_rent: 1100, sqft: 2000:, num_beds: 2, num_baths: 2}
+])
 
-Sheila = (name: "Sheila Jones", age: 23, gender: "female", apartment_id: 4)
-Sheila.save
-Liz = (name: "Liz Girma", age: 36, gender: "female", apartment_id: 4)
-Liz.save
-Sam = (name: "Sam Qureshi", age: 30, gender: "males", apartment_id: 17)
-Sam.save
-Olivia = (name: "Olivia Bergen", age: 22, gender: "female", apartment_id: 13)
-Olivia.save
-Matt = (name: "Matt Shields", age: 27, gender: "male", apartment_id: 13)
-Matt.save
-Zoe = (name: "Zoe Isakoff", age: 32, gender: "female", apartment_id: 17)
-Zoe.save
-Rajesh = (name: "Rajesh Prasad", age: 25, gender: "male", apartment_id: 13)
-Rajesh.save
-Radha = (name: "Radha Mahadevan", age: 29, gender: "female", apartment_id: 17)
-Radha.save
-James = (name: "James Jacobs", age: 32, gender: "male", apartment_id: 4)
-James.save
-Mary = (name: "Mary Quesada", age: 29, gender: "female", apartment_id: 17)
-Mary.save
+Tenant.create ([
+  {name: "Sheila Jones", age: 23, gender: "female", apartment_id: 4}
+  {name: "Liz Girma", age: 36, gender: "female", apartment_id: 4}
+  {name: "Sam Qureshi", age: 30, gender: "males", apartment_id: 17}
+  {name: "Olivia Bergen", age: 22, gender: "female", apartment_id: 13}
+  {name: "Matt Shields", age: 27, gender: "male", apartment_id: 13}
+  {name: "Zoe Isakoff", age: 32, gender: "female", apartment_id: 17}
+  {name: "Rajesh Prasad", age: 25, gender: "male", apartment_id: 13}
+  {name: "Radha Mahadevan", age: 29, gender: "female", apartment_id: 17}
+  {name: "James Jacobs", age: 32, gender: "male", apartment_id: 4}
+  {name: "Mary Quesada", age: 29, gender: "female", apartment_id: 17}
+])
 
 # Birthday!
 # It's Kristin Wisoky's birthday. Find her in the DB and change her age to be 1 year older
 # Note: She's in the seed data, so she should be in your DB
 Wisoky_K = Tenant.find_by(name: "Kristin Wisoky")
-update.Wisoky_K(age: 24)
+update.Wisoky_K('age += 1')
 Wisoky_K.save
 
 # Rennovation!
