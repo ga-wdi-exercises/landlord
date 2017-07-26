@@ -2,16 +2,40 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
-# NOTE: Uncomment the lines below to verify that your seed script is working
+open = true
 
-# puts "There are #{Apartment.count} apartments"
-# puts "There are #{Tenant.count} tenants"
-#
-# puts "*" * 50
-#
-# puts "The first apartment is at #{Apartment.first.address}."
-# puts "It has  #{Apartment.first.tenants.count} tenants."
-
-binding.pry
-
-puts "ignore this line, it's just here so the binding.pry above works"
+while open do
+  puts "-------------------------\nWelcome to the Landlord App\nSelect a number below to see more data\n\n1. See all apartments\n2. See all tenants\n3. See all apartments with their tenants\n4. EXIT"
+  answer = gets.chomp
+  if answer == "1"
+    puts "------APARTMENTS------"
+    apartments = Apartment.all
+    apartments.each do |apt|
+      puts "ID: #{apt.id}, ADDRESS: #{apt.address}, RENT: $#{apt.monthly_rent}"
+    end
+  elsif answer == "2"
+    puts "------TENANTS------"
+    tenants = Tenant.all
+    tenants.each do |t|
+      puts "NAME: #{t.name}, AGE: #{t.age}"
+    end
+  elsif answer == "3"
+    apartments = Apartment.all
+    apartments.each do |apt|
+      tenants = []
+      apt.tenants.each do |ten|
+        tenants << ten.name
+      end
+      if tenants.length >=1
+        puts "Apartment \##{apt.id} at #{apt.address} is occupied by:\n #{tenants.join(", ")}\n\n"
+      else
+        puts "!!!! Apartment \##{apt.id} at #{apt.address} is VACANT !!!!\n\n"
+    end
+end
+  elsif answer == "4"
+    open = false
+  else
+    puts "Unrecognized command"
+    break
+  end
+end
