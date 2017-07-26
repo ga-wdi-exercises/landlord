@@ -6,3 +6,5 @@ Number of baths: <%= @apartment.num_baths %> <br><br>
 Tenants: <% @tenants.each do |tenant| %>
           <br><br> <a href="/tenants/<%= tenant.id%>"><%= tenant.name%></a>
             <% end %>
+<h2><a href = "/apartments/<%= @apartment.id %>/edit">Edit this property</a></h2>
+<h2><a href="/apartments">Show all properties</a></h2>

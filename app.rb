@@ -8,6 +8,21 @@ require_relative 'models/apartment'
 require_relative 'models/tenant'
 
 
+get '/apartments/new' do
+  erb :'apartments/new'
+end
+
+post '/apartments' do
+  @apartment = Apartment.create(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
+end
+
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect "/apartments"
+end
+
 get '/apartments' do
   @apartments = Apartment.all
   erb :"apartments/index"
@@ -18,6 +33,7 @@ get '/apartments/:id' do
   @tenants = @apartment.tenants
   erb :"apartments/show"
 end
+
 
 get '/apartments/:id/edit' do
   @apartment = Apartment.find(params[:id])
@@ -35,17 +51,3 @@ get '/tenants/:id' do
   @apartment = Apartment.find(@tenant.apartment_id)
   erb :"tenants/show"
 end
-
-
-
-# get 'apartments/new' do
-#
-# end
-#
-# get 'apartments/:id' do
-#
-# end
-#
-# get 'apartments/:id/:tenants' do
-#
-# end
