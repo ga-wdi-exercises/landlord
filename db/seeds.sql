@@ -24,6 +24,7 @@ INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('08465 Howell Harbor', 300, 1300, 3, 1);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('8865 Borer Viaduct', 600, 600, 1, 4);
 INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('7357 Emard Row', 2600, 2300, 3, 2);
+INSERT INTO apartments (address, monthly_rent, sqft, num_beds, num_baths) VALUES ('123 Fake Street', 2000, 2300, 3, 3);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Maudie Mosciski', 90, 'Female', 1);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Kristin Wisoky', 23, 'Female', 1);
 INSERT INTO tenants (name, age, gender, apartment_id) VALUES ('Demario King', 71, 'Female', 2);
