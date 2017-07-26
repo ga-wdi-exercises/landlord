@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Create Apartment</h2>
+  <form id="create_apartment" action="/apartments" method="post">
+
+    <div>
+      <label>Address: </label>
+      <input type="text" name="apartment[address]">
+    </div>
+
+    <div>
+      <label>Rent/Month: </label>
+      <input type="text" name="apartment[monthly_rent]">
+    </div>
+
+    <div>
+      <label>Sqft: </label>
+      <input type="text" name="apartment[sqft]">
+    </div>
+
+    <div>
+      <label>num_beds </label>
+      <input type="text" name="apartment[num_beds]">
+    </div>
+
+    <div>
+      <label>num_baths </label>
+      <input type="text" name="apartment[num_baths]">
+    </div>
+
+    <h2><a
+        href="javascript:{}"
+        onclick="document.getElementById('create_apartment').submit();"
+        type="submit">(Create)
+    </a></h2>
+  </form>
+
+  <a href="/apartments">(Go Back)</a>
+</div>

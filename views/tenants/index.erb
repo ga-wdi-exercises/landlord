@@ -1,0 +1,19 @@
+<div class="container">
+
+   <h2> Tenants for <a href="/apartments/<%= @apartment.id %>"><%= @apartment.address %></a></h2>
+
+  <ul>
+    <% @apartment.tenants.each do |tenant| %>
+      <li>
+        <a href="/apartments/<%= @apartment.id %>/tenants/<%= tenant.id %>">
+          <%= tenant.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+
+  <h3><a href="/apartments/<%= @apartment.id %>/tenants/new">Add New Tenant</a></h3>
+
+  <h2><a href="/apartments">All apartments</a></h2>
+
+</div>

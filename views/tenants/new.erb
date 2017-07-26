@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Create Apartment</h2>
+  <form id="add_tenant" action="/apartments/<%= @apartment.id %>/tenants" method="post">
+
+    <div>
+      <label>Name: </label>
+      <input type="text" name="tenant[name]">
+    </div>
+
+    <div>
+      <label>Age: </label>
+      <input type="text" name="tenant[age]">
+    </div>
+
+    <div>
+      <label>Gender: </label>
+      <input type="text" name="tenant[gender]">
+    </div>
+
+    <div>
+      <input type="hidden" name="tenant[apartment_id]" value="<%= @apartment.id %>">
+    </div>
+
+    <h2><a
+        href="javascript:{}"
+        onclick="document.getElementById('add_tenant').submit();"
+        type="submit">(Create)
+    </a></h2>
+  </form>
+
+  <a href="/tenants">(Go Back)</a>
+</div>
