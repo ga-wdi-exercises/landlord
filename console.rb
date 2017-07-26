@@ -1,22 +1,22 @@
-# # require_relative "db/connection"
-# require_relative "models/apartment"
-# require_relative "models/tenant"
-require "pg" # postgres db library
-require "active_record" # the ORM
+require_relative "db/connection"
+require_relative "models/apartment"
+require_relative "models/tenant"
+# require "pg" # postgres db library
+# require "active_record" # the ORM
 require "pry" # for debugging
 
-ActiveRecord::Base.establish_connection(
-  :adapter => "postgresql",
-  :database => "landlord"
-)
-
-class Tenant < ActiveRecord::Base
-  belongs_to :apartment
-end
-
-class Apartment < ActiveRecord::Base
-  has_many :tenants
-end
+# ActiveRecord::Base.establish_connection(
+#   :adapter => "postgresql",
+#   :database => "landlord"
+# )
+#
+# class Tenant < ActiveRecord::Base
+#   belongs_to :apartment
+# end
+#
+# class Apartment < ActiveRecord::Base
+#   has_many :tenants
+# end
 # NOTE: Uncomment the lines below to verify that your seed script is working
 
 # puts "There are #{Apartment.count} apartments"
