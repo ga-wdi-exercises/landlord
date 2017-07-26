@@ -5,13 +5,29 @@
 <p>Beds: <%= @apartment.num_beds %></p>
 <p>Baths: <%= @apartment.num_baths %></p>
 
+<a href="/apartments/<%= @apartment.id %>/edit">edit details</a> <br>
+
 <h3>Tenants</h3>
 <% @apartment.tenants.each do |tenant| %>
   <p><%= tenant.name %></p>
 <% end %>
 
-<a href="/apartments/<%= @apartment.id %>/edit">edit details</a> <br>
-<a href="/directory">delete listing</a> <br><br>
+<p>Add tenant</p>
+<form class="" action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <select class="" name="">
+    <% @tenants.each do |tenant| %>
+      <option value="<%= tenant.name %>" name="<%= tenant.name %>"><%= tenant.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Add Tenant">
+</form>
+<br><br>
 
-<a href="/directory">back to directory</a> <br>
-<a href="/apartments">back to apartment listings</a>
+<form class="" action="/apartments/<%= @apartment.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Apartment">
+</form>
+<br>
+<a href="/apartments">back to apartment listings</a><br>
+<a href="/directory">back to directory</a>
