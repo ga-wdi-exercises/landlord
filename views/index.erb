@@ -1,0 +1,9 @@
+<h1>Slum Manager</h1>
+
+<% @apartments.each do |apt| %>
+  <div>
+    <a href="/apartments/<%= apt.id %>"><%= apt.address %></a>
+  </div>
+<% end %>
+
+<a href="/apartments/new">Add an Apartment</a>
