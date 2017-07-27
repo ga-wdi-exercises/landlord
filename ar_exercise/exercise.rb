@@ -79,15 +79,23 @@ Tenant.create(name: "Mathilde Beatty", age: 83, gender: 'Female', apartment_id: 
 # Note: She's in the seed data, so she should be in your DB
 kristin_w = Tenant.find_by(name: "Kristin Wisoky")
 kristin_w.age += 1
+kristin_w.save
 
 # Rennovation!
 # Find the apartment "62897 Verna Walk" and update it to have an additional bedroom
 # Make sure to save the results to your database
+verna_update = Apartment.find_by(address: "62897 Verna Walk")
+verna_update.num_beds +=1
+verna_update.save
 
 # Rent Adjustment!
 # Update the same apartment that you just 'rennovated'. Increase it's rent by $400
 # to reflect the new bedroom
+verna_update.monthly_rent += 400
+verna_update.save
 
 # Millenial Eviction!
 # Find all tenants who are under 30 years old
 # Delete their records from the DB
+young_tenants = Tenant.where("age < 30", :age)
+young_tenants.destroy_all
