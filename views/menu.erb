@@ -1,0 +1,14 @@
+<h1>Landlord App</h1>
+
+
+<h3><a href="apartments/new">Create New Apartment</a></h3>
+
+<h3>Apartments - </h3>
+<ul>
+
+
+<% @apartments.each do |place| %>
+<li><a href="/apartments/<%= place.id %>"><%= place.address %></a></li>
+<% end %>
+
+</ul>

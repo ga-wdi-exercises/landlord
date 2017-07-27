@@ -47,22 +47,22 @@ d_tenants = Tenant.where(apartment_id: d_id)
 
 # Use `each` and `puts` to:
 # Display the name and ID # of every tenant
-name_id_tenant = Tenant.each do |person|
+name_id_tenant = Tenant.all.each do |person|
   puts person.name
   puts person.id
 end
 
 # Iterate over each apartment, for each apartment, display it's address and rent price
-add_rent_apt = Apartment.each do |place|
+add_rent_apt = Apartment.all.each do |place|
   puts place.address
   puts place.monthly_rent
 end
 
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 
-add_ten_apt = Apartment.each do |place|
+add_ten_apt = Apartment.all.each do |place|
   puts place.address
-  Tenant.each do |person|
+  Tenant.all.each do |person|
     if person.apartment_id == place.id
       puts person.name
     end
