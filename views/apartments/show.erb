@@ -8,4 +8,10 @@
   <p>Number of Baths: <%= @apartments.num_baths %></p>
   <p>Number of Beds: <%= @apartments.num_beds %></p>
   </ul>
+  <h3>Renters:</h3>
+  <% @apartments.tenants.each do |tenant| %>
+  <p><%= tenant.name %></p>
+  <% end %>
 </div>
+
+<h2><a href="/apartments/<%= @apartments.id %>/edit">Edit Apartments</a></h2>
