@@ -2,16 +2,38 @@ require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
 
-#NOTE: Uncomment the lines below to verify that your seed script is working
+# Build out a simple command line interface that provides a menu prompt and allows
+# the user to:
+#
+# 1. See a list of all apartments (include ID#, address, and monthly rent)
+# 2. See a list of all tenants (include name and age)
+# 3. See a list of all apartments and their associated tenants (just address and name)
 
-puts "There are #{Apartment.count} apartments"
-puts "There are #{Tenant.count} tenants"
+puts "1 Apartment List"
+puts "2 Tenant List,"
+puts "3 View of Apartment & Tenants,"
+input = gets.chomp
 
-puts "*" * 50
+Apartment.each do |apartment|
+  if input == "1"
+    puts "ID: #{apartment.id}, address: #{apartment.address}, price: #{apartment.monthly_rent}"
+  end
+end
 
-puts "The first apartment is at #{Apartment.first.address}."
-puts "It has  #{Apartment.first.tenants.count} tenants."
+Tenant.each do |tenant|
+  if input == "2"
+    puts "Id: #{tenant.id}, name: #{tenant.name}, age: #{tenant.age}"
+  end
+end
 
-binding.pry
+# Apartment.each do |apartment|
+#  if input == "3"
+#     puts "address: #{apartment.address}"
+#         Tenant.each do |tenant|
+#           puts tenant.name
+#         end
+#     end
 
-puts "ignore this line, it's just here so the binding.pry above works"
+ binding.pry
+
+ puts "ignore this line, it's just here so the binding.pry above work
