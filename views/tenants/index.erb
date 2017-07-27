@@ -1,0 +1,10 @@
+
+<h1> LIST OF TENANTS </h1>
+<p>------------------------------</p>
+<a href= '/tenants/new'> CREATE A NEW TENANT </a>
+<p>------------------------------</p>
+<% @tenants.each do |tenant| %>
+<div>
+ <h2><a href = '/tenants/<%=tenant.id%>'> <%=tenant.name%> </a></h2>
+</div>
+<% end %>
