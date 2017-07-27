@@ -1,0 +1,10 @@
+
+
+<h2>Aparment List</h2>
+<% @apartments.each do |apartment|%>
+<p class='apartments'>
+<a href="/apartments/<%= apartment.id %>"><%= apartment.address %></a>
+</p>
+<% end %>
+
+<h2><a href="/apartments/new">Add Apartment</a></h2>
