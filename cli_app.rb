@@ -1,4 +1,3 @@
-require 'pry'
 require_relative "db/connection"
 require_relative "models/apartment"
 require_relative "models/tenant"
@@ -6,7 +5,7 @@ require_relative "models/tenant"
 in_use = true
 
 while in_use do
-  puts 'Slum Management'
+  puts '**Slum Management**'
   puts 'What do you want to do:'
   puts '[1] See all apartments'
   puts '[2] See all tenants'
@@ -16,35 +15,24 @@ while in_use do
   if answer == '1'
     puts '**All Apartments**'
     apartments = Apartment.all
-    apartments.each{|apt| puts "- ID: #{apt.id}, ADDRESS: #{apt.address}, RENT: $#{apt.monthly_rent}"}
+    apartments.each{|apt| puts "- Id: #{apt.id}, Address: #{apt.address}, Rent: $#{apt.monthly_rent}, Sq Feet: #{apt.sqft}, Bedrooms: #{apt.num_beds}, Bathrooms: #{apt.num_baths}"}
     puts '******************'
   elsif answer == '2'
-    puts "------TENANTS------"
+    puts '**All Tenants**'
     tenants = Tenant.all
-    tenants.each do |t|
-      puts "NAME: #{t.name}, AGE: #{t.age}"
-    end
-  elsif answer == "3"
+    tenants.each{|t| puts "Name: #{t.name}, Age: #{t.age}, Gender: #{t.gender}"}
+    puts '***************'
+  elsif answer == '3'
+    puts '**All Apartments and Tenants**'
     apartments = Apartment.all
-    apartments.each do |apt|
+    apartments.each do |x|
       tenants = []
-      apt.tenants.each do |ten|
-        tenants << ten.name
-      end
-      if tenants.length >=1
-        puts "Apartment \##{apt.id} at #{apt.address} is occupied by:\n #{tenants.join(", ")}\n\n"
-      else
-        puts "!!!! Apartment \##{apt.id} at #{apt.address} is VACANT !!!!\n\n"
+      x.tenants.each{|y| tenants << y.name}
+      puts "#{x.address}, tenants: #{tenants.join(", ")}"
     end
-end
-  elsif answer == "4"
-    open = false
+    puts '******************************'
   else
-    puts "Unrecognized command"
+    in_use = false
     break
   end
 end
-
-binding.pry
-
-puts "ignore this line, it's just here so the binding.pry above works"
