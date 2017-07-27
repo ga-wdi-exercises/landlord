@@ -49,6 +49,10 @@ all_tenants.each do |person|
   puts "Tenant name is #{person.name} with ID: #{person.id}"
 end
 # Iterate over each apartment, for each apartment, display it's address and rent price
+all_apartments = Apartment.all
+all_apartments.each do |apt|
+  puts "#{apt.address} at a cost of #{apt.monthly_rent}"
+end
 # Iterate over each apartment, for each apartment, display it's address and all of it's tenants
 
 ################################################
