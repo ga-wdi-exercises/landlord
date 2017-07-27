@@ -11,11 +11,11 @@ ActiveRecord::Base.establish_connection(
 )
 
 class Tenant < ActiveRecord::Base
-  belongs_to :apartment
+  belongs_to :apartment dependent: :destroy
 end
 
 class Apartment < ActiveRecord::Base
-  has_many :tenants
+  has_many :tenants,  dependent: :destroy
 end
 
 ################################################
