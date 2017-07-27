@@ -1,0 +1,32 @@
+
+<h1> EDIT--> <%=@tenant.name%>  </h1>
+
+<form action="/tenants/<%=@tenant.id%>" method="post">
+<input type="hidden" name="_method" value="put">
+
+  <label for="tenant[name]">Name:</label>
+  <input type="text" name="tenant[name]" value=<%=@tenant.name%>>
+
+  <label for="tenant[age]">age:</label>
+  <input type="text" name="tenant[age]" value=<%=@tenant.age%>>
+
+  <label for="tenant[apartment_id]">apartment id:</label>
+  <input type="text" name="tenant[apartment_id]"value=<%=@tenant.apartment_id%> >
+
+  <label for="tenant[gender]">gender:</label>
+  <input type="text" name="tenant[gender]" value=<%=@tenant.gender%>>
+
+  <input type="submit" value="Updatex" >
+</form>
+
+
+
+<br> <br> <br>
+<h1> DELETE:  <%=@tenant.name %> </h1>
+
+<form  action="/tenant/<%=@tenant.id%>" method="post">
+
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="" value="delete">
+
+</form>
