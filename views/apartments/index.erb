@@ -1,0 +1,11 @@
+<h2> All Apartments </h2>
+<div class="container">
+  <% @apartments.each do |apt| %>
+    <p>
+      <a href="/apartments/<%= apt.id %>"><%= apt.address %></a>
+      <a href="/apartments/<%= apt.id %>/tenants">See tenants</a>
+    </p>
+  <% end %>
+
+  <h3><a href="/apartments/new">Create New Apartment</a></h3>
+</div>

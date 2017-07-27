@@ -1,0 +1,36 @@
+<div class="container">
+
+   <h2> <%= @apartment.address %>
+
+    <a href="/apartments/<%= @apartment.id %>/edit">(edit)</a>
+    <a
+    href="javascript:{}"
+    onclick="document.getElementById('delete_apartment').submit();"
+    type="submit">(Delete)
+    </a>
+  </h2>
+
+  <form id="delete_apartment" action="/apartments/<%= @apartment.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+  </form>
+
+  <p><label>Rent/Mo: </label><%= @apartment.monthly_rent %></p>
+  <p><label>Sqft: </label><%= @apartment.sqft %></p>
+  <p><label>#Beds: </label><%= @apartment.num_beds %></p>
+  <p><label>#Baths: </label><%= @apartment.num_baths %></p>
+  <p><label>Renters: </label></p>
+  <ul>
+    <% @apartment.tenants.each do |tenant| %>
+      <li>
+        <a href="/apartments/<%= @apartment.id %>/tenants/<%= tenant.id %>">
+          <%= tenant.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+
+  <h3><a href="/apartments/<%= @apartment.id %>/tenants/new">Add New Tenant</a></h3>
+
+  <h2><a href="/apartments">All apartments</a></h2>
+
+</div>
