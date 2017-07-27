@@ -1,0 +1,9 @@
+<h2>Here are all your tenants</h2>
+<h3>Click to see more information</h3>
+
+<% @tenants.each do |tenant| %>
+  <a href = "/tenants/<%= tenant.id %>"> <%= tenant.name  %></a>
+
+  <br><br>
+
+<% end %>
