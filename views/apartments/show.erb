@@ -1,16 +1,18 @@
 <div class="container">
 
    <h2> <%= @apartment.address %>
-<!-- <a href="/apartments/<%= @apartment.id %>/edit">(edit)</a><a
-      href="javascript:{}"
-      onclick="document.getElementById('delete_apartment').submit();"
-      type="submit">(Delete!)
-      </a>-->
+
+    <a href="/apartments/<%= @apartment.id %>/edit">(edit)</a>
+    <a
+    href="javascript:{}"
+    onclick="document.getElementById('delete_apartment').submit();"
+    type="submit">(Delete)
+    </a>
   </h2>
 
-  <!-- <form id="delete_apartment" action="/apartments/<%= @apartment.id %>" method="post">
+  <form id="delete_apartment" action="/apartments/<%= @apartment.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-  </form> -->
+  </form>
 
   <p><label>Rent/Mo: </label><%= @apartment.monthly_rent %></p>
   <p><label>Sqft: </label><%= @apartment.sqft %></p>

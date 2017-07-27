@@ -115,7 +115,3 @@ verna.save
 millenials = Tenant.where("age < 30")
 # # Delete their records from the DB
 millenials.destroy_all
-
-binding.pry
-
-puts "EOF"

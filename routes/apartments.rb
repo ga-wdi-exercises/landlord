@@ -14,6 +14,11 @@ get '/apartments/new' do
   erb :'apartments/new'
 end
 
+post '/apartments' do
+  @apartment = Apartment.create(params[:apartment])
+  redirect "/apartments/#{@apartment[:id]}"
+end
+
 # View an apartment's details(a link to GET /apartments/1)
 # The route GET /apartments/1 should show info about a single apartment
 # Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters
@@ -22,7 +27,21 @@ get '/apartments/:id' do
   erb :'apartments/show'
 end
 
-post '/apartments' do
-  @apartment = Apartment.create(params[:apartment])
-  redirect "/apartments/#{@apartment[:id]}"
+# update
+get '/apartments/:id/edit' do
+  @apartment = Apartment.find(params[:id])
+  erb :'apartments/edit'
+end
+
+put '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.update(params[:apartment])
+  redirect "/apartments/#{@apartment.id}"
+end
+
+#delete
+delete '/apartments/:id' do
+  @apartment = Apartment.find(params[:id])
+  @apartment.destroy
+  redirect '/apartments'
 end
